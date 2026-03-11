@@ -143,7 +143,7 @@ export function HeroEye() {
   };
 
   return (
-    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(360px,48vw)] mb-[52px] flex items-center justify-center z-[2]">
+    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(360px,48vw)] mb-8 md:mb-[52px] flex items-center justify-center z-[2]">
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
