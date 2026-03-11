@@ -179,7 +179,7 @@ export function HeroEye() {
       </div>
 
       {/* Connecting lines SVG */}
-      <svg className="vlines-svg absolute inset-0 w-full h-full pointer-events-none z-[6]" viewBox="0 0 680 360">
+      <svg className="vlines-svg absolute inset-0 w-full h-full pointer-events-none z-[6] hidden md:block" viewBox="0 0 680 360">
         {[
           { x1: 340, y1: 180, x2: 340, y2: 0 },
           { x1: 340, y1: 180, x2: 660, y2: 54 },
