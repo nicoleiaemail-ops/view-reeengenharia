@@ -10,6 +10,7 @@ import { MidCTA } from "@/components/MidCTA";
 import { Pillars } from "@/components/Pillars";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
+import { DISTIP } from "@/components/DISTIP";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
