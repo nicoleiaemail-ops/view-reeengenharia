@@ -122,9 +122,28 @@ export default function AvaliacaoMaturidade() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    console.log("Assessment submitted:", data);
-    setSubmitted(true);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    try {
+      const { nome, email, telefone, segmento, ...respostas } = data;
+      const { error } = await supabase.from("maturity_assessments").insert({
+        nome,
+        email,
+        telefone,
+        segmento,
+        respostas,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success("Avaliação enviada com sucesso!");
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
