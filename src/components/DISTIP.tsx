@@ -88,8 +88,8 @@ export function DISTIP() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* SEO-Optimized Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,113 +115,88 @@ export function DISTIP() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-[.95rem] md:text-[1.05rem] leading-relaxed max-w-3xl mx-auto"
+            className="text-muted-foreground text-[.95rem] md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto"
           >
-            Framework estratégico para avaliar e elevar o nível de maturidade da sua empresa, 
-            identificando gargalos e oportunidades de crescimento sustentável.
+            Framework estratégico que analisa seis dimensões críticas para empresas que querem escalar com eficiência, controle e decisões baseadas em dados.
           </motion.p>
         </div>
 
-        {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Left - Value Proposition */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5 space-y-6"
-          >
-            <div className="space-y-4">
-              <p className="text-foreground/80 text-[.9rem] leading-[1.8]">
-                A metodologia <strong className="text-foreground">DISTIP</strong> analisa seis dimensões críticas para empresas que querem escalar com eficiência e controle.
-              </p>
-              
-              <p className="text-muted-foreground text-[.85rem] leading-[1.8]">
-                Empresas que evoluem nesses pilares conseguem enxergar sua operação de forma clara, 
-                tomar decisões baseadas em dados e crescer sem perder o controle.
-              </p>
-            </div>
-
-            {/* CTA Card */}
-            <div className="bg-gradient-to-br from-primary/[.08] to-primary/[.02] border border-primary/20 rounded-xl p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
-                  <ArrowRight className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-foreground text-[.95rem] mb-1">
-                    Descubra o nível de maturidade da sua empresa
-                  </h4>
-                  <p className="text-muted-foreground text-[.8rem]">
-                    Avaliação gratuita em menos de 5 minutos
-                  </p>
-                </div>
-              </div>
-              
-              <Link
-                to="/avaliacao-maturidade"
-                className="flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground font-display font-bold text-[.85rem] tracking-[.05em] px-6 py-3.5 rounded-lg hover:opacity-90 transition-all no-underline group"
+        {/* 6 Pillar Cards — 3 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-12">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={`group relative bg-gradient-to-br ${pillar.color} border ${pillar.border} rounded-xl p-5 md:p-6 hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden`}
               >
-                Iniciar avaliação agora
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
+                {/* Letter Badge */}
+                <div className={`absolute top-4 right-4 w-10 h-10 rounded-lg ${pillar.bgAccent} flex items-center justify-center`}>
+                  <span className={`${pillar.accent} font-display font-black text-lg`}>{pillar.letter}</span>
+                </div>
 
-          {/* Right - Pillar Cards */}
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {pillars.map((pillar, i) => {
-                const Icon = pillar.icon;
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className={`group relative bg-gradient-to-br ${pillar.color} border ${pillar.border} rounded-xl p-5 hover:shadow-lg hover:shadow-${pillar.accent.replace('text-', '')}/5 hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden`}
-                  >
-                    {/* Letter Badge */}
-                    <div className={`absolute top-4 right-4 w-10 h-10 rounded-lg ${pillar.bgAccent} flex items-center justify-center`}>
-                      <span className={`${pillar.accent} font-display font-black text-lg`}>{pillar.letter}</span>
-                    </div>
-
-                    <div className="relative z-10">
-                      <div className={`${pillar.accent} mb-3`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      
-                      <h3 className={`font-display font-bold text-foreground text-[.95rem] mb-1 ${pillar.accent}`}>
-                        {pillar.title}
-                      </h3>
-                      
-                      <p className="font-medium text-foreground/90 text-[.8rem] mb-2 leading-tight">
-                        {pillar.headline}
-                      </p>
-                      
-                      <p className="text-muted-foreground text-[.75rem] leading-relaxed mb-3">
-                        {pillar.desc}
-                      </p>
-                      
-                      <div className={`inline-flex items-center gap-1.5 text-[.7rem] ${pillar.accent} font-medium bg-background/50 rounded-full px-3 py-1 border border-${pillar.border.replace('border-', '')}`}>
-                        <CheckCircle className="w-3 h-3" />
-                        {pillar.benefit}
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                <div className="relative z-10">
+                  <div className={`${pillar.accent} mb-3`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  
+                  <h3 className={`font-display font-bold text-[.95rem] mb-1 ${pillar.accent}`}>
+                    {pillar.title}
+                  </h3>
+                  
+                  <p className="font-medium text-foreground/90 text-[.8rem] mb-2 leading-tight">
+                    {pillar.headline}
+                  </p>
+                  
+                  <p className="text-muted-foreground text-[.75rem] leading-relaxed mb-3">
+                    {pillar.desc}
+                  </p>
+                  
+                  <div className={`inline-flex items-center gap-1.5 text-[.7rem] ${pillar.accent} font-medium bg-background/50 rounded-full px-3 py-1`}>
+                    <CheckCircle className="w-3 h-3" />
+                    {pillar.benefit}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Bottom Trust Indicators */}
+        {/* CTA — centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-xl mx-auto"
+        >
+          <div className="bg-gradient-to-br from-primary/[.08] to-primary/[.02] border border-primary/20 rounded-xl p-6 text-center">
+            <h4 className="font-display font-bold text-foreground text-[1rem] mb-1">
+              Descubra o nível de maturidade da sua empresa
+            </h4>
+            <p className="text-muted-foreground text-[.8rem] mb-5">
+              Avaliação gratuita em menos de 5 minutos
+            </p>
+            
+            <Link
+              to="/avaliacao-maturidade"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-display font-bold text-[.85rem] tracking-[.05em] px-8 py-3.5 rounded-lg hover:opacity-90 transition-all no-underline group"
+            >
+              Iniciar avaliação agora
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Trust Indicators */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-6 text-[.75rem] text-muted-foreground"
+          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-[.75rem] text-muted-foreground"
         >
           <span className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 text-view-green" />
