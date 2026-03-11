@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { HeroEye } from "@/components/HeroEye";
+import { DISTIP } from "@/components/DISTIP";
 
 const About = () => {
   useEffect(() => {
