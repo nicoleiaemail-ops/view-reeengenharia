@@ -1,7 +1,66 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length === 0) return "";
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 3) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2, 3)} ${digits.slice(3)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 3)} ${digits.slice(3, 7)}-${digits.slice(7)}`;
+}
+
+const inputCls = "w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors placeholder:text-muted-foreground/50";
+const selectCls = `${inputCls} appearance-none cursor-pointer bg-[length:12px] bg-[right_12px_center] bg-no-repeat`;
+const labelCls = "block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1";
+
+const segmentos = [
+  { value: "industria", label: "🏭 Indústria", sub: "Manufatura, produção, transformação" },
+  { value: "construcao", label: "🏗️ Construção Civil", sub: "Construtoras, incorporadoras, obras" },
+  { value: "comercio", label: "🛒 Comércio / Varejo", sub: "Lojas, atacado, e-commerce" },
+  { value: "servicos", label: "🔧 Serviços", sub: "Manutenção, consultoria, facilities" },
+  { value: "alimentacao", label: "🍽️ Alimentação", sub: "Restaurantes, cafeterias, food service" },
+  { value: "saude", label: "🏥 Saúde", sub: "Clínicas, hospitais, laboratórios" },
+  { value: "logistica", label: "🚚 Logística / Transporte", sub: "Frota, armazém, distribuição" },
+  { value: "educacao", label: "📚 Educação", sub: "Escolas, cursos, treinamentos" },
+  { value: "agro", label: "🌾 Agronegócio", sub: "Fazendas, cooperativas, insumos" },
+  { value: "tech", label: "💻 Tecnologia", sub: "Software, startups, SaaS" },
+  { value: "outro", label: "📋 Outro segmento", sub: "" },
+];
+
+const cidades = [
+  { group: "Paraíba", items: ["João Pessoa", "Campina Grande", "Patos", "Bayeux", "Santa Rita", "Cabedelo"] },
+  { group: "Pernambuco", items: ["Recife", "Olinda", "Jaboatão dos Guararapes", "Caruaru", "Petrolina"] },
+  { group: "Rio Grande do Norte", items: ["Natal", "Mossoró", "Parnamirim", "São Gonçalo do Amarante"] },
+  { group: "Outros estados", items: ["Outra cidade (atendimento remoto)"] },
+];
+
+const funcionarios = [
+  { value: "1-10", label: "1 a 10 funcionários" },
+  { value: "11-30", label: "11 a 30 funcionários" },
+  { value: "31-50", label: "31 a 50 funcionários" },
+  { value: "51-100", label: "51 a 100 funcionários" },
+  { value: "101-200", label: "101 a 200 funcionários" },
+  { value: "201-500", label: "201 a 500 funcionários" },
+  { value: "500+", label: "Mais de 500 funcionários" },
+];
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value));
+  }, []);
+
+  const handlePhoneKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Allow: backspace, delete, tab, escape, enter, arrows
+    const allowed = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "Home", "End"];
+    if (allowed.includes(e.key)) return;
+    // Block non-numeric
+    if (!/^\d$/.test(e.key)) {
+      e.preventDefault();
+    }
+  }, []);
 
   return (
     <section className="py-28 px-[7%] border-t border-view-line" id="diagnostico">
@@ -37,47 +96,81 @@ export function ContactForm() {
           <div className="text-[.75rem] text-muted-foreground mb-7">Formulário de 2 minutos · Resposta em até 48h</div>
 
           <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+            {/* Nome */}
             <div className="mb-3.5">
-              <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">Nome</label>
-              <input type="text" placeholder="Seu nome" required className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors" />
+              <label className={labelCls}>Nome</label>
+              <input type="text" placeholder="Seu nome completo" required maxLength={100} className={inputCls} />
             </div>
+
+            {/* Email + WhatsApp */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
               <div>
-                <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">E-mail</label>
-                <input type="email" placeholder="seu@email.com" required className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors" />
+                <label className={labelCls}>E-mail</label>
+                <input type="email" placeholder="seu@email.com" required maxLength={255} className={inputCls} />
               </div>
               <div>
-                <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">WhatsApp</label>
-                <input type="tel" placeholder="(83) 9 0000-0000" className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors" />
+                <label className={labelCls}>WhatsApp</label>
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  placeholder="(83) 9 0000-0000"
+                  required
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  onKeyDown={handlePhoneKeyDown}
+                  maxLength={16}
+                  className={inputCls}
+                />
               </div>
             </div>
-            <div className="mb-3.5">
-              <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">Empresa</label>
-              <input type="text" placeholder="Nome da empresa" className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors" />
-            </div>
+
+            {/* Empresa + Funcionários */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
               <div>
-                <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">Segmento</label>
-                <select className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors appearance-none">
-                  <option value="" disabled selected>Selecione</option>
-                  <option>Indústria</option>
-                  <option>Construção</option>
-                  <option>Comércio</option>
-                  <option>Serviços</option>
-                  <option>Saúde</option>
-                  <option>Logística</option>
-                  <option>Outro</option>
+                <label className={labelCls}>Empresa</label>
+                <input type="text" placeholder="Nome da empresa" required maxLength={100} className={inputCls} />
+              </div>
+              <div>
+                <label className={labelCls}>Nº de funcionários</label>
+                <select required defaultValue="" className={selectCls}
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
+                >
+                  <option value="" disabled>Selecione</option>
+                  {funcionarios.map((f) => (
+                    <option key={f.value} value={f.value}>{f.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Segmento + Cidade */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
+              <div>
+                <label className={labelCls}>Segmento</label>
+                <select required defaultValue="" className={selectCls}
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
+                >
+                  <option value="" disabled>Selecione o segmento</option>
+                  {segmentos.map((s) => (
+                    <option key={s.value} value={s.value}>
+                      {s.label}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>
-                <label className="block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1">Cidade</label>
-                <select className="w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors appearance-none">
-                  <option value="" disabled selected>Selecione</option>
-                  <option>João Pessoa — PB</option>
-                  <option>Campina Grande — PB</option>
-                  <option>Recife — PE</option>
-                  <option>Natal — RN</option>
-                  <option>Outra</option>
+                <label className={labelCls}>Cidade</label>
+                <select required defaultValue="" className={selectCls}
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
+                >
+                  <option value="" disabled>Selecione a cidade</option>
+                  {cidades.map((g) => (
+                    <optgroup key={g.group} label={`── ${g.group}`}>
+                      {g.items.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </optgroup>
+                  ))}
                 </select>
               </div>
             </div>
