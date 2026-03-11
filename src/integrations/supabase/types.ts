@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      diagnostic_leads: {
+        Row: {
+          cidade: string
+          created_at: string
+          email: string
+          empresa: string
+          id: string
+          nome: string
+          num_funcionarios: string
+          segmento: string
+          whatsapp: string
+        }
+        Insert: {
+          cidade: string
+          created_at?: string
+          email: string
+          empresa: string
+          id?: string
+          nome: string
+          num_funcionarios: string
+          segmento: string
+          whatsapp: string
+        }
+        Update: {
+          cidade?: string
+          created_at?: string
+          email?: string
+          empresa?: string
+          id?: string
+          nome?: string
+          num_funcionarios?: string
+          segmento?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
       maturity_assessments: {
         Row: {
           created_at: string

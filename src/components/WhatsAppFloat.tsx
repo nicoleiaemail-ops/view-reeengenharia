@@ -2,7 +2,7 @@ export function WhatsAppFloat() {
   return (
     <a
       className="fixed bottom-8 right-8 z-[200] w-[52px] h-[52px] rounded-full bg-[#25d366] flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,.4)] no-underline hover:scale-[1.08] transition-transform"
-      href="https://wa.me/5583900000000"
+      href="https://wa.me/558399565051?text=Ol%C3%A1%2C%20eu%20quero%20enxergar%20melhor%20a%20minha%20empresa"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"

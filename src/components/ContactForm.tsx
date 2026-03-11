@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
-
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 function formatPhone(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 11);
   if (digits.length === 0) return "";
@@ -46,6 +47,7 @@ const funcionarios = [
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [phone, setPhone] = useState("");
 
   const handlePhoneChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,14 +55,38 @@ export function ContactForm() {
   }, []);
 
   const handlePhoneKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Allow: backspace, delete, tab, escape, enter, arrows
     const allowed = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "Home", "End"];
     if (allowed.includes(e.key)) return;
-    // Block non-numeric
     if (!/^\d$/.test(e.key)) {
       e.preventDefault();
     }
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    try {
+      const { error } = await supabase.from("diagnostic_leads").insert({
+        nome: formData.get("nome") as string,
+        email: formData.get("email") as string,
+        whatsapp: phone,
+        empresa: formData.get("empresa") as string,
+        num_funcionarios: formData.get("num_funcionarios") as string,
+        segmento: formData.get("segmento") as string,
+        cidade: formData.get("cidade") as string,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success("Diagnóstico solicitado com sucesso!");
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-28 px-[7%] border-t border-view-line" id="diagnostico">
@@ -95,18 +121,18 @@ export function ContactForm() {
           <div className="font-display font-extrabold text-[1.1rem] mb-1">Quero meu Diagnóstico Grátis</div>
           <div className="text-[.75rem] text-muted-foreground mb-7">Formulário de 2 minutos · Resposta em até 48h</div>
 
-          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+          <form onSubmit={handleSubmit}>
             {/* Nome */}
             <div className="mb-3.5">
               <label className={labelCls}>Nome</label>
-              <input type="text" placeholder="Seu nome completo" required maxLength={100} className={inputCls} />
+              <input name="nome" type="text" placeholder="Seu nome completo" required maxLength={100} className={inputCls} />
             </div>
 
             {/* Email + WhatsApp */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
               <div>
                 <label className={labelCls}>E-mail</label>
-                <input type="email" placeholder="seu@email.com" required maxLength={255} className={inputCls} />
+                <input name="email" type="email" placeholder="seu@email.com" required maxLength={255} className={inputCls} />
               </div>
               <div>
                 <label className={labelCls}>WhatsApp</label>
@@ -128,11 +154,11 @@ export function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
               <div>
                 <label className={labelCls}>Empresa</label>
-                <input type="text" placeholder="Nome da empresa" required maxLength={100} className={inputCls} />
+                <input name="empresa" type="text" placeholder="Nome da empresa" required maxLength={100} className={inputCls} />
               </div>
               <div>
                 <label className={labelCls}>Nº de funcionários</label>
-                <select required defaultValue="" className={selectCls}
+                <select name="num_funcionarios" required defaultValue="" className={selectCls}
                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
                 >
                   <option value="" disabled>Selecione</option>
@@ -147,7 +173,7 @@ export function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
               <div>
                 <label className={labelCls}>Segmento</label>
-                <select required defaultValue="" className={selectCls}
+                <select name="segmento" required defaultValue="" className={selectCls}
                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
                 >
                   <option value="" disabled>Selecione o segmento</option>
@@ -160,7 +186,7 @@ export function ContactForm() {
               </div>
               <div>
                 <label className={labelCls}>Cidade</label>
-                <select required defaultValue="" className={selectCls}
+                <select name="cidade" required defaultValue="" className={selectCls}
                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")` }}
                 >
                   <option value="" disabled>Selecione a cidade</option>
@@ -175,14 +201,14 @@ export function ContactForm() {
               </div>
             </div>
 
-            <button type="submit" disabled={submitted}
+            <button type="submit" disabled={submitted || submitting}
               className={`w-full rounded-sm py-4 font-display font-extrabold text-[.86rem] tracking-[.07em] mt-4 transition-all cursor-pointer ${
                 submitted
                   ? "bg-view-green text-background"
                   : "bg-foreground text-background hover:opacity-88 hover:-translate-y-px"
               }`}
             >
-              {submitted ? "✓ Solicitado! Entraremos em contato em até 48h." : "SOLICITAR DIAGNÓSTICO GRATUITO →"}
+              {submitted ? "✓ Solicitado! Entraremos em contato em até 48h." : submitting ? "Enviando..." : "SOLICITAR DIAGNÓSTICO GRATUITO →"}
             </button>
             <div className="text-center text-[.67rem] text-muted-foreground mt-3">🔒 Seus dados estão protegidos. Sem spam.</div>
           </form>
