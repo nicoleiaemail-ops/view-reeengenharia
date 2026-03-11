@@ -2,95 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 78% 10%;
+    --foreground: 225 33% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 78% 10%;
+    --card-foreground: 225 33% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 78% 10%;
+    --popover-foreground: 225 33% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 222 100% 65%;
+    --primary-foreground: 222 78% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 222 50% 15%;
+    --secondary-foreground: 225 33% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 50% 15%;
+    --muted-foreground: 225 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 70% 66%;
+    --accent-foreground: 222 78% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 225 33% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 225 15% 15%;
+    --input: 225 15% 15%;
+    --ring: 222 100% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* VIEW custom tokens */
+    --view-dark: 222 78% 10%;
+    --view-navy: 222 60% 15%;
+    --view-accent: 222 100% 65%;
+    --view-gold: 40 70% 66%;
+    --view-white: 225 33% 95%;
+    --view-muted: 225 33% 95%;
+    --view-line: 225 15% 15%;
+    --view-green: 145 63% 58%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 222 60% 15%;
+    --sidebar-foreground: 225 33% 95%;
+    --sidebar-primary: 222 100% 65%;
+    --sidebar-primary-foreground: 225 33% 95%;
+    --sidebar-accent: 222 50% 20%;
+    --sidebar-accent-foreground: 225 33% 95%;
+    --sidebar-border: 225 15% 15%;
+    --sidebar-ring: 222 100% 65%;
   }
 }
 
@@ -99,7 +60,166 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* ═══ FONTS ═══ */
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes vfragDrift {
+  0%   { transform: translateX(0) translateY(0) rotate(var(--r, 0deg)); opacity: 0.3; }
+  50%  { opacity: 0.6; }
+  100% { transform: translateX(var(--dx, 10px)) translateY(var(--dy, -8px)) rotate(var(--r2, 2deg)); opacity: 0.2; }
+}
+
+@keyframes vpulseAnim {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+}
+
+@keyframes vdash {
+  to { stroke-dashoffset: -48; }
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -40; }
+}
+
+@keyframes ctrlPulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+@keyframes faqFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ═══ SCROLL REVEAL ═══ */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ EYE ANIMATION STYLES ═══ */
+.veye-svg {
+  filter: drop-shadow(0 0 0px hsla(var(--view-accent) / 0));
+  transition: filter 1.8s ease;
+}
+
+.veye-svg.powered {
+  filter: drop-shadow(0 0 50px hsla(var(--view-accent) / 0.45)) drop-shadow(0 0 100px hsla(var(--view-accent) / 0.15));
+}
+
+.vlid-light {
+  background: hsla(var(--view-accent) / 0);
+  transition: background 1.4s ease, height 0.8s ease;
+}
+
+.vlid-light.lit {
+  background: hsla(var(--view-accent) / 0.7);
+  height: 4px !important;
+}
+
+.vnode {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+
+.vnode.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vlines-svg {
+  opacity: 0;
+  transition: opacity 0.8s ease 1s;
+}
+
+.vlines-svg.show {
+  opacity: 1;
+}
+
+.vpulse-el {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.vpulse-el.show {
+  opacity: 1;
+}
+
+.vstate-label {
+  transition: color 0.6s ease;
+}
+
+.vstate-label .vstate-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+.vstate-label.open {
+  color: hsl(var(--view-accent));
+}
+
+.vstate-label.open .vstate-dot {
+  background: hsl(var(--view-green));
+  box-shadow: 0 0 8px hsl(var(--view-green));
+}
+
+.vchaos-inner {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.vchaos-inner.hidden {
+  opacity: 0;
+}
+
+/* ═══ FAQ ═══ */
+.faq-item[open] {
+  background: hsla(var(--view-accent) / 0.05);
+  border-color: hsla(var(--view-accent) / 0.2);
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(45deg);
+}
+
+.faq-body {
+  animation: faqFadeIn 0.25s ease;
+}
+
+/* ═══ COUNTER ANIMATION ═══ */
+.counter-animate {
+  display: inline-block;
 }
