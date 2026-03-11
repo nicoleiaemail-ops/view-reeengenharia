@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { ViewLogo } from "@/components/ViewLogo";
+import { HeroEye } from "@/components/HeroEye";
 
 const About = () => {
   useEffect(() => {
