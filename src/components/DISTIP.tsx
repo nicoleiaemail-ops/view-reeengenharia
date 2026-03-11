@@ -129,7 +129,7 @@ export function DISTIP() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground text-[.95rem] md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto"
           >
-            Framework estratégico que analisa seis dimensões críticas para empresas que querem escalar com eficiência, controle e decisões baseadas em dados.
+            Framework estratégico que analisa sete dimensões críticas para empresas que querem escalar com eficiência, controle e decisões baseadas em dados.
           </motion.p>
         </div>
 
