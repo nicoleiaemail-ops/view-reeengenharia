@@ -119,7 +119,7 @@ export function DISTIP() {
             transition={{ delay: 0.1 }}
             className="font-display font-extrabold text-[clamp(1.8rem,4vw,3rem)] leading-[1.1] text-foreground mb-5"
           >
-            O Modelo <span className="text-primary">DISTIP</span>: Maturidade Empresarial em 6 Pilares
+            O Modelo <span className="text-primary">DISTIPP</span>: Maturidade Empresarial em 7 Pilares
           </motion.h2>
           
           <motion.p 
@@ -129,7 +129,7 @@ export function DISTIP() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground text-[.95rem] md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto"
           >
-            Framework estratégico que analisa seis dimensões críticas para empresas que querem escalar com eficiência, controle e decisões baseadas em dados.
+            Framework estratégico que analisa sete dimensões críticas para empresas que querem escalar com eficiência, controle e decisões baseadas em dados.
           </motion.p>
         </div>
 
