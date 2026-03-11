@@ -47,6 +47,7 @@ const funcionarios = [
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [phone, setPhone] = useState("");
 
   const handlePhoneChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,14 +55,38 @@ export function ContactForm() {
   }, []);
 
   const handlePhoneKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Allow: backspace, delete, tab, escape, enter, arrows
     const allowed = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "Home", "End"];
     if (allowed.includes(e.key)) return;
-    // Block non-numeric
     if (!/^\d$/.test(e.key)) {
       e.preventDefault();
     }
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    try {
+      const { error } = await supabase.from("diagnostic_leads").insert({
+        nome: formData.get("nome") as string,
+        email: formData.get("email") as string,
+        whatsapp: phone,
+        empresa: formData.get("empresa") as string,
+        num_funcionarios: formData.get("num_funcionarios") as string,
+        segmento: formData.get("segmento") as string,
+        cidade: formData.get("cidade") as string,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success("Diagnóstico solicitado com sucesso!");
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-28 px-[7%] border-t border-view-line" id="diagnostico">
