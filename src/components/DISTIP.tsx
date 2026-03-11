@@ -77,12 +77,6 @@ const pillars = [
   },
 ];
 
-const benefits = [
-  "Reduza desperdícios operacionais",
-  "Integre áreas do negócio",
-  "Aumente produtividade em até 50%",
-  "Tome decisões com mais velocidade",
-];
 
 export function DISTIP() {
   return (
