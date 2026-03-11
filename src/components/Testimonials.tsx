@@ -3,12 +3,12 @@ export function Testimonials() {
     {
       text: "Manter o ISO 9001 era uma corrida contra o tempo a cada auditoria. Com a VIEW, cada etapa da obra gera um registro automático. Hoje acompanho o andamento de qualquer projeto em tempo real — de onde estiver.",
       result: "✓ ISO 9001 mantido sem retrabalho · ✓ Planejamento de obras em tempo real",
-      initials: "AM", name: "Ana M.", role: "Diretora · Construtora, Paraíba", tag: "Construção Civil",
+      initials: "VD", name: "Vitória D.", role: "Diretora · Construtora, Paraíba", tag: "Construção Civil",
     },
     {
-      text: "Eu contava estoque na mão e anotava num caderno. Os números nunca batiam. Agora vejo em tempo real o nível de cada insumo, recebo alertas antes de faltar e nunca mais fui pega de surpresa no meio do movimento.",
-      result: "✓ Controle de estoque em tempo real · ✓ Fim das perdas por falta de insumos",
-      initials: "CR", name: "Carla R.", role: "Proprietária · Cafeteria, Recife", tag: "Alimentação",
+      text: "Antes eu precisava ligar pra cada encarregado pra saber o que tava acontecendo. Agora abro o aplicativo e vejo tudo: o que foi feito, o que atrasou, quem tá onde. Mudou completamente a forma como eu gerencio a obra.",
+      result: "✓ Acompanhamento em tempo real · ✓ Gestão completa pelo celular",
+      initials: "AS", name: "Aguinaldo S.", role: "Supervisor de Obra · Construtora, Paraíba", tag: "Construção Civil",
     },
   ];
 
