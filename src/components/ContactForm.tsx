@@ -9,9 +9,9 @@ function formatPhone(value: string): string {
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 3)} ${digits.slice(3, 7)}-${digits.slice(7)}`;
 }
 
-const inputCls = "w-full bg-foreground/[.05] border border-view-line rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/45 transition-colors placeholder:text-muted-foreground/50";
-const selectCls = `${inputCls} appearance-none cursor-pointer bg-[length:12px] bg-[right_12px_center] bg-no-repeat`;
-const labelCls = "block text-[.65rem] tracking-[.1em] uppercase text-muted-foreground mb-1";
+const inputCls = "w-full bg-foreground/[.08] border border-view-line/60 rounded-sm px-3.5 py-3 text-foreground font-body text-[.88rem] outline-none focus:border-primary/60 focus:bg-foreground/[.12] transition-colors placeholder:text-muted-foreground/60";
+const selectCls = `${inputCls} appearance-none cursor-pointer pr-10 bg-[length:14px] bg-[right_14px_center] bg-no-repeat`;
+const labelCls = "block text-[.7rem] tracking-[.08em] uppercase text-foreground/80 font-semibold mb-1.5";
 
 const segmentos = [
   { value: "industria", label: "🏭 Indústria", sub: "Manufatura, produção, transformação" },
