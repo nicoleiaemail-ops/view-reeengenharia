@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HeroEye } from "./HeroEye";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
@@ -19,17 +20,19 @@ export function Hero() {
           Enxergar processos, setores, gargalos, custos e oportunidades — com clareza, em tempo real, de qualquer lugar.
           Porque você não pode melhorar o que não consegue ver.
         </p>
-        <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
-          </svg>
-          Quero enxergar minha empresa
-        </a>
-
-        <div className="inline-flex items-center gap-2.5 mt-5 bg-foreground/[.04] border border-foreground/10 rounded-full py-2 px-5">
-          <span className="text-[1.1rem] font-display font-extrabold text-foreground">+50%</span>
-          <span className="w-px h-3.5 bg-foreground/15" />
-          <span className="text-[.65rem] text-foreground/55 tracking-[.08em] uppercase">aumento de produtividade</span>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
+            </svg>
+            Quero enxergar minha empresa
+          </a>
+          <Link
+            to="/avaliacao-maturidade"
+            className="inline-flex items-center gap-2 border border-primary/30 text-primary bg-primary/[.05] px-8 py-4 rounded-sm font-display font-bold text-[.86rem] tracking-[.07em] no-underline hover:bg-primary/[.1] hover:-translate-y-0.5 transition-all"
+          >
+            Avaliação DISTIP gratuita
+          </Link>
         </div>
       </div>
     </section>
