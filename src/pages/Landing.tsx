@@ -39,13 +39,13 @@ const Landing = () => {
       <Results />
       <Reengenharia />
       <Pains />
+      <DISTIP />
       <CostOfNotSeeing />
       <Solution />
       <MidCTA />
       <Pillars />
       <Testimonials />
       <FAQ />
-      <DISTIP />
       <ContactForm />
       <Footer />
       <WhatsAppFloat />
