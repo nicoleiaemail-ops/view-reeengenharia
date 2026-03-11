@@ -90,7 +90,7 @@ export function ContactForm() {
 
   return (
     <section className="py-28 px-[7%] border-t border-view-line" id="diagnostico">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
         <div className="scroll-reveal">
           <h2 className="font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-[1.1] mb-4">
             Diagnóstico gratuito.<br />Resultado em 48h.
