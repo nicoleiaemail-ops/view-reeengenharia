@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ViewLogo } from "./ViewLogo";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const location = useLocation();
   const isAbout = location.pathname === "/sobre";
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-[7%] py-4 bg-background/92 backdrop-blur-md border-b border-view-line">
@@ -16,10 +19,12 @@ export function Navbar() {
           </small>
         </div>
       </Link>
-      <div className="flex items-center gap-8">
+
+      {/* Desktop links */}
+      <div className="hidden md:flex items-center gap-8">
         <Link
           to={isAbout ? "/" : "/sobre"}
-          className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em] hidden md:inline"
+          className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em]"
         >
           {isAbout ? "Início" : "Sobre nós"}
         </Link>
@@ -36,6 +41,41 @@ export function Navbar() {
           Diagnóstico Grátis
         </a>
       </div>
+
+      {/* Mobile hamburger */}
+      <button
+        className="md:hidden flex items-center justify-center w-10 h-10 text-foreground"
+        onClick={() => setOpen(!open)}
+        aria-label="Menu"
+      >
+        {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-view-line flex flex-col items-center gap-5 py-6 md:hidden">
+          <Link
+            to={isAbout ? "/" : "/sobre"}
+            className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em]"
+            onClick={() => setOpen(false)}
+          >
+            {isAbout ? "Início" : "Sobre nós"}
+          </Link>
+          <a
+            href={isAbout ? "/" : "#diagnostico"}
+            onClick={(e) => {
+              setOpen(false);
+              if (isAbout) {
+                e.preventDefault();
+                window.location.href = "/#diagnostico";
+              }
+            }}
+            className="bg-foreground text-background px-6 py-3 rounded-sm font-display font-extrabold text-[.8rem] tracking-[.08em] no-underline"
+          >
+            Diagnóstico Grátis
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
