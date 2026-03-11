@@ -344,8 +344,8 @@ export default function AvaliacaoMaturidade() {
                 Próximo <ArrowRight className="w-4 h-4" />
               </Button>
             ) : (
-              <Button onClick={handleSubmit} className="bg-view-green text-background font-display font-bold gap-2">
-                Enviar avaliação <Send className="w-4 h-4" />
+              <Button onClick={handleSubmit} disabled={submitting} className="bg-view-green text-background font-display font-bold gap-2">
+                {submitting ? "Enviando..." : "Enviar avaliação"} <Send className="w-4 h-4" />
               </Button>
             )}
           </div>
