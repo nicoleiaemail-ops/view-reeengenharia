@@ -14,9 +14,10 @@ export function Hero() {
           <em className="not-italic text-accent">{typewriterText}</em>
           <span className="text-accent font-light" style={{ animation: "cursorBlink .7s step-end infinite" }}>|</span>
         </h1>
-        <p className="text-[.98rem] leading-[1.85] text-muted-foreground max-w-[420px] mx-auto mb-10">
+        <p className="text-[.98rem] leading-[1.85] text-muted-foreground max-w-[460px] mx-auto mb-10">
           A VIEW nasceu com um propósito: <strong className="text-foreground font-medium">ajudar empresas a enxergar.</strong>{" "}
-          Enxergar processos, setores, gargalos e oportunidades — com clareza, em tempo real, de qualquer lugar.
+          Enxergar processos, setores, gargalos, custos e oportunidades — com clareza, em tempo real, de qualquer lugar.
+          Porque você não pode melhorar o que não consegue ver.
         </p>
         <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

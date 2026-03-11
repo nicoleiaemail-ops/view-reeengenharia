@@ -146,6 +146,15 @@ const About = () => {
         </div>
       </section>
 
+      {/* Stat highlight */}
+      <section className="py-12 px-[7%]">
+        <div className="scroll-reveal max-w-[500px] mx-auto text-center bg-primary/[.06] border border-primary/20 rounded-2xl py-8 px-10">
+          <span className="font-display font-extrabold text-[clamp(2.5rem,5vw,3.5rem)] text-primary leading-none">+50%</span>
+          <div className="text-[.85rem] text-foreground font-display font-bold mt-2">aumento de produtividade</div>
+          <div className="text-[.75rem] text-muted-foreground mt-1">média nas operações atendidas pela VIEW</div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-28 px-[7%] text-center border-t border-view-line bg-secondary">
         <h2 className="scroll-reveal font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] mb-4">

@@ -1,9 +1,9 @@
 export function Pains() {
   const pains = [
-    { icon: "⏳", title: "Demora para ter uma informação", desc: "Precisa perguntar para alguém, procurar numa planilha ou esperar um relatório. A decisão fica travada.", color: "gold" },
+    { icon: "⏳", title: "Demora para ter uma informação", desc: "Precisa perguntar para alguém, procurar numa planilha ou esperar um relatório. A decisão fica travada — e o custo da espera cresce todo dia.", color: "gold" },
     { icon: "📉", title: "Não sabe o desempenho da sua operação", desc: "Cada setor funciona de forma isolada. Você não tem visão clara do que está indo bem — nem do que está saindo do controle.", color: "blue" },
     { icon: "📋", title: "Equipe perde horas preenchendo Excel", desc: "Tempo valioso gasto em tarefas que não geram resultado. A operação real fica sem atenção.", color: "green" },
-    { icon: "🗂️", title: "Tem dado, mas não sabe o que fazer", desc: "Informações espalhadas em arquivos e mensagens, sem padrão. Impossível tomar decisão com isso.", color: "gold" },
+    { icon: "🚫", title: "Sem dados centralizados — ou sem dados nenhum", desc: "Não é só que a informação está espalhada. Muitas vezes ela nem existe. Sem uma base de dados centralizada, cada decisão vira achismo. Dados soltos em WhatsApp, cadernos e planilhas pessoais não servem para nada.", color: "gold" },
   ];
 
   const colorMap: Record<string, { bg: string; border: string; iconBg: string; title: string }> = {
