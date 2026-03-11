@@ -75,6 +75,18 @@ const pillars = [
     accent: "text-view-green",
     bgAccent: "bg-view-green/10",
   },
+  {
+    letter: "P",
+    title: "Processos",
+    headline: "Fluxos otimizados e padronizados",
+    desc: "Documentação clara e execução consistente que elimina gargalos e variações.",
+    benefit: "Reduza erros e acelere entregas em 35%",
+    icon: Workflow,
+    color: "from-primary/25 to-primary/5",
+    border: "border-primary/30",
+    accent: "text-primary",
+    bgAccent: "bg-primary/10",
+  },
 ];
 
 
