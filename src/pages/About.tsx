@@ -121,28 +121,69 @@ const About = () => {
           <h2 className="font-display font-extrabold text-[clamp(1.7rem,2.8vw,2.4rem)] leading-[1.1]">Missão, Visão e Valores</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { icon: "🎯", tag: "Missão", title: "Desenvolver empresas por meio da excelência operacional", desc: "Construir uma cultura organizacional enxuta e orientada por dados.", border: "border-primary/25", bg: "bg-gradient-to-br from-[#0d1f4e] to-background", tagColor: "text-primary/80" },
-            { icon: "👁️", tag: "Visão", title: "Influenciar uma nova geração de empresas brasileiras", desc: "Ser a referência em reengenharia operacional e transformação digital.", border: "border-accent/20", bg: "bg-gradient-to-br from-[#1a120a] to-background", tagColor: "text-accent/80" },
-            { icon: "⚡", tag: "Valores", title: "Como tomamos cada decisão", desc: "", border: "border-view-green/20", bg: "bg-gradient-to-br from-[#0a1e14] to-background", tagColor: "text-view-green/70", values: ["Clareza antes da tecnologia", "Dados antes de opinião", "Simplicidade operacional", "Melhoria contínua (Kaizen)", "Crescimento sustentável"] },
-          ].map((c, i) => (
-            <div key={i} className={`scroll-reveal rounded-2xl p-8 flex flex-col gap-4 border ${c.border} ${c.bg} hover:-translate-y-1 transition-transform`} style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div className="w-[54px] h-[54px] rounded-xl flex items-center justify-center text-[1.5rem] bg-primary/20">{c.icon}</div>
-              <div className={`text-[.6rem] tracking-[.2em] uppercase ${c.tagColor}`}>{c.tag}</div>
-              <div className="font-display font-extrabold text-[1.05rem] text-foreground leading-tight">{c.title}</div>
-              {c.desc && <div className="text-[.82rem] text-muted-foreground leading-relaxed">{c.desc}</div>}
-              {c.values && (
-                <div className="flex flex-col gap-2.5 mt-1">
-                  {c.values.map((v, vi) => (
-                    <div key={vi} className="flex items-center gap-3 text-[.82rem] text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-view-green flex-shrink-0" />{v}
-                    </div>
-                  ))}
-                </div>
-              )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+          <div className="scroll-reveal rounded-2xl p-8 flex flex-col gap-4 border border-primary/25 bg-gradient-to-br from-[#0d1f4e] to-background hover:-translate-y-1 transition-transform">
+            <div className="w-[54px] h-[54px] rounded-xl flex items-center justify-center text-[1.5rem] bg-primary/20">🎯</div>
+            <div className="text-[.6rem] tracking-[.2em] uppercase text-primary/80">Missão</div>
+            <div className="text-[.82rem] text-muted-foreground leading-relaxed">
+              Desenvolver empresas parceiras por meio de uma cultura organizacional de excelência operacional enxuta e tecnológica, contribuindo para um crescimento orientado por dados, próspero e sustentável.
             </div>
-          ))}
+          </div>
+          <div className="scroll-reveal rounded-2xl p-8 flex flex-col gap-4 border border-accent/20 bg-gradient-to-br from-[#1a120a] to-background hover:-translate-y-1 transition-transform" style={{ transitionDelay: ".1s" }}>
+            <div className="w-[54px] h-[54px] rounded-xl flex items-center justify-center text-[1.5rem] bg-accent/20">👁️</div>
+            <div className="text-[.6rem] tracking-[.2em] uppercase text-accent/80">Visão</div>
+            <div className="text-[.82rem] text-muted-foreground leading-relaxed">
+              Influenciar e construir uma nova geração de empresas brasileiras organizadas, eficientes e guiadas por dados a partir da reengenharia operacional e transformação digital.
+            </div>
+          </div>
+        </div>
+
+        {/* Valores */}
+        <div className="scroll-reveal mb-16">
+          <div className="text-center mb-10">
+            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-3">Valores da VIEW</div>
+            <p className="text-[.85rem] text-muted-foreground max-w-[500px] mx-auto">Valores definem como a empresa toma decisões.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { num: "01", title: "Clareza antes da tecnologia", desc: "Não automatizamos caos. Primeiro entendemos e organizamos o processo." },
+              { num: "02", title: "Dados antes de opinião", desc: "Decisões devem ser tomadas com base em informação real, não em intuição." },
+              { num: "03", title: "Simplicidade operacional", desc: "Processos eficientes são simples, claros e replicáveis." },
+              { num: "04", title: "Melhoria contínua", desc: "Acreditamos no princípio Kaizen: pequenas melhorias constantes criam grandes transformações." },
+              { num: "05", title: "Eficiência acima de complexidade", desc: "A melhor solução é aquela que resolve o problema com o menor desperdício possível." },
+              { num: "06", title: "Crescimento sustentável", desc: "Empresas devem crescer com estrutura, não com improviso." },
+            ].map((v, i) => (
+              <div key={i} className="bg-foreground/[.03] border border-view-line rounded-xl p-6 hover:bg-primary/[.04] hover:border-primary/15 transition-all">
+                <div className="font-display font-bold text-[.65rem] tracking-[.1em] text-primary/60 mb-3">VALOR {v.num}</div>
+                <h3 className="font-display font-bold text-[.95rem] text-foreground mb-2">{v.title}</h3>
+                <p className="text-[.8rem] text-muted-foreground leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Princípios */}
+        <div className="scroll-reveal" style={{ transitionDelay: ".15s" }}>
+          <div className="text-center mb-10">
+            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-3">Princípios da VIEW</div>
+            <p className="text-[.85rem] text-muted-foreground max-w-[500px] mx-auto">Esses princípios mostram como trabalhamos.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { num: "01", title: "Fazer o básico extremamente bem", desc: "Documentação, padronização, processos claros e rastreáveis são a base de qualquer operação eficiente." },
+              { num: "02", title: "Estrutura antes de escala", desc: "Empresas que crescem sem processo criam caos operacional. Primeiro organizamos, depois escalamos." },
+              { num: "03", title: "Processos antes de ferramentas", desc: "Tecnologia não resolve desorganização. Processos bem definidos vêm antes da digitalização." },
+              { num: "04", title: "Visibilidade gera controle", desc: "Você não pode melhorar aquilo que não consegue medir. Por isso priorizamos dados, indicadores e rastreabilidade." },
+              { num: "05", title: "Automação para liberar inteligência humana", desc: "Automatizamos tarefas operacionais para que pessoas foquem em decisões estratégicas." },
+              { num: "06", title: "Empresas inteligentes operam com dados", desc: "Organizações modernas tomam decisões com base em indicadores claros e acessíveis em tempo real." },
+            ].map((p, i) => (
+              <div key={i} className="bg-view-green/[.06] border border-view-green/20 rounded-xl p-6 hover:bg-view-green/[.10] hover:border-view-green/30 transition-all">
+                <div className="font-display font-bold text-[.65rem] tracking-[.1em] text-view-green/70 mb-3">PRINCÍPIO {p.num}</div>
+                <h3 className="font-display font-bold text-[.95rem] text-foreground mb-2">{p.title}</h3>
+                <p className="text-[.8rem] text-muted-foreground leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
