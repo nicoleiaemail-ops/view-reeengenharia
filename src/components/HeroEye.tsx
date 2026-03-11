@@ -143,7 +143,7 @@ export function HeroEye() {
   };
 
   return (
-    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(360px,48vw)] mb-[52px] flex items-center justify-center z-[2]">
+    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(360px,48vw)] mb-8 md:mb-[52px] flex items-center justify-center z-[2]">
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
@@ -179,7 +179,7 @@ export function HeroEye() {
       </div>
 
       {/* Connecting lines SVG */}
-      <svg className="vlines-svg absolute inset-0 w-full h-full pointer-events-none z-[6]" viewBox="0 0 680 360">
+      <svg className="vlines-svg absolute inset-0 w-full h-full pointer-events-none z-[6] hidden md:block" viewBox="0 0 680 360">
         {[
           { x1: 340, y1: 180, x2: 340, y2: 0 },
           { x1: 340, y1: 180, x2: 660, y2: 54 },
@@ -196,7 +196,7 @@ export function HeroEye() {
       </svg>
 
       {/* Nodes */}
-      <div className="absolute inset-0 pointer-events-none z-[10]">
+      <div className="absolute inset-0 pointer-events-none z-[10] hidden md:block">
         {nodeData.map((n, i) => (
           <div key={i} id={`vn${i}`} className={`vnode absolute flex flex-col items-center gap-[5px] ${nodePositions[n.cls]}`}>
             <div className="w-14 h-14 rounded-full bg-background/95 border border-primary/50 flex items-center justify-center text-[1.3rem] transition-shadow duration-600">

@@ -14,7 +14,7 @@ export function Pillars() {
   ];
 
   return (
-    <section className="py-28 px-[7%]">
+    <section className="py-16 md:py-28 px-[7%]">
       <div className="scroll-reveal text-center max-w-[600px] mx-auto mb-16">
         <h2 className="font-display font-extrabold text-[clamp(1.9rem,3vw,2.6rem)] leading-[1.1] mb-4">
           Os 4 Pilares da Transformação

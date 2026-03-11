@@ -1,7 +1,7 @@
 export function Solution() {
   return (
-    <section className="bg-secondary py-28 px-[7%] border-t border-b border-view-line">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+    <section className="bg-secondary py-16 md:py-28 px-[7%] border-t border-b border-view-line">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Left */}
         <div className="scroll-reveal">
           <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">O que a VIEW faz</div>
@@ -77,7 +77,7 @@ export function Solution() {
         </div>
 
         {/* Tagline full width */}
-        <div className="scroll-reveal lg:col-span-2 border border-foreground/12 rounded p-6 bg-foreground/[.03] flex items-center gap-5" style={{ transitionDelay: ".25s" }}>
+        <div className="scroll-reveal lg:col-span-2 border border-foreground/12 rounded p-5 md:p-6 bg-foreground/[.03] flex items-center gap-4 md:gap-5" style={{ transitionDelay: ".25s" }}>
           <div className="w-[3px] h-10 rounded-sm flex-shrink-0 bg-gradient-to-b from-primary to-primary/50" />
           <div className="font-display font-semibold text-[clamp(.88rem,1.3vw,1.05rem)] text-foreground leading-relaxed">
             Automatizamos fluxos manuais, planilhas e rotinas desconectadas em processos digitais orientados a dados —{" "}

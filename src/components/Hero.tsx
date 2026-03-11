@@ -5,7 +5,7 @@ export function Hero() {
   const typewriterText = useTypewriter();
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-32 pb-16 text-center relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
       <HeroEye />
 
       <div className="relative z-[2]">

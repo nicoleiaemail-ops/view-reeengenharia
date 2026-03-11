@@ -93,7 +93,7 @@ export function CostOfNotSeeing() {
   };
 
   return (
-    <section className="py-28 px-[7%] relative overflow-hidden">
+    <section className="py-16 md:py-28 px-[7%] relative overflow-hidden">
       {/* Background dramatic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-destructive/[.04] blur-[100px] pointer-events-none" />
 
@@ -151,7 +151,7 @@ export function CostOfNotSeeing() {
 
         {/* Bottom urgency strip */}
         <div className="scroll-reveal" style={{ transitionDelay: ".5s" }}>
-          <div className="border border-destructive/20 rounded-xl bg-destructive/[.04] p-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+          <div className="border border-destructive/20 rounded-xl bg-destructive/[.04] p-6 md:p-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             <div className="flex-1 text-center lg:text-left">
               <div className="font-display font-extrabold text-[1.15rem] text-foreground mb-2">
                 E o pior: você pode nem saber que está perdendo.
@@ -161,7 +161,7 @@ export function CostOfNotSeeing() {
                 Não é falta de esforço da sua equipe. É falta de <strong className="text-foreground">estrutura para enxergar.</strong>
               </p>
             </div>
-            <a href="#diagnostico" className="flex-shrink-0 inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all whitespace-nowrap">
+            <a href="#diagnostico" className="flex-shrink-0 inline-flex items-center gap-2 bg-foreground text-background px-6 md:px-8 py-4 rounded-sm font-display font-extrabold text-[.82rem] md:text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all text-center">
               Descobrir meus custos ocultos →
             </a>
           </div>
