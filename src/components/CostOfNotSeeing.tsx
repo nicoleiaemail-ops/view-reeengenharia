@@ -151,7 +151,7 @@ export function CostOfNotSeeing() {
 
         {/* Bottom urgency strip */}
         <div className="scroll-reveal" style={{ transitionDelay: ".5s" }}>
-          <div className="border border-destructive/20 rounded-xl bg-destructive/[.04] p-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+          <div className="border border-destructive/20 rounded-xl bg-destructive/[.04] p-6 md:p-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             <div className="flex-1 text-center lg:text-left">
               <div className="font-display font-extrabold text-[1.15rem] text-foreground mb-2">
                 E o pior: você pode nem saber que está perdendo.
