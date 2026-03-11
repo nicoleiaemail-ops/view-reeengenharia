@@ -68,6 +68,10 @@
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'Inter', sans-serif;
   }
+
+  #lovable-badge {
+    display: none !important;
+  }
 }
 
 /* ═══ FONTS ═══ */
