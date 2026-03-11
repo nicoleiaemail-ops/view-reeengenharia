@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Results } from "@/components/Results";
 import { Reengenharia } from "@/components/Reengenharia";
 import { Pains } from "@/components/Pains";
+import { CostOfNotSeeing } from "@/components/CostOfNotSeeing";
 import { Solution } from "@/components/Solution";
 import { MidCTA } from "@/components/MidCTA";
 import { Pillars } from "@/components/Pillars";
@@ -37,6 +38,7 @@ const Landing = () => {
       <Results />
       <Reengenharia />
       <Pains />
+      <CostOfNotSeeing />
       <Solution />
       <MidCTA />
       <Pillars />
