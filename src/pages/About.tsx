@@ -25,7 +25,9 @@ const About = () => {
 
       {/* Hero */}
       <section className="min-h-screen flex flex-col items-center justify-center px-[7%] pt-28 pb-20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
+        <HeroEye />
+
+        <div className="absolute inset-0 pointer-events-none z-[1]"
           style={{
             backgroundImage: "linear-gradient(hsla(225,33%,95%,.025) 1px, transparent 1px), linear-gradient(90deg, hsla(225,33%,95%,.025) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
@@ -34,7 +36,7 @@ const About = () => {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] w-[600px] h-[600px] rounded-full bg-primary/[.06] blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-[800px]">
+        <div className="relative z-[2] max-w-[800px]">
           <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">Sobre a VIEW</div>
           <h1 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.8rem)] leading-[1.1] mb-6">
             Nascemos dentro de<br />grandes operações.<br />
