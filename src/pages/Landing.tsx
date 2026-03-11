@@ -45,6 +45,7 @@ const Landing = () => {
       <Pillars />
       <Testimonials />
       <FAQ />
+      <DISTIP />
       <ContactForm />
       <Footer />
       <WhatsAppFloat />
