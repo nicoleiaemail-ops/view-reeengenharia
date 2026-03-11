@@ -161,7 +161,7 @@ export function CostOfNotSeeing() {
                 Não é falta de esforço da sua equipe. É falta de <strong className="text-foreground">estrutura para enxergar.</strong>
               </p>
             </div>
-            <a href="#diagnostico" className="flex-shrink-0 inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all whitespace-nowrap">
+            <a href="#diagnostico" className="flex-shrink-0 inline-flex items-center gap-2 bg-foreground text-background px-6 md:px-8 py-4 rounded-sm font-display font-extrabold text-[.82rem] md:text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all text-center">
               Descobrir meus custos ocultos →
             </a>
           </div>
