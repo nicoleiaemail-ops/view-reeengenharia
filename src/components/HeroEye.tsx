@@ -196,7 +196,7 @@ export function HeroEye() {
       </svg>
 
       {/* Nodes */}
-      <div className="absolute inset-0 pointer-events-none z-[10]">
+      <div className="absolute inset-0 pointer-events-none z-[10] hidden md:block">
         {nodeData.map((n, i) => (
           <div key={i} id={`vn${i}`} className={`vnode absolute flex flex-col items-center gap-[5px] ${nodePositions[n.cls]}`}>
             <div className="w-14 h-14 rounded-full bg-background/95 border border-primary/50 flex items-center justify-center text-[1.3rem] transition-shadow duration-600">
