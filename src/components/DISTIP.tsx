@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Database, Link2, Monitor, Cpu, Lightbulb, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { Database, Link2, Monitor, Cpu, Lightbulb, Users, Workflow, ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const pillars = [
@@ -74,6 +74,18 @@ const pillars = [
     border: "border-view-green/30",
     accent: "text-view-green",
     bgAccent: "bg-view-green/10",
+  },
+  {
+    letter: "P",
+    title: "Processos",
+    headline: "Fluxos otimizados e padronizados",
+    desc: "Documentação clara e execução consistente que elimina gargalos e variações.",
+    benefit: "Reduza erros e acelere entregas em 35%",
+    icon: Workflow,
+    color: "from-primary/25 to-primary/5",
+    border: "border-primary/30",
+    accent: "text-primary",
+    bgAccent: "bg-primary/10",
   },
 ];
 
