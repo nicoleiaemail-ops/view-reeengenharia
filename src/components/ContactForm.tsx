@@ -117,7 +117,7 @@ export function ContactForm() {
           </ul>
         </div>
 
-        <div className="scroll-reveal bg-secondary border border-view-line rounded p-9" style={{ transitionDelay: ".15s" }}>
+        <div className="scroll-reveal bg-secondary border border-view-line rounded p-6 md:p-9" style={{ transitionDelay: ".15s" }}>
           <div className="font-display font-extrabold text-[1.1rem] mb-1">Quero meu Diagnóstico Grátis</div>
           <div className="text-[.75rem] text-muted-foreground mb-7">Formulário de 2 minutos · Resposta em até 48h</div>
 

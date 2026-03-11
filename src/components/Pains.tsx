@@ -13,7 +13,7 @@ export function Pains() {
   };
 
   return (
-    <section className="py-28 px-[7%]">
+    <section className="py-16 md:py-28 px-[7%]">
       <div className="scroll-reveal text-center mb-14">
         <h2 className="font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-[1.1] mb-3">
           Você reconhece alguma dessas situações?

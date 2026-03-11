@@ -25,7 +25,7 @@ export function Testimonials() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-view-line border border-view-line">
         {testimonials.map((t, i) => (
-          <div key={i} className="scroll-reveal bg-background p-10 flex flex-col gap-6 hover:bg-secondary transition-colors" style={{ transitionDelay: `${i * 0.15}s` }}>
+          <div key={i} className="scroll-reveal bg-background p-6 md:p-10 flex flex-col gap-6 hover:bg-secondary transition-colors" style={{ transitionDelay: `${i * 0.15}s` }}>
             <div>
               <div className="text-[3rem] leading-none text-primary/35 mb-1">"</div>
               <div className="text-[.88rem] text-muted-foreground leading-relaxed italic flex-1">{t.text}</div>

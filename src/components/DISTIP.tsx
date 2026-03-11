@@ -66,7 +66,7 @@ const pillars = [
 
 export function DISTIP() {
   return (
-    <section id="distip" className="py-28 px-[7%] relative overflow-hidden">
+    <section id="distip" className="py-16 md:py-28 px-[7%] relative overflow-hidden">
       {/* background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/[.04] blur-[120px]" />
