@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Database, Link2, Monitor, Cpu, Lightbulb, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { Database, Link2, Monitor, Cpu, Lightbulb, Users, Workflow, ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const pillars = [
