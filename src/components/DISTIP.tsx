@@ -137,23 +137,6 @@ export function DISTIP() {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="bg-foreground/[.02] border border-view-line rounded-2xl p-6 md:p-8">
-              <h3 className="font-display font-bold text-[1.1rem] text-foreground mb-4">
-                Por que avaliar a maturidade da sua empresa?
-              </h3>
-              
-              <ul className="space-y-3">
-                {benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[.88rem] text-muted-foreground">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="w-3 h-3 text-primary" />
-                    </div>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <div className="space-y-4">
               <p className="text-foreground/80 text-[.9rem] leading-[1.8]">
                 A metodologia <strong className="text-foreground">DISTIP</strong> analisa seis dimensões críticas para empresas que querem escalar com eficiência e controle.
