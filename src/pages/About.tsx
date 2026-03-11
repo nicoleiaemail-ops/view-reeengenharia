@@ -80,7 +80,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Metodologia */}
+      {/* Metodologia DISTIP */}
+      <DISTIP />
+
+      {/* Metodologia de trabalho - 5 passos */}
       <section className="py-20 px-[5%]">
         <div className="max-w-[1100px] mx-auto">
           <div className="scroll-reveal text-center mb-14">
