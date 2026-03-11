@@ -31,7 +31,7 @@ export function Hero() {
             to="/avaliacao-maturidade"
             className="inline-flex items-center gap-2 border border-primary/30 text-primary bg-primary/[.05] px-8 py-4 rounded-sm font-display font-bold text-[.86rem] tracking-[.07em] no-underline hover:bg-primary/[.1] hover:-translate-y-0.5 transition-all"
           >
-            Avaliação DISTIP gratuita
+            Avaliação DISTIPP gratuita
           </Link>
         </div>
       </div>
