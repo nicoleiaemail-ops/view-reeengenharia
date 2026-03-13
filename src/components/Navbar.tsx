@@ -3,6 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { ViewLogo } from "./ViewLogo";
 import { Menu, X } from "lucide-react";
 
+const anchors = [
+  { label: "Metodologia", href: "#distip" },
+  { label: "Resultados", href: "#resultados" },
+  { label: "FAQ", href: "#faq" },
+];
+
 export function Navbar() {
   const location = useLocation();
   const isAbout = location.pathname === "/sobre";
@@ -21,10 +27,15 @@ export function Navbar() {
       </Link>
 
       {/* Desktop links */}
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-6">
+        {!isAbout && anchors.map((a) => (
+          <a key={a.href} href={a.href} className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]">
+            {a.label}
+          </a>
+        ))}
         <Link
           to={isAbout ? "/" : "/sobre"}
-          className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em]"
+          className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]"
         >
           {isAbout ? "Início" : "Sobre nós"}
         </Link>
@@ -36,7 +47,7 @@ export function Navbar() {
               window.location.href = "/#diagnostico";
             }
           }}
-          className="bg-foreground text-background px-5 py-2.5 rounded-sm font-display font-extrabold text-[.76rem] tracking-[.08em] no-underline hover:opacity-85 transition-opacity"
+          className="bg-foreground text-background px-5 py-2.5 rounded-md font-display font-extrabold text-[.76rem] tracking-[.08em] no-underline hover:opacity-85 transition-opacity"
         >
           Diagnóstico Grátis
         </a>
@@ -54,6 +65,11 @@ export function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-view-line flex flex-col items-center gap-5 py-6 md:hidden">
+          {!isAbout && anchors.map((a) => (
+            <a key={a.href} href={a.href} className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors" onClick={() => setOpen(false)}>
+              {a.label}
+            </a>
+          ))}
           <Link
             to={isAbout ? "/" : "/sobre"}
             className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em]"
@@ -70,7 +86,7 @@ export function Navbar() {
                 window.location.href = "/#diagnostico";
               }
             }}
-            className="bg-foreground text-background px-6 py-3 rounded-sm font-display font-extrabold text-[.8rem] tracking-[.08em] no-underline"
+            className="bg-foreground text-background px-6 py-3 rounded-md font-display font-extrabold text-[.8rem] tracking-[.08em] no-underline"
           >
             Diagnóstico Grátis
           </a>

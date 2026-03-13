@@ -1,19 +1,17 @@
 import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Results } from "@/components/Results";
-import { Reengenharia } from "@/components/Reengenharia";
 import { Pains } from "@/components/Pains";
 import { CostOfNotSeeing } from "@/components/CostOfNotSeeing";
 import { Solution } from "@/components/Solution";
-import { MidCTA } from "@/components/MidCTA";
-import { Pillars } from "@/components/Pillars";
+import { DISTIP } from "@/components/DISTIP";
+import { Results } from "@/components/Results";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
-import { DISTIP } from "@/components/DISTIP";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
 const Landing = () => {
   useEffect(() => {
@@ -36,19 +34,17 @@ const Landing = () => {
     <>
       <Navbar />
       <Hero />
-      <Results />
-      <Reengenharia />
       <Pains />
-      <DISTIP />
       <CostOfNotSeeing />
       <Solution />
-      <MidCTA />
-      <Pillars />
+      <DISTIP />
+      <Results />
       <Testimonials />
       <FAQ />
       <ContactForm />
       <Footer />
       <WhatsAppFloat />
+      <StickyMobileCTA />
     </>
   );
 };
