@@ -13,7 +13,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="bg-secondary py-16 md:py-28 px-[7%] border-t border-view-line">
+    <section className="bg-secondary py-10 md:py-16 px-[7%] border-t border-view-line">
       <div className="scroll-reveal text-center mb-14">
         <h2 className="font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-[1.1] mb-3">
           Quem já enxerga diferente.

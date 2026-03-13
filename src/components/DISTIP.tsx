@@ -92,7 +92,7 @@ const pillars = [
 
 export function DISTIP() {
   return (
-    <section id="distip" className="py-20 md:py-32 px-[5%] relative overflow-hidden bg-gradient-to-b from-background via-background to-secondary/20">
+    <section id="distip" className="py-10 md:py-16 px-[5%] relative overflow-hidden bg-gradient-to-b from-background via-background to-secondary/20">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[.03] blur-[100px]" />
