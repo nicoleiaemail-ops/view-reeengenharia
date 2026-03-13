@@ -1,6 +1,6 @@
 export function Solution() {
   return (
-    <section className="bg-secondary py-16 md:py-28 px-[7%] border-t border-b border-view-line">
+    <section className="bg-secondary py-10 md:py-16 px-[7%] border-t border-b border-view-line">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Left */}
         <div className="scroll-reveal">

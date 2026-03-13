@@ -8,7 +8,7 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-20 px-[5%]" id="faq">
+    <section className="py-10 md:py-16 px-[5%]" id="faq">
       <div className="max-w-[760px] mx-auto">
         <div className="scroll-reveal text-center mb-12">
           <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-3">Tire suas dúvidas</div>

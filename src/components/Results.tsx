@@ -25,7 +25,7 @@ function ResultCard({ icon, target, prefix, suffix, label, sublabel, colorClass,
 
 export function Results() {
   return (
-    <section id="resultados" className="px-[7%] py-16 md:py-24">
+    <section id="resultados" className="px-[7%] py-8 md:py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ResultCard icon="⚙️" target={20} suffix="+" label="processos automatizados" sublabel="em empresas atendidas"
           colorClass="bg-accent/[.06] border-accent/25 hover:bg-accent/[.11]" />

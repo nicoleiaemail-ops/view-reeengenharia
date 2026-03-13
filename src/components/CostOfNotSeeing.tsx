@@ -93,7 +93,7 @@ export function CostOfNotSeeing() {
   };
 
   return (
-    <section className="py-16 md:py-28 px-[7%] relative overflow-hidden">
+    <section className="py-10 md:py-16 px-[7%] relative overflow-hidden">
       {/* Background dramatic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-destructive/[.04] blur-[100px] pointer-events-none" />
 
