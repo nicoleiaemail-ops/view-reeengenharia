@@ -6,22 +6,22 @@ export function Hero() {
   const typewriterText = useTypewriter();
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-16 md:pt-20 pb-6 md:pb-8 text-center relative overflow-hidden">
       <HeroEye />
 
       <div className="relative z-[2]">
-        <h1 className="font-display font-extrabold text-[clamp(2.5rem,4.2vw,3.8rem)] leading-[1.05] tracking-tight mb-6">
+        <h1 className="font-display font-extrabold text-[clamp(2.5rem,4.2vw,3.8rem)] leading-[1.05] tracking-tight mb-4">
           Sua empresa operando<br />com{" "}
           <em className="not-italic text-accent">{typewriterText}</em>
           <span className="text-accent font-light" style={{ animation: "cursorBlink .7s step-end infinite" }}>|</span>
         </h1>
-        <p className="text-[.98rem] leading-[1.85] text-muted-foreground max-w-[460px] mx-auto mb-10">
+        <p className="text-[.98rem] leading-[1.85] text-muted-foreground max-w-[460px] mx-auto mb-6">
           A VIEW nasceu com um propósito: <strong className="text-foreground font-medium">ajudar empresas a enxergar.</strong>{" "}
           Enxergar processos, setores, gargalos, custos e oportunidades — com clareza, em tempo real, de qualquer lugar.
           Porque você não pode melhorar o que não consegue ver.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+          <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
             </svg>
@@ -29,7 +29,7 @@ export function Hero() {
           </a>
           <Link
             to="/avaliacao-maturidade"
-            className="inline-flex items-center gap-2 border border-primary/30 text-primary bg-primary/[.05] px-8 py-4 rounded-sm font-display font-bold text-[.86rem] tracking-[.07em] no-underline hover:bg-primary/[.1] hover:-translate-y-0.5 transition-all"
+            className="inline-flex items-center gap-2 border border-primary/30 text-primary bg-primary/[.05] px-6 py-3 rounded-sm font-display font-bold text-[.86rem] tracking-[.07em] no-underline hover:bg-primary/[.1] hover:-translate-y-0.5 transition-all"
           >
             Avaliação DISTIPP gratuita
           </Link>

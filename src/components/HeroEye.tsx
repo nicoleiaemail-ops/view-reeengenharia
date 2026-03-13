@@ -143,7 +143,7 @@ export function HeroEye() {
   };
 
   return (
-    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(360px,48vw)] mb-8 md:mb-[52px] flex items-center justify-center z-[2]">
+    <div ref={stageRef} className="relative w-[min(680px,90vw)] h-[min(280px,38vw)] mb-4 md:mb-6 flex items-center justify-center z-[2]">
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
@@ -215,7 +215,7 @@ export function HeroEye() {
         style={{ animation: "vpulseAnim 2.8s ease-out infinite", animationDelay: "1.4s" }} />
 
       {/* Eye SVG */}
-      <svg className="veye-svg relative z-[5] w-[min(520px,85vw)] overflow-visible" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo VIEW — visibilidade operacional">
+      <svg className="veye-svg relative z-[5] w-[min(420px,75vw)] overflow-visible" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo VIEW — visibilidade operacional">
         <defs>
           <radialGradient id="vIrisOpen" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#e8f4ff" stopOpacity=".95" />
