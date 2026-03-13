@@ -26,14 +26,6 @@ function ResultCard({ icon, target, prefix, suffix, label, sublabel, colorClass,
 export function Results() {
   return (
     <section id="resultados" className="px-[7%] py-16 md:py-24">
-      <div className="scroll-reveal text-center mb-10">
-        <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.1] mb-3">
-          Resultados reais dos nossos clientes
-        </h2>
-        <p className="text-[.88rem] text-muted-foreground max-w-[480px] mx-auto">
-          Números baseados em projetos de reengenharia de processos entregues pela VIEW.
-        </p>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ResultCard icon="⚙️" target={20} suffix="+" label="processos automatizados" sublabel="em empresas atendidas"
           colorClass="bg-accent/[.06] border-accent/25 hover:bg-accent/[.11]" />
