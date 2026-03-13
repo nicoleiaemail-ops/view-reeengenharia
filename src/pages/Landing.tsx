@@ -34,6 +34,7 @@ const Landing = () => {
     <>
       <Navbar />
       <Hero />
+      <Results />
       <Pains />
       <CostOfNotSeeing />
       <Solution />
