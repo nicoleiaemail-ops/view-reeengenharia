@@ -18,15 +18,15 @@ export function Hero() {
         </div>
 
         <h1 className="font-display font-extrabold text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.08] tracking-tight mb-4">
-          Sua empresa operando com{" "}
+          Sua empresa operando{" "}
+          <br />
+          com{" "}
           <span className="text-accent">{typed}</span>
           <span className="inline-block w-[2px] h-[1em] bg-accent/70 align-middle ml-0.5" style={{ animation: "blink 1s step-end infinite" }} />
         </h1>
 
         <p className="text-[.95rem] leading-[1.7] text-muted-foreground max-w-[520px] mx-auto mb-6">
-          A VIEW nasceu com um propósito: dar visibilidade total à sua operação.
-          Unimos reengenharia de processos, automação inteligente e tecnologia sob medida
-          para você enxergar o que antes era invisível.
+          A VIEW nasceu com um propósito: ajudar empresas a enxergar. Enxergar processos, setores, gargalos, custos e oportunidades — com clareza, em tempo real, de qualquer lugar. Porque você não pode melhorar o que não consegue ver.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
