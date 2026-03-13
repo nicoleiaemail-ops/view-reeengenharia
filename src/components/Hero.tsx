@@ -1,12 +1,15 @@
+import { useTypewriter } from "@/hooks/useTypewriter";
 import { HeroEye } from "./HeroEye";
 
 export function Hero() {
+  const typed = useTypewriter();
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-16 md:pt-20 pb-6 md:pb-8 text-center relative overflow-hidden">
       <HeroEye />
 
       <div className="relative z-[2]">
-        {/* Badge with typewriter-like keywords */}
+        {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-primary/[.06] border border-primary/20 rounded-full px-4 py-1.5 mb-5">
           <span className="w-[6px] h-[6px] rounded-full bg-primary shadow-[0_0_8px_hsl(var(--view-accent))]" style={{ animation: "blink 2s infinite" }} />
           <span className="text-[.65rem] tracking-[.1em] text-primary/80 font-display font-semibold">
@@ -15,13 +18,15 @@ export function Hero() {
         </div>
 
         <h1 className="font-display font-extrabold text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.08] tracking-tight mb-4">
-          Pare de operar no escuro.<br />
-          <span className="text-accent">Enxergue cada processo, custo e gargalo</span>
-          <br className="hidden sm:block" /> — em tempo real.
+          Sua empresa operando com{" "}
+          <span className="text-accent">{typed}</span>
+          <span className="inline-block w-[2px] h-[1em] bg-accent/70 align-middle ml-0.5" style={{ animation: "blink 1s step-end infinite" }} />
         </h1>
 
         <p className="text-[.95rem] leading-[1.7] text-muted-foreground max-w-[520px] mx-auto mb-6">
-          Redesenhamos sua operação com automação, dados e sistemas sob medida. Diagnóstico gratuito em 48h.
+          A VIEW nasceu com um propósito: dar visibilidade total à sua operação.
+          Unimos reengenharia de processos, automação inteligente e tecnologia sob medida
+          para você enxergar o que antes era invisível.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
@@ -32,7 +37,7 @@ export function Hero() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
             </svg>
-            Quero meu diagnóstico gratuito
+            Quero enxergar minha operação
           </a>
           <a
             href="#distip"
