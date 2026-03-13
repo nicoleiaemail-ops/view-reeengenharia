@@ -35,10 +35,10 @@ const Landing = () => {
       <Navbar />
       <Hero />
       <Results />
+      <DISTIP />
       <Pains />
       <CostOfNotSeeing />
       <Solution />
-      <DISTIP />
       <Testimonials />
       <FAQ />
       <ContactForm />
