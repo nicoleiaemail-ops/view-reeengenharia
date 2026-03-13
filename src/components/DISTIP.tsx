@@ -133,8 +133,8 @@ export function DISTIP() {
           </motion.p>
         </div>
 
-        {/* 6 Pillar Cards — 3 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-12">
+        {/* 7 Pillar Cards — 4 columns desktop for balanced layout (4+3) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-12">
           {pillars.map((pillar, i) => {
             const Icon = pillar.icon;
             return (
