@@ -39,7 +39,6 @@ const Landing = () => {
       <CostOfNotSeeing />
       <Solution />
       <DISTIP />
-      <Results />
       <Testimonials />
       <FAQ />
       <ContactForm />
