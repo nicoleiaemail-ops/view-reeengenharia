@@ -245,24 +245,6 @@ export default function AvaliacaoMaturidade() {
     ),
     2: (
       <div className="space-y-6">
-        <ScaleField label="O quanto sua empresa investe em melhoria contínua dos processos e operações?" value={data.inov1 || ""} onChange={(v) => set("inov1", v)} />
-        <ScaleField label="Sua empresa busca ativamente investir em novas tecnologias e práticas inovadoras?" value={data.inov2 || ""} onChange={(v) => set("inov2", v)} />
-        <ScaleField label="Você acredita que seu negócio poderia se beneficiar mais com o uso de tecnologias emergentes?" value={data.inov3 || ""} onChange={(v) => set("inov3", v)} />
-        <RadioField label="Com que frequência sua empresa testa e implementa novas ideias ou soluções?" options={["Nunca", "Raramente", "Às vezes", "Frequentemente", "Sempre"]} value={data.inov4 || ""} onChange={(v) => set("inov4", v)} />
-        <RadioField label="Sua empresa possui um orçamento dedicado à inovação e desenvolvimento?" options={["Sim", "Não", "Parcialmente"]} value={data.inov5 || ""} onChange={(v) => set("inov5", v)} />
-      </div>
-    ),
-    3: (
-      <div className="space-y-6">
-        <RadioField label="Sua empresa possui um sistema de gestão personalizado para suas necessidades específicas?" options={["Sim", "Não", "Parcialmente"]} value={data.sis1 || ""} onChange={(v) => set("sis1", v)} />
-        <ScaleField label="Seu sistema de gestão apresenta todas as informações que você precisa de forma clara e acessível?" value={data.sis2 || ""} onChange={(v) => set("sis2", v)} />
-        <TextField label="Quais são as principais limitações do seu sistema de gestão?" value={data.sis3 || ""} onChange={(v) => set("sis3", v)} />
-        <ScaleField label="O uso diário do sistema causa estresse para você ou seus funcionários?" value={data.sis4 || ""} onChange={(v) => set("sis4", v)} />
-        <RadioField label="Você acredita que seu sistema de gestão poderia ser melhorado?" options={["Sim", "Não", "Muito"]} value={data.sis5 || ""} onChange={(v) => set("sis5", v)} />
-      </div>
-    ),
-    4: (
-      <div className="space-y-6">
         <ScaleField label="Sua empresa consegue tomar decisões estratégicas com base nos dados disponíveis?" value={data.dad1 || ""} onChange={(v) => set("dad1", v)} />
         <RadioField label="O quanto de retorno financeiro sua empresa já obteve a partir do uso de dados bem analisados?" options={["Nenhum", "Baixo", "Moderado", "Alto", "Muito alto"]} value={data.dad2 || ""} onChange={(v) => set("dad2", v)} />
         <RadioField label="Sua empresa sente falta de indicadores de desempenho detalhados?" options={["Sim", "Não", "Às vezes"]} value={data.dad3 || ""} onChange={(v) => set("dad3", v)} />
@@ -270,7 +252,7 @@ export default function AvaliacaoMaturidade() {
         <RadioField label="Sua empresa utiliza ferramentas analíticas para prever tendências?" options={["Sim", "Não", "Em desenvolvimento"]} value={data.dad5 || ""} onChange={(v) => set("dad5", v)} />
       </div>
     ),
-    5: (
+    3: (
       <div className="space-y-6">
         <ScaleField label="Há falhas frequentes de comunicação entre os setores?" value={data.int1 || ""} onChange={(v) => set("int1", v)} />
         <TextField label="Quais impactos essas falhas causam na empresa?" value={data.int2 || ""} onChange={(v) => set("int2", v)} />
@@ -279,16 +261,16 @@ export default function AvaliacaoMaturidade() {
         <ScaleField label="Os sistemas e departamentos estão bem integrados?" value={data.int5 || ""} onChange={(v) => set("int5", v)} />
       </div>
     ),
-    6: (
+    4: (
       <div className="space-y-6">
-        <ScaleField label="Qual o nível de confiança que você tem em seus funcionários para executar responsabilidades sem supervisão constante?" value={data.pes1 || ""} onChange={(v) => set("pes1", v)} />
-        <ScaleField label="Você tem certeza de que seus funcionários cumprem seus procedimentos e responsabilidades?" value={data.pes2 || ""} onChange={(v) => set("pes2", v)} />
-        <RadioField label="Você já teve prejuízos significativos devido à displicência de funcionários?" options={["Sim", "Não"]} value={data.pes3 || ""} onChange={(v) => set("pes3", v)} />
-        <ScaleField label="É fácil visualizar o desempenho individual dos funcionários?" value={data.pes4 || ""} onChange={(v) => set("pes4", v)} />
-        <ScaleField label="Você consegue reconhecer ou punir funcionários de acordo com o desempenho?" value={data.pes5 || ""} onChange={(v) => set("pes5", v)} />
+        <RadioField label="Sua empresa possui um sistema de gestão personalizado para suas necessidades específicas?" options={["Sim", "Não", "Parcialmente"]} value={data.sis1 || ""} onChange={(v) => set("sis1", v)} />
+        <ScaleField label="Seu sistema de gestão apresenta todas as informações que você precisa de forma clara e acessível?" value={data.sis2 || ""} onChange={(v) => set("sis2", v)} />
+        <TextField label="Quais são as principais limitações do seu sistema de gestão?" value={data.sis3 || ""} onChange={(v) => set("sis3", v)} />
+        <ScaleField label="O uso diário do sistema causa estresse para você ou seus funcionários?" value={data.sis4 || ""} onChange={(v) => set("sis4", v)} />
+        <RadioField label="Você acredita que seu sistema de gestão poderia ser melhorado?" options={["Sim", "Não", "Muito"]} value={data.sis5 || ""} onChange={(v) => set("sis5", v)} />
       </div>
     ),
-    7: (
+    5: (
       <div className="space-y-6">
         <ScaleField label="O quão digitalizados estão os registros operacionais da empresa?" value={data.tec1 || ""} onChange={(v) => set("tec1", v)} />
         <RadioField label="Sua empresa ainda depende muito de papel para registrar dados?" options={["Sim", "Não", "Parcialmente"]} value={data.tec2 || ""} onChange={(v) => set("tec2", v)} />
@@ -297,16 +279,44 @@ export default function AvaliacaoMaturidade() {
         <ScaleField label="A tecnologia atual permite tomar decisões rápidas e informadas?" value={data.tec5 || ""} onChange={(v) => set("tec5", v)} />
       </div>
     ),
+    6: (
+      <div className="space-y-6">
+        <ScaleField label="O quanto sua empresa investe em melhoria contínua dos processos e operações?" value={data.inov1 || ""} onChange={(v) => set("inov1", v)} />
+        <ScaleField label="Sua empresa busca ativamente investir em novas tecnologias e práticas inovadoras?" value={data.inov2 || ""} onChange={(v) => set("inov2", v)} />
+        <ScaleField label="Você acredita que seu negócio poderia se beneficiar mais com o uso de tecnologias emergentes?" value={data.inov3 || ""} onChange={(v) => set("inov3", v)} />
+        <RadioField label="Com que frequência sua empresa testa e implementa novas ideias ou soluções?" options={["Nunca", "Raramente", "Às vezes", "Frequentemente", "Sempre"]} value={data.inov4 || ""} onChange={(v) => set("inov4", v)} />
+        <RadioField label="Sua empresa possui um orçamento dedicado à inovação e desenvolvimento?" options={["Sim", "Não", "Parcialmente"]} value={data.inov5 || ""} onChange={(v) => set("inov5", v)} />
+      </div>
+    ),
+    7: (
+      <div className="space-y-6">
+        <ScaleField label="Qual o nível de confiança que você tem em seus funcionários para executar responsabilidades sem supervisão constante?" value={data.pes1 || ""} onChange={(v) => set("pes1", v)} />
+        <ScaleField label="Você tem certeza de que seus funcionários cumprem seus procedimentos e responsabilidades?" value={data.pes2 || ""} onChange={(v) => set("pes2", v)} />
+        <RadioField label="Você já teve prejuízos significativos devido à displicência de funcionários?" options={["Sim", "Não"]} value={data.pes3 || ""} onChange={(v) => set("pes3", v)} />
+        <ScaleField label="É fácil visualizar o desempenho individual dos funcionários?" value={data.pes4 || ""} onChange={(v) => set("pes4", v)} />
+        <ScaleField label="Você consegue reconhecer ou punir funcionários de acordo com o desempenho?" value={data.pes5 || ""} onChange={(v) => set("pes5", v)} />
+      </div>
+    ),
+    8: (
+      <div className="space-y-6">
+        <RadioField label="Os principais processos da sua empresa estão mapeados e documentados de forma clara?" options={["Sim, todos os processos estão documentados e atualizados", "Parcialmente, alguns processos estão documentados", "Não, os processos dependem do conhecimento informal das pessoas"]} value={data.proc1 || ""} onChange={(v) => set("proc1", v)} />
+        <RadioField label="Seus funcionários seguem procedimentos padronizados (SOPs, checklists, fluxogramas) na execução das atividades?" options={["Sim, temos padrões claros e eles são seguidos", "Temos alguns padrões, mas nem sempre são seguidos", "Não, cada um executa à sua maneira"]} value={data.proc2 || ""} onChange={(v) => set("proc2", v)} />
+        <RadioField label="Com que frequência sua empresa enfrenta retrabalho, erros repetitivos ou gargalos nos processos?" options={["Raramente, os processos fluem bem", "Às vezes, há alguns pontos de atrito", "Frequentemente, os mesmos problemas se repetem"]} value={data.proc3 || ""} onChange={(v) => set("proc3", v)} />
+        <RadioField label="Sua empresa revisa e melhora seus processos com base em dados e resultados operacionais?" options={["Sim, de forma sistemática e periódica", "Às vezes, quando surgem problemas evidentes", "Não, os processos raramente são revisados"]} value={data.proc4 || ""} onChange={(v) => set("proc4", v)} />
+        <RadioField label="Os processos da sua empresa permitiriam crescer (em volume, equipe ou faturamento) sem perder qualidade ou controle?" options={["Sim, nossos processos são escaláveis", "Parcialmente, teríamos dificuldades em alguns pontos", "Não, o crescimento geraria desorganização"]} value={data.proc5 || ""} onChange={(v) => set("proc5", v)} />
+      </div>
+    ),
   };
 
   const stepTitles: Record<number, { title: string; desc: string }> = {
     1: { title: "Quem está respondendo", desc: "Informações básicas sobre você e sua empresa." },
-    2: { title: "Dimensão Inovação", desc: "Esta dimensão avalia o compromisso da empresa com a melhoria contínua e a implementação de novas tecnologias e práticas." },
-    3: { title: "Dimensão Sistemas", desc: "Esta dimensão examina a eficácia dos sistemas de gestão utilizados pela empresa." },
-    4: { title: "Dimensão Dados", desc: "Esta dimensão analisa o uso de dados para tomada de decisão estratégica." },
-    5: { title: "Dimensão Integração", desc: "Esta dimensão analisa a comunicação e integração entre setores da empresa." },
-    6: { title: "Dimensão Pessoas", desc: "Esta dimensão avalia a gestão do capital humano." },
-    7: { title: "Dimensão Tecnologia", desc: "Esta dimensão avalia o grau de digitalização dos processos empresariais." },
+    2: { title: "Dimensão Dados", desc: "Esta dimensão analisa o uso de dados para tomada de decisão estratégica." },
+    3: { title: "Dimensão Integração", desc: "Esta dimensão analisa a comunicação e integração entre setores da empresa." },
+    4: { title: "Dimensão Sistemas", desc: "Esta dimensão examina a eficácia dos sistemas de gestão utilizados pela empresa." },
+    5: { title: "Dimensão Tecnologia", desc: "Esta dimensão avalia o grau de digitalização dos processos empresariais." },
+    6: { title: "Dimensão Inovação", desc: "Esta dimensão avalia o compromisso da empresa com a melhoria contínua e a implementação de novas tecnologias e práticas." },
+    7: { title: "Dimensão Pessoas", desc: "Esta dimensão avalia a gestão do capital humano." },
+    8: { title: "Dimensão Processos", desc: "Esta dimensão avalia o nível de mapeamento, padronização e controle dos fluxos operacionais da empresa." },
   };
 
   const current = stepTitles[step];
