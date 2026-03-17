@@ -186,14 +186,14 @@ export default function AvaliacaoMaturidade() {
               Avaliação Estratégica de Maturidade Empresarial
             </h1>
             <p className="text-primary font-display font-semibold text-[.85rem] tracking-wide">
-              Tecnologia, Sistemas, Integração, Pessoas, Dados e Inovação
+              Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos
             </p>
             <p className="text-muted-foreground text-[.88rem] leading-relaxed max-w-xl mx-auto">
               Este formulário foi criado para ajudar a avaliar o quão bem estruturados estão os principais pilares do seu negócio.
               O objetivo é identificar oportunidades de melhoria que possam aumentar a eficiência operacional, reduzir custos e melhorar a tomada de decisão em tempo real.
             </p>
             <p className="text-muted-foreground text-[.85rem] leading-relaxed max-w-xl mx-auto">
-              As perguntas estão organizadas em seis dimensões essenciais para o sucesso em um ambiente de negócios dinâmico e competitivo.
+              As perguntas estão organizadas em sete dimensões essenciais para o sucesso em um ambiente de negócios dinâmico e competitivo.
             </p>
             <p className="text-foreground/60 text-[.75rem]">Leva menos de 5 minutos para responder.</p>
             <Button
