@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowLeft, ArrowRight, Send, CheckCircle2 } from "lucide-react";
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 const segments = [
   "Construção civil",
