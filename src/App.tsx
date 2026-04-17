@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
 import AvaliacaoMaturidade from "./pages/AvaliacaoMaturidade";
+import AdminLogin from "./pages/AdminLogin";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +20,8 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
