@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
+
+const seoTags = (
+  <SEO
+    title="Avaliação de Maturidade Empresarial — Diagnóstico VIEW"
+    description="Faça o diagnóstico gratuito de maturidade da sua empresa baseado na metodologia DISTIPP e descubra oportunidades de automação e ganho operacional."
+    path="/avaliacao-maturidade"
+  />
+);
 import { Footer } from "@/components/Footer";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
