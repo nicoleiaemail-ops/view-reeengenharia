@@ -23,6 +23,11 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional"
+        description="Conheça a VIEW: missão, valores e a metodologia DISTIPP para dar visibilidade, controle e automação à operação da sua empresa."
+        path="/sobre"
+      />
       <Navbar />
 
       {/* Hero */}
