@@ -158,6 +158,7 @@ export default function AvaliacaoMaturidade() {
   if (submitted) {
     return (
       <>
+        {seoTags}
         <Navbar />
         <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
           <div className="max-w-lg text-center space-y-6">
@@ -185,6 +186,7 @@ export default function AvaliacaoMaturidade() {
   if (step === 0) {
     return (
       <>
+        {seoTags}
         <Navbar />
         <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
           <div className="max-w-2xl text-center space-y-6">
@@ -332,6 +334,7 @@ export default function AvaliacaoMaturidade() {
 
   return (
     <>
+      {seoTags}
       <Navbar />
       <main className="min-h-screen pt-24 pb-16 px-[7%]">
         <div className="max-w-2xl mx-auto">
