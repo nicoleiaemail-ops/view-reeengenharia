@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ViewLogo } from "./ViewLogo";
 
 export function Footer() {
@@ -10,7 +11,12 @@ export function Footer() {
           <div className="text-[.38rem] tracking-[.2em] text-muted-foreground uppercase mt-0.5">Reengenharia de Processos</div>
         </div>
       </div>
-      <div className="text-[.72rem] text-foreground/[.28]">© 2026 VIEW. Todos os direitos reservados.</div>
+      <div className="flex items-center gap-4">
+        <Link to="/admin-login" className="text-[.65rem] text-foreground/[.28] hover:text-foreground transition-colors">
+          Área restrita
+        </Link>
+        <div className="text-[.72rem] text-foreground/[.28]">© 2026 VIEW. Todos os direitos reservados.</div>
+      </div>
     </footer>
   );
 }
