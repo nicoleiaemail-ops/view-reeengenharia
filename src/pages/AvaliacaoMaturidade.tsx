@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
+
+const seoTags = (
+  <SEO
+    title="Avaliação de Maturidade Empresarial — Diagnóstico VIEW"
+    description="Faça o diagnóstico gratuito de maturidade da sua empresa baseado na metodologia DISTIPP e descubra oportunidades de automação e ganho operacional."
+    path="/avaliacao-maturidade"
+  />
+);
 import { Footer } from "@/components/Footer";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
@@ -149,6 +158,7 @@ export default function AvaliacaoMaturidade() {
   if (submitted) {
     return (
       <>
+        {seoTags}
         <Navbar />
         <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
           <div className="max-w-lg text-center space-y-6">
@@ -176,6 +186,7 @@ export default function AvaliacaoMaturidade() {
   if (step === 0) {
     return (
       <>
+        {seoTags}
         <Navbar />
         <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
           <div className="max-w-2xl text-center space-y-6">
@@ -323,6 +334,7 @@ export default function AvaliacaoMaturidade() {
 
   return (
     <>
+      {seoTags}
       <Navbar />
       <main className="min-h-screen pt-24 pb-16 px-[7%]">
         <div className="max-w-2xl mx-auto">

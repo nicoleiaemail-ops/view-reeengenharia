@@ -1,0 +1,9 @@
+# VIEW — Reengenharia de Processos
+
+> A VIEW ajuda empresas a enxergar processos, gargalos e oportunidades com dados em tempo real, automação e sistemas sob medida, aplicando a metodologia DISTIPP.
+
+## Pages
+
+- [Home](/): Reengenharia de processos, visibilidade operacional e diagnóstico gratuito.
+- [Sobre](/sobre): Quem é a VIEW, missão, valores e metodologia DISTIPP.
+- [Avaliação de Maturidade](/avaliacao-maturidade): Diagnóstico online de maturidade empresarial baseado no framework DISTIPP.

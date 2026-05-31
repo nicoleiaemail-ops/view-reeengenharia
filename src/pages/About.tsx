@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -22,6 +23,11 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional"
+        description="Conheça a VIEW: missão, valores e a metodologia DISTIPP para dar visibilidade, controle e automação à operação da sua empresa."
+        path="/sobre"
+      />
       <Navbar />
 
       {/* Hero */}
