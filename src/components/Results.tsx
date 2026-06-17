@@ -27,13 +27,13 @@ export function Results() {
   return (
     <section id="resultados" className="px-[7%] py-8 md:py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <ResultCard icon="⚙️" target={20} suffix="+" label="processos automatizados" sublabel="em empresas atendidas"
+        <ResultCard icon="⚙️" target={20} suffix="+" label="processos automatizados" sublabel="total acumulado nas empresas atendidas"
           colorClass="bg-accent/[.06] border-accent/25 hover:bg-accent/[.11]" />
-        <ResultCard icon="📈" target={50} prefix="+" suffix="%" label="aumento de produtividade" sublabel="média nas operações atendidas"
+        <ResultCard icon="📈" target={50} prefix="+" suffix="%" label="aumento de produtividade" sublabel="média por operação atendida em 2024–2025"
           colorClass="bg-primary/[.07] border-primary/25 hover:bg-primary/[.13]" delay=".08s" />
-        <ResultCard icon="⏱️" target={100} suffix="h+" label="horas economizadas pelas equipes"
+        <ResultCard icon="⏱️" target={100} suffix="h+" label="horas economizadas por mês" sublabel="média por equipe após automação de processos"
           colorClass="bg-primary/[.07] border-primary/25 hover:bg-primary/[.13]" delay=".16s" />
-        <ResultCard icon="💰" target={100} prefix="R$" suffix="k+" label="economizados pelos clientes"
+        <ResultCard icon="💰" target={100} prefix="R$" suffix="k+" label="economizados pelos clientes" sublabel="em custos operacionais no primeiro ano"
           colorClass="bg-view-green/[.06] border-view-green/25 hover:bg-view-green/[.11]" delay=".24s" />
       </div>
     </section>

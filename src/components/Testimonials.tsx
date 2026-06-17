@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Testimonials() {
   const testimonials = [
     {
@@ -48,6 +50,15 @@ export function Testimonials() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="scroll-reveal text-center mt-10">
+        <Link
+          to="/casos"
+          className="inline-flex items-center gap-2 text-[.82rem] text-muted-foreground hover:text-foreground transition-colors font-display font-semibold"
+        >
+          Ver casos completos com desafio, solução e resultados →
+        </Link>
       </div>
     </section>
   );

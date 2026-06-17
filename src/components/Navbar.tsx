@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 
 const anchors = [
   { label: "Soluções", href: "/solucoes" },
+  { label: "Casos", href: "/casos" },
   { label: "Metodologia", href: "#distip" },
   { label: "Resultados", href: "#resultados" },
   { label: "FAQ", href: "#faq" },

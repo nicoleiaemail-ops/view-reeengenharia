@@ -1,10 +1,15 @@
 export function FAQ() {
   const faqs = [
     { q: "O que é reengenharia de processos?", a: "Reengenharia de processos é o redesign completo de como sua empresa funciona — substituindo rotinas manuais, planilhas descentralizadas e decisões baseadas em achismo por fluxos digitais, automatizados e orientados a dados em tempo real." },
+    { q: "O que é a metodologia DISTIPP?", a: "DISTIPP é a metodologia exclusiva da VIEW para diagnóstico de maturidade empresarial. Analisa sete dimensões: <strong>Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos.</strong> Com base nesse mapeamento, a VIEW define quais áreas priorizar para gerar mais resultado." },
     { q: "Quanto tempo leva para ver resultados?", a: "O diagnóstico gratuito é concluído em 48 horas. Projetos de automação costumam ter <strong>primeiros resultados visíveis entre 3 e 6 meses</strong> após o início da implementação." },
+    { q: "Qual a diferença entre automação e reengenharia de processos?", a: "Reengenharia redesenha como o processo funciona. Automação executa processos já bem definidos sem intervenção humana. A VIEW sempre faz reengenharia antes de automatizar: <strong>não automatizamos o caos.</strong>" },
     { q: "A VIEW atende empresas de qualquer segmento?", a: "Sim. Já atuamos em construção civil, alimentação, indústria, serviços e varejo. Atendemos presencialmente em PB, PE e RN, e remotamente em todo o Brasil." },
-    { q: "A VIEW vende software?", a: "Não. Entregamos execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo. O software é uma consequência." },
+    { q: "Como funciona o diagnóstico gratuito?", a: "Em até 48 horas identificamos os principais gargalos, custos ocultos e oportunidades de automação da sua operação — e apresentamos um caminho claro, <strong>sem compromisso e sem jargão técnico.</strong>" },
+    { q: "A VIEW vende software?", a: "Não. Entregamos execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo. O software é uma consequência do processo bem estruturado." },
+    { q: "O que é maturidade operacional de uma empresa?", a: "É o grau em que a empresa tem processos documentados, dados centralizados, tecnologia integrada e equipes orientadas por indicadores. <strong>Empresas com alta maturidade tomam decisões mais rápidas e escalam com mais controle.</strong>" },
     { q: "Qual o investimento?", a: "O diagnóstico é 100% gratuito e sem compromisso. O investimento do projeto é definido após entender o escopo. O <strong>retorno sobre o investimento é mensurável desde as primeiras semanas.</strong>" },
+    { q: "A VIEW atende pequenas e médias empresas?", a: "Sim. A VIEW foi criada para PMEs que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio. Atendemos empresas de 5 a 200 funcionários." },
   ];
 
   return (

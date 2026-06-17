@@ -1,6 +1,6 @@
-# VIEW — IA · Processos · Dados
+# VIEW Reengenharia de Processos
 
-> A VIEW ajuda empresas a enxergar processos, gargalos e oportunidades com dados em tempo real, automação e sistemas sob medida. Atuamos com IA, reengenharia de processos, sistemas customizados, consultoria estratégica e capacitação de equipes, aplicando a metodologia exclusiva DISTIPP.
+> A VIEW é uma consultoria especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para pequenas e médias empresas (PMEs) brasileiras. Fundada em 2024, aplica a metodologia exclusiva DISTIPP para transformar operações baseadas em planilhas e decisões por intuição em sistemas digitais orientados a dados.
 
 ## Domínio
 
@@ -8,24 +8,95 @@ https://viewprocessos.com.br
 
 ## Páginas
 
-- [Home](https://viewprocessos.com.br/): Diagnóstico gratuito, áreas de solução e depoimentos de clientes.
-- [Soluções](https://viewprocessos.com.br/solucoes): Todas as 5 áreas de atuação — IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica, Capacitação.
-- [Sobre](https://viewprocessos.com.br/sobre): Quem é a VIEW, missão, valores e metodologia DISTIPP.
-- [Avaliação de Maturidade](https://viewprocessos.com.br/avaliacao-maturidade): Diagnóstico online de maturidade empresarial baseado no framework DISTIPP.
+- [Home](https://viewprocessos.com.br/): Diagnóstico gratuito, 5 áreas de solução, resultados e depoimentos de clientes.
+- [Soluções](https://viewprocessos.com.br/solucoes): Detalhamento das 5 áreas de atuação — IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica, Capacitação.
+- [Sobre](https://viewprocessos.com.br/sobre): Origem da empresa, missão, visão, valores, 6 princípios operacionais e a metodologia DISTIPP em 5 passos.
+- [Avaliação de Maturidade](https://viewprocessos.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
+
+## O que é a VIEW
+
+A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos de atuação em grandes indústrias brasileiras como Baterias Moura e Alpargatas. O objetivo é replicar os mesmos princípios de excelência operacional dessas empresas para PMEs em crescimento no Nordeste do Brasil.
+
+A VIEW não vende software. Entrega execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo.
+
+## Metodologia DISTIPP
+
+DISTIPP é o framework exclusivo de diagnóstico de maturidade empresarial da VIEW. Analisa sete dimensões críticas:
+
+1. **Dados** — Capacidade de tomar decisões baseadas em evidências e indicadores confiáveis.
+2. **Integração** — Nível de comunicação e fluxo de informação entre setores e sistemas.
+3. **Sistemas** — Adequação e eficácia dos sistemas de gestão utilizados.
+4. **Tecnologia** — Grau de digitalização dos processos e rastreabilidade das operações.
+5. **Inovação** — Comprometimento com melhoria contínua e adoção de novas práticas.
+6. **Pessoas** — Gestão do desempenho humano, autonomia e rastreabilidade de responsabilidades.
+7. **Processos** — Nível de padronização, documentação e escalabilidade dos fluxos operacionais.
+
+## Como funciona a metodologia VIEW (5 passos)
+
+1. **Diagnóstico gratuito** — Mapeamento da operação atual. Resultado em 48h, sem custo e sem compromisso.
+2. **Mapeamento e redesign** — Documentação de cada fluxo, eliminação do que não agrega valor, padronização do replicável.
+3. **Automação e sistema sob medida** — Automação de tarefas repetitivas e desenvolvimento de sistema adaptado à operação (iOS, Android, Desktop).
+4. **Dashboards em tempo real** — Implementação de KPIs acessíveis de qualquer lugar, em tempo real.
+5. **Acompanhamento contínuo** — Parceria de longo prazo com monitoramento e garantia de resultados.
 
 ## Serviços
 
-- IA & Automação: agentes de IA, automação de fluxos, integração entre sistemas.
-- Sistemas & Dados: dashboards em tempo real, Business Intelligence, relatórios automáticos.
-- Reengenharia de Processos: mapeamento e redesign de fluxos operacionais, eliminação de gargalos.
-- Consultoria Estratégica: planejamento operacional, definição de KPIs, gestão orientada a dados.
-- Capacitação: treinamentos para equipes em processos, dados e ferramentas digitais.
+### IA & Automação
+Agentes de IA autônomos, chatbots com IA para atendimento, automação de fluxos repetitivos, consultoria em IA e treinamento de equipes para uso prático de inteligência artificial.
 
-## Metodologia
+### Sistemas & Dados
+Sistemas de gestão personalizados (não genéricos), dashboards de Business Intelligence em tempo real acessíveis pelo celular, e análise de maturidade digital.
 
-DISTIPP: Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas, Processos.
+### Reengenharia de Processos
+Padronização de processos com documentação clara (SOPs, checklists, fluxogramas), auditoria operacional completa e arquitetura empresarial — redesign de departamentos, responsabilidades e fluxos.
+
+### Consultoria Estratégica
+Planejamento estratégico, análise de viabilidade de negócio, finanças corporativas (margem, custo, fluxo de caixa) e desenvolvimento de estruturas de governança.
+
+### Capacitação
+Treinamentos práticos de IA para equipes, capacitação para construção de agentes próprios e implementação guiada de ferramentas de IA no dia a dia operacional.
+
+## Resultados documentados
+
+- +50% de aumento médio de produtividade nas operações atendidas
+- 20+ processos automatizados em empresas clientes
+- 100+ horas economizadas pelas equipes mensalmente
+- R$100.000+ economizados pelos clientes em custos operacionais
+
+## Casos de uso
+
+### Construção Civil — Vitória D. (Diretora, Construtora, Paraíba)
+Desafio: manutenção do certificado ISO 9001 exigia registros manuais extensos e a cada auditoria havia retrabalho intenso.
+Solução VIEW: cada etapa da obra passou a gerar registro automático via sistema sob medida.
+Resultado: ISO 9001 mantido sem retrabalho; planejamento de obras acompanhado em tempo real de qualquer lugar.
+
+### Construção Civil — Aguinaldo S. (Supervisor de Obra, Construtora, Paraíba)
+Desafio: precisava ligar para cada encarregado para saber o status da obra, sem visibilidade centralizada.
+Solução VIEW: aplicativo com rastreamento de atividades, atrasos e localização de equipes em tempo real.
+Resultado: gestão completa pelo celular; visibilidade total do que foi feito, o que atrasou e quem está onde.
+
+### Alimentação — Restaurante (Proprietário, Setor de Alimentação)
+Desafio: caos na hora do almoço — pedidos atrasavam, clientes reclamavam, equipe estressada, sem dados do fluxo da cozinha.
+Solução VIEW: mapeamento completo do fluxo do pedido ao pagamento; reorganização do layout da cozinha.
+Resultado: atendimento mais rápido, redução de custos operacionais, gargalos eliminados, dados em tempo real do pedido ao pagamento.
 
 ## Área de atendimento
 
-Presencial: Paraíba, Pernambuco, Rio Grande do Norte.
-Remoto: todo o Brasil.
+- **Presencial:** Paraíba (PB), Pernambuco (PE), Rio Grande do Norte (RN)
+- **Remoto:** todo o Brasil
+
+## Contato
+
+- WhatsApp: +55 (83) 9 9565-0051
+- Email: admin@reengenhariaview.com.br
+- Site: https://viewprocessos.com.br
+
+## Segmentos atendidos
+
+Construção civil, indústria, alimentação, comércio/varejo, serviços, logística, tecnologia, agronegócio e saúde.
+
+## Valores e princípios
+
+**Valores:** Clareza antes da tecnologia · Dados antes de opinião · Simplicidade operacional · Melhoria contínua (Kaizen) · Eficiência acima de complexidade · Crescimento sustentável.
+
+**Princípios:** Fazer o básico extremamente bem · Estrutura antes de escala · Processos antes de ferramentas · Visibilidade gera controle · Automação para liberar inteligência humana · Empresas inteligentes operam com dados.

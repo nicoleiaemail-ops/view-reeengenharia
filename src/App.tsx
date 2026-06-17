@@ -6,6 +6,7 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Solucoes from "./pages/Solucoes";
 import AvaliacaoMaturidade from "./pages/AvaliacaoMaturidade";
+import Casos from "./pages/Casos";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/sobre" element={<About />} />
           <Route path="/solucoes" element={<Solucoes />} />
           <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
+          <Route path="/casos" element={<Casos />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />

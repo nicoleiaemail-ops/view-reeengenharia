@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const words = ["dados.", "IA.", "escala.", "margem.", "lucro.", "conectividade."];
 
 export function useTypewriter() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(words[0]);
 
   useEffect(() => {
     let wordIndex = 0;
