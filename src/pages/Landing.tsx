@@ -169,7 +169,7 @@ const localBusinessJsonLd = {
     { "@type": "State", name: "Rio Grande do Norte" },
     { "@type": "Country", name: "Brasil" },
   ],
-  sameAs: [],
+  sameAs: ["https://www.instagram.com/reengenhariaview"],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
