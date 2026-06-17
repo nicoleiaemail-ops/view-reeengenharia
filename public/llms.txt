@@ -1,9 +1,31 @@
-# VIEW — Reengenharia de Processos
+# VIEW — IA · Processos · Dados
 
-> A VIEW ajuda empresas a enxergar processos, gargalos e oportunidades com dados em tempo real, automação e sistemas sob medida, aplicando a metodologia DISTIPP.
+> A VIEW ajuda empresas a enxergar processos, gargalos e oportunidades com dados em tempo real, automação e sistemas sob medida. Atuamos com IA, reengenharia de processos, sistemas customizados, consultoria estratégica e capacitação de equipes, aplicando a metodologia exclusiva DISTIPP.
 
-## Pages
+## Domínio
 
-- [Home](/): Reengenharia de processos, visibilidade operacional e diagnóstico gratuito.
-- [Sobre](/sobre): Quem é a VIEW, missão, valores e metodologia DISTIPP.
-- [Avaliação de Maturidade](/avaliacao-maturidade): Diagnóstico online de maturidade empresarial baseado no framework DISTIPP.
+https://viewprocessos.com.br
+
+## Páginas
+
+- [Home](https://viewprocessos.com.br/): Diagnóstico gratuito, áreas de solução e depoimentos de clientes.
+- [Soluções](https://viewprocessos.com.br/solucoes): Todas as 5 áreas de atuação — IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica, Capacitação.
+- [Sobre](https://viewprocessos.com.br/sobre): Quem é a VIEW, missão, valores e metodologia DISTIPP.
+- [Avaliação de Maturidade](https://viewprocessos.com.br/avaliacao-maturidade): Diagnóstico online de maturidade empresarial baseado no framework DISTIPP.
+
+## Serviços
+
+- IA & Automação: agentes de IA, automação de fluxos, integração entre sistemas.
+- Sistemas & Dados: dashboards em tempo real, Business Intelligence, relatórios automáticos.
+- Reengenharia de Processos: mapeamento e redesign de fluxos operacionais, eliminação de gargalos.
+- Consultoria Estratégica: planejamento operacional, definição de KPIs, gestão orientada a dados.
+- Capacitação: treinamentos para equipes em processos, dados e ferramentas digitais.
+
+## Metodologia
+
+DISTIPP: Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas, Processos.
+
+## Área de atendimento
+
+Presencial: Paraíba, Pernambuco, Rio Grande do Norte.
+Remoto: todo o Brasil.
