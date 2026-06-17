@@ -147,12 +147,12 @@ export default function AvaliacaoMaturidade() {
     setSubmitting(true);
     try {
       const { nome, email, telefone, segmento, ...respostas } = data;
-      const { error } = await supabase.from("maturity_assessments").insert({
-        nome,
-        email,
-        telefone,
-        segmento,
-        respostas,
+      const { error } = await supabase.rpc("submit_maturity_assessment", {
+        p_nome: nome,
+        p_email: email,
+        p_telefone: telefone,
+        p_segmento: segmento,
+        p_respostas: respostas,
       });
       if (error) throw error;
       setSubmitted(true);

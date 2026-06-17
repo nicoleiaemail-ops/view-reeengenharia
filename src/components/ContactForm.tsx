@@ -54,14 +54,11 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     try {
-      const { error } = await supabase.from("diagnostic_leads").insert({
-        nome: formData.get("nome") as string,
-        email: "",
-        whatsapp: phone,
-        empresa: formData.get("empresa") as string,
-        num_funcionarios: "",
-        segmento: formData.get("segmento") as string,
-        cidade: "",
+      const { error } = await supabase.rpc("submit_diagnostic_lead", {
+        p_nome: formData.get("nome") as string,
+        p_whatsapp: phone,
+        p_empresa: formData.get("empresa") as string,
+        p_segmento: formData.get("segmento") as string,
       });
       if (error) throw error;
       setSubmitted(true);
