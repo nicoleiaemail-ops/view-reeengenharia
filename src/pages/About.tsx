@@ -99,7 +99,7 @@ const About = () => {
             <em className="not-italic text-accent">Entregamos isso para você.</em>
           </h1>
           <p className="text-[.95rem] text-muted-foreground leading-relaxed max-w-[600px] mx-auto">
-            Três engenheiros de produção que passaram anos transformando operações industriais de alta performance — e decidiram levar esses mesmos princípios para empresas em crescimento.
+            Uma equipe formada dentro das maiores operações industriais do Brasil — que decidiu levar esses mesmos princípios de excelência para empresas em crescimento.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ const About = () => {
             De dentro das maiores<br />indústrias do Brasil<br /><em className="not-italic text-accent">para o seu negócio.</em>
           </h2>
           <div className="text-[.92rem] text-muted-foreground leading-relaxed space-y-4 [&_strong]:text-foreground">
-            <p>A VIEW nasceu da experiência direta de três engenheiros de produção que atuaram por mais de cinco anos em empresas como <strong>Baterias Moura</strong> e <strong>Alpargatas</strong>.</p>
+            <p>A VIEW nasceu da experiência direta de uma equipe de engenharia com mais de cinco anos de atuação em empresas como <strong>Baterias Moura</strong> e <strong>Alpargatas</strong>.</p>
             <p>Nesse tempo, vivenciaram como <strong>operações bem estruturadas, processos claros e uso inteligente de dados</strong> transformam o desempenho de uma empresa.</p>
             <p>Foi daí que surgiu a VIEW: com o propósito de levar os mesmos princípios de excelência operacional para empresas que estão construindo sua estrutura agora.</p>
           </div>
