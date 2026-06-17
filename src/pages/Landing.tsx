@@ -36,7 +36,96 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "VIEW Reengenharia de Processos",
-  url: "https://view-reeengenharia.com/",
+  url: "https://viewprocessos.com.br/",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ProfessionalService"],
+  name: "VIEW Reengenharia de Processos",
+  alternateName: "VIEW",
+  url: "https://viewprocessos.com.br",
+  logo: "https://viewprocessos.com.br/favicon.ico",
+  description:
+    "Empresa especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para gestores de PMEs. Metodologia exclusiva DISTIPP.",
+  foundingDate: "2024",
+  areaServed: [
+    { "@type": "State", name: "Paraíba" },
+    { "@type": "State", name: "Pernambuco" },
+    { "@type": "State", name: "Rio Grande do Norte" },
+    { "@type": "Country", name: "Brasil" },
+  ],
+  knowsAbout: [
+    "Reengenharia de processos",
+    "Automação de processos",
+    "Business Intelligence",
+    "Transformação digital",
+    "Visibilidade operacional",
+    "Sistemas de gestão personalizados",
+    "Metodologia DISTIPP",
+  ],
+  serviceType: [
+    "Reengenharia de Processos",
+    "Automação de Processos",
+    "Business Intelligence",
+    "Sistemas de Gestão Customizados",
+    "Diagnóstico Operacional Gratuito",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Serviços VIEW",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Diagnóstico Gratuito de Maturidade Operacional",
+          description:
+            "Mapeamento do nível de maturidade digital da empresa em 48h, sem custo e sem compromisso.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Reengenharia de Processos",
+          description:
+            "Redesign completo dos fluxos operacionais, eliminando rotinas manuais e planilhas por processos digitais orientados a dados.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Sistemas de Gestão Customizados",
+          description:
+            "Desenvolvimento de sistemas sob medida para iOS, Android e Desktop, adaptados à realidade operacional da empresa.",
+        },
+      },
+    ],
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Vitória D." },
+      reviewBody:
+        "Manter o ISO 9001 era uma corrida contra o tempo a cada auditoria. Com a VIEW, cada etapa da obra gera um registro automático. Hoje acompanho o andamento de qualquer projeto em tempo real — de onde estiver.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Aguinaldo S." },
+      reviewBody:
+        "Antes eu precisava ligar pra cada encarregado pra saber o que tava acontecendo. Agora abro o aplicativo e vejo tudo: o que foi feito, o que atrasou, quem tá onde. Mudou completamente a forma como eu gerencio a obra.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "2",
+    bestRating: "5",
+  },
 };
 
 const Landing = () => {
@@ -62,7 +151,7 @@ const Landing = () => {
         title="VIEW — Visibilidade e Controle Operacional para Empresas"
         description="A VIEW entrega visibilidade operacional, controle de processos e informação em tempo real com IA, automação e sistemas sob medida."
         path="/"
-        jsonLd={[websiteJsonLd, faqJsonLd]}
+        jsonLd={[websiteJsonLd, organizationJsonLd, faqJsonLd]}
       />
       <Navbar />
       <Hero />

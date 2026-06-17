@@ -27,6 +27,55 @@ const About = () => {
         title="Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional"
         description="Conheça a VIEW: missão, valores e a metodologia DISTIPP para dar visibilidade, controle e automação à operação da sua empresa."
         path="/sobre"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
+              { "@type": "ListItem", position: 2, name: "Sobre a VIEW", item: "https://viewprocessos.com.br/sobre" },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Como funciona a metodologia VIEW de reengenharia de processos",
+            description:
+              "Processo completo de reengenharia operacional em 5 etapas: do diagnóstico gratuito ao acompanhamento contínuo, com automação e dashboards em tempo real.",
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Diagnóstico gratuito",
+                text: "Mapeamos sua operação atual. Resultado em 48h, totalmente gratuito e sem compromisso.",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Mapeamento e redesign",
+                text: "Documentamos cada fluxo, eliminamos o que não agrega valor e padronizamos o que é replicável.",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Automação e sistema sob medida",
+                text: "Automatizamos tarefas repetitivas e desenvolvemos o sistema que sua operação precisa, disponível para iOS, Android e Desktop.",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Dashboards em tempo real",
+                text: "Implementamos indicadores de performance acessíveis de qualquer lugar, em tempo real.",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Acompanhamento contínuo",
+                text: "Não entregamos e saímos. Acompanhamos e garantimos resultados em parceria de longo prazo.",
+              },
+            ],
+          },
+        ]}
       />
       <Navbar />
 

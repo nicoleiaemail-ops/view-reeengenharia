@@ -10,6 +10,16 @@ const seoTags = (
     title="Avaliação de Maturidade Empresarial — Diagnóstico VIEW"
     description="Faça o diagnóstico gratuito de maturidade da sua empresa baseado na metodologia DISTIPP e descubra oportunidades de automação e ganho operacional."
     path="/avaliacao-maturidade"
+    jsonLd={[
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
+          { "@type": "ListItem", position: 2, name: "Avaliação de Maturidade", item: "https://viewprocessos.com.br/avaliacao-maturidade" },
+        ],
+      },
+    ]}
   />
 );
 import { Footer } from "@/components/Footer";

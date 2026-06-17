@@ -15,4 +15,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin-login
 
-Sitemap: https://view-reeengenharia.lovable.app/sitemap.xml
+Sitemap: https://viewprocessos.com.br/sitemap.xml
