@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "./pages/Landing";
-import About from "./pages/About";
-import Solucoes from "./pages/Solucoes";
-import AvaliacaoMaturidade from "./pages/AvaliacaoMaturidade";
-import Casos from "./pages/Casos";
-import AdminLogin from "./pages/AdminLogin";
-import Admin from "./pages/Admin";
-import NotFound from "./pages/NotFound";
+
+const About = lazy(() => import("./pages/About"));
+const Solucoes = lazy(() => import("./pages/Solucoes"));
+const AvaliacaoMaturidade = lazy(() => import("./pages/AvaliacaoMaturidade"));
+const Casos = lazy(() => import("./pages/Casos"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const Admin = lazy(() => import("./pages/Admin"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -18,16 +20,18 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="/solucoes" element={<Solucoes />} />
-          <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
-          <Route path="/casos" element={<Casos />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="/solucoes" element={<Solucoes />} />
+            <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
+            <Route path="/casos" element={<Casos />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

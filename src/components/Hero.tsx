@@ -1,12 +1,16 @@
+import { lazy, Suspense } from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import { HeroEye } from "./HeroEye";
+
+const HeroEye = lazy(() => import("./HeroEye").then((m) => ({ default: m.HeroEye })));
 
 export function Hero() {
   const typed = useTypewriter();
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-[5%] pt-16 md:pt-20 pb-6 md:pb-8 text-center relative overflow-hidden">
-      <HeroEye />
+      <Suspense fallback={<div className="w-[min(680px,90vw)] h-[min(280px,38vw)] mb-4 md:mb-6" />}>
+        <HeroEye />
+      </Suspense>
 
       <div className="relative z-[2]">
         {/* Badge */}
