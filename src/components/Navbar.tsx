@@ -4,6 +4,7 @@ import { ViewLogo } from "./ViewLogo";
 import { Menu, X } from "lucide-react";
 
 const anchors = [
+  { label: "Soluções", href: "/solucoes" },
   { label: "Metodologia", href: "#distip" },
   { label: "Resultados", href: "#resultados" },
   { label: "FAQ", href: "#faq" },
@@ -21,18 +22,24 @@ export function Navbar() {
         <div className="font-display">
           <span className="font-bold text-foreground tracking-[.18em] text-[1.1rem]">VIEW</span>
           <small className="block text-[.38rem] font-normal tracking-[.2em] text-muted-foreground uppercase mt-0.5">
-            Reengenharia de Processos
+            IA · Processos · Dados
           </small>
         </div>
       </Link>
 
       {/* Desktop links */}
       <div className="hidden md:flex items-center gap-6">
-        {!isAbout && anchors.map((a) => (
-          <a key={a.href} href={a.href} className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]">
-            {a.label}
-          </a>
-        ))}
+        {!isAbout && anchors.map((a) =>
+          a.href.startsWith("/") ? (
+            <Link key={a.href} to={a.href} className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]">
+              {a.label}
+            </Link>
+          ) : (
+            <a key={a.href} href={a.href} className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]">
+              {a.label}
+            </a>
+          )
+        )}
         <Link
           to={isAbout ? "/" : "/sobre"}
           className="text-[.78rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.03em]"
@@ -65,11 +72,17 @@ export function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-view-line flex flex-col items-center gap-5 py-6 md:hidden">
-          {!isAbout && anchors.map((a) => (
-            <a key={a.href} href={a.href} className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors" onClick={() => setOpen(false)}>
-              {a.label}
-            </a>
-          ))}
+          {!isAbout && anchors.map((a) =>
+            a.href.startsWith("/") ? (
+              <Link key={a.href} to={a.href} className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors" onClick={() => setOpen(false)}>
+                {a.label}
+              </Link>
+            ) : (
+              <a key={a.href} href={a.href} className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors" onClick={() => setOpen(false)}>
+                {a.label}
+              </a>
+            )
+          )}
           <Link
             to={isAbout ? "/" : "/sobre"}
             className="text-[.85rem] text-muted-foreground hover:text-foreground transition-colors tracking-[.05em]"

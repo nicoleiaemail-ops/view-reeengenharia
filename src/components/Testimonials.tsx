@@ -10,6 +10,11 @@ export function Testimonials() {
       result: "✓ Acompanhamento em tempo real · ✓ Gestão completa pelo celular",
       initials: "AS", name: "Aguinaldo S.", role: "Supervisor de Obra · Construtora, Paraíba", tag: "Construção Civil",
     },
+    {
+      text: "A cozinha vivia em caos na hora do almoço. Pedidos atrasavam, cliente reclamava, equipe estressada. A VIEW mapeou cada etapa — do pedido ao pagamento — e reorganizou o layout da cozinha. Hoje o atendimento é mais rápido, os custos caíram e o cliente percebe a diferença.",
+      result: "✓ Atendimento mais rápido · ✓ Redução de custos operacionais · ✓ Gargalos da cozinha eliminados · ✓ Dados do pedido ao pagamento em tempo real",
+      initials: "RS", name: "Restaurante", role: "Proprietário · Setor de Alimentação", tag: "Alimentação",
+    },
   ];
 
   return (
@@ -23,7 +28,7 @@ export function Testimonials() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-view-line border border-view-line">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-view-line border border-view-line">
         {testimonials.map((t, i) => (
           <div key={i} className="scroll-reveal bg-background p-6 md:p-10 flex flex-col gap-6 hover:bg-secondary transition-colors" style={{ transitionDelay: `${i * 0.15}s` }}>
             <div>

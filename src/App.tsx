@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
+import Solucoes from "./pages/Solucoes";
 import AvaliacaoMaturidade from "./pages/AvaliacaoMaturidade";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
@@ -19,6 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="/solucoes" element={<Solucoes />} />
           <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />

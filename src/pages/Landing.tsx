@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Servicos } from "@/components/Servicos";
 import { Pains } from "@/components/Pains";
 import { CostOfNotSeeing } from "@/components/CostOfNotSeeing";
 import { Solution } from "@/components/Solution";
@@ -155,6 +156,7 @@ const Landing = () => {
       />
       <Navbar />
       <Hero />
+      <Servicos />
       <Results />
       <DISTIP />
       <Pains />
