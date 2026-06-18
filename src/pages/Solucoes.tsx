@@ -111,6 +111,14 @@ const solucoes = [
   },
 ];
 
+const providerRef = {
+  "@type": "Organization",
+  name: "VIEW Reengenharia de Processos",
+  url: "https://viewprocessos.com.br",
+  telephone: "+55-83-99565-0051",
+  email: "admin@reengenhariaview.com.br",
+};
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -128,8 +136,63 @@ const jsonLd = [
       "@type": "ListItem",
       position: i + 1,
       name: s.tag,
-      description: s.headline,
+      url: `https://viewprocessos.com.br/solucoes#${s.id}`,
     })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "IA & Automação",
+    serviceType: "Automação de processos com Inteligência Artificial",
+    provider: providerRef,
+    description: "Agentes de IA autônomos, chatbots com IA para atendimento, automação de fluxos repetitivos e treinamento de equipes para uso prático de inteligência artificial no dia a dia operacional.",
+    areaServed: { "@type": "Country", name: "Brasil" },
+    url: "https://viewprocessos.com.br/solucoes#ia-automacao",
+    offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Sistemas & Dados",
+    serviceType: "Desenvolvimento de sistemas de gestão e Business Intelligence",
+    provider: providerRef,
+    description: "Sistemas de gestão personalizados (não genéricos), dashboards de Business Intelligence em tempo real acessíveis pelo celular e análise de maturidade digital da empresa.",
+    areaServed: { "@type": "Country", name: "Brasil" },
+    url: "https://viewprocessos.com.br/solucoes#sistemas-dados",
+    offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Reengenharia de Processos",
+    serviceType: "Consultoria em reengenharia e padronização de processos empresariais",
+    provider: providerRef,
+    description: "Mapeamento, padronização e redesign completo dos fluxos operacionais. Eliminação de retrabalho, auditoria de processos e arquitetura empresarial com documentação clara (SOPs, checklists, fluxogramas).",
+    areaServed: { "@type": "Country", name: "Brasil" },
+    url: "https://viewprocessos.com.br/solucoes#reengenharia",
+    offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Consultoria Estratégica",
+    serviceType: "Consultoria estratégica, planejamento e finanças corporativas para PMEs",
+    provider: providerRef,
+    description: "Planejamento estratégico, análise de viabilidade de negócio, finanças corporativas (margem, custo, fluxo de caixa) e desenvolvimento de estruturas de governança baseadas em dados.",
+    areaServed: { "@type": "Country", name: "Brasil" },
+    url: "https://viewprocessos.com.br/solucoes#consultoria-estrategica",
+    offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Capacitação em IA",
+    serviceType: "Treinamento e capacitação de equipes em Inteligência Artificial",
+    provider: providerRef,
+    description: "Treinamentos práticos de IA para equipes, capacitação para construção de agentes próprios e implementação guiada de ferramentas de IA no cotidiano operacional da empresa.",
+    areaServed: { "@type": "Country", name: "Brasil" },
+    url: "https://viewprocessos.com.br/solucoes#capacitacao",
+    offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
 ];
 

@@ -1,11 +1,12 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { HeroEye } from "@/components/HeroEye";
 import { DISTIP } from "@/components/DISTIP";
+
+const HeroEye = lazy(() => import("@/components/HeroEye").then((m) => ({ default: m.HeroEye })));
 
 const About = () => {
   useEffect(() => {
@@ -35,6 +36,40 @@ const About = () => {
               { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
               { "@type": "ListItem", position: 2, name: "Sobre a VIEW", item: "https://viewprocessos.com.br/sobre" },
             ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional",
+            url: "https://viewprocessos.com.br/sobre",
+            description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para PMEs brasileiras.",
+            mainEntity: {
+              "@type": ["Organization", "ProfessionalService"],
+              name: "VIEW Reengenharia de Processos",
+              url: "https://viewprocessos.com.br",
+              logo: "https://viewprocessos.com.br/og-image.png",
+              foundingDate: "2024",
+              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para PMEs no Nordeste do Brasil.",
+              telephone: "+55-83-99565-0051",
+              email: "admin@reengenhariaview.com.br",
+              areaServed: [
+                { "@type": "State", name: "Paraíba" },
+                { "@type": "State", name: "Pernambuco" },
+                { "@type": "State", name: "Rio Grande do Norte" },
+                { "@type": "Country", name: "Brasil" },
+              ],
+              knowsAbout: [
+                "Reengenharia de processos",
+                "Automação de processos empresariais",
+                "Business Intelligence",
+                "Transformação digital para PMEs",
+                "Sistemas de gestão customizados",
+                "Metodologia DISTIPP",
+                "Engenharia de produção",
+              ],
+              slogan: "Você não pode melhorar o que não consegue ver.",
+              sameAs: ["https://www.instagram.com/reengenhariaview"],
+            },
           },
           {
             "@context": "https://schema.org",
@@ -81,7 +116,9 @@ const About = () => {
 
       {/* Hero */}
       <section className="min-h-screen flex flex-col items-center justify-center px-[7%] pt-28 pb-20 text-center relative overflow-hidden">
-        <HeroEye />
+        <Suspense fallback={<div className="w-[min(680px,90vw)] h-[min(280px,38vw)] mb-4 md:mb-6" />}>
+          <HeroEye />
+        </Suspense>
 
         <div className="absolute inset-0 pointer-events-none z-[1]"
           style={{
