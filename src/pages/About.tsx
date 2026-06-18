@@ -25,8 +25,8 @@ const About = () => {
   return (
     <>
       <SEO
-        title="Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional"
-        description="Conheça a VIEW: missão, valores e a metodologia DISTIPP para dar visibilidade, controle e automação à operação da sua empresa."
+        title="Sobre a VIEW — Consultoria de Processos para PMEs no Nordeste do Brasil"
+        description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional às PMEs. Metodologia DISTIPP, missão, valores e nossa história."
         path="/sobre"
         jsonLd={[
           {

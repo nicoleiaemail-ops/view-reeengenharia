@@ -111,6 +111,29 @@ const solucoes = [
   },
 ];
 
+const solucoesFaqs = [
+  {
+    q: "A VIEW constrói aplicativos para celular?",
+    a: "Sim. A VIEW desenvolve sistemas sob medida disponíveis para iOS, Android e Desktop — não softwares genéricos, mas ferramentas construídas para o fluxo específico da sua operação.",
+  },
+  {
+    q: "Preciso ter conhecimento em tecnologia para contratar a VIEW?",
+    a: "Não. A VIEW cuida de toda a parte técnica: mapeamento, automação, sistema e implementação. Você só precisa conhecer o seu negócio — a equipe VIEW traduz isso em tecnologia.",
+  },
+  {
+    q: "Qual é a diferença entre automação e reengenharia de processos?",
+    a: "Reengenharia redesenha como o processo funciona — elimina etapas desnecessárias, padroniza fluxos e define responsabilidades. Automação executa processos já bem definidos sem intervenção humana. A VIEW sempre faz reengenharia antes de automatizar: não automatizamos o caos.",
+  },
+  {
+    q: "A VIEW atende empresas de qualquer segmento?",
+    a: "Sim. Já atendemos construção civil, alimentação, indústria, serviços, varejo e logística. Atendemos presencialmente em PB, PE e RN, e remotamente em todo o Brasil.",
+  },
+  {
+    q: "Quanto tempo leva para ver resultados depois de contratar a VIEW?",
+    a: "O diagnóstico gratuito é concluído em até 48 horas. Projetos de automação e sistema sob medida costumam ter primeiros resultados visíveis entre 3 e 6 meses após o início da implementação.",
+  },
+];
+
 const providerRef = {
   "@type": "Organization",
   name: "VIEW Reengenharia de Processos",
@@ -185,6 +208,15 @@ const jsonLd = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: solucoesFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
     name: "Capacitação em IA",
     serviceType: "Treinamento e capacitação de equipes em Inteligência Artificial",
@@ -209,8 +241,8 @@ export default function Solucoes() {
   return (
     <>
       <SEO
-        title="Soluções VIEW — IA, Automação, Sistemas e Consultoria para Empresas"
-        description="A VIEW oferece IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica e Capacitação — tudo para sua empresa operar com mais clareza e menos desperdício."
+        title="Soluções VIEW — Automação, Reengenharia de Processos e IA para PMEs"
+        description="Reengenharia de processos, automação com IA, sistemas sob medida e dashboards em tempo real para pequenas e médias empresas. Atendemos PB, PE, RN e todo o Brasil."
         path="/solucoes"
         jsonLd={jsonLd}
       />
@@ -269,6 +301,29 @@ export default function Solucoes() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* FAQ */}
+      <section className="px-[7%] py-20 border-t border-view-line">
+        <div className="max-w-[800px] mx-auto">
+          <div className="scroll-reveal text-center mb-12">
+            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">Dúvidas frequentes</div>
+            <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.5vw,2.1rem)] leading-[1.1]">
+              Perguntas sobre os serviços
+            </h2>
+          </div>
+          <div className="flex flex-col divide-y divide-view-line">
+            {solucoesFaqs.map((faq, i) => (
+              <details key={i} className="scroll-reveal group py-5" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-bold text-[.93rem] text-foreground hover:text-primary transition-colors">
+                  {faq.q}
+                  <span className="text-primary/60 text-[1.1rem] flex-shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <p className="mt-3 text-[.85rem] text-muted-foreground leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* CTA final */}

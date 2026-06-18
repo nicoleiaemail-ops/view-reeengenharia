@@ -7,8 +7,8 @@ import { SEO } from "@/components/SEO";
 
 const seoTags = (
   <SEO
-    title="Avaliação de Maturidade Empresarial — Diagnóstico VIEW"
-    description="Faça o diagnóstico gratuito de maturidade da sua empresa baseado na metodologia DISTIPP e descubra oportunidades de automação e ganho operacional."
+    title="Avaliação de Maturidade Empresarial — Diagnóstico DISTIPP Gratuito"
+    description="Descubra em 5 minutos o nível de maturidade operacional da sua empresa. Diagnóstico gratuito baseado na metodologia DISTIPP da VIEW — 7 dimensões, resultado imediato."
     path="/avaliacao-maturidade"
     jsonLd={[
       {
@@ -18,6 +18,51 @@ const seoTags = (
           { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
           { "@type": "ListItem", position: 2, name: "Avaliação de Maturidade", item: "https://viewprocessos.com.br/avaliacao-maturidade" },
         ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Diagnóstico de Maturidade Operacional DISTIPP",
+        url: "https://viewprocessos.com.br/avaliacao-maturidade",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "BRL",
+          availability: "https://schema.org/InStock",
+        },
+        description: "Ferramenta gratuita de diagnóstico de maturidade empresarial em 7 dimensões (Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos) baseada na metodologia DISTIPP da VIEW. Resultado personalizado em menos de 5 minutos.",
+        provider: {
+          "@type": "Organization",
+          name: "VIEW Reengenharia de Processos",
+          url: "https://viewprocessos.com.br",
+        },
+        featureList: [
+          "Diagnóstico gratuito em 7 dimensões DISTIPP",
+          "Avaliação personalizada por segmento de mercado",
+          "Resultado e recomendações em até 48 horas",
+          "Sem compromisso de contratação",
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        name: "Diagnóstico de Maturidade Operacional — metodologia DISTIPP",
+        url: "https://viewprocessos.com.br/avaliacao-maturidade",
+        description: "Questionário de 8 etapas que avalia o grau de maturidade digital e operacional da sua empresa nas dimensões Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos.",
+        educationalLevel: "Empresarial",
+        about: [
+          { "@type": "Thing", name: "Maturidade operacional" },
+          { "@type": "Thing", name: "Transformação digital" },
+          { "@type": "Thing", name: "Reengenharia de processos" },
+          { "@type": "Thing", name: "Automação empresarial" },
+        ],
+        provider: {
+          "@type": "Organization",
+          name: "VIEW Reengenharia de Processos",
+          url: "https://viewprocessos.com.br",
+        },
       },
     ]}
   />
