@@ -15,15 +15,15 @@ const seoTags = (
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
-          { "@type": "ListItem", position: 2, name: "Avaliação de Maturidade", item: "https://viewprocessos.com.br/avaliacao-maturidade" },
+          { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
+          { "@type": "ListItem", position: 2, name: "Avaliação de Maturidade", item: "https://reengenhariaview.com.br/avaliacao-maturidade" },
         ],
       },
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         name: "Diagnóstico de Maturidade Operacional DISTIPP",
-        url: "https://viewprocessos.com.br/avaliacao-maturidade",
+        url: "https://reengenhariaview.com.br/avaliacao-maturidade",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         offers: {
@@ -36,7 +36,7 @@ const seoTags = (
         provider: {
           "@type": "Organization",
           name: "VIEW Reengenharia de Processos",
-          url: "https://viewprocessos.com.br",
+          url: "https://reengenhariaview.com.br",
         },
         featureList: [
           "Diagnóstico gratuito em 7 dimensões DISTIPP",
@@ -49,7 +49,7 @@ const seoTags = (
         "@context": "https://schema.org",
         "@type": "Quiz",
         name: "Diagnóstico de Maturidade Operacional — metodologia DISTIPP",
-        url: "https://viewprocessos.com.br/avaliacao-maturidade",
+        url: "https://reengenhariaview.com.br/avaliacao-maturidade",
         description: "Questionário de 8 etapas que avalia o grau de maturidade digital e operacional da sua empresa nas dimensões Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos.",
         educationalLevel: "Empresarial",
         about: [
@@ -61,7 +61,7 @@ const seoTags = (
         provider: {
           "@type": "Organization",
           name: "VIEW Reengenharia de Processos",
-          url: "https://viewprocessos.com.br",
+          url: "https://reengenhariaview.com.br",
         },
       },
     ]}

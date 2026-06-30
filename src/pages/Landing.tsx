@@ -42,7 +42,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "VIEW Reengenharia de Processos",
-  url: "https://viewprocessos.com.br/",
+  url: "https://reengenhariaview.com.br/",
 };
 
 const organizationJsonLd = {
@@ -50,8 +50,8 @@ const organizationJsonLd = {
   "@type": ["Organization", "ProfessionalService"],
   name: "VIEW Reengenharia de Processos",
   alternateName: "VIEW",
-  url: "https://viewprocessos.com.br",
-  logo: "https://viewprocessos.com.br/og-image.png",
+  url: "https://reengenhariaview.com.br",
+  logo: "https://reengenhariaview.com.br/og-image.png",
   description:
     "Empresa especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para gestores de PMEs. Metodologia exclusiva DISTIPP.",
   telephone: "+55-83-99565-0051",
@@ -147,8 +147,8 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "VIEW Reengenharia de Processos",
-  image: "https://viewprocessos.com.br/og-image.png",
-  url: "https://viewprocessos.com.br",
+  image: "https://reengenhariaview.com.br/og-image.png",
+  url: "https://reengenhariaview.com.br",
   telephone: "+55-83-99565-0051",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
@@ -182,7 +182,7 @@ const speakableJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "VIEW — Visibilidade e Controle Operacional para Empresas",
-  url: "https://viewprocessos.com.br/",
+  url: "https://reengenhariaview.com.br/",
   speakable: {
     "@type": "SpeakableSpecification",
     cssSelector: ["h1", "h2", "#faq", "#distip"],

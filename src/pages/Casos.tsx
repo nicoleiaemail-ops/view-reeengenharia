@@ -87,13 +87,28 @@ const casos = [
   },
 ];
 
+const casosFaqs = [
+  {
+    q: "A VIEW tem casos de sucesso em quais segmentos?",
+    a: "Sim. Os casos documentados incluem construção civil (manutenção de ISO 9001 e gestão de obra pelo celular) e alimentação (reorganização do fluxo de pedidos em restaurante). A metodologia se aplica a qualquer segmento com processos operacionais — indústria, serviços, varejo e logística inclusive.",
+  },
+  {
+    q: "Quanto tempo leva para os resultados aparecerem, como nos casos acima?",
+    a: "O diagnóstico gratuito é concluído em 48 horas. Os primeiros resultados de automação e sistema sob medida, como os relatados nos casos de construção civil e alimentação, costumam aparecer entre 3 e 6 meses após o início da implementação.",
+  },
+  {
+    q: "Esses resultados são exclusivos de empresas grandes?",
+    a: "Não. Os casos documentados são de PMEs — uma construtora e um restaurante — atendidas pela VIEW em Paraíba. A metodologia foi criada especificamente para empresas de 5 a 200 funcionários.",
+  },
+];
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
-      { "@type": "ListItem", position: 2, name: "Casos", item: "https://viewprocessos.com.br/casos" },
+      { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
+      { "@type": "ListItem", position: 2, name: "Casos", item: "https://reengenhariaview.com.br/casos" },
     ],
   },
   {
@@ -111,7 +126,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "VIEW Reengenharia de Processos",
-    url: "https://viewprocessos.com.br",
+    url: "https://reengenhariaview.com.br",
     review: casos.map((c) => ({
       "@type": "Review",
       author: { "@type": "Person", name: c.client },
@@ -124,6 +139,15 @@ const jsonLd = [
       reviewCount: String(casos.length),
       bestRating: "5",
     },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: casosFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   },
 ];
 
@@ -235,6 +259,29 @@ export default function Casos() {
             )}
           </article>
         ))}
+      </section>
+
+      {/* FAQ */}
+      <section className="px-[7%] py-20 border-t border-view-line">
+        <div className="max-w-[800px] mx-auto">
+          <div className="scroll-reveal text-center mb-12">
+            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">Dúvidas frequentes</div>
+            <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.5vw,2.1rem)] leading-[1.1]">
+              Perguntas sobre os casos de sucesso
+            </h2>
+          </div>
+          <div className="flex flex-col divide-y divide-view-line">
+            {casosFaqs.map((faq, i) => (
+              <details key={i} className="scroll-reveal group py-5" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-bold text-[.93rem] text-foreground hover:text-primary transition-colors">
+                  {faq.q}
+                  <span className="text-primary/60 text-[1.1rem] flex-shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <p className="mt-3 text-[.85rem] text-muted-foreground leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* CTA */}

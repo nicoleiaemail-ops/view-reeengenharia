@@ -137,7 +137,7 @@ const solucoesFaqs = [
 const providerRef = {
   "@type": "Organization",
   name: "VIEW Reengenharia de Processos",
-  url: "https://viewprocessos.com.br",
+  url: "https://reengenhariaview.com.br",
   telephone: "+55-83-99565-0051",
   email: "admin@reengenhariaview.com.br",
 };
@@ -147,8 +147,8 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Início", item: "https://viewprocessos.com.br/" },
-      { "@type": "ListItem", position: 2, name: "Soluções", item: "https://viewprocessos.com.br/solucoes" },
+      { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
+      { "@type": "ListItem", position: 2, name: "Soluções", item: "https://reengenhariaview.com.br/solucoes" },
     ],
   },
   {
@@ -159,7 +159,7 @@ const jsonLd = [
       "@type": "ListItem",
       position: i + 1,
       name: s.tag,
-      url: `https://viewprocessos.com.br/solucoes#${s.id}`,
+      url: `https://reengenhariaview.com.br/solucoes#${s.id}`,
     })),
   },
   {
@@ -170,7 +170,7 @@ const jsonLd = [
     provider: providerRef,
     description: "Agentes de IA autônomos, chatbots com IA para atendimento, automação de fluxos repetitivos e treinamento de equipes para uso prático de inteligência artificial no dia a dia operacional.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://viewprocessos.com.br/solucoes#ia-automacao",
+    url: "https://reengenhariaview.com.br/solucoes#ia-automacao",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
@@ -181,7 +181,7 @@ const jsonLd = [
     provider: providerRef,
     description: "Sistemas de gestão personalizados (não genéricos), dashboards de Business Intelligence em tempo real acessíveis pelo celular e análise de maturidade digital da empresa.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://viewprocessos.com.br/solucoes#sistemas-dados",
+    url: "https://reengenhariaview.com.br/solucoes#sistemas-dados",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
@@ -192,7 +192,7 @@ const jsonLd = [
     provider: providerRef,
     description: "Mapeamento, padronização e redesign completo dos fluxos operacionais. Eliminação de retrabalho, auditoria de processos e arquitetura empresarial com documentação clara (SOPs, checklists, fluxogramas).",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://viewprocessos.com.br/solucoes#reengenharia",
+    url: "https://reengenhariaview.com.br/solucoes#reengenharia",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
@@ -203,7 +203,7 @@ const jsonLd = [
     provider: providerRef,
     description: "Planejamento estratégico, análise de viabilidade de negócio, finanças corporativas (margem, custo, fluxo de caixa) e desenvolvimento de estruturas de governança baseadas em dados.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://viewprocessos.com.br/solucoes#consultoria-estrategica",
+    url: "https://reengenhariaview.com.br/solucoes#consultoria-estrategica",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
@@ -223,7 +223,7 @@ const jsonLd = [
     provider: providerRef,
     description: "Treinamentos práticos de IA para equipes, capacitação para construção de agentes próprios e implementação guiada de ferramentas de IA no cotidiano operacional da empresa.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://viewprocessos.com.br/solucoes#capacitacao",
+    url: "https://reengenhariaview.com.br/solucoes#capacitacao",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
 ];
