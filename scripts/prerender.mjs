@@ -12,7 +12,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
 
 // Rotas públicas (nunca inclui /admin ou /admin-login).
-const ROUTES = ["/", "/sobre", "/solucoes", "/avaliacao-maturidade", "/casos"];
+const ROUTES = [
+  "/",
+  "/sobre",
+  "/solucoes",
+  "/avaliacao-maturidade",
+  "/casos",
+  "/blog",
+  "/blog/metodologia-distipp-7-dimensoes-maturidade-operacional",
+];
 
 // Locais mais comuns do Chrome/Chromium por sistema operacional.
 const CHROME_CANDIDATES = [

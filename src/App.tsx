@@ -9,6 +9,8 @@ const About = lazy(() => import("./pages/About"));
 const Solucoes = lazy(() => import("./pages/Solucoes"));
 const AvaliacaoMaturidade = lazy(() => import("./pages/AvaliacaoMaturidade"));
 const Casos = lazy(() => import("./pages/Casos"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/solucoes" element={<Solucoes />} />
             <Route path="/avaliacao-maturidade" element={<AvaliacaoMaturidade />} />
             <Route path="/casos" element={<Casos />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
