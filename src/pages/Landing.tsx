@@ -154,14 +154,16 @@ const localBusinessJsonLd = {
   description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Avenida Presidente Epitácio Pessoa, Bairro dos Estados",
     addressLocality: "João Pessoa",
     addressRegion: "PB",
+    postalCode: "58030-000",
     addressCountry: "BR",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "-7.1195",
-    longitude: "-34.8450",
+    latitude: "-7.1193777",
+    longitude: "-34.8592312",
   },
   areaServed: [
     { "@type": "State", name: "Paraíba" },
@@ -169,7 +171,10 @@ const localBusinessJsonLd = {
     { "@type": "State", name: "Rio Grande do Norte" },
     { "@type": "Country", name: "Brasil" },
   ],
-  sameAs: ["https://www.instagram.com/reengenhariaview"],
+  sameAs: [
+    "https://www.instagram.com/reengenhariaview",
+    "https://maps.app.goo.gl/3eS9uGY33MLKijYL9",
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

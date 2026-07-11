@@ -68,7 +68,10 @@ const About = () => {
                 "Engenharia de produção",
               ],
               slogan: "Você não pode melhorar o que não consegue ver.",
-              sameAs: ["https://www.instagram.com/reengenhariaview"],
+              sameAs: [
+                "https://www.instagram.com/reengenhariaview",
+                "https://maps.app.goo.gl/3eS9uGY33MLKijYL9",
+              ],
             },
           },
           {
