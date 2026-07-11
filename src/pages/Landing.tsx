@@ -61,7 +61,6 @@ const organizationJsonLd = {
     telephone: "+55-83-99565-0051",
     contactType: "customer service",
     availableLanguage: "Portuguese",
-    contactOption: "TollFree",
   },
   foundingDate: "2024",
   areaServed: [
