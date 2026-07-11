@@ -154,7 +154,7 @@ const localBusinessJsonLd = {
   description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Avenida Presidente Epitácio Pessoa, Bairro dos Estados",
+    streetAddress: "Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados",
     addressLocality: "João Pessoa",
     addressRegion: "PB",
     postalCode: "58030-000",
