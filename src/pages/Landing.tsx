@@ -154,13 +154,14 @@ const localBusinessJsonLd = {
   description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
   address: {
     "@type": "PostalAddress",
+    addressLocality: "João Pessoa",
     addressRegion: "PB",
     addressCountry: "BR",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "-7.2249",
-    longitude: "-35.8809",
+    latitude: "-7.1195",
+    longitude: "-34.8450",
   },
   areaServed: [
     { "@type": "State", name: "Paraíba" },
