@@ -12,6 +12,15 @@ https://reengenhariaview.com.br
 - [Soluções](https://reengenhariaview.com.br/solucoes): Detalhamento das 5 áreas de atuação — IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica, Capacitação.
 - [Sobre](https://reengenhariaview.com.br/sobre): Origem da empresa, missão, visão, valores, 6 princípios operacionais e a metodologia DISTIPP em 5 passos.
 - [Avaliação de Maturidade](https://reengenhariaview.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
+- [Casos](https://reengenhariaview.com.br/casos): Casos de sucesso documentados em construção civil e alimentação, com desafio, solução e resultado de cada cliente.
+- [Blog](https://reengenhariaview.com.br/blog): Artigos sobre reengenharia de processos, maturidade operacional, automação e visibilidade em tempo real para PMEs.
+
+## Artigos
+
+- [Metodologia DISTIPP: as 7 dimensões da maturidade operacional de uma empresa](https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional): O que cada dimensão do DISTIPP mede e como o framework indica por onde uma PME deve começar a melhorar.
+- [Reengenharia de processos: o que é e quando sua empresa precisa](https://reengenhariaview.com.br/blog/reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa): Definição de reengenharia de processos, como funciona na prática e os sinais de que uma empresa precisa repensar como opera.
+- [Automação de processos para PMEs: por onde começar sem gastar muito](https://reengenhariaview.com.br/blog/automacao-de-processos-para-pmes-por-onde-comecar): Critérios para escolher o primeiro processo a automatizar e erros comuns em automação de PMEs.
+- [Visibilidade operacional em tempo real: o que é e por que muda a gestão](https://reengenhariaview.com.br/blog/visibilidade-operacional-em-tempo-real): O que é visibilidade operacional, o que muda na tomada de decisão e como implementá-la sem trocar todo o sistema.
 
 ## O que é a VIEW
 

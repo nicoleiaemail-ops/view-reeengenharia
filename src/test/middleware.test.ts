@@ -1,5 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import middleware from "../../middleware";
+import { articles } from "../content/blog";
+
+const SLUG = articles[0].slug;
 
 const MD = "# VIEW\n\nConteúdo em markdown.\n";
 const HTML = '<!doctype html><html lang="pt-BR"><head></head><body></body></html>';
@@ -44,10 +47,10 @@ describe("negociação de conteúdo para agentes", () => {
   });
 
   it("mapeia rotas aninhadas para /_md/<rota>.md", async () => {
-    const fetchMock = mockOrigin(["/_md/blog/artigo-x.md"]);
-    const res = await get("/blog/artigo-x", "text/markdown, text/html;q=0.9");
+    const fetchMock = mockOrigin([`/_md/blog/${SLUG}.md`]);
+    const res = await get(`/blog/${SLUG}`, "text/markdown, text/html;q=0.9");
     expect(await res.text()).toBe(MD);
-    expect(String(fetchMock.mock.calls[0][0])).toContain("/_md/blog/artigo-x.md");
+    expect(String(fetchMock.mock.calls[0][0])).toContain(`/_md/blog/${SLUG}.md`);
   });
 
   it("cai no HTML quando a rota não tem espelho markdown (rewrite de SPA devolve 200)", async () => {
@@ -85,5 +88,64 @@ describe("negociação de conteúdo para agentes", () => {
     mockOrigin(["/_md/index.md"]);
     const res = await get("/", "text/markdown", "POST");
     expect(isPassThrough(res)).toBe(true);
+  });
+});
+
+describe("404 real em vez de soft 404", () => {
+  const HTML_ACCEPT = "text/html,application/xhtml+xml,*/*;q=0.8";
+
+  it("responde 404 e noindex para rota inexistente", async () => {
+    mockOrigin([]);
+    const res = await get("/pagina-que-nao-existe", HTML_ACCEPT);
+    expect(res.status).toBe(404);
+    expect(res.headers.get("X-Robots-Tag")).toBe("noindex");
+    expect(await res.text()).toBe(HTML);
+  });
+
+  it("responde 404 para slug de blog inexistente", async () => {
+    mockOrigin([]);
+    const res = await get("/blog/artigo-que-nunca-existiu", HTML_ACCEPT);
+    expect(res.status).toBe(404);
+  });
+
+  it("mantém 200 nas rotas conhecidas, com e sem barra final", async () => {
+    mockOrigin([]);
+    for (const path of ["/", "/casos", "/casos/", "/blog", `/blog/${SLUG}`]) {
+      const res = await get(path, HTML_ACCEPT);
+      expect(isPassThrough(res), `esperava pass-through em ${path}`).toBe(true);
+    }
+  });
+
+  it("não transforma arquivo estático de public/ em 404", async () => {
+    mockOrigin([]);
+    for (const path of ["/llms.txt", "/favicon.ico", "/og-image.png"]) {
+      const res = await get(path, HTML_ACCEPT);
+      expect(isPassThrough(res), `esperava pass-through em ${path}`).toBe(true);
+    }
+  });
+
+  it("deixa /admin passar sem Link headers", async () => {
+    mockOrigin([]);
+    const res = await get("/admin", HTML_ACCEPT);
+    expect(isPassThrough(res)).toBe(true);
+    expect(res.headers.get("Link")).toBeNull();
+  });
+
+  it("responde HEAD 404 sem corpo", async () => {
+    mockOrigin([]);
+    const res = await get("/nao-existe", HTML_ACCEPT, "HEAD");
+    expect(res.status).toBe(404);
+    expect(await res.text()).toBe("");
+  });
+
+  it("ainda responde 404 se a origem falhar ao buscar o index.html", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => {
+        throw new Error("network down");
+      })
+    );
+    const res = await get("/nao-existe", HTML_ACCEPT);
+    expect(res.status).toBe(404);
   });
 });

@@ -5,12 +5,7 @@ import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
 
-const seoTags = (
-  <SEO
-    title="Avaliação de Maturidade Empresarial — Diagnóstico DISTIPP Gratuito"
-    description="Descubra em 5 minutos o nível de maturidade operacional da sua empresa. Diagnóstico gratuito baseado na metodologia DISTIPP da VIEW — 7 dimensões, resultado imediato."
-    path="/avaliacao-maturidade"
-    jsonLd={[
+const SEO_JSONLD = [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -64,9 +59,7 @@ const seoTags = (
           url: "https://reengenhariaview.com.br",
         },
       },
-    ]}
-  />
-);
+];
 import { Footer } from "@/components/Footer";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
@@ -78,6 +71,115 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowLeft, ArrowRight, Send, CheckCircle2 } from "lucide-react";
 
 const TOTAL_STEPS = 8;
+
+// As 7 dimensões DISTIPP explicadas na tela inicial. Além de orientar quem vai
+// responder, é o conteúdo que torna a página indexável: sem isto a rota
+// pré-renderizada tinha só o H1 e três parágrafos.
+const DIMENSOES = [
+  {
+    letra: "D",
+    nome: "Dados",
+    texto:
+      "Se as decisões da empresa nascem de números confiáveis ou de intuição. Avalia a existência de indicadores, o acesso a eles e o uso de análise para antecipar tendências.",
+  },
+  {
+    letra: "I",
+    nome: "Integração",
+    texto:
+      "Como a informação circula entre setores. Falhas de comunicação entre comercial, operação e financeiro são a origem mais comum de retrabalho e prazo perdido.",
+  },
+  {
+    letra: "S",
+    nome: "Sistemas",
+    texto:
+      "Se o sistema de gestão atende à operação real ou se a equipe trabalha em volta dele com planilhas paralelas, o que costuma indicar um ERP mal ajustado ao negócio.",
+  },
+  {
+    letra: "T",
+    nome: "Tecnologia",
+    texto:
+      "O grau de digitalização dos registros operacionais — quanto ainda depende de papel, WhatsApp e memória das pessoas, e se há dashboards acompanhando a operação.",
+  },
+  {
+    letra: "I",
+    nome: "Inovação",
+    texto:
+      "A capacidade de testar e adotar novas práticas. Mede se existe melhoria contínua estruturada e orçamento dedicado, ou se mudanças só ocorrem sob crise.",
+  },
+  {
+    letra: "P",
+    nome: "Pessoas",
+    texto:
+      "Autonomia e responsabilização da equipe. Avalia se o desempenho individual é visível e se é possível reconhecer ou corrigir com base em fatos.",
+  },
+  {
+    letra: "P",
+    nome: "Processos",
+    texto:
+      "Mapeamento, padronização e escalabilidade dos fluxos. Verifica se a empresa cresceria em volume ou equipe sem perder controle e qualidade.",
+  },
+];
+
+const COMO_FUNCIONA = [
+  {
+    titulo: "Você responde 8 etapas",
+    texto:
+      "São 5 perguntas por dimensão, em escala ou múltipla escolha, mais um bloco inicial de identificação. Leva menos de 5 minutos e não exige preparação nem consulta a documentos.",
+  },
+  {
+    titulo: "A VIEW analisa as respostas",
+    texto:
+      "Nossa equipe cruza as respostas com o padrão do seu segmento e identifica quais dimensões estão travando o crescimento — e quais já estão maduras o suficiente para sustentar mudança.",
+  },
+  {
+    titulo: "Você recebe o diagnóstico em até 48 horas",
+    texto:
+      "Um retorno com o nível de maturidade por dimensão, os gargalos prioritários e as oportunidades de melhoria mais concretas para o seu caso. Sem compromisso de contratação.",
+  },
+];
+
+const FAQS = [
+  {
+    q: "A avaliação de maturidade é realmente gratuita?",
+    a: "Sim. O diagnóstico é gratuito e não exige contratação. A VIEW usa a avaliação como primeiro contato para entender a operação antes de propor qualquer trabalho.",
+  },
+  {
+    q: "Quanto tempo leva para responder?",
+    a: "Menos de 5 minutos. São 8 etapas com perguntas objetivas em escala ou múltipla escolha, sem necessidade de levantar dados ou consultar relatórios.",
+  },
+  {
+    q: "O que é a metodologia DISTIPP?",
+    a: "DISTIPP é o framework de diagnóstico da VIEW que mede a maturidade operacional de uma empresa em sete dimensões: Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos. Cada dimensão revela um tipo diferente de gargalo, e a combinação delas mostra por onde começar a melhorar.",
+  },
+  {
+    q: "Quando recebo o resultado?",
+    a: "Em até 48 horas após o envio. O retorno traz o nível de maturidade por dimensão, os gargalos prioritários e as oportunidades de melhoria específicas do seu negócio.",
+  },
+  {
+    q: "Preciso ser uma empresa grande para fazer a avaliação?",
+    a: "Não. A avaliação foi desenhada para pequenas e médias empresas em crescimento — justamente o momento em que os processos informais começam a virar gargalo. Atendemos construção civil, indústria, logística, tecnologia, serviços e comércio.",
+  },
+];
+
+const seoTags = (
+  <SEO
+    title="Avaliação de Maturidade Empresarial — Diagnóstico DISTIPP Gratuito"
+    description="Descubra em 5 minutos o nível de maturidade operacional da sua empresa. Diagnóstico gratuito baseado na metodologia DISTIPP da VIEW — 7 dimensões, resultado em até 48h."
+    path="/avaliacao-maturidade"
+    jsonLd={[
+      ...SEO_JSONLD,
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: FAQS.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ]}
+  />
+);
 
 const segments = [
   "Construção civil",
@@ -243,8 +345,8 @@ export default function AvaliacaoMaturidade() {
       <>
         {seoTags}
         <Navbar />
-        <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
-          <div className="max-w-2xl text-center space-y-6">
+        <main className="min-h-screen px-[7%] pt-32 pb-16">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
             <span className="inline-block font-display text-[.6rem] tracking-[.25em] uppercase text-primary border border-primary/20 rounded-full px-4 py-1.5">
               Diagnóstico Gratuito
             </span>
@@ -269,6 +371,88 @@ export default function AvaliacaoMaturidade() {
             >
               Iniciar Avaliação
             </Button>
+          </div>
+
+          <div className="max-w-2xl mx-auto mt-24 space-y-16 text-left">
+            <section>
+              <h2 className="font-display font-extrabold text-xl text-foreground mb-3">
+                O que a avaliação mede
+              </h2>
+              <p className="text-muted-foreground text-[.88rem] leading-relaxed mb-8">
+                A avaliação segue o DISTIPP, framework de diagnóstico da VIEW que
+                mede a maturidade operacional em sete dimensões. Cada uma revela um
+                tipo diferente de gargalo — e é a combinação delas que mostra por
+                onde a mudança precisa começar.
+              </p>
+              <ul className="space-y-6">
+                {DIMENSOES.map(({ letra, nome, texto }) => (
+                  <li key={nome} className="flex gap-4">
+                    <span className="font-display font-extrabold text-primary text-lg leading-none pt-0.5 w-6 shrink-0">
+                      {letra}
+                    </span>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground text-[.92rem] mb-1">
+                        {nome}
+                      </h3>
+                      <p className="text-muted-foreground text-[.85rem] leading-relaxed">
+                        {texto}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-display font-extrabold text-xl text-foreground mb-8">
+                Como funciona
+              </h2>
+              <ol className="space-y-6">
+                {COMO_FUNCIONA.map(({ titulo, texto }, i) => (
+                  <li key={titulo} className="flex gap-4">
+                    <span className="font-display font-extrabold text-primary text-lg leading-none pt-0.5 w-6 shrink-0">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground text-[.92rem] mb-1">
+                        {titulo}
+                      </h3>
+                      <p className="text-muted-foreground text-[.85rem] leading-relaxed">
+                        {texto}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            <section>
+              <h2 className="font-display font-extrabold text-xl text-foreground mb-8">
+                Perguntas frequentes
+              </h2>
+              <dl className="space-y-6">
+                {FAQS.map(({ q, a }) => (
+                  <div key={q}>
+                    <dt className="font-display font-bold text-foreground text-[.92rem] mb-1.5">
+                      {q}
+                    </dt>
+                    <dd className="text-muted-foreground text-[.85rem] leading-relaxed">
+                      {a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            <div className="text-center pt-4">
+              <Button
+                onClick={() => setStep(1)}
+                size="lg"
+                className="bg-primary text-primary-foreground font-display font-extrabold tracking-wide text-[.85rem] px-10"
+              >
+                Iniciar Avaliação
+              </Button>
+            </div>
           </div>
         </main>
         <Footer />
