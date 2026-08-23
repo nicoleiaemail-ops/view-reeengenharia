@@ -96,6 +96,20 @@ Resultado: atendimento mais rápido, redução de custos operacionais, gargalos 
 
 Construção civil, indústria, alimentação, comércio/varejo, serviços, logística, tecnologia, agronegócio e saúde.
 
+## Recursos para agentes
+
+- `/.well-known/api-catalog` — catálogo de recursos legíveis por máquina (application/linkset+json).
+- `/.well-known/agent-skills/index.json` — índice de Agent Skills publicadas pela VIEW.
+- `/.well-known/agent-skills/diagnostico-maturidade-distipp/SKILL.md` — como conduzir o diagnóstico DISTIPP.
+- `/.well-known/agent-skills/solicitar-diagnostico-view/SKILL.md` — como preparar a solicitação de diagnóstico.
+- `/auth.md` — autenticação: nenhuma. Todo o conteúdo é público e anônimo.
+- `/sitemap.xml` — páginas públicas.
+- Qualquer página pública devolve Markdown quando a requisição envia `Accept: text/markdown`.
+- Preferências de uso do conteúdo em `/robots.txt`: `search=yes, ai-input=yes, ai-train=yes`.
+
+Nenhuma ação (pedido de diagnóstico, contato, envio de formulário) é executada por API:
+o envio é sempre feito por uma pessoa, pelos canais de contato acima.
+
 ## Valores e princípios
 
 **Valores:** Clareza antes da tecnologia · Dados antes de opinião · Simplicidade operacional · Melhoria contínua (Kaizen) · Eficiência acima de complexidade · Crescimento sustentável.

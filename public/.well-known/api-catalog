@@ -1,0 +1,36 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://reengenhariaview.com.br/",
+      "service-doc": [
+        {
+          "href": "https://reengenhariaview.com.br/llms.txt",
+          "type": "text/markdown",
+          "title": "VIEW — documentação em texto para agentes e LLMs (llms.txt)",
+          "hreflang": ["pt-BR"]
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://reengenhariaview.com.br/llms.txt",
+          "type": "text/markdown",
+          "title": "Descrição completa da empresa, serviços, metodologia e contatos"
+        }
+      ],
+      "alternate": [
+        {
+          "href": "https://reengenhariaview.com.br/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap XML de todas as páginas públicas"
+        }
+      ],
+      "index": [
+        {
+          "href": "https://reengenhariaview.com.br/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Índice de Agent Skills publicadas pela VIEW"
+        }
+      ]
+    }
+  ]
+}

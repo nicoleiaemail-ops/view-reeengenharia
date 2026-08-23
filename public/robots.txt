@@ -32,7 +32,13 @@ Allow: /
 User-agent: Gemini
 Allow: /
 
+# Content Signals (contentsignals.org) — preferências de uso do conteúdo público.
+#   search    = indexação e link em buscadores tradicionais
+#   ai-input  = uso do conteúdo como fonte citada em respostas de IA (RAG/grounding)
+#   ai-train  = uso do conteúdo para treinar modelos generativos
+# A VIEW libera os três: o objetivo é ser encontrada e citada por buscadores e por IA.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Disallow: /admin
 Disallow: /admin-login

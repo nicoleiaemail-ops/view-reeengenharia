@@ -1,0 +1,89 @@
+import { afterEach, describe, expect, it, vi } from "vitest";
+import middleware from "../../middleware";
+
+const MD = "# VIEW\n\nConteúdo em markdown.\n";
+const HTML = '<!doctype html><html lang="pt-BR"><head></head><body></body></html>';
+
+/** Simula o Vercel: /_md/<rota>.md existe; o resto cai no rewrite de SPA (index.html, 200). */
+function mockOrigin(available: string[]) {
+  const fetchMock = vi.fn(async (input: URL | RequestInfo) => {
+    const path = new URL(String(input)).pathname;
+    return available.includes(path)
+      ? new Response(MD, { status: 200, headers: { "content-type": "text/markdown" } })
+      : new Response(HTML, { status: 200, headers: { "content-type": "text/html" } });
+  });
+  vi.stubGlobal("fetch", fetchMock);
+  return fetchMock;
+}
+
+const get = (path: string, accept: string, method = "GET") =>
+  middleware(new Request(`https://reengenhariaview.com.br${path}`, { method, headers: { accept } }));
+
+/** next() do @vercel/edge marca a resposta para o Vercel continuar servindo o HTML. */
+const isPassThrough = (res: Response) => res.headers.get("x-middleware-next") === "1";
+
+afterEach(() => vi.unstubAllGlobals());
+
+describe("negociação de conteúdo para agentes", () => {
+  it("serve HTML para navegador, com Vary e Link", async () => {
+    mockOrigin(["/_md/index.md"]);
+    const res = await get("/", "text/html,application/xhtml+xml,*/*;q=0.8");
+    expect(isPassThrough(res)).toBe(true);
+    expect(res.headers.get("Vary")).toBe("Accept");
+    expect(res.headers.get("Link")).toContain('rel="api-catalog"');
+  });
+
+  it("serve markdown quando o agente pede text/markdown", async () => {
+    mockOrigin(["/_md/index.md"]);
+    const res = await get("/", "text/markdown");
+    expect(res.status).toBe(200);
+    expect(res.headers.get("Content-Type")).toBe("text/markdown; charset=utf-8");
+    expect(res.headers.get("Vary")).toBe("Accept");
+    expect(Number(res.headers.get("x-markdown-tokens"))).toBeGreaterThan(0);
+    expect(await res.text()).toBe(MD);
+  });
+
+  it("mapeia rotas aninhadas para /_md/<rota>.md", async () => {
+    const fetchMock = mockOrigin(["/_md/blog/artigo-x.md"]);
+    const res = await get("/blog/artigo-x", "text/markdown, text/html;q=0.9");
+    expect(await res.text()).toBe(MD);
+    expect(String(fetchMock.mock.calls[0][0])).toContain("/_md/blog/artigo-x.md");
+  });
+
+  it("cai no HTML quando a rota não tem espelho markdown (rewrite de SPA devolve 200)", async () => {
+    mockOrigin([]);
+    const res = await get("/casos", "text/markdown");
+    expect(isPassThrough(res)).toBe(true);
+    expect(res.headers.get("Content-Type")).not.toBe("text/markdown; charset=utf-8");
+  });
+
+  it("respeita text/markdown;q=0 e serve HTML", async () => {
+    mockOrigin(["/_md/index.md"]);
+    const res = await get("/", "text/html, text/markdown;q=0");
+    expect(isPassThrough(res)).toBe(true);
+  });
+
+  it("cai no HTML se a origem falhar", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => {
+        throw new Error("network down");
+      })
+    );
+    const res = await get("/", "text/markdown");
+    expect(isPassThrough(res)).toBe(true);
+  });
+
+  it("responde HEAD sem corpo, mantendo os cabeçalhos", async () => {
+    mockOrigin(["/_md/index.md"]);
+    const res = await get("/", "text/markdown", "HEAD");
+    expect(res.headers.get("Content-Type")).toBe("text/markdown; charset=utf-8");
+    expect(await res.text()).toBe("");
+  });
+
+  it("não intercepta POST", async () => {
+    mockOrigin(["/_md/index.md"]);
+    const res = await get("/", "text/markdown", "POST");
+    expect(isPassThrough(res)).toBe(true);
+  });
+});
