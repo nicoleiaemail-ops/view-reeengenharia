@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import middleware from "../../middleware";
+import middleware, { __BLOG_SLUGS_FOR_TESTS } from "../../middleware";
 import { articles } from "../content/blog";
 
 const SLUG = articles[0].slug;
@@ -93,6 +93,14 @@ describe("negociação de conteúdo para agentes", () => {
 
 describe("404 real em vez de soft 404", () => {
   const HTML_ACCEPT = "text/html,application/xhtml+xml,*/*;q=0.8";
+
+  // O middleware não pode importar src/content/blog (o bundler do Vercel não
+  // resolve o import e o emite literal, quebrando em runtime), então a lista de
+  // slugs é duplicada lá. Este teste é o que impede as duas divergirem: sem ele,
+  // publicar um artigo novo faria a rota dele responder 404.
+  it("a lista de slugs do middleware está sincronizada com o conteúdo do blog", () => {
+    expect([...__BLOG_SLUGS_FOR_TESTS].sort()).toEqual(articles.map((a) => a.slug).sort());
+  });
 
   it("responde 404 e noindex para rota inexistente", async () => {
     mockOrigin([]);

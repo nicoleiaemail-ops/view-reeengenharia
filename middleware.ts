@@ -14,7 +14,6 @@
 // com status 404 de verdade, que é o que os crawlers precisam ver.
 
 import { next } from "@vercel/edge";
-import { articles } from "./src/content/blog";
 
 export const config = {
   // Tudo que não é asset, arquivo estático ou rota interna do Vercel: as rotas
@@ -36,7 +35,19 @@ const STATIC_ROUTES = new Set([
 // (são privadas e já saem com noindex).
 const PRIVATE_ROUTES = new Set(["/admin", "/admin-login"]);
 
-const BLOG_SLUGS = new Set(articles.map((a) => a.slug));
+// Slugs do blog repetidos aqui de propósito. O bundler do middleware do Vercel
+// não resolve o import de src/content/blog (moduleResolution node16 exige
+// extensão explícita) e emite o import literal, que quebra em runtime — o
+// resultado seria 404 em todos os artigos. Um teste em src/test/middleware.test.ts
+// falha se esta lista divergir de src/content/blog.
+const BLOG_SLUGS = new Set([
+  "metodologia-distipp-7-dimensoes-maturidade-operacional",
+  "reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa",
+  "automacao-de-processos-para-pmes-por-onde-comecar",
+  "visibilidade-operacional-em-tempo-real",
+]);
+
+export const __BLOG_SLUGS_FOR_TESTS = BLOG_SLUGS;
 
 // Arquivos servidos direto de public/ (llms.txt, favicon.ico, og-image.png…).
 // O matcher não consegue distinguir "rota inexistente" de "arquivo estático",
