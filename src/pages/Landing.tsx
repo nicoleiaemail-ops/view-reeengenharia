@@ -9,29 +9,22 @@ import { Solution } from "@/components/Solution";
 import { DISTIP } from "@/components/DISTIP";
 import { Results } from "@/components/Results";
 import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
+import { FAQ, faqItems } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
-const faqs = [
-  { q: "O que é reengenharia de processos?", a: "Reengenharia de processos é o redesign completo de como sua empresa funciona — substituindo rotinas manuais, planilhas descentralizadas e decisões baseadas em achismo por fluxos digitais, automatizados e orientados a dados em tempo real." },
-  { q: "O que é a metodologia DISTIPP?", a: "DISTIPP é a metodologia exclusiva da VIEW para diagnóstico de maturidade empresarial. Analisa sete dimensões: Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos. Com base nesse mapeamento, a VIEW define quais áreas priorizar para gerar mais resultado." },
-  { q: "Quanto tempo leva para ver resultados?", a: "O diagnóstico gratuito é concluído em 48 horas. Projetos de automação costumam ter primeiros resultados visíveis entre 3 e 6 meses após o início da implementação." },
-  { q: "Qual a diferença entre automação e reengenharia de processos?", a: "Reengenharia redesenha como o processo funciona — elimina etapas desnecessárias, padroniza fluxos e define responsabilidades. Automação executa processos já bem definidos sem intervenção humana. A VIEW sempre faz reengenharia antes de automatizar: não automatizamos o caos." },
-  { q: "A VIEW atende empresas de qualquer segmento?", a: "Sim. Já atuamos em construção civil, alimentação, indústria, serviços e varejo. Atendemos presencialmente em PB, PE e RN, e remotamente em todo o Brasil." },
-  { q: "Como funciona o diagnóstico gratuito?", a: "O diagnóstico é uma análise inicial da sua operação feita pela equipe VIEW. Em até 48 horas identificamos os principais gargalos, custos ocultos e oportunidades de automação — e apresentamos um caminho claro, sem compromisso e sem jargão técnico." },
-  { q: "A VIEW vende software?", a: "Não. Entregamos execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo. O software é uma consequência do processo bem estruturado, não o ponto de partida." },
-  { q: "O que é maturidade operacional de uma empresa?", a: "Maturidade operacional é o grau em que uma empresa tem seus processos documentados, dados centralizados, tecnologia integrada e equipes orientadas por indicadores. Empresas com alta maturidade tomam decisões mais rápidas, cometem menos erros e escalam com mais controle." },
-  { q: "Qual o investimento?", a: "O diagnóstico é 100% gratuito e sem compromisso. O investimento do projeto é definido após entender o escopo. O retorno sobre o investimento é mensurável desde as primeiras semanas." },
-  { q: "A VIEW atende pequenas e médias empresas?", a: "Sim. A VIEW foi criada especificamente para PMEs que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio. Atendemos empresas de 5 a 200 funcionários." },
-];
-
+/*
+  As perguntas eram declaradas duas vezes: aqui, para o JSON-LD, e outra vez
+  dentro do componente FAQ, para a tela. As duas cópias já haviam divergido em
+  quatro respostas — o que o Google lia não era mais o que o visitante lia.
+  Agora o schema é gerado a partir da mesma lista que renderiza a seção.
+*/
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
+  mainEntity: faqItems.map((f) => ({
     "@type": "Question",
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -54,11 +47,11 @@ const organizationJsonLd = {
   logo: "https://reengenhariaview.com.br/og-image.png",
   description:
     "Empresa especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para gestores de PMEs. Metodologia exclusiva DISTIPP.",
-  telephone: "+55-83-99565-0051",
+  telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-83-99565-0051",
+    telephone: "+55-83-99322-4878",
     contactType: "customer service",
     availableLanguage: "Portuguese",
   },
@@ -134,12 +127,11 @@ const organizationJsonLd = {
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
     },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "2",
-    bestRating: "5",
-  },
+  // Havia aqui um aggregateRating de "5,0 com 2 avaliações". Nota máxima
+  // apoiada em duas avaliações é o padrão que o Google trata como rich snippet
+  // abusivo, e para um leitor humano soa pior do que não ter nota nenhuma. Os
+  // depoimentos individuais continuam declarados acima, que é o que de fato
+  // existe. Reintroduza a nota agregada quando houver volume real.
 };
 
 const localBusinessJsonLd = {
@@ -148,7 +140,7 @@ const localBusinessJsonLd = {
   name: "VIEW Reengenharia de Processos",
   image: "https://reengenhariaview.com.br/og-image.png",
   url: "https://reengenhariaview.com.br",
-  telephone: "+55-83-99565-0051",
+  telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
   description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
@@ -221,13 +213,23 @@ const Landing = () => {
       />
       <Navbar />
       <Hero />
-      <Servicos />
-      <Results />
-      <DISTIP />
+      {/*
+        A ordem anterior era Hero → Serviços → Resultados → DISTIPP → Dores →
+        Custo → Solução → Prova → FAQ → Form: as cinco áreas de serviço e a
+        metodologia apareciam antes de o problema ter sido estabelecido, e o
+        visitante era apresentado à solução de algo que ainda não tinha
+        reconhecido como dor.
+
+        Agora: dor → custo da dor → solução → como fazemos → prova → método →
+        dúvidas → oferta.
+      */}
       <Pains />
       <CostOfNotSeeing />
       <Solution />
+      <Servicos />
+      <Results />
       <Testimonials />
+      <DISTIP />
       <FAQ />
       <ContactForm />
       <Footer />

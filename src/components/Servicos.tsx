@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { PRIMARY_HREF, PRIMARY_LABEL } from "./CTA";
+import { EVENTS, track } from "@/lib/analytics";
 
 const areas = [
   {
@@ -99,10 +101,11 @@ export function Servicos() {
             </p>
           </div>
           <a
-            href="#diagnostico"
-            className="inline-flex items-center gap-2 bg-background text-foreground px-5 py-3 rounded-md font-display font-extrabold text-[.8rem] tracking-[.06em] no-underline hover:opacity-85 transition-opacity self-start"
+            href={PRIMARY_HREF}
+            onClick={() => track(EVENTS.ctaClick, { cta: "primary", location: "servicos" })}
+            className="inline-flex items-center gap-2 bg-background text-foreground px-5 py-3 rounded-md font-display font-extrabold text-[.82rem] tracking-[.06em] no-underline hover:opacity-85 transition-opacity self-start"
           >
-            Diagnóstico grátis →
+            {PRIMARY_LABEL} →
           </a>
         </div>
       </div>

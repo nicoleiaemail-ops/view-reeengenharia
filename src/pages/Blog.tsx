@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BlogCTA } from "@/components/BlogCTA";
 import { articles } from "@/content/blog";
 
 const SITE_URL = "https://reengenhariaview.com.br";
@@ -89,6 +90,10 @@ export default function Blog() {
               <span className="text-[.82rem] text-primary font-display font-semibold">Ler artigo →</span>
             </Link>
           ))}
+        </div>
+
+        <div className="max-w-[900px] mx-auto">
+          <BlogCTA location="blog_index" />
         </div>
       </section>
 

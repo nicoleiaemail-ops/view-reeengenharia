@@ -29,6 +29,7 @@ const STATIC_ROUTES = new Set([
   "/avaliacao-maturidade",
   "/casos",
   "/blog",
+  "/privacidade",
 ]);
 
 // Rotas reais que não devem receber Link headers nem espelho Markdown

@@ -11,7 +11,7 @@ export function Footer() {
             <ViewLogo size={36} />
             <div>
               <div className="font-display font-bold text-[.95rem] tracking-[.12em]">VIEW</div>
-              <div className="text-[.38rem] tracking-[.2em] text-muted-foreground uppercase mt-0.5">Reengenharia de Processos</div>
+              <div className="text-[.56rem] tracking-[.18em] text-muted-foreground uppercase mt-0.5">Reengenharia de Processos</div>
             </div>
           </div>
           <p className="text-[.78rem] text-muted-foreground leading-relaxed max-w-[280px]">
@@ -45,12 +45,12 @@ export function Footer() {
           <ul className="flex flex-col gap-2.5">
             <li>
               <a
-                href="https://wa.me/558399565051"
+                href="https://wa.me/5583993224878"
                 className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp: (83) 9 9565-0051
+                WhatsApp: (83) 9 9322-4878
               </a>
             </li>
             <li>
@@ -70,10 +70,15 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-view-line pt-6 flex items-center justify-between flex-wrap gap-3">
-        <div className="text-[.7rem] text-foreground/[.30]">© 2026 VIEW Reengenharia de Processos. Todos os direitos reservados.</div>
-        <Link to="/admin-login" className="text-[.65rem] text-foreground/[.20] hover:text-foreground/50 transition-colors">
-          Área restrita
-        </Link>
+        <div className="text-[.72rem] text-muted-foreground/80">© 2026 VIEW Reengenharia de Processos. Todos os direitos reservados.</div>
+        <div className="flex items-center gap-4">
+          <Link to="/privacidade" className="text-[.72rem] text-muted-foreground/80 hover:text-foreground transition-colors">
+            Política de Privacidade
+          </Link>
+          <Link to="/admin-login" className="text-[.68rem] text-muted-foreground/50 hover:text-foreground transition-colors">
+            Área restrita
+          </Link>
+        </div>
       </div>
     </footer>
   );

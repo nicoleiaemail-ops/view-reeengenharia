@@ -1,9 +1,17 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
+import { DistippRadar } from "@/components/DistippRadar";
+import { EVENTS, track } from "@/lib/analytics";
+import {
+  calcularResultado,
+  DESCRICAO_NIVEL,
+  RECOMENDACAO,
+  type Resultado,
+} from "@/lib/distipp-score";
 
 const SEO_JSONLD = [
       {
@@ -122,19 +130,19 @@ const DIMENSOES = [
 
 const COMO_FUNCIONA = [
   {
-    titulo: "Você responde 8 etapas",
+    titulo: "Você responde as 7 dimensões",
     texto:
-      "São 5 perguntas por dimensão, em escala ou múltipla escolha, mais um bloco inicial de identificação. Leva menos de 5 minutos e não exige preparação nem consulta a documentos.",
+      "São 5 perguntas por dimensão, em escala ou múltipla escolha. Leva menos de 5 minutos e não exige preparação nem consulta a documentos. A identificação fica para o fim.",
   },
   {
-    titulo: "A VIEW analisa as respostas",
+    titulo: "Seu score aparece na hora",
     texto:
-      "Nossa equipe cruza as respostas com o padrão do seu segmento e identifica quais dimensões estão travando o crescimento — e quais já estão maduras o suficiente para sustentar mudança.",
+      "Ao terminar, você vê na própria tela a pontuação geral, o radar das sete dimensões e as duas que a VIEW priorizaria na sua empresa. Sem esperar, sem depender de email.",
   },
   {
-    titulo: "Você recebe o diagnóstico em até 48 horas",
+    titulo: "O relatório completo chega em até 48 horas",
     texto:
-      "Um retorno com o nível de maturidade por dimensão, os gargalos prioritários e as oportunidades de melhoria mais concretas para o seu caso. Sem compromisso de contratação.",
+      "Nossa equipe cruza suas respostas com o padrão do seu segmento e envia a leitura detalhada de cada dimensão, com os gargalos prioritários e o plano de ação sugerido. Sem compromisso de contratação.",
   },
 ];
 
@@ -256,11 +264,11 @@ function TextField({ label, value, onChange }: { label: string; value: string; o
 type FormData = Record<string, string>;
 
 export default function AvaliacaoMaturidade() {
-  const navigate = useNavigate();
   const [step, setStep] = useState(0); // 0 = intro
-  const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState<FormData>({});
   const [errors, setErrors] = useState<string[]>([]);
+  const [consent, setConsent] = useState(false);
+  const [resultado, setResultado] = useState<Resultado | null>(null);
 
   const set = (key: string, val: string) => setData((prev) => ({ ...prev, [key]: val }));
 
@@ -268,29 +276,43 @@ export default function AvaliacaoMaturidade() {
 
   const validateStep = (): boolean => {
     const missing: string[] = [];
-    if (step === 1) {
+    // A identificação passou a ser a última etapa (era a primeira).
+    if (step === TOTAL_STEPS) {
       if (!data.nome?.trim()) missing.push("nome");
       if (!data.email?.trim()) missing.push("email");
       if (!data.telefone?.trim()) missing.push("telefone");
       if (!data.segmento) missing.push("segmento");
+      if (!consent) missing.push("consent");
     }
-    // Scale/radio fields – at least answer something (soft validation)
     setErrors(missing);
     return missing.length === 0;
   };
 
   const next = () => {
     if (!validateStep()) return;
-    if (step < TOTAL_STEPS) setStep(step + 1);
+    if (step < TOTAL_STEPS) {
+      const proximo = step + 1;
+      setStep(proximo);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Registra em que etapa as pessoas param. Era impossível saber antes.
+      track(EVENTS.quizStep, { step: proximo });
+    }
   };
 
   const prev = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) {
+      setStep(step - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async () => {
+    if (!validateStep()) {
+      toast.error("Preencha os campos obrigatórios e aceite a Política de Privacidade.");
+      return;
+    }
     setSubmitting(true);
     try {
       const { nome, email, telefone, segmento, ...respostas } = data;
@@ -302,8 +324,15 @@ export default function AvaliacaoMaturidade() {
         p_respostas: respostas,
       });
       if (error) throw error;
-      setSubmitted(true);
-      toast.success("Avaliação enviada com sucesso!");
+
+      // O score sai das respostas que já estão aqui no navegador: entregar na
+      // hora não custa uma requisição sequer.
+      const calculado = calcularResultado(respostas);
+      setResultado(calculado);
+      track(EVENTS.quizComplete, { segmento, score: calculado.geral, nivel: calculado.nivel });
+      track(EVENTS.quizResultView, { score: calculado.geral });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast.success("Avaliação enviada. Seu score está abaixo.");
     } catch (err) {
       console.error(err);
       toast.error("Erro ao enviar. Tente novamente.");
@@ -312,26 +341,146 @@ export default function AvaliacaoMaturidade() {
     }
   };
 
-  if (submitted) {
+  if (resultado) {
+    const corDoScore = (s: number) =>
+      s < 40 ? "text-destructive" : s < 60 ? "text-accent" : s < 80 ? "text-primary" : "text-view-green";
+    const barraDoScore = (s: number) =>
+      s < 40 ? "bg-destructive" : s < 60 ? "bg-accent" : s < 80 ? "bg-primary" : "bg-view-green";
+
     return (
       <>
         {seoTags}
         <Navbar />
-        <main className="min-h-screen flex items-center justify-center px-[7%] pt-24 pb-16">
-          <div className="max-w-lg text-center space-y-6">
-            <CheckCircle2 className="w-16 h-16 text-view-green mx-auto" />
-            <h1 className="font-display font-extrabold text-2xl text-foreground">
-              Obrigado por responder a Avaliação Estratégica de Maturidade Empresarial.
-            </h1>
-            <p className="text-muted-foreground text-[.9rem] leading-relaxed">
-              Nossa equipe analisará suas respostas e em breve enviaremos um diagnóstico inicial com oportunidades de melhoria para o seu negócio.
-            </p>
-            <Button
-              onClick={() => navigate("/")}
-              className="bg-primary text-primary-foreground font-display font-bold tracking-wide"
-            >
-              Voltar para o site
-            </Button>
+        <main className="min-h-screen px-[7%] pt-28 pb-20">
+          <div className="max-w-3xl mx-auto">
+            {/* Score geral */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-view-green text-[.75rem] font-display font-semibold tracking-[.14em] uppercase mb-5">
+                <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
+                Avaliação concluída
+              </div>
+              <h1 className="font-display font-extrabold text-[clamp(1.5rem,3vw,2.2rem)] leading-tight text-foreground mb-6">
+                O nível de maturidade da sua operação
+              </h1>
+
+              <div className="inline-flex flex-col items-center border border-view-line rounded-2xl px-12 py-8 bg-foreground/[.03]">
+                <div className={`font-display font-extrabold text-[4rem] leading-none tabular-nums ${corDoScore(resultado.geral)}`}>
+                  {resultado.geral}
+                  <span className="text-[1.4rem] text-muted-foreground font-bold">/100</span>
+                </div>
+                <div className="font-display font-bold text-[1.05rem] text-foreground mt-3">
+                  Maturidade {resultado.nivel.toLowerCase()}
+                </div>
+                <div className="text-[.76rem] text-muted-foreground mt-1">
+                  {resultado.respondidas} de {resultado.total} perguntas pontuadas
+                </div>
+              </div>
+
+              <p className="text-muted-foreground text-[.92rem] leading-relaxed max-w-xl mx-auto mt-7">
+                {DESCRICAO_NIVEL[resultado.nivel]}
+              </p>
+            </div>
+
+            {/* Radar */}
+            <div className="border border-view-line rounded-xl p-6 md:p-8 bg-foreground/[.02] mb-8">
+              <h2 className="font-display font-extrabold text-[1.1rem] text-foreground mb-1 text-center">
+                Seu perfil nas 7 dimensões
+              </h2>
+              <p className="text-[.82rem] text-muted-foreground text-center mb-6">
+                Quanto mais para fora, mais madura a dimensão.
+              </p>
+              <DistippRadar dimensoes={resultado.dimensoes} />
+            </div>
+
+            {/* Barras por dimensão */}
+            <div className="border border-view-line rounded-xl p-6 md:p-8 bg-foreground/[.02] mb-8">
+              <h2 className="font-display font-extrabold text-[1.1rem] text-foreground mb-6">
+                Dimensão por dimensão
+              </h2>
+              <div className="flex flex-col gap-5">
+                {[...resultado.dimensoes]
+                  .sort((a, b) => a.score - b.score)
+                  .map((d) => (
+                    <div key={d.dimensao}>
+                      <div className="flex items-baseline justify-between gap-4 mb-1.5">
+                        <span className="font-display font-bold text-[.9rem] text-foreground">{d.dimensao}</span>
+                        <span className="text-[.8rem] text-muted-foreground">
+                          <span className={`font-display font-extrabold text-[.95rem] tabular-nums ${corDoScore(d.score)}`}>
+                            {d.score}
+                          </span>
+                          <span className="ml-2">{d.nivel}</span>
+                        </span>
+                      </div>
+                      <div className="h-2 rounded-full bg-foreground/10 overflow-hidden">
+                        <div
+                          className={`h-full rounded-full transition-all duration-700 ${barraDoScore(d.score)}`}
+                          style={{ width: `${d.score}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* Prioridades */}
+            <div className="border border-primary/25 rounded-xl p-6 md:p-8 bg-primary/[.05] mb-10">
+              <h2 className="font-display font-extrabold text-[1.1rem] text-foreground mb-2">
+                Por onde a VIEW começaria na sua empresa
+              </h2>
+              <p className="text-[.86rem] text-muted-foreground mb-6 leading-relaxed">
+                Estas são as duas dimensões com menor pontuação. Mexer nelas primeiro costuma destravar as
+                outras — o contrário raramente é verdade.
+              </p>
+              <ol className="flex flex-col gap-6 list-none p-0 m-0">
+                {resultado.prioridades.map((d, i) => (
+                  <li key={d.dimensao} className="flex gap-4">
+                    <span className="font-display font-extrabold text-primary text-xl leading-none pt-0.5 w-6 shrink-0">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground text-[.95rem] mb-1">
+                        {d.dimensao}{" "}
+                        <span className="text-muted-foreground font-normal">— score {d.score}/100</span>
+                      </h3>
+                      <p className="text-muted-foreground text-[.88rem] leading-relaxed">
+                        {RECOMENDACAO[d.dimensao]}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Próximo passo */}
+            <div className="text-center border-t border-view-line pt-10">
+              <h2 className="font-display font-extrabold text-[1.15rem] text-foreground mb-3">
+                O relatório completo chega em até 48h
+              </h2>
+              <p className="text-muted-foreground text-[.9rem] leading-relaxed max-w-xl mx-auto mb-7">
+                Enviamos para <strong className="text-foreground">{data.email}</strong> a leitura detalhada
+                de cada dimensão, comparada com o padrão do seu segmento, e o plano de ação sugerido. Se
+                quiser conversar antes disso, é só chamar.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={`https://wa.me/5583993224878?text=${encodeURIComponent(
+                    `Olá! Acabei de fazer a avaliação DISTIPP e meu score foi ${resultado.geral}/100 (${resultado.nivel}). Gostaria de conversar sobre o resultado.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(EVENTS.whatsappClick, { location: "quiz_resultado" })}
+                  className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-7 py-3.5 rounded-md font-display font-extrabold text-[.86rem] tracking-[.06em] no-underline hover:opacity-[.88] transition-opacity"
+                >
+                  Discutir meu resultado no WhatsApp →
+                </a>
+                <Link
+                  to="/casos"
+                  className="inline-flex items-center justify-center gap-2 border border-muted-foreground/30 text-muted-foreground px-7 py-3.5 rounded-md font-display font-semibold text-[.84rem] no-underline hover:text-foreground hover:border-foreground/40 transition-all"
+                >
+                  Ver casos parecidos com o meu
+                </Link>
+              </div>
+            </div>
           </div>
         </main>
         <Footer />
@@ -363,13 +512,18 @@ export default function AvaliacaoMaturidade() {
             <p className="text-muted-foreground text-[.85rem] leading-relaxed max-w-xl mx-auto">
               As perguntas estão organizadas em sete dimensões essenciais para o sucesso em um ambiente de negócios dinâmico e competitivo.
             </p>
-            <p className="text-foreground/60 text-[.75rem]">Leva menos de 5 minutos para responder.</p>
+            <p className="text-muted-foreground text-[.8rem]">
+              Leva menos de 5 minutos · Seu score aparece na tela ao terminar
+            </p>
             <Button
-              onClick={() => setStep(1)}
+              onClick={() => {
+                track(EVENTS.quizStart, { origem: "intro_topo" });
+                setStep(1);
+              }}
               size="lg"
               className="bg-primary text-primary-foreground font-display font-extrabold tracking-wide text-[.85rem] px-10"
             >
-              Iniciar Avaliação
+              Iniciar avaliação
             </Button>
           </div>
 
@@ -446,11 +600,14 @@ export default function AvaliacaoMaturidade() {
 
             <div className="text-center pt-4">
               <Button
-                onClick={() => setStep(1)}
+                onClick={() => {
+                  track(EVENTS.quizStart, { origem: "intro_rodape" });
+                  setStep(1);
+                }}
                 size="lg"
                 className="bg-primary text-primary-foreground font-display font-extrabold tracking-wide text-[.85rem] px-10"
               >
-                Iniciar Avaliação
+                Iniciar avaliação
               </Button>
             </div>
           </div>
@@ -464,22 +621,36 @@ export default function AvaliacaoMaturidade() {
   const hasError = (field: string) => errors.includes(field);
 
   const sections: Record<number, React.ReactNode> = {
-    1: (
+    /*
+      Os dados de contato eram pedidos na etapa 1, antes de qualquer valor ter
+      sido entregue — o visitante precisava se identificar para só então
+      descobrir do que se tratava. Agora ficam na etapa 8, depois das sete
+      dimensões: quem chegou até aqui já investiu o tempo e tem o score à
+      espera do outro lado do botão.
+    */
+    8: (
       <div className="space-y-5">
-        <div>
-          <Label className="text-foreground/90 text-[.82rem] font-medium">Nome ou Empresa *</Label>
-          <Input value={data.nome || ""} onChange={(e) => set("nome", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("nome") ? "border-destructive" : ""}`} placeholder="Seu nome ou empresa" />
+        <div className="bg-primary/[.06] border border-primary/20 rounded-lg p-4 mb-2">
+          <p className="text-[.85rem] text-foreground leading-relaxed">
+            <strong className="font-display font-bold">Falta só isto.</strong> Ao enviar, seu score nas 7
+            dimensões aparece na hora, nesta tela. O relatório com o plano de ação vai para o seu email em
+            até 48h.
+          </p>
         </div>
         <div>
-          <Label className="text-foreground/90 text-[.82rem] font-medium">Email *</Label>
-          <Input type="email" value={data.email || ""} onChange={(e) => set("email", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("email") ? "border-destructive" : ""}`} placeholder="seu@email.com" />
+          <Label htmlFor="av-nome" className="text-foreground/90 text-[.85rem] font-medium">Nome ou Empresa *</Label>
+          <Input id="av-nome" autoComplete="name" value={data.nome || ""} onChange={(e) => set("nome", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("nome") ? "border-destructive" : ""}`} placeholder="Seu nome ou empresa" />
         </div>
         <div>
-          <Label className="text-foreground/90 text-[.82rem] font-medium">Telefone para contato *</Label>
-          <Input value={data.telefone || ""} onChange={(e) => set("telefone", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("telefone") ? "border-destructive" : ""}`} placeholder="(00) 00000-0000" />
+          <Label htmlFor="av-email" className="text-foreground/90 text-[.85rem] font-medium">Email *</Label>
+          <Input id="av-email" type="email" autoComplete="email" value={data.email || ""} onChange={(e) => set("email", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("email") ? "border-destructive" : ""}`} placeholder="seu@email.com" />
         </div>
         <div>
-          <Label className="text-foreground/90 text-[.82rem] font-medium">Qual segmento mais representa sua empresa? *</Label>
+          <Label htmlFor="av-telefone" className="text-foreground/90 text-[.85rem] font-medium">Telefone para contato *</Label>
+          <Input id="av-telefone" autoComplete="tel" value={data.telefone || ""} onChange={(e) => set("telefone", e.target.value)} className={`${inputCls} mt-1.5 ${hasError("telefone") ? "border-destructive" : ""}`} placeholder="(00) 00000-0000" />
+        </div>
+        <div>
+          <Label className="text-foreground/90 text-[.85rem] font-medium">Qual segmento mais representa sua empresa? *</Label>
           <Select value={data.segmento || ""} onValueChange={(v) => set("segmento", v)}>
             <SelectTrigger className={`${inputCls} mt-1.5 ${hasError("segmento") ? "border-destructive" : ""}`}>
               <SelectValue placeholder="Selecione o segmento" />
@@ -491,9 +662,26 @@ export default function AvaliacaoMaturidade() {
             </SelectContent>
           </Select>
         </div>
+
+        <label className="flex items-start gap-2.5 cursor-pointer pt-1">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className={`mt-0.5 w-4 h-4 flex-shrink-0 accent-primary cursor-pointer ${hasError("consent") ? "outline outline-2 outline-destructive" : ""}`}
+          />
+          <span className="text-[.79rem] text-muted-foreground leading-relaxed">
+            Autorizo a VIEW a usar meus dados e minhas respostas para gerar e enviar meu diagnóstico,
+            conforme a{" "}
+            <Link to="/privacidade" className="text-primary underline hover:no-underline">
+              Política de Privacidade
+            </Link>
+            .
+          </span>
+        </label>
       </div>
     ),
-    2: (
+    1: (
       <div className="space-y-6">
         <ScaleField label="Sua empresa consegue tomar decisões estratégicas com base nos dados disponíveis?" value={data.dad1 || ""} onChange={(v) => set("dad1", v)} />
         <RadioField label="O quanto de retorno financeiro sua empresa já obteve a partir do uso de dados bem analisados?" options={["Nenhum", "Baixo", "Moderado", "Alto", "Muito alto"]} value={data.dad2 || ""} onChange={(v) => set("dad2", v)} />
@@ -502,7 +690,7 @@ export default function AvaliacaoMaturidade() {
         <RadioField label="Sua empresa utiliza ferramentas analíticas para prever tendências?" options={["Sim", "Não", "Em desenvolvimento"]} value={data.dad5 || ""} onChange={(v) => set("dad5", v)} />
       </div>
     ),
-    3: (
+    2: (
       <div className="space-y-6">
         <ScaleField label="Há falhas frequentes de comunicação entre os setores?" value={data.int1 || ""} onChange={(v) => set("int1", v)} />
         <TextField label="Quais impactos essas falhas causam na empresa?" value={data.int2 || ""} onChange={(v) => set("int2", v)} />
@@ -511,7 +699,7 @@ export default function AvaliacaoMaturidade() {
         <ScaleField label="Os sistemas e departamentos estão bem integrados?" value={data.int5 || ""} onChange={(v) => set("int5", v)} />
       </div>
     ),
-    4: (
+    3: (
       <div className="space-y-6">
         <RadioField label="Sua empresa possui um sistema de gestão personalizado para suas necessidades específicas?" options={["Sim", "Não", "Parcialmente"]} value={data.sis1 || ""} onChange={(v) => set("sis1", v)} />
         <ScaleField label="Seu sistema de gestão apresenta todas as informações que você precisa de forma clara e acessível?" value={data.sis2 || ""} onChange={(v) => set("sis2", v)} />
@@ -520,7 +708,7 @@ export default function AvaliacaoMaturidade() {
         <RadioField label="Você acredita que seu sistema de gestão poderia ser melhorado?" options={["Sim", "Não", "Muito"]} value={data.sis5 || ""} onChange={(v) => set("sis5", v)} />
       </div>
     ),
-    5: (
+    4: (
       <div className="space-y-6">
         <ScaleField label="O quão digitalizados estão os registros operacionais da empresa?" value={data.tec1 || ""} onChange={(v) => set("tec1", v)} />
         <RadioField label="Sua empresa ainda depende muito de papel para registrar dados?" options={["Sim", "Não", "Parcialmente"]} value={data.tec2 || ""} onChange={(v) => set("tec2", v)} />
@@ -529,7 +717,7 @@ export default function AvaliacaoMaturidade() {
         <ScaleField label="A tecnologia atual permite tomar decisões rápidas e informadas?" value={data.tec5 || ""} onChange={(v) => set("tec5", v)} />
       </div>
     ),
-    6: (
+    5: (
       <div className="space-y-6">
         <ScaleField label="O quanto sua empresa investe em melhoria contínua dos processos e operações?" value={data.inov1 || ""} onChange={(v) => set("inov1", v)} />
         <ScaleField label="Sua empresa busca ativamente investir em novas tecnologias e práticas inovadoras?" value={data.inov2 || ""} onChange={(v) => set("inov2", v)} />
@@ -538,7 +726,7 @@ export default function AvaliacaoMaturidade() {
         <RadioField label="Sua empresa possui um orçamento dedicado à inovação e desenvolvimento?" options={["Sim", "Não", "Parcialmente"]} value={data.inov5 || ""} onChange={(v) => set("inov5", v)} />
       </div>
     ),
-    7: (
+    6: (
       <div className="space-y-6">
         <ScaleField label="Qual o nível de confiança que você tem em seus funcionários para executar responsabilidades sem supervisão constante?" value={data.pes1 || ""} onChange={(v) => set("pes1", v)} />
         <ScaleField label="Você tem certeza de que seus funcionários cumprem seus procedimentos e responsabilidades?" value={data.pes2 || ""} onChange={(v) => set("pes2", v)} />
@@ -547,7 +735,7 @@ export default function AvaliacaoMaturidade() {
         <ScaleField label="Você consegue reconhecer ou punir funcionários de acordo com o desempenho?" value={data.pes5 || ""} onChange={(v) => set("pes5", v)} />
       </div>
     ),
-    8: (
+    7: (
       <div className="space-y-6">
         <RadioField label="Os principais processos da sua empresa estão mapeados e documentados de forma clara?" options={["Sim, todos os processos estão documentados e atualizados", "Parcialmente, alguns processos estão documentados", "Não, os processos dependem do conhecimento informal das pessoas"]} value={data.proc1 || ""} onChange={(v) => set("proc1", v)} />
         <RadioField label="Seus funcionários seguem procedimentos padronizados (SOPs, checklists, fluxogramas) na execução das atividades?" options={["Sim, temos padrões claros e eles são seguidos", "Temos alguns padrões, mas nem sempre são seguidos", "Não, cada um executa à sua maneira"]} value={data.proc2 || ""} onChange={(v) => set("proc2", v)} />
@@ -559,14 +747,14 @@ export default function AvaliacaoMaturidade() {
   };
 
   const stepTitles: Record<number, { title: string; desc: string }> = {
-    1: { title: "Quem está respondendo", desc: "Informações básicas sobre você e sua empresa." },
-    2: { title: "Dimensão Dados", desc: "Esta dimensão analisa o uso de dados para tomada de decisão estratégica." },
-    3: { title: "Dimensão Integração", desc: "Esta dimensão analisa a comunicação e integração entre setores da empresa." },
-    4: { title: "Dimensão Sistemas", desc: "Esta dimensão examina a eficácia dos sistemas de gestão utilizados pela empresa." },
-    5: { title: "Dimensão Tecnologia", desc: "Esta dimensão avalia o grau de digitalização dos processos empresariais." },
-    6: { title: "Dimensão Inovação", desc: "Esta dimensão avalia o compromisso da empresa com a melhoria contínua e a implementação de novas tecnologias e práticas." },
-    7: { title: "Dimensão Pessoas", desc: "Esta dimensão avalia a gestão do capital humano." },
-    8: { title: "Dimensão Processos", desc: "Esta dimensão avalia o nível de mapeamento, padronização e controle dos fluxos operacionais da empresa." },
+    1: { title: "Dimensão Dados", desc: "Esta dimensão analisa o uso de dados para tomada de decisão estratégica." },
+    2: { title: "Dimensão Integração", desc: "Esta dimensão analisa a comunicação e integração entre setores da empresa." },
+    3: { title: "Dimensão Sistemas", desc: "Esta dimensão examina a eficácia dos sistemas de gestão utilizados pela empresa." },
+    4: { title: "Dimensão Tecnologia", desc: "Esta dimensão avalia o grau de digitalização dos processos empresariais." },
+    5: { title: "Dimensão Inovação", desc: "Esta dimensão avalia o compromisso da empresa com a melhoria contínua e a implementação de novas tecnologias e práticas." },
+    6: { title: "Dimensão Pessoas", desc: "Esta dimensão avalia a gestão do capital humano." },
+    7: { title: "Dimensão Processos", desc: "Esta dimensão avalia o nível de mapeamento, padronização e controle dos fluxos operacionais da empresa." },
+    8: { title: "Para onde enviamos o resultado", desc: "Última etapa. Seu score aparece aqui mesmo assim que você enviar." },
   };
 
   const current = stepTitles[step];
@@ -606,7 +794,7 @@ export default function AvaliacaoMaturidade() {
               </Button>
             ) : (
               <Button onClick={handleSubmit} disabled={submitting} className="bg-view-green text-background font-display font-bold gap-2">
-                {submitting ? "Enviando..." : "Enviar avaliação"} <Send className="w-4 h-4" />
+                {submitting ? "Calculando..." : "Ver meu score"} <Send className="w-4 h-4" />
               </Button>
             )}
           </div>

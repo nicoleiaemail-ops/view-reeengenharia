@@ -1,6 +1,8 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { EVENTS, track } from "@/lib/analytics";
 
 function formatPhone(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -35,10 +37,25 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [phone, setPhone] = useState("");
+  const [consent, setConsent] = useState(false);
 
-  const handlePhoneChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(formatPhone(e.target.value));
+  // "Começou a preencher" é a métrica que revela abandono de formulário —
+  // sem ela, um formulário com 90% de desistência é indistinguível de um
+  // formulário que ninguém viu.
+  const startTracked = useRef(false);
+  const trackStart = useCallback(() => {
+    if (startTracked.current) return;
+    startTracked.current = true;
+    track(EVENTS.formStart, { form: "diagnostico" });
   }, []);
+
+  const handlePhoneChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      trackStart();
+      setPhone(formatPhone(e.target.value));
+    },
+    [trackStart]
+  );
 
   const handlePhoneKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     const allowed = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "Home", "End"];
@@ -50,6 +67,10 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!consent) {
+      toast.error("É preciso aceitar a Política de Privacidade para enviar.");
+      return;
+    }
     setSubmitting(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -62,6 +83,7 @@ export function ContactForm() {
       });
       if (error) throw error;
       setSubmitted(true);
+      track(EVENTS.leadSubmit, { form: "diagnostico", segmento: formData.get("segmento") as string });
       toast.success("Diagnóstico solicitado com sucesso!");
     } catch (err) {
       console.error(err);
@@ -78,11 +100,23 @@ export function ContactForm() {
           <h2 className="font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-[1.1] mb-4">
             Diagnóstico gratuito.<br />Resultado em 48h.
           </h2>
+          {/*
+            Aqui havia um selo "Apenas 3 vagas disponíveis esta semana" fixo no
+            código, que aparecia para todo visitante em toda visita. Quem
+            voltasse duas semanas depois via o mesmo texto e entendia o jogo —
+            escassez que não é real custa mais credibilidade do que gera
+            urgência. O reforço agora é uma promessa que a VIEW cumpre.
+          */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full py-2 px-4 mb-5">
-            <span className="w-[7px] h-[7px] rounded-full bg-primary shadow-[0_0_8px_hsl(var(--view-accent))] flex-shrink-0" style={{ animation: "blink 2s infinite" }} />
-            <span className="text-[.65rem] tracking-[.08em] text-primary/90 font-display font-semibold">Apenas 3 vagas disponíveis esta semana</span>
+            <span
+              className="w-[7px] h-[7px] rounded-full bg-primary shadow-[0_0_8px_hsl(var(--view-accent))] flex-shrink-0"
+              style={{ animation: "blink 2s infinite" }}
+            />
+            <span className="text-[.7rem] tracking-[.08em] text-primary font-display font-semibold">
+              Retorno em até 48h úteis
+            </span>
           </div>
-          <p className="text-[.9rem] text-muted-foreground leading-relaxed mb-8">
+          <p className="text-[.92rem] text-muted-foreground leading-relaxed mb-8">
             Nossa equipe analisa sua operação, identifica onde você está perdendo tempo e dinheiro, e apresenta um caminho claro — sem jargão técnico, sem compromisso.
           </p>
           <ul className="flex flex-col gap-3">
@@ -104,17 +138,19 @@ export function ContactForm() {
           <div className="font-display font-extrabold text-[1.1rem] mb-1">Quero meu Diagnóstico Grátis</div>
           <div className="text-[.75rem] text-muted-foreground mb-7">Formulário de 30 segundos · Resposta em até 48h</div>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} onFocus={trackStart}>
             {/* Nome */}
             <div className="mb-4">
-              <label className={labelCls}>Nome</label>
-              <input name="nome" type="text" placeholder="Seu nome completo" required maxLength={100} className={inputCls} />
+              <label className={labelCls} htmlFor="lead-nome">Nome</label>
+              <input id="lead-nome" name="nome" type="text" placeholder="Seu nome completo" required maxLength={100} autoComplete="name" className={inputCls} />
             </div>
 
             {/* WhatsApp */}
             <div className="mb-4">
-              <label className={labelCls}>WhatsApp</label>
+              <label className={labelCls} htmlFor="lead-whatsapp">WhatsApp</label>
               <input
+                id="lead-whatsapp"
+                autoComplete="tel"
                 type="tel"
                 inputMode="numeric"
                 placeholder="(83) 9 0000-0000"
@@ -130,12 +166,12 @@ export function ContactForm() {
             {/* Empresa + Segmento */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
-                <label className={labelCls}>Empresa</label>
-                <input name="empresa" type="text" placeholder="Nome da empresa" required maxLength={100} className={inputCls} />
+                <label className={labelCls} htmlFor="lead-empresa">Empresa</label>
+                <input id="lead-empresa" name="empresa" type="text" placeholder="Nome da empresa" required maxLength={100} autoComplete="organization" className={inputCls} />
               </div>
               <div>
-                <label className={labelCls}>Segmento</label>
-                <select name="segmento" required defaultValue="" className={selectCls}
+                <label className={labelCls} htmlFor="lead-segmento">Segmento</label>
+                <select id="lead-segmento" name="segmento" required defaultValue="" className={selectCls}
                   style={{ backgroundImage: chevronSvg }}
                 >
                   <option value="" disabled>Selecione</option>
@@ -146,16 +182,48 @@ export function ContactForm() {
               </div>
             </div>
 
-            <button type="submit" disabled={submitted || submitting}
-              className={`w-full rounded-md py-4 font-display font-extrabold text-[.86rem] tracking-[.07em] mt-2 transition-all cursor-pointer ${
+            {/*
+              Consentimento LGPD. O formulário coleta nome, telefone, empresa e
+              segmento e antes só exibia "🔒 Seus dados estão protegidos. Sem
+              spam." — sem base legal registrada, sem política publicada e sem
+              nenhum aceite do titular.
+            */}
+            <label className="flex items-start gap-2.5 mt-5 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                required
+                className="mt-0.5 w-4 h-4 flex-shrink-0 accent-primary cursor-pointer"
+              />
+              <span className="text-[.76rem] text-muted-foreground leading-relaxed">
+                Autorizo a VIEW a usar meus dados para entrar em contato e preparar meu diagnóstico,
+                conforme a{" "}
+                <Link to="/privacidade" className="text-primary underline hover:no-underline">
+                  Política de Privacidade
+                </Link>
+                .
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              disabled={submitted || submitting || !consent}
+              className={`w-full rounded-md py-4 font-display font-extrabold text-[.88rem] tracking-[.06em] mt-4 transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-60 ${
                 submitted
                   ? "bg-view-green text-background"
-                  : "bg-foreground text-background hover:opacity-88 hover:-translate-y-px"
+                  : "bg-foreground text-background hover:opacity-[.88] hover:-translate-y-px"
               }`}
             >
-              {submitted ? "✓ Solicitado! Entraremos em contato em até 48h." : submitting ? "Enviando..." : "SOLICITAR DIAGNÓSTICO GRATUITO →"}
+              {submitted
+                ? "✓ Solicitado! Entraremos em contato em até 48h."
+                : submitting
+                  ? "Enviando..."
+                  : "Solicitar diagnóstico gratuito →"}
             </button>
-            <div className="text-center text-[.7rem] text-muted-foreground mt-3">🔒 Seus dados estão protegidos. Sem spam.</div>
+            <div className="text-center text-[.74rem] text-muted-foreground mt-3">
+              🔒 Sem spam. Você pode pedir a exclusão dos seus dados a qualquer momento.
+            </div>
           </form>
         </div>
       </div>

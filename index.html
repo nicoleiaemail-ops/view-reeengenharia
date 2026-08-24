@@ -23,8 +23,22 @@
     <link rel="canonical" href="https://reengenhariaview.com.br/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <!--
+      O preload precisa apontar para a MESMA URL do stylesheet. Antes pedia
+      Space Grotesk 700;800 + Inter 400;500 enquanto o stylesheet pedia
+      500;600;700;800 + 300;400;500;600: o preload nunca era aproveitado e o
+      navegador baixava dois conjuntos de fontes. Os pesos foram reduzidos aos
+      que o site realmente usa.
+    -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>

@@ -20,7 +20,9 @@
     --secondary-foreground: 225 33% 95%;
 
     --muted: 222 50% 15%;
-    --muted-foreground: 225 15% 55%;
+    /* Era 55% de luminosidade: ~4.3:1 sobre o fundo, no limite do AA e pesado
+       de ler em corpo pequeno. A 72% o texto de corpo passa de 7:1 (AAA). */
+    --muted-foreground: 225 18% 72%;
 
     --accent: 40 70% 66%;
     --accent-foreground: 222 78% 10%;
@@ -62,6 +64,25 @@
 
   html {
     scroll-behavior: smooth;
+    /* O site foi escrito quase todo em rem com corpo entre .75rem e .88rem —
+       12px a 14px. Para o público (gestores de 40 a 60 anos decidindo um
+       investimento) isso é cansativo. Subir a base a 17px escala toda a
+       tipografia de uma vez, mantendo as proporções já ajustadas. */
+    font-size: 106.25%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {

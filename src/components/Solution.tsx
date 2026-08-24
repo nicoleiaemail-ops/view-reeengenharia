@@ -1,3 +1,5 @@
+import { PrimaryCTA, Reassurance } from "./CTA";
+
 export function Solution() {
   return (
     <section className="bg-secondary py-10 md:py-16 px-[7%] border-t border-b border-view-line">
@@ -26,12 +28,8 @@ export function Solution() {
           </div>
 
           <div className="flex flex-col items-start gap-3">
-            <a href="#diagnostico" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-sm font-display font-extrabold text-[.86rem] tracking-[.07em] no-underline hover:opacity-88 hover:-translate-y-0.5 transition-all">
-              Quero o controle da minha empresa →
-            </a>
-            <span className="text-[.72rem] text-muted-foreground">
-              Diagnóstico gratuito <span className="mx-1.5 text-foreground/50">|</span> Sem compromisso
-            </span>
+            <PrimaryCTA location="solucao" className="px-8 py-4" />
+            <Reassurance />
           </div>
         </div>
 
@@ -43,7 +41,7 @@ export function Solution() {
               <div className="text-[.58rem] tracking-[.18em] uppercase p-3 px-5 bg-foreground/[.03] border-b border-view-line text-destructive/60">Antes</div>
               <div className="flex flex-col gap-px bg-view-line">
                 {["Planilha desatualizada", "Processo manual e repetitivo", "Decisão sem dados", "Equipe sobrecarregada"].map((t, i) => (
-                  <div key={i} className="bg-background/95 px-5 py-3.5 flex items-center gap-3 text-[.75rem] text-foreground/45">
+                  <div key={i} className="bg-background/95 px-5 py-3.5 flex items-center gap-3 text-[.78rem] text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-destructive/60 flex-shrink-0" />{t}
                   </div>
                 ))}

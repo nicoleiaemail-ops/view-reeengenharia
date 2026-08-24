@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BlogCTA } from "@/components/BlogCTA";
 import NotFound from "./NotFound";
 import { getArticle } from "@/content/blog";
 
@@ -130,16 +131,8 @@ export default function BlogPost() {
             </div>
           </section>
 
-          <div className="mt-14 pt-10 border-t border-view-line text-center">
-            <p className="text-[.95rem] text-muted-foreground mb-5">
-              Quer saber o nível de maturidade operacional da sua empresa?
-            </p>
-            <Link
-              to="/avaliacao-maturidade"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-display font-semibold text-[.85rem] px-6 py-3 hover:opacity-90 transition-opacity no-underline"
-            >
-              Fazer o diagnóstico gratuito DISTIPP →
-            </Link>
+          <div className="mt-14 pt-10 border-t border-view-line">
+            <BlogCTA location={`artigo:${article.slug}`} />
           </div>
         </div>
       </article>
