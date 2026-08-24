@@ -50,7 +50,7 @@ const About = () => {
               logo: "https://reengenhariaview.com.br/og-image.png",
               foundingDate: "2024",
               description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para PMEs no Nordeste do Brasil.",
-              telephone: "+55-83-99565-0051",
+              telephone: "+55-83-99322-4878",
               email: "admin@reengenhariaview.com.br",
               areaServed: [
                 { "@type": "State", name: "Paraíba" },

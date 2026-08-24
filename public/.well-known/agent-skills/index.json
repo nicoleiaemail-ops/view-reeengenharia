@@ -13,7 +13,7 @@
       "type": "skill-md",
       "description": "Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW Reengenharia de Processos (PMEs no Nordeste do Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.",
       "url": "https://reengenhariaview.com.br/.well-known/agent-skills/solicitar-diagnostico-view/SKILL.md",
-      "digest": "sha256:542f1cdfe5b8fd67d96d46387a5eb4796f145e7caf77fb49df0450c151f62b52"
+      "digest": "sha256:782e8744f893fc044395b62cc43bcd40193f1876e2b58c6cdb9579f4a75f0a98"
     }
   ]
 }

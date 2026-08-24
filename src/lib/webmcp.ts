@@ -126,7 +126,7 @@ Metodologia: DISTIPP (7 dimensões de maturidade operacional)
 Cobertura: Paraíba, Pernambuco, Rio Grande do Norte e todo o Brasil (remoto). Base em João Pessoa/PB.
 Diagnóstico gratuito com devolutiva em até 48h.
 
-Contato: WhatsApp (83) 9 9565-0051 · admin@reengenhariaview.com.br
+Contato: WhatsApp (83) 9 9322-4878 · admin@reengenhariaview.com.br
 Contexto completo para leitura: ${SITE}/llms.txt
 `),
   },
@@ -212,7 +212,7 @@ Versão oficial com análise da equipe: ${SITE}/avaliacao-maturidade
     execute: () =>
       text(`
 Canais oficiais da VIEW:
-- WhatsApp: https://wa.me/558399565051 — (83) 9 9565-0051
+- WhatsApp: https://wa.me/5583993224878 — (83) 9 9322-4878
 - E-mail: admin@reengenhariaview.com.br
 - Formulário de diagnóstico gratuito: ${SITE}/#diagnostico
 - Avaliação de Maturidade DISTIPP (~5 min): ${SITE}/avaliacao-maturidade

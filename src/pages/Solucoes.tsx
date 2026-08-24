@@ -138,7 +138,7 @@ const providerRef = {
   "@type": "Organization",
   name: "VIEW Reengenharia de Processos",
   url: "https://reengenhariaview.com.br",
-  telephone: "+55-83-99565-0051",
+  telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
 };
 

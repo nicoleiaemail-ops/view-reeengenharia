@@ -38,7 +38,7 @@ Preferências de uso do conteúdo estão declaradas em `/robots.txt`
 Solicitar o diagnóstico gratuito, contratar um projeto ou receber o resultado da
 Avaliação de Maturidade DISTIPP passa por contato humano — não há API para isso:
 
-- WhatsApp: <https://wa.me/558399565051>
+- WhatsApp: <https://wa.me/5583993224878>
 - E-mail: <admin@reengenhariaview.com.br>
 - Formulário: <https://reengenhariaview.com.br/#contato>
 - Avaliação de Maturidade: <https://reengenhariaview.com.br/avaliacao-maturidade>

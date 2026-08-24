@@ -24,7 +24,7 @@ Não preencha telefone, e-mail ou nome de empresa por inferência.
 | --- | --- | --- |
 | Nome do responsável | sim | quem vai conversar com a VIEW |
 | Empresa | sim | razão social ou nome fantasia |
-| WhatsApp | sim | formato `(83) 9 9565-0051`; DDD brasileiro |
+| WhatsApp | sim | formato `(83) 9 9322-4878`; DDD brasileiro |
 | Segmento | sim | ver lista abaixo |
 | Dor principal | recomendado | 1–3 frases, no vocabulário do usuário |
 | Nº de funcionários | recomendado | calibra o tamanho da intervenção |
@@ -39,7 +39,7 @@ Tecnologia · Outro.
 1. **Formulário do site** — <https://reengenhariaview.com.br/#diagnostico>
    (campos: nome, WhatsApp, empresa, segmento). Caminho preferido: entregue o
    link com os valores prontos para o usuário colar.
-2. **WhatsApp** — <https://wa.me/558399565051> — (83) 9 9565-0051.
+2. **WhatsApp** — <https://wa.me/5583993224878> — (83) 9 9322-4878.
    Melhor canal para resposta rápida.
 3. **E-mail** — <admin@reengenhariaview.com.br>. Use quando houver anexo
    (planilha, fluxograma, print de sistema).
