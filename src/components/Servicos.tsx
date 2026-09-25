@@ -3,53 +3,69 @@ import { ArrowRight } from "lucide-react";
 import { PRIMARY_HREF, PRIMARY_LABEL } from "./CTA";
 import { EVENTS, track } from "@/lib/analytics";
 
+/*
+  A ordem aqui é o argumento, não uma preferência de layout: é a ordem em que
+  os problemas aparecem na empresa. A versão anterior abria por "IA &
+  Automação", que é vender a última etapa primeiro — automação antes de o
+  processo estar desenhado. "Consultoria Estratégica" deixou de existir como
+  nome de área: o que ela fazia é o VIEW 360.
+
+  Cada card mostra até quatro serviços; a lista completa das cinco frentes
+  está em /solucoes, que é a mesma densidade que os cards já tinham.
+*/
 const areas = [
   {
-    icon: "🤖",
-    tag: "IA & Automação",
-    pain: "Sua equipe ainda faz tarefas que deveriam ser automáticas?",
-    services: ["Agentes de IA", "Chatbot com IA", "Automações de fluxos", "Consultoria em IA"],
-    href: "/solucoes#ia-automacao",
+    icon: "🎯",
+    tag: "VIEW 360",
+    sub: "Diagnóstico da operação",
+    desc: "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
+    services: ["Análise de maturidade digital", "Auditoria de processo", "Arquitetura empresarial", "Planejamento estratégico"],
+    href: "/solucoes#view-360",
     color: "border-primary/20 hover:border-primary/40 hover:bg-primary/[.04]",
     accent: "text-primary",
   },
   {
-    icon: "💻",
-    tag: "Sistemas & Dados",
-    pain: "Você decide com dados ou com achismo?",
-    services: ["Sistemas personalizados", "Dashboards em tempo real", "Análise de maturidade digital"],
-    href: "/solucoes#sistemas-dados",
-    color: "border-view-green/20 hover:border-view-green/40 hover:bg-view-green/[.04]",
-    accent: "text-view-green",
-  },
-  {
     icon: "🔁",
-    tag: "Reengenharia de Processos",
-    pain: "Os mesmos problemas se repetem todo mês?",
-    services: ["Padronização de processos", "Auditoria operacional", "Arquitetura empresarial"],
-    href: "/solucoes#reengenharia",
+    tag: "VIEW FLOW",
+    sub: "Processos e automação",
+    desc: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
+    services: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Chatbot com IA"],
+    href: "/solucoes#view-flow",
     color: "border-accent/20 hover:border-accent/40 hover:bg-accent/[.04]",
     accent: "text-accent",
   },
   {
-    icon: "🎯",
-    tag: "Consultoria Estratégica",
-    pain: "Você sabe se está crescendo de forma saudável?",
-    services: ["Planejamento estratégico", "Viabilidade de negócio", "Finanças corporativas"],
-    href: "/solucoes#consultoria-estrategica",
+    icon: "💻",
+    tag: "VIEW ONE",
+    sub: "Sistemas e integração",
+    desc: "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
+    services: ["Sistemas personalizados", "Integração e centralização de sistemas"],
+    href: "/solucoes#view-one",
+    color: "border-view-green/20 hover:border-view-green/40 hover:bg-view-green/[.04]",
+    accent: "text-view-green",
+  },
+  {
+    icon: "📈",
+    tag: "VIEW INSIGHTS",
+    sub: "Dados e decisão",
+    desc: "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
+    services: ["Dashboards e BI"],
+    href: "/solucoes#view-insights",
     color: "border-primary/20 hover:border-primary/40 hover:bg-primary/[.04]",
     accent: "text-primary",
   },
   {
     icon: "🎓",
-    tag: "Capacitação",
-    pain: "Sua equipe sabe usar IA no dia a dia?",
-    services: ["Treinamento de IA", "Construção de agentes próprios", "Adoção de IA no dia a dia"],
-    href: "/solucoes#capacitacao",
+    tag: "VIEW ACADEMY",
+    sub: "Capacitação",
+    desc: "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
+    services: ["Treinamento de equipes", "Treinamento de IA"],
+    href: "/solucoes#view-academy",
     color: "border-view-green/20 hover:border-view-green/40 hover:bg-view-green/[.04]",
     accent: "text-view-green",
   },
 ];
+
 
 export function Servicos() {
   return (
@@ -57,7 +73,7 @@ export function Servicos() {
       <div className="scroll-reveal text-center mb-12">
         <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-3">O que a VIEW faz</div>
         <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.8vw,2.2rem)] leading-[1.1] mb-4">
-          Cinco áreas.<br />
+          Cinco frentes.<br />
           <em className="not-italic text-primary">Um único objetivo: sua empresa operando com clareza.</em>
         </h2>
         <p className="text-[.9rem] text-muted-foreground max-w-[520px] mx-auto leading-relaxed">
@@ -78,8 +94,10 @@ export function Servicos() {
               <ArrowRight className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 ${a.accent}`} />
             </div>
             <div>
-              <div className={`font-display font-bold text-[.8rem] tracking-[.04em] mb-1 ${a.accent}`}>{a.tag}</div>
-              <div className="font-display font-semibold text-[.9rem] text-foreground leading-snug mb-3">{a.pain}</div>
+              <div className={`font-display font-bold text-[.8rem] tracking-[.04em] mb-1 ${a.accent}`}>
+                {a.tag} <span className="text-foreground/50 font-semibold">· {a.sub}</span>
+              </div>
+              <div className="text-[.82rem] text-muted-foreground leading-relaxed mb-3">{a.desc}</div>
               <ul className="flex flex-col gap-1">
                 {a.services.map((s) => (
                   <li key={s} className="text-[.75rem] text-muted-foreground flex items-center gap-2">
