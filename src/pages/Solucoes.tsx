@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
@@ -50,6 +50,9 @@ const solucoes = [
     tag: "VIEW FLOW",
     sub: "Processos e automação",
     desc: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
+    // A condicao de entrada da IA fica imediatamente antes dos tres servicos
+    // de IA: quem chega neles le a regra antes da oferta.
+    recusaAntes: "Agentes de IA",
     services: [
       { name: "Padronização de processos", desc: "Cada processo documentado e replicável — sem depender da memória de ninguém." },
       { name: "Automações de fluxos", desc: "Tarefas manuais e repetitivas eliminadas, depois do processo desenhado." },
@@ -232,6 +235,37 @@ const jsonLd = [
   },
 ];
 
+/**
+ * Condicao de entrada da IA, dentro do VIEW FLOW.
+ *
+ * Fundo navy, cantos retos, sem icone e sem ilustracao: e uma regra, nao um
+ * card de venda. As tres negacoes em linhas separadas porque cada uma recusa
+ * um pedido diferente que chega da mesma pessoa.
+ */
+function BlocoRecusa() {
+  return (
+    <div className="bg-view-navy text-white p-6 rounded-none">
+      <div className="font-display font-extrabold text-[.95rem] mb-4">Quando a VIEW não aplica IA</div>
+
+      <div className="flex flex-col gap-1.5 mb-4 font-display font-semibold text-[.86rem]">
+        <span>Não automatizamos caos.</span>
+        <span>Não digitalizamos desperdício.</span>
+        <span>Não aplicamos IA sem problema definido e sem métrica.</span>
+      </div>
+
+      <p className="text-[.8rem] leading-relaxed text-white/80 mb-3">
+        Todo agente, chatbot ou automação entra depois de três coisas: o processo desenhado, o problema
+        com nome e a métrica escolhida. Automatizar antes disso acelera o erro, e sai mais caro que o
+        erro parado.
+      </p>
+      <p className="text-[.8rem] leading-relaxed text-white/80">
+        Se o processo ainda não está no papel, o caminho começa no VIEW FLOW. Essa ordem é o que faz a
+        automação continuar funcionando seis meses depois.
+      </p>
+    </div>
+  );
+}
+
 export default function Solucoes() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -296,10 +330,13 @@ export default function Solucoes() {
             <div className={`${s.bgColor} border ${s.borderColor} rounded-xl p-6 flex flex-col gap-3 ${idx % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
               <div className="text-[.6rem] tracking-[.18em] uppercase text-muted-foreground mb-1">O que inclui</div>
               {s.services.map((srv) => (
-                <div key={srv.name} className="bg-background/60 border border-foreground/[.06] rounded-lg p-4">
-                  <div className={`font-display font-bold text-[.88rem] mb-1 ${s.accentColor}`}>{srv.name}</div>
-                  {srv.desc && <div className="text-[.79rem] text-muted-foreground leading-relaxed">{srv.desc}</div>}
-                </div>
+                <Fragment key={srv.name}>
+                  {"recusaAntes" in s && s.recusaAntes === srv.name && <BlocoRecusa />}
+                  <div className="bg-background/60 border border-foreground/[.06] rounded-lg p-4">
+                    <div className={`font-display font-bold text-[.88rem] mb-1 ${s.accentColor}`}>{srv.name}</div>
+                    {srv.desc && <div className="text-[.79rem] text-muted-foreground leading-relaxed">{srv.desc}</div>}
+                  </div>
+                </Fragment>
               ))}
             </div>
           </div>
