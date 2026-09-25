@@ -67,7 +67,6 @@ const organizationJsonLd = {
     "Automação de processos",
     "Business Intelligence",
     "Evolução empresarial",
-    "Visibilidade operacional",
     "Sistemas de gestão personalizados",
     "Metodologia DISTIPP",
   ],

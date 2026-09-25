@@ -7,8 +7,8 @@ import { EVENTS, track } from "@/lib/analytics";
   A ordem aqui é o argumento, não uma preferência de layout: é a ordem em que
   os problemas aparecem na empresa. A versão anterior abria por "IA &
   Automação", que é vender a última etapa primeiro — automação antes de o
-  processo estar desenhado. "Consultoria Estratégica" deixou de existir como
-  nome de área: o que ela fazia é o VIEW 360.
+  processo estar desenhado. A área que se chamava de consultoria estratégica
+  deixou de existir com esse nome: o que ela fazia é o VIEW 360.
 
   Cada card mostra até quatro serviços; a lista completa das cinco frentes
   está em /solucoes, que é a mesma densidade que os cards já tinham.
