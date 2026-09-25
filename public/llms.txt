@@ -46,7 +46,7 @@ DISTIPP é o framework exclusivo de diagnóstico de maturidade empresarial da VI
 2. **Mapeamento e redesign** — Documentação de cada fluxo, eliminação do que não agrega valor, padronização do replicável.
 3. **Automação e sistema sob medida** — Automação de tarefas repetitivas e desenvolvimento de sistema adaptado à operação (iOS, Android, Desktop).
 4. **Dashboards em tempo real** — Implementação de KPIs acessíveis de qualquer lugar, em tempo real.
-5. **Acompanhamento contínuo** — Parceria de longo prazo com monitoramento e garantia de resultados.
+5. **Acompanhamento contínuo** — Parceria de longo prazo com monitoramento e medição do resultado.
 
 ## Serviços
 

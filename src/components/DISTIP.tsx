@@ -93,7 +93,7 @@ const pillars = [
     title: "Processos",
     headline: "Fluxos padronizados e escaláveis",
     desc: "Documentação clara e execução consistente, sem depender da memória de ninguém.",
-    benefit: "Quando alguém sai, o processo fica",
+    benefit: "O processo não depende de quem está na sala",
     icon: Workflow,
     color: "from-primary/25 to-primary/5",
     border: "border-primary/30",

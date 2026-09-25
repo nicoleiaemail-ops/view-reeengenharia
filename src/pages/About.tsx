@@ -62,7 +62,7 @@ const About = () => {
                 "Reengenharia de processos",
                 "Automação de processos empresariais",
                 "Business Intelligence",
-                "Transformação digital para PMEs",
+                "Evolução empresarial",
                 "Sistemas de gestão customizados",
                 "Metodologia DISTIPP",
                 "Engenharia de produção",
@@ -109,7 +109,7 @@ const About = () => {
                 "@type": "HowToStep",
                 position: 5,
                 name: "Acompanhamento contínuo",
-                text: "Não entregamos e saímos. Acompanhamos e garantimos resultados em parceria de longo prazo.",
+                text: "Não entregamos e saímos. Acompanhamos, medimos o resultado e seguimos em parceria de longo prazo.",
               },
             ],
           },
@@ -198,7 +198,7 @@ const About = () => {
               { num: "02", title: "Mapeamento e redesign", desc: "Documentamos cada fluxo. Eliminamos o que não agrega. Padronizamos o replicável.", tag: "Clareza antes de automação" },
               { num: "03", title: "Automação e sistema sob medida", desc: "Automatizamos o repetitivo e desenvolvemos o sistema que sua operação precisa.", tag: "iOS · Android · Desktop" },
               { num: "04", title: "Dashboards em tempo real", desc: "Indicadores acessíveis de qualquer lugar, em tempo real.", tag: "KPIs reais · Tempo real" },
-              { num: "05", title: "Acompanhamento contínuo", desc: "Não entregamos e saímos. Acompanhamos e garantimos resultados.", tag: "Parceria de longo prazo" },
+              { num: "05", title: "Acompanhamento contínuo", desc: "Não entregamos e saímos. Acompanhamos e medimos o resultado.", tag: "Parceria de longo prazo" },
             ].map((s, i) => (
               <div key={i} className="scroll-reveal flex items-start gap-6 py-7 border-b border-foreground/[.06] last:border-b-0" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="w-14 h-14 rounded-full bg-primary/12 border border-primary/35 flex items-center justify-center font-display font-extrabold text-[.75rem] tracking-[.08em] text-primary/70 flex-shrink-0">
@@ -219,7 +219,19 @@ const About = () => {
       <section className="py-28 px-[7%]">
         <div className="scroll-reveal text-center mb-14">
           <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">O que nos move</div>
-          <h2 className="font-display font-extrabold text-[clamp(1.7rem,2.8vw,2.4rem)] leading-[1.1]">Missão, Visão e Valores</h2>
+          <h2 className="font-display font-extrabold text-[clamp(1.7rem,2.8vw,2.4rem)] leading-[1.1]">Propósito, Missão, Visão e Valores</h2>
+        </div>
+
+        {/*
+          O propósito é a frase que fica acima de missão e visão: é o guarda-chuva
+          sob o qual as duas existem. Faltava no site — a seção começava direto na
+          missão, e sem ele a visão precisava carregar sozinha o "para quê".
+        */}
+        <div className="scroll-reveal max-w-[760px] mx-auto text-center mb-16">
+          <div className="text-[.6rem] tracking-[.2em] uppercase text-primary/80 mb-4">Propósito</div>
+          <p className="font-display font-extrabold text-[clamp(1.25rem,2.4vw,1.9rem)] leading-[1.25] text-foreground">
+            Tornar empresas mais simples de entender, operar e evoluir.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
@@ -234,7 +246,7 @@ const About = () => {
             <div className="w-[54px] h-[54px] rounded-xl flex items-center justify-center text-[1.5rem] bg-accent/20">👁️</div>
             <div className="text-[.6rem] tracking-[.2em] uppercase text-accent/80">Visão</div>
             <div className="text-[.82rem] text-muted-foreground leading-relaxed">
-              Influenciar e construir uma nova geração de empresas brasileiras organizadas, eficientes e guiadas por dados a partir da reengenharia operacional e transformação digital.
+              Influenciar e construir uma nova geração de empresas brasileiras organizadas, eficientes e guiadas por dados a partir da reengenharia operacional e da evolução empresarial.
             </div>
           </div>
         </div>

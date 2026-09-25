@@ -66,7 +66,7 @@ const organizationJsonLd = {
     "Reengenharia de processos",
     "Automação de processos",
     "Business Intelligence",
-    "Transformação digital",
+    "Evolução empresarial",
     "Visibilidade operacional",
     "Sistemas de gestão personalizados",
     "Metodologia DISTIPP",

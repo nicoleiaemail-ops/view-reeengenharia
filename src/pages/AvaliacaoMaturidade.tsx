@@ -57,7 +57,7 @@ const SEO_JSONLD = [
         educationalLevel: "Empresarial",
         about: [
           { "@type": "Thing", name: "Maturidade operacional" },
-          { "@type": "Thing", name: "Transformação digital" },
+          { "@type": "Thing", name: "Evolução empresarial" },
           { "@type": "Thing", name: "Reengenharia de processos" },
           { "@type": "Thing", name: "Automação empresarial" },
         ],
