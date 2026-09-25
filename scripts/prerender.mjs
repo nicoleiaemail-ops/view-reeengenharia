@@ -22,6 +22,7 @@ const ROUTES = [
   "/casos",
   "/blog",
   "/privacidade",
+  "/links",
   "/blog/metodologia-distipp-7-dimensoes-maturidade-operacional",
   "/blog/reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa",
   "/blog/automacao-de-processos-para-pmes-por-onde-comecar",
@@ -93,6 +94,18 @@ function dedupeHeadTags() {
         el.remove();
         removed++;
       }
+    }
+  }
+
+  // Rota noindex não tem canonical do helmet para substituir o estático — o
+  // componente SEO o omite de propósito. Sem este passo a página saía com
+  // noindex e, ao mesmo tempo, canonical apontando para a home, que são dois
+  // sinais contraditórios sobre a mesma URL.
+  const noindex = document.querySelector('meta[name="robots"][content*="noindex"]');
+  if (noindex) {
+    for (const el of document.head.querySelectorAll('link[rel="canonical"]')) {
+      el.remove();
+      removed++;
     }
   }
   return removed;
