@@ -9,7 +9,7 @@ https://reengenhariaview.com.br
 ## Páginas
 
 - [Home](https://reengenhariaview.com.br/): Diagnóstico gratuito, 5 áreas de solução, resultados e depoimentos de clientes.
-- [Soluções](https://reengenhariaview.com.br/solucoes): Detalhamento das 5 áreas de atuação — IA & Automação, Sistemas & Dados, Reengenharia de Processos, Consultoria Estratégica, Capacitação.
+- [Soluções](https://reengenhariaview.com.br/solucoes): Detalhamento das cinco frentes — VIEW 360, VIEW FLOW, VIEW ONE, VIEW INSIGHTS e VIEW ACADEMY.
 - [Sobre](https://reengenhariaview.com.br/sobre): Origem da empresa, missão, visão, valores, 6 princípios operacionais e a metodologia DISTIPP em 5 passos.
 - [Avaliação de Maturidade](https://reengenhariaview.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
 - [Casos](https://reengenhariaview.com.br/casos): Casos de sucesso documentados em construção civil e alimentação, com desafio, solução e resultado de cada cliente.
@@ -50,20 +50,26 @@ DISTIPP é o framework exclusivo de diagnóstico de maturidade empresarial da VI
 
 ## Serviços
 
-### IA & Automação
-Agentes de IA autônomos, chatbots com IA para atendimento, automação de fluxos repetitivos, consultoria em IA e treinamento de equipes para uso prático de inteligência artificial.
+As cinco frentes aparecem nesta ordem porque é a ordem em que os problemas
+aparecem na empresa: processo desenhado primeiro, depois sistema, depois
+automação, depois dado.
 
-### Sistemas & Dados
-Sistemas de gestão personalizados (não genéricos), dashboards de Business Intelligence em tempo real acessíveis pelo celular, e análise de maturidade digital.
+### VIEW 360 — Diagnóstico da operação
+Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver. Inclui análise de maturidade digital, auditoria de processo, arquitetura empresarial, desenvolvimento de governança, planejamento estratégico, viabilidade de negócio e finanças corporativas.
 
-### Reengenharia de Processos
-Padronização de processos com documentação clara (SOPs, checklists, fluxogramas), auditoria operacional completa e arquitetura empresarial — redesign de departamentos, responsabilidades e fluxos.
+### VIEW FLOW — Processos e automação
+O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha. Inclui padronização de processos, automações de fluxos, agentes de IA, chatbot com IA e consultoria em IA.
 
-### Consultoria Estratégica
-Planejamento estratégico, análise de viabilidade de negócio, finanças corporativas (margem, custo, fluxo de caixa) e desenvolvimento de estruturas de governança.
+Quando a VIEW não aplica IA: não automatizamos caos, não digitalizamos desperdício e não aplicamos IA sem problema definido e sem métrica. Todo agente, chatbot ou automação entra depois de três coisas: o processo desenhado, o problema com nome e a métrica escolhida.
 
-### Capacitação
-Treinamentos práticos de IA para equipes, capacitação para construção de agentes próprios e implementação guiada de ferramentas de IA no dia a dia operacional.
+### VIEW ONE — Sistemas e integração
+Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação. Inclui sistemas personalizados e integração e centralização de sistemas.
+
+### VIEW INSIGHTS — Dados e decisão
+Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação. Inclui dashboards e BI.
+
+### VIEW ACADEMY — Capacitação
+Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste. Inclui treinamento de equipes e treinamento de IA.
 
 ## Resultados documentados
 

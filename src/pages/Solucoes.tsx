@@ -5,22 +5,38 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
+/*
+  As cinco frentes, na ordem em que os problemas aparecem na empresa. Antes
+  eram cinco areas tecnicas e a pagina abria por IA, que e a ultima etapa do
+  metodo. "Consultoria Estrategica" deixou de existir: o que ela entregava
+  virou o VIEW 360.
+
+  Cada frente perdeu o par problema/solucao que tinha. Nao foi corte
+  editorial: os textos antigos estavam colados nos agrupamentos antigos, e no
+  reagrupamento dois deles cairiam na mesma frente (FLOW) enquanto o INSIGHTS
+  ficaria sem nenhum. Manter exigiria escrever texto novo, que nao esta
+  aprovado. Ficou a descricao de cada frente, que esta.
+
+  Nenhum servico foi removido: os 18 que existiam continuam aqui, com as
+  descricoes que ja tinham.
+*/
 const solucoes = [
   {
-    id: "ia-automacao",
-    icon: "🤖",
-    tag: "IA & Automação",
-    headline: "Sua equipe parou de fazer o que só humano pode fazer?",
-    problem:
-      "Se sua equipe passa horas fazendo tarefas repetitivas — copiar dados, responder sempre as mesmas perguntas, preencher planilhas — você está pagando um ser humano para fazer o que uma máquina faria melhor, mais rápido e sem erro.",
-    solution:
-      "A VIEW constrói agentes de IA e automações que assumem essas tarefas. Sua equipe para de ser operacional e começa a ser estratégica.",
+    id: "view-360",
+    icon: "🎯",
+    tag: "VIEW 360",
+    sub: "Diagnóstico da operação",
+    desc: "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
     services: [
-      { name: "Agentes de IA", desc: "Sistemas autônomos que executam tarefas complexas sem intervenção humana constante." },
-      { name: "Chatbot com IA", desc: "Atendimento automatizado que responde, filtra e qualifica sem depender da equipe." },
-      { name: "Automações de fluxos", desc: "Tarefas manuais e repetitivas eliminadas — o processo roda sozinho." },
-      { name: "Consultoria em IA", desc: "Identificamos onde a IA gera mais retorno no seu negócio específico." },
-      { name: "Treinamento de equipes", desc: "Sua equipe aprende a trabalhar com IA no dia a dia, sem depender de terceiros." },
+      { name: "Análise de maturidade digital", desc: "Diagnóstico de onde seus dados estão, como são usados e o que falta para você tomar decisões melhores." },
+      { name: "Auditoria de processo", desc: "Análise completa de onde a operação perde tempo e dinheiro sem que você perceba." },
+      { name: "Arquitetura empresarial", desc: "Redesign estrutural da empresa: departamentos, responsabilidades e fluxos alinhados." },
+      { name: "Desenvolvimento de governança", desc: "Estrutura de decisão clara — quem decide o quê, com base em quê." },
+      { name: "Planejamento estratégico", desc: "Definição clara de onde o negócio vai, por qual caminho e com quais recursos." },
+      { name: "Viabilidade de negócio", desc: "Análise antes de investir: o projeto tem retorno real ou é uma aposta?" },
+      { name: "Finanças corporativas", desc: "Visão clara de margem, custo, fluxo de caixa e saúde financeira do negócio." },
+      { name: "Construção de agentes próprios", desc: "Sua equipe sai capaz de criar e ajustar agentes sem depender de fornecedor externo." },
+      { name: "Adoção de IA no dia a dia", desc: "Implementação guiada: ferramentas certas, para o time certo, no momento certo." },
     ],
     color: "primary",
     borderColor: "border-primary/25",
@@ -29,38 +45,17 @@ const solucoes = [
     accentColor: "text-primary",
   },
   {
-    id: "sistemas-dados",
-    icon: "💻",
-    tag: "Sistemas & Dados",
-    headline: "Você toma decisão baseado em achismo ou em dados?",
-    problem:
-      "Sem um sistema centralizado, cada decisão vira um chute. Você não sabe quais produtos vendem mais, qual funcionário performa melhor, onde o dinheiro está saindo. O problema não é falta de informação — é que ela está espalhada em WhatsApp, planilhas e cabeças de pessoas.",
-    solution:
-      "A VIEW centraliza seus dados em dashboards em tempo real e constrói sistemas sob medida para a sua operação — não um software genérico, mas uma ferramenta que reflete exatamente como seu negócio funciona.",
-    services: [
-      { name: "Sistemas personalizados", desc: "Software feito para o seu fluxo, não para um fluxo genérico que você precisa se adaptar." },
-      { name: "Dashboards e BI", desc: "Indicadores do seu negócio visíveis em tempo real, de qualquer lugar, no celular." },
-      { name: "Análise de maturidade digital", desc: "Diagnóstico de onde seus dados estão, como são usados e o que falta para você tomar decisões melhores." },
-    ],
-    color: "view-green",
-    borderColor: "border-view-green/25",
-    bgColor: "bg-view-green/[.06]",
-    tagColor: "text-view-green",
-    accentColor: "text-view-green",
-  },
-  {
-    id: "reengenharia",
+    id: "view-flow",
     icon: "🔁",
-    tag: "Reengenharia de Processos",
-    headline: "Sua empresa trava sempre no mesmo ponto?",
-    problem:
-      "Se os mesmos problemas se repetem todo mês — atraso, retrabalho, equipe sobrecarregada, cliente insatisfeito — o problema não é a equipe. É o processo. E processo ruim não melhora com mais esforço, melhora com redesign.",
-    solution:
-      "A VIEW mapeia cada etapa da sua operação, encontra onde ela trava e redesenha o fluxo para que funcione sem depender de você. Processos claros, padronizados e escaláveis.",
+    tag: "VIEW FLOW",
+    sub: "Processos e automação",
+    desc: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
     services: [
-      { name: "Padronização", desc: "Cada processo documentado e replicável — sem depender da memória de ninguém." },
-      { name: "Auditoria de processo", desc: "Análise completa de onde a operação perde tempo e dinheiro sem que você perceba." },
-      { name: "Arquitetura empresarial", desc: "Redesign estrutural da empresa: departamentos, responsabilidades e fluxos alinhados." },
+      { name: "Padronização de processos", desc: "Cada processo documentado e replicável — sem depender da memória de ninguém." },
+      { name: "Automações de fluxos", desc: "Tarefas manuais e repetitivas eliminadas, depois do processo desenhado." },
+      { name: "Agentes de IA", desc: "Sistemas autônomos que executam tarefas complexas sem intervenção humana constante." },
+      { name: "Chatbot com IA", desc: "Atendimento automatizado que responde, filtra e qualifica sem depender da equipe." },
+      { name: "Consultoria em IA", desc: "Identificamos onde a IA gera mais retorno no seu negócio específico." },
     ],
     color: "accent",
     borderColor: "border-accent/25",
@@ -69,19 +64,31 @@ const solucoes = [
     accentColor: "text-accent",
   },
   {
-    id: "consultoria-estrategica",
-    icon: "🎯",
-    tag: "Consultoria Estratégica",
-    headline: "Você sabe se seu negócio está crescendo de forma saudável?",
-    problem:
-      "Faturamento subindo não significa lucro aumentando. Muitas empresas crescem e ficam mais frágeis — mais custo, mais complexidade, menos margem. Sem visão estratégica clara, crescimento vira risco.",
-    solution:
-      "A VIEW analisa o seu negócio de cima: onde está o dinheiro, onde está o risco, o que faz sentido escalar e o que precisa ser cortado. Decisão estratégica com base em dado.",
+    id: "view-one",
+    icon: "💻",
+    tag: "VIEW ONE",
+    sub: "Sistemas e integração",
+    desc: "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
     services: [
-      { name: "Planejamento estratégico", desc: "Definição clara de onde o negócio vai, por qual caminho e com quais recursos." },
-      { name: "Viabilidade de negócio", desc: "Análise antes de investir: o projeto tem retorno real ou é uma aposta?" },
-      { name: "Finanças corporativas", desc: "Visão clara de margem, custo, fluxo de caixa e saúde financeira do negócio." },
-      { name: "Desenvolvimento de governança", desc: "Estrutura de decisão clara — quem decide o quê, com base em quê." },
+      { name: "Sistemas personalizados", desc: "Software construído em cima do fluxo que a sua empresa já executa." },
+      // Servico que a especificacao lista e que nao existia na pagina. O nome
+      // veio aprovado; a descricao nao, e escrever uma seria inventar.
+      { name: "Integração e centralização de sistemas" },
+    ],
+    color: "view-green",
+    borderColor: "border-view-green/25",
+    bgColor: "bg-view-green/[.06]",
+    tagColor: "text-view-green",
+    accentColor: "text-view-green",
+  },
+  {
+    id: "view-insights",
+    icon: "📈",
+    tag: "VIEW INSIGHTS",
+    sub: "Dados e decisão",
+    desc: "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
+    services: [
+      { name: "Dashboards e BI", desc: "Indicadores do seu negócio visíveis em tempo real, de qualquer lugar, no celular." },
     ],
     color: "primary",
     borderColor: "border-primary/25",
@@ -90,18 +97,14 @@ const solucoes = [
     accentColor: "text-primary",
   },
   {
-    id: "capacitacao",
+    id: "view-academy",
     icon: "🎓",
-    tag: "Capacitação",
-    headline: "Sua equipe sabe usar as ferramentas que existem hoje?",
-    problem:
-      "IA não é só para grandes empresas. Mas a maioria das equipes ainda não sabe como usá-la no dia a dia — e continua fazendo tudo manualmente enquanto o concorrente já automatizou.",
-    solution:
-      "A VIEW treina sua equipe para adotar IA de forma prática e aplicada à realidade do seu negócio. Do conceito ao uso real, sem teoria desnecessária.",
+    tag: "VIEW ACADEMY",
+    sub: "Capacitação",
+    desc: "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
     services: [
+      { name: "Treinamento de equipes", desc: "Sua equipe aprende a trabalhar com IA no dia a dia, sem depender de terceiros." },
       { name: "Treinamento de IA", desc: "Capacitação prática: sua equipe aprende a usar IA nas tarefas do dia a dia." },
-      { name: "Construção de agentes próprios", desc: "Sua equipe sai capaz de criar e ajustar agentes sem depender de fornecedor externo." },
-      { name: "Adoção de IA no dia a dia", desc: "Implementação guiada: ferramentas certas, para o time certo, no momento certo." },
     ],
     color: "view-green",
     borderColor: "border-view-green/25",
@@ -110,6 +113,7 @@ const solucoes = [
     accentColor: "text-view-green",
   },
 ];
+
 
 const solucoesFaqs = [
   {
@@ -165,45 +169,45 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "IA & Automação",
-    serviceType: "Automação de processos com Inteligência Artificial",
+    name: "VIEW 360",
+    serviceType: "Diagnóstico da operação",
     provider: providerRef,
-    description: "Agentes de IA autônomos, chatbots com IA para atendimento, automação de fluxos repetitivos e treinamento de equipes para uso prático de inteligência artificial no dia a dia operacional.",
+    description: "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://reengenhariaview.com.br/solucoes#ia-automacao",
+    url: "https://reengenhariaview.com.br/solucoes#view-360",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Sistemas & Dados",
-    serviceType: "Desenvolvimento de sistemas de gestão e Business Intelligence",
+    name: "VIEW FLOW",
+    serviceType: "Processos e automação",
     provider: providerRef,
-    description: "Sistemas de gestão personalizados (não genéricos), dashboards de Business Intelligence em tempo real acessíveis pelo celular e análise de maturidade digital da empresa.",
+    description: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://reengenhariaview.com.br/solucoes#sistemas-dados",
+    url: "https://reengenhariaview.com.br/solucoes#view-flow",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Reengenharia de Processos",
-    serviceType: "Consultoria em reengenharia e padronização de processos empresariais",
+    name: "VIEW ONE",
+    serviceType: "Sistemas e integração",
     provider: providerRef,
-    description: "Mapeamento, padronização e redesign completo dos fluxos operacionais. Eliminação de retrabalho, auditoria de processos e arquitetura empresarial com documentação clara (SOPs, checklists, fluxogramas).",
+    description: "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://reengenhariaview.com.br/solucoes#reengenharia",
+    url: "https://reengenhariaview.com.br/solucoes#view-one",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Consultoria Estratégica",
-    serviceType: "Consultoria estratégica, planejamento e finanças corporativas para PMEs",
+    name: "VIEW INSIGHTS",
+    serviceType: "Dados e decisão",
     provider: providerRef,
-    description: "Planejamento estratégico, análise de viabilidade de negócio, finanças corporativas (margem, custo, fluxo de caixa) e desenvolvimento de estruturas de governança baseadas em dados.",
+    description: "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://reengenhariaview.com.br/solucoes#consultoria-estrategica",
+    url: "https://reengenhariaview.com.br/solucoes#view-insights",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
   {
@@ -218,12 +222,12 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Capacitação em IA",
-    serviceType: "Treinamento e capacitação de equipes em Inteligência Artificial",
+    name: "VIEW ACADEMY",
+    serviceType: "Capacitação",
     provider: providerRef,
-    description: "Treinamentos práticos de IA para equipes, capacitação para construção de agentes próprios e implementação guiada de ferramentas de IA no cotidiano operacional da empresa.",
+    description: "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
     areaServed: { "@type": "Country", name: "Brasil" },
-    url: "https://reengenhariaview.com.br/solucoes#capacitacao",
+    url: "https://reengenhariaview.com.br/solucoes#view-academy",
     offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" } },
   },
 ];
@@ -274,10 +278,9 @@ export default function Solucoes() {
                 <span>{s.icon}</span> {s.tag}
               </div>
               <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] mb-4">
-                {s.headline}
+                {s.sub}
               </h2>
-              <p className="text-[.88rem] text-muted-foreground leading-relaxed mb-4">{s.problem}</p>
-              <p className="text-[.88rem] text-foreground leading-relaxed font-medium">{s.solution}</p>
+              <p className="text-[.9rem] text-foreground leading-relaxed">{s.desc}</p>
 
               <div className="mt-8 flex gap-3 flex-wrap">
                 <a
@@ -295,7 +298,7 @@ export default function Solucoes() {
               {s.services.map((srv) => (
                 <div key={srv.name} className="bg-background/60 border border-foreground/[.06] rounded-lg p-4">
                   <div className={`font-display font-bold text-[.88rem] mb-1 ${s.accentColor}`}>{srv.name}</div>
-                  <div className="text-[.79rem] text-muted-foreground leading-relaxed">{srv.desc}</div>
+                  {srv.desc && <div className="text-[.79rem] text-muted-foreground leading-relaxed">{srv.desc}</div>}
                 </div>
               ))}
             </div>

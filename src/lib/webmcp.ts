@@ -30,36 +30,37 @@ const NO_ARGS = { type: "object", properties: {}, additionalProperties: false } 
 
 const SOLUCOES = [
   {
-    area: "IA & Automação",
-    dor: "Sua equipe ainda faz tarefas que deveriam ser automáticas?",
-    entregas: ["Agentes de IA autônomos", "Chatbot com IA para atendimento", "Automação de fluxos repetitivos", "Consultoria em IA"],
-    url: `${SITE}/solucoes#ia-automacao`,
+    area: "VIEW 360",
+    dor: "Diagnóstico da operação",
+    entregas: ["Análise de maturidade digital", "Auditoria de processo", "Arquitetura empresarial", "Desenvolvimento de governança", "Planejamento estratégico", "Viabilidade de negócio", "Finanças corporativas"],
+    url: `${SITE}/solucoes#view-360`,
   },
   {
-    area: "Sistemas & Dados",
-    dor: "Você decide com dados ou com achismo?",
-    entregas: ["Sistemas de gestão personalizados", "Dashboards de BI em tempo real (inclusive no celular)", "Análise de maturidade digital"],
-    url: `${SITE}/solucoes#sistemas-dados`,
+    area: "VIEW FLOW",
+    dor: "Processos e automação",
+    entregas: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Chatbot com IA", "Consultoria em IA"],
+    url: `${SITE}/solucoes#view-flow`,
   },
   {
-    area: "Reengenharia de Processos",
-    dor: "Os mesmos problemas se repetem todo mês?",
-    entregas: ["Padronização com SOPs, checklists e fluxogramas", "Auditoria operacional completa", "Arquitetura empresarial (redesenho de setores e responsabilidades)"],
-    url: `${SITE}/solucoes#reengenharia`,
+    area: "VIEW ONE",
+    dor: "Sistemas e integração",
+    entregas: ["Sistemas personalizados", "Integração e centralização de sistemas"],
+    url: `${SITE}/solucoes#view-one`,
   },
   {
-    area: "Consultoria Estratégica",
-    dor: "Você sabe se está crescendo de forma saudável?",
-    entregas: ["Planejamento estratégico", "Análise de viabilidade de negócio", "Finanças corporativas (margem, custo, fluxo de caixa)", "Estruturas de governança"],
-    url: `${SITE}/solucoes#consultoria-estrategica`,
+    area: "VIEW INSIGHTS",
+    dor: "Dados e decisão",
+    entregas: ["Dashboards e BI"],
+    url: `${SITE}/solucoes#view-insights`,
   },
   {
-    area: "Capacitação",
-    dor: "Sua equipe sabe usar IA no dia a dia?",
-    entregas: ["Treinamento prático de IA para equipes", "Construção de agentes próprios", "Implantação guiada de ferramentas de IA"],
-    url: `${SITE}/solucoes#capacitacao`,
+    area: "VIEW ACADEMY",
+    dor: "Capacitação",
+    entregas: ["Treinamento de equipes", "Treinamento de IA"],
+    url: `${SITE}/solucoes#view-academy`,
   },
 ];
+
 
 const DIMENSOES = [
   ["Dados", "Capacidade de decidir com base em evidências e indicadores confiáveis."],
