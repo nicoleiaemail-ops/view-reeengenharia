@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "A VIEW atende pequenas e médias empresas?",
-    a: "Sim. A VIEW foi criada para PMEs que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio. Atendemos empresas de 5 a 200 funcionários.",
+    a: "Sim. A VIEW foi criada para PMEs que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio. Atendemos empresas de 20 a 300 pessoas.",
   },
   {
     q: "O que acontece com os dados que eu enviar?",

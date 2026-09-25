@@ -98,7 +98,7 @@ const casosFaqs = [
   },
   {
     q: "Esses resultados são exclusivos de empresas grandes?",
-    a: "Não. Os casos documentados são de PMEs — uma construtora e um restaurante — atendidas pela VIEW em Paraíba. A metodologia foi criada especificamente para empresas de 5 a 200 funcionários.",
+    a: "Não. Os casos documentados são de PMEs — uma construtora e um restaurante — atendidas pela VIEW em Paraíba. A metodologia foi criada especificamente para empresas de 20 a 300 pessoas.",
   },
 ];
 

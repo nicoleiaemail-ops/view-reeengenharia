@@ -36,10 +36,13 @@ export function Hero() {
           Sua operação inteira em uma tela, <span className="text-accent">em tempo real</span>.
         </h1>
 
-        <p className="text-[.98rem] leading-[1.7] text-muted-foreground max-w-[560px] mx-auto mb-3">
-          Reengenharia de processos, automação e sistemas sob medida para empresas de{" "}
-          <strong className="text-foreground font-semibold">5 a 200 funcionários</strong>. Você para de
-          perguntar como está a operação — e passa a ver.
+        <p className="text-[.98rem] leading-[1.7] text-muted-foreground max-w-[560px] mx-auto mb-4">
+          Sua empresa cresceu e a operação se espalhou por planilha, sistema e grupo de WhatsApp. A VIEW
+          desenha o processo primeiro. Depois constrói o sistema que sustenta ele.
+        </p>
+
+        <p className="text-[1.02rem] leading-[1.6] text-foreground font-semibold max-w-[560px] mx-auto mb-3">
+          Você para de perguntar como está a operação e passa a ver.
         </p>
 
         <p className="text-[.85rem] leading-relaxed text-muted-foreground/90 max-w-[520px] mx-auto mb-7">
@@ -49,6 +52,15 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
           <PrimaryCTA location="hero" />
           <SecondaryCTA location="hero" />
+        </div>
+
+        {/*
+          Rótulo de porte. A especificação pedia Cinza Chumbo (#5A6476), que dá
+          3,12:1 sobre o fundo escuro daqui — abaixo do mínimo AA. Usado o token
+          do projeto, que existe justamente para este papel e passa de 7:1.
+        */}
+        <div className="text-[.68rem] tracking-[.12em] uppercase text-muted-foreground font-display font-semibold mb-3">
+          Empresas de 20 a 300 pessoas
         </div>
 
         <Reassurance />
