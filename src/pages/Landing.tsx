@@ -207,7 +207,7 @@ const Landing = () => {
     <>
       <SEO
         title="VIEW — Visibilidade e Controle Operacional para Empresas"
-        description="A VIEW entrega visibilidade operacional, controle de processos e informação em tempo real com IA, automação e sistemas sob medida."
+        description="A VIEW devolve o controle da operação para quem toma decisão."
         path="/"
         jsonLd={[websiteJsonLd, organizationJsonLd, localBusinessJsonLd, faqJsonLd, speakableJsonLd]}
       />

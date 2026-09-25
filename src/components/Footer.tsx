@@ -15,7 +15,8 @@ export function Footer() {
             </div>
           </div>
           <p className="text-[.78rem] text-muted-foreground leading-relaxed max-w-[280px]">
-            Visibilidade operacional, automação e controle de processos para empresas em crescimento.
+            A VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo desenhado,
+            depois o sistema, a automação e o dado. Nessa ordem, com a medição feita antes e depois.
           </p>
         </div>
 

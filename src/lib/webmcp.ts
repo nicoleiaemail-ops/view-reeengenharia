@@ -111,8 +111,9 @@ const tools: WebMcpTool[] = [
     inputSchema: NO_ARGS,
     execute: () =>
       text(`
-VIEW Reengenharia de Processos — consultoria de reengenharia de processos, automação com IA,
-sistemas sob medida e visibilidade operacional em tempo real para pequenas e médias empresas.
+VIEW — a VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo
+desenhado, depois o sistema, a automação e o dado. Nessa ordem, com a medição feita antes e
+depois. Atende empresas de 20 a 300 pessoas.
 
 Fundada em 2024 por uma equipe de engenharia de produção com mais de cinco anos em grandes
 indústrias brasileiras (Baterias Moura, Alpargatas). Aplica os mesmos princípios de excelência
