@@ -11,11 +11,9 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
   metodo. "Consultoria Estrategica" deixou de existir: o que ela entregava
   virou o VIEW 360.
 
-  Cada frente perdeu o par problema/solucao que tinha. Nao foi corte
-  editorial: os textos antigos estavam colados nos agrupamentos antigos, e no
-  reagrupamento dois deles cairiam na mesma frente (FLOW) enquanto o INSIGHTS
-  ficaria sem nenhum. Manter exigiria escrever texto novo, que nao esta
-  aprovado. Ficou a descricao de cada frente, que esta.
+  O par problema/solucao foi reescrito para o agrupamento novo. Os textos
+  antigos estavam colados nas cinco areas tecnicas: no reagrupamento, dois
+  cairiam na mesma frente (FLOW) e o INSIGHTS ficaria sem nenhum.
 
   Nenhum servico foi removido: os 18 que existiam continuam aqui, com as
   descricoes que ja tinham.
@@ -27,6 +25,10 @@ const solucoes = [
     tag: "VIEW 360",
     sub: "Diagnóstico da operação",
     desc: "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
+    problem:
+      "Você sabe que a operação trava, mas não sabe onde. Cada área aponta para outra, todo mundo tem uma teoria, e a decisão acaba saindo por intuição ou por quem falou mais alto na reunião.",
+    solution:
+      "A VIEW mede as sete dimensões do DISTIPP, coloca número no custo mensal de cada gargalo e devolve uma ordem de ataque: o que resolver primeiro, o que pode esperar e quanto cada item vale por mês.",
     services: [
       { name: "Análise de maturidade digital", desc: "Diagnóstico de onde seus dados estão, como são usados e o que falta para você tomar decisões melhores." },
       { name: "Auditoria de processo", desc: "Análise completa de onde a operação perde tempo e dinheiro sem que você perceba." },
@@ -53,6 +55,10 @@ const solucoes = [
     // A condicao de entrada da IA fica imediatamente antes dos tres servicos
     // de IA: quem chega neles le a regra antes da oferta.
     recusaAntes: "Agentes de IA",
+    problem:
+      "O processo existe, mas mora na cabeça de três pessoas. Quando uma falta, a etapa para. Quando entra alguém novo, o treinamento é olhar por cima do ombro, e o mesmo erro volta todo mês no mesmo ponto.",
+    solution:
+      "A VIEW escreve o fluxo junto com quem executa ele, tira as etapas que só existem por costume e padroniza o que sobra. Depois disso, a parte repetitiva vira automação, com a métrica escolhida antes de a primeira linha ser construída.",
     services: [
       { name: "Padronização de processos", desc: "Cada processo documentado e replicável — sem depender da memória de ninguém." },
       { name: "Automações de fluxos", desc: "Tarefas manuais e repetitivas eliminadas, depois do processo desenhado." },
@@ -72,6 +78,10 @@ const solucoes = [
     tag: "VIEW ONE",
     sub: "Sistemas e integração",
     desc: "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
+    problem:
+      "Você paga ERP, CRM, financeiro, RH, BI e mais uma lista de assinaturas, e nenhum conversa com o outro. O mesmo dado é digitado três vezes, cada relatório devolve um número diferente, e ninguém confia no total.",
+    solution:
+      "A VIEW mapeia o que cada sistema faz de fato, desenha a operação integrada e constrói por partes, homologando com o seu time a cada entrega. Conforme os módulos entram, os contratos antigos saem, e o custo que você já pagava passa a construir a sua operação.",
     services: [
       { name: "Sistemas personalizados", desc: "Software construído em cima do fluxo que a sua empresa já executa." },
       // Servico que a especificacao lista e que nao existia na pagina. O nome
@@ -90,6 +100,10 @@ const solucoes = [
     tag: "VIEW INSIGHTS",
     sub: "Dados e decisão",
     desc: "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
+    problem:
+      "O painel está pronto, bonito, e ninguém abre. Na reunião de segunda, a discussão continua girando sobre o que cada um acha que aconteceu, porque o número aparece na tela sem dizer o que fazer com ele.",
+    solution:
+      "A VIEW transforma o painel em leitura: o que mudou na semana, por que mudou, o que fazer e quem faz. Cada recomendação sai com responsável, prazo e a métrica que vai dizer se funcionou.",
     services: [
       { name: "Dashboards e BI", desc: "Indicadores do seu negócio visíveis em tempo real, de qualquer lugar, no celular." },
     ],
@@ -105,6 +119,10 @@ const solucoes = [
     tag: "VIEW ACADEMY",
     sub: "Capacitação",
     desc: "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
+    problem:
+      "O fornecedor entrega, treina uma tarde e vai embora. Seis meses depois, qualquer ajuste depende de abrir ticket, esperar orçamento e pagar hora de terceiro para mexer em algo que é da sua operação.",
+    solution:
+      "A VIEW forma o seu time nos processos e nas ferramentas da própria empresa, usando os problemas que ele já tem na mesa. No fim, quem opera sabe ajustar, medir e documentar sem depender de fornecedor.",
     services: [
       { name: "Treinamento de equipes", desc: "Sua equipe aprende a trabalhar com IA no dia a dia, sem depender de terceiros." },
       { name: "Treinamento de IA", desc: "Capacitação prática: sua equipe aprende a usar IA nas tarefas do dia a dia." },
@@ -314,7 +332,9 @@ export default function Solucoes() {
               <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] mb-4">
                 {s.sub}
               </h2>
-              <p className="text-[.9rem] text-foreground leading-relaxed">{s.desc}</p>
+              <p className="text-[.9rem] text-foreground leading-relaxed font-medium mb-4">{s.desc}</p>
+              <p className="text-[.88rem] text-muted-foreground leading-relaxed mb-4">{s.problem}</p>
+              <p className="text-[.88rem] text-foreground leading-relaxed">{s.solution}</p>
 
               <div className="mt-8 flex gap-3 flex-wrap">
                 <a
