@@ -188,7 +188,7 @@ export function CostOfNotSeeing() {
             <Campo
               id="calc-custo"
               label="Custo médio da hora trabalhada"
-              hint="Salário com encargos dividido pelas horas do mês. Em PMEs costuma ficar entre R$ 20 e R$ 60."
+              hint="Salário com encargos dividido pelas horas do mês. Costuma ficar entre R$ 20 e R$ 60."
               min={15}
               max={120}
               step={5}
@@ -243,7 +243,7 @@ export function CostOfNotSeeing() {
 
             <p className="text-[.73rem] text-muted-foreground/80 leading-relaxed">
               Estimativa, não promessa. As proporções de retrabalho e espera são faixas que a VIEW observa
-              em diagnóstico de PMEs — a sua pode ser maior ou menor. O diagnóstico gratuito mede os
+              em diagnóstico de empresas desse porte — a sua pode ser maior ou menor. O diagnóstico gratuito mede os
               números reais da sua operação em vez de estimá-los.
             </p>
           </div>

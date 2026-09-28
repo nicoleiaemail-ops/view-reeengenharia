@@ -11,7 +11,7 @@ Ele mede a maturidade operacional de uma empresa em sete dimensões e indica qua
 delas está travando as outras. Esta skill permite que você conduza o diagnóstico
 em conversa, sem formulário.
 
-Público-alvo: pequenas e médias empresas que operam com planilhas, WhatsApp e
+Público-alvo: empresas de 20 a 300 pessoas que operam com planilhas, WhatsApp e
 decisão por intuição — indústria, construção civil, logística, serviços, comércio
 e tecnologia.
 

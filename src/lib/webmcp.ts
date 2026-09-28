@@ -118,7 +118,7 @@ depois. Atende empresas de 20 a 300 pessoas.
 
 Fundada em 2024 por uma equipe de engenharia de produção com mais de cinco anos em grandes
 indústrias brasileiras (Baterias Moura, Alpargatas). Aplica os mesmos princípios de excelência
-operacional em PMEs em crescimento.
+operacional em empresas de 20 a 300 pessoas em crescimento.
 
 A VIEW não vende software de prateleira. Entrega execução: diagnóstico, redesenho de processos,
 automação, sistema sob medida e acompanhamento contínuo.

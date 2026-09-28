@@ -54,8 +54,8 @@ const faqs = [
     a: "É o grau em que a empresa tem processos documentados, dados centralizados, tecnologia integrada e equipes orientadas por indicadores. <strong>Empresas com alta maturidade tomam decisões mais rápidas e escalam com mais controle.</strong>",
   },
   {
-    q: "A VIEW atende pequenas e médias empresas?",
-    a: "Sim. A VIEW foi criada para PMEs que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio. Atendemos empresas de 20 a 300 pessoas.",
+    q: "Qual o porte de empresa que a VIEW atende?",
+    a: "Empresas de 20 a 300 pessoas que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio.",
   },
   {
     q: "O que acontece com os dados que eu enviar?",

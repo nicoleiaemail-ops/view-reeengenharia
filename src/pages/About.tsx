@@ -25,8 +25,8 @@ const About = () => {
   return (
     <>
       <SEO
-        title="Sobre a VIEW — Consultoria de Processos para PMEs no Nordeste do Brasil"
-        description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional às PMEs. Metodologia DISTIPP, missão, valores e nossa história."
+        title="Sobre a VIEW — Consultoria de Processos no Nordeste do Brasil"
+        description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional a empresas de 20 a 300 pessoas. Metodologia DISTIPP, missão, valores e nossa história."
         path="/sobre"
         jsonLd={[
           {
@@ -42,14 +42,14 @@ const About = () => {
             "@type": "AboutPage",
             name: "Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional",
             url: "https://reengenhariaview.com.br/sobre",
-            description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para PMEs brasileiras.",
+            description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para empresas de 20 a 300 pessoas.",
             mainEntity: {
               "@type": ["Organization", "ProfessionalService"],
               name: "VIEW Reengenharia de Processos",
               url: "https://reengenhariaview.com.br",
               logo: "https://reengenhariaview.com.br/og-image.png",
               foundingDate: "2024",
-              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para PMEs no Nordeste do Brasil.",
+              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para empresas de 20 a 300 pessoas, no Nordeste do Brasil.",
               telephone: "+55-83-99322-4878",
               email: "admin@reengenhariaview.com.br",
               areaServed: [

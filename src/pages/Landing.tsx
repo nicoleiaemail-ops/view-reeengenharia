@@ -46,7 +46,7 @@ const organizationJsonLd = {
   url: "https://reengenhariaview.com.br",
   logo: "https://reengenhariaview.com.br/og-image.png",
   description:
-    "Empresa especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para gestores de PMEs. Metodologia exclusiva DISTIPP.",
+    "Empresa especializada em reengenharia de processos, automação operacional e controle da operação para empresas de 20 a 300 pessoas. Metodologia exclusiva DISTIPP.",
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   contactPoint: {
@@ -173,7 +173,7 @@ const localBusinessJsonLd = {
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
-  description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
+  description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e controle da operação para empresas de 20 a 300 pessoas, no Nordeste do Brasil.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados",
