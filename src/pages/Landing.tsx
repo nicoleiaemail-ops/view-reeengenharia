@@ -77,6 +77,9 @@ const organizationJsonLd = {
     "Sistemas de Gestão Customizados",
     "Diagnóstico Operacional Gratuito",
   ],
+  // O catalogo listava tres servicos da estrutura antiga. Passa a listar as
+  // cinco frentes, com as descricoes aprovadas, mais o diagnostico gratuito,
+  // que continua sendo a oferta de entrada do site.
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Serviços VIEW",
@@ -87,29 +90,57 @@ const organizationJsonLd = {
           "@type": "Service",
           name: "Diagnóstico Gratuito de Maturidade Operacional",
           description:
-            "Mapeamento do nível de maturidade digital da empresa em 48h, sem custo e sem compromisso.",
+            "Mapeamento do nível de maturidade da empresa nas 7 dimensões do DISTIPP, sem custo e sem compromisso.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Reengenharia de Processos",
+          name: "VIEW 360",
           description:
-            "Redesign completo dos fluxos operacionais, eliminando rotinas manuais e planilhas por processos digitais orientados a dados.",
+            "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Sistemas de Gestão Customizados",
+          name: "VIEW FLOW",
           description:
-            "Desenvolvimento de sistemas sob medida para iOS, Android e Desktop, adaptados à realidade operacional da empresa.",
+            "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "VIEW ONE",
+          description:
+            "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "VIEW INSIGHTS",
+          description:
+            "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "VIEW ACADEMY",
+          description:
+            "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
         },
       },
     ],
   },
+
   review: [
     {
       "@type": "Review",
@@ -205,8 +236,8 @@ const Landing = () => {
   return (
     <>
       <SEO
-        title="VIEW — Visibilidade e Controle Operacional para Empresas"
-        description="A VIEW devolve o controle da operação para quem toma decisão."
+        title="VIEW — Controle da Operação para Empresas de 20 a 300 Pessoas"
+        description="A VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo desenhado, depois o sistema, a automação e o dado."
         path="/"
         jsonLd={[websiteJsonLd, organizationJsonLd, localBusinessJsonLd, faqJsonLd, speakableJsonLd]}
       />

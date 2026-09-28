@@ -279,7 +279,7 @@ export default function Solucoes() {
   return (
     <>
       <SEO
-        title="Soluções VIEW — Automação, Reengenharia de Processos e IA para PMEs"
+        title="Soluções VIEW — Reengenharia de Processos, Automação e IA"
         description="Reengenharia de processos, automação com IA, sistemas sob medida e dashboards em tempo real para pequenas e médias empresas. Atendemos PB, PE, RN e todo o Brasil."
         path="/solucoes"
         jsonLd={jsonLd}
