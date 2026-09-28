@@ -45,7 +45,7 @@ export function Footer() {
           <ul className="flex flex-col gap-2.5">
             <li>
               <a
-                href="https://wa.me/558399565051"
+                href="https://wa.me/5583993224878"
                 className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
