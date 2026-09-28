@@ -54,11 +54,14 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     try {
-      const { error } = await supabase.rpc("submit_diagnostic_lead", {
-        p_nome: formData.get("nome") as string,
-        p_whatsapp: phone,
-        p_empresa: formData.get("empresa") as string,
-        p_segmento: formData.get("segmento") as string,
+      const { error } = await supabase.from("diagnostic_leads").insert({
+        nome: (formData.get("nome") as string) || "",
+        whatsapp: phone,
+        empresa: (formData.get("empresa") as string) || "",
+        segmento: (formData.get("segmento") as string) || "",
+        email: (formData.get("email") as string) || "",
+        cidade: (formData.get("cidade") as string) || "",
+        num_funcionarios: (formData.get("num_funcionarios") as string) || "",
       });
       if (error) throw error;
       setSubmitted(true);
