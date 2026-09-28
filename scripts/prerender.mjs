@@ -111,6 +111,42 @@ function dedupeHeadTags() {
   return removed;
 }
 
+// Executado dentro da página: rola a página até o fim e volta ao topo.
+//
+// Tudo que depende de IntersectionObserver ficava no estado inicial no HTML
+// salvo, porque o observer nunca dispara numa aba que não rola. O caso visível
+// eram os números acumulados da home: o contador começa em 0 e só anima quando
+// entra na viewport, então o HTML publicado dizia "0 processos automatizados" e
+// "R$0 em custo operacional cortado". Pessoa nenhuma via isso, porque no
+// navegador a seção anima ao rolar — mas Googlebot e os crawlers de IA leem o
+// HTML, não a animação.
+//
+// Depois de rolar, espera os contadores pararem de mudar: é o sinal de que as
+// animações terminaram e o DOM pode ser serializado.
+async function revelarConteudoAdiado() {
+  const espera = (ms) => new Promise((r) => setTimeout(r, ms));
+  const passo = Math.max(320, Math.round(window.innerHeight * 0.8));
+
+  for (let y = 0; y < document.body.scrollHeight; y += passo) {
+    window.scrollTo(0, y);
+    await espera(90);
+  }
+  window.scrollTo(0, document.body.scrollHeight);
+  await espera(200);
+
+  const amostra = () =>
+    [...document.querySelectorAll(".tabular-nums")].map((el) => el.textContent).join("|");
+  let anterior = amostra();
+  for (let i = 0; i < 20; i++) {
+    await espera(200);
+    const atual = amostra();
+    if (atual === anterior) break;
+    anterior = atual;
+  }
+
+  window.scrollTo(0, 0);
+}
+
 // Executado dentro da página (contexto do navegador): converte o DOM renderizado
 // em Markdown. Não tenta ser um conversor genérico de HTML — cobre o que o site
 // usa (títulos, parágrafos, listas, tabelas, links, ênfase) e ignora o resto.
@@ -320,6 +356,7 @@ async function run() {
         },
         { timeout: 15000 }
       );
+      await page.evaluate(revelarConteudoAdiado);
       const deduped = await page.evaluate(dedupeHeadTags);
       const html = await page.content();
 
