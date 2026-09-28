@@ -158,8 +158,8 @@ export default function Links() {
           propósito: o botão declara que veio do Instagram pedindo a Leitura
           Executiva, este declara que veio do site querendo conversar.
 
-          O LinkedIn não existe em nenhum lugar do projeto e a instrução é não
-          inventar URL de rede social, então ficou fora.
+          A VIEW ainda não tem LinkedIn, então o link ficou fora. Quando tiver,
+          entra aqui entre o WhatsApp e o Instagram.
         */}
         <footer
           className="mt-10 pt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[.78rem] font-body"

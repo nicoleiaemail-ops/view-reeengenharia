@@ -79,38 +79,14 @@ const About = () => {
             "@type": "HowTo",
             name: "Como funciona a metodologia VIEW de reengenharia de processos",
             description:
-              "Processo completo de reengenharia operacional em 5 etapas: do diagnóstico gratuito ao acompanhamento contínuo, com automação e dashboards em tempo real.",
+              "Método de evolução operacional em 6 etapas: processo desenhado primeiro, depois sistema, automação e dado, com medição feita antes e depois.",
             step: [
-              {
-                "@type": "HowToStep",
-                position: 1,
-                name: "Diagnóstico gratuito",
-                text: "Mapeamos sua operação atual. Resultado em 48h, totalmente gratuito e sem compromisso.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 2,
-                name: "Mapeamento e redesign",
-                text: "Documentamos cada fluxo, eliminamos o que não agrega valor e padronizamos o que é replicável.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 3,
-                name: "Automação e sistema sob medida",
-                text: "Automatizamos tarefas repetitivas e desenvolvemos o sistema que sua operação precisa, disponível para iOS, Android e Desktop.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 4,
-                name: "Dashboards em tempo real",
-                text: "Implementamos indicadores de performance acessíveis de qualquer lugar, em tempo real.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 5,
-                name: "Acompanhamento contínuo",
-                text: "Não entregamos e saímos. Acompanhamos, medimos o resultado e seguimos em parceria de longo prazo.",
-              },
+              { "@type": "HowToStep", position: 1, name: "Enxergar", text: "Medimos as sete dimensões da sua operação e colocamos número no custo mensal de cada gargalo." },
+              { "@type": "HowToStep", position: 2, name: "Entender", text: "Vamos até onde o trabalho acontece e descobrimos, com quem executa, por que a etapa trava." },
+              { "@type": "HowToStep", position: 3, name: "Simplificar", text: "Tiramos as etapas que só existem por costume e padronizamos o que sobra." },
+              { "@type": "HowToStep", position: 4, name: "Construir", text: "Automação, integração e sistema entram agora, com a métrica escolhida antes da primeira linha." },
+              { "@type": "HowToStep", position: 5, name: "Capacitar", text: "Seu time aprende a operar, ajustar e documentar o que foi construído." },
+              { "@type": "HowToStep", position: 6, name: "Evoluir", text: "Medimos o resultado contra a métrica combinada e você decide o ciclo seguinte." },
             ],
           },
         ]}
@@ -194,11 +170,12 @@ const About = () => {
           <div className="flex flex-col relative">
             <div className="absolute left-[27px] top-5 bottom-5 w-px bg-gradient-to-b from-primary/50 to-primary/10 pointer-events-none" />
             {[
-              { num: "01", title: "Diagnóstico gratuito", desc: "Mapeamos sua operação atual. Resultado em 48h.", tag: "Gratuito · 48h" },
-              { num: "02", title: "Mapeamento e redesign", desc: "Documentamos cada fluxo. Eliminamos o que não agrega. Padronizamos o replicável.", tag: "Clareza antes de automação" },
-              { num: "03", title: "Automação e sistema sob medida", desc: "Automatizamos o repetitivo e desenvolvemos o sistema que sua operação precisa.", tag: "iOS · Android · Desktop" },
-              { num: "04", title: "Dashboards em tempo real", desc: "Indicadores acessíveis de qualquer lugar, em tempo real.", tag: "KPIs reais · Tempo real" },
-              { num: "05", title: "Acompanhamento contínuo", desc: "Não entregamos e saímos. Acompanhamos e medimos o resultado.", tag: "Parceria de longo prazo" },
+              { num: "01", title: "Enxergar", desc: "Medimos as sete dimensões da sua operação e colocamos número no custo mensal de cada gargalo.", tag: "Diagnóstico DISTIPP" },
+              { num: "02", title: "Entender", desc: "Vamos até onde o trabalho acontece e descobrimos, com quem executa, por que a etapa trava.", tag: "Causa antes de solução" },
+              { num: "03", title: "Simplificar", desc: "Tiramos as etapas que só existem por costume e padronizamos o que sobra.", tag: "Processo antes de ferramenta" },
+              { num: "04", title: "Construir", desc: "Automação, integração e sistema entram agora, com a métrica escolhida antes da primeira linha.", tag: "Métrica definida antes" },
+              { num: "05", title: "Capacitar", desc: "Seu time aprende a operar, ajustar e documentar o que foi construído.", tag: "Autonomia, sem dependência" },
+              { num: "06", title: "Evoluir", desc: "Medimos o resultado contra a métrica combinada e você decide o ciclo seguinte.", tag: "Medição antes e depois" },
             ].map((s, i) => (
               <div key={i} className="scroll-reveal flex items-start gap-6 py-7 border-b border-foreground/[.06] last:border-b-0" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="w-14 h-14 rounded-full bg-primary/12 border border-primary/35 flex items-center justify-center font-display font-extrabold text-[.75rem] tracking-[.08em] text-primary/70 flex-shrink-0">
@@ -212,6 +189,73 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/*
+        Os sete pilares e as tres recusas faltavam nesta pagina. A pagina /links
+        promete "o metodo de seis etapas, os sete pilares e as tres recusas" em
+        /sobre, e so o metodo estava aqui.
+
+        Os pilares aparecem em lista compacta, com letra, nome e sinal de
+        mudanca. A home ja tem a versao em cards: repetir o mesmo bloco criaria
+        conteudo duplicado entre duas paginas indexadas.
+      */}
+      <section className="py-24 px-[7%] border-t border-view-line">
+        <div className="max-w-[860px] mx-auto">
+          <div className="scroll-reveal text-center mb-12">
+            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">O que olhamos</div>
+            <h2 className="font-display font-extrabold text-[clamp(1.7rem,2.8vw,2.4rem)] leading-[1.1] mb-4">
+              Os sete pilares do <span className="text-primary">DISTIPP</span>
+            </h2>
+            <p className="text-[.9rem] text-muted-foreground max-w-[560px] mx-auto leading-relaxed">
+              Cada pilar carrega um sinal de mudança: a frase concreta que prova, na prática, que a sua
+              empresa evoluiu naquela dimensão.
+            </p>
+          </div>
+
+          <div className="scroll-reveal flex flex-col divide-y divide-view-line">
+            {[
+              { letra: "D", nome: "Dados", sinal: "Você para de decidir por intuição." },
+              { letra: "I", nome: "Integração", sinal: "A informação chega antes da cobrança." },
+              { letra: "S", nome: "Sistemas", sinal: "Acaba a planilha paralela ao ERP." },
+              { letra: "T", nome: "Tecnologia", sinal: "Mais volume sem mais gente." },
+              { letra: "I", nome: "Inovação", sinal: "Mudança deixa de acontecer só em crise." },
+              { letra: "P", nome: "Pessoas", sinal: "Reconhecer e corrigir com base em fato." },
+              { letra: "P", nome: "Processos", sinal: "O processo não depende de quem está na sala." },
+            ].map((pilar, i) => (
+              <div key={i} className="flex items-baseline gap-4 py-4">
+                <span className="font-display font-black text-primary/70 w-5 flex-shrink-0" aria-hidden="true">
+                  {pilar.letra}
+                </span>
+                <span className="font-display font-bold text-foreground text-[.92rem] w-[7.5rem] flex-shrink-0">
+                  {pilar.nome}
+                </span>
+                <span className="text-[.87rem] text-muted-foreground leading-relaxed">{pilar.sinal}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/*
+        As tres recusas. Fundo navy e cantos retos, igual ao bloco do /solucoes:
+        e uma regra, nao um card de venda. Aqui aparecem no nivel da marca, e nao
+        so dentro do VIEW FLOW.
+      */}
+      <section className="pb-24 px-[7%]">
+        <div className="scroll-reveal max-w-[860px] mx-auto bg-view-navy text-white p-8 md:p-10 rounded-none">
+          <div className="text-[.65rem] tracking-[.22em] uppercase text-white/50 mb-4">O que nunca fazemos</div>
+          <div className="flex flex-col gap-2 mb-6 font-display font-bold text-[clamp(1.05rem,2vw,1.4rem)] leading-tight">
+            <span>Não automatizamos caos.</span>
+            <span>Não digitalizamos desperdício.</span>
+            <span>Não aplicamos IA sem problema definido e sem métrica.</span>
+          </div>
+          <p className="text-[.87rem] leading-relaxed text-white/80 max-w-[620px]">
+            É por isso que a ordem do método não muda: processo desenhado primeiro, depois o sistema, a
+            automação e o dado, com a medição feita antes e depois. Automatizar antes disso acelera o erro,
+            e sai mais caro que o erro parado.
+          </p>
         </div>
       </section>
 
