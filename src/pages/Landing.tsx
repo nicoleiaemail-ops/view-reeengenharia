@@ -54,11 +54,11 @@ const organizationJsonLd = {
   logo: "https://reengenhariaview.com.br/og-image.png",
   description:
     "Empresa especializada em reengenharia de processos, automação operacional e visibilidade em tempo real para gestores de PMEs. Metodologia exclusiva DISTIPP.",
-  telephone: "+55-83-99565-0051",
+  telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-83-99565-0051",
+    telephone: "+55-83-99322-4878",
     contactType: "customer service",
     availableLanguage: "Portuguese",
     contactOption: "TollFree",
@@ -149,7 +149,7 @@ const localBusinessJsonLd = {
   name: "VIEW Reengenharia de Processos",
   image: "https://reengenhariaview.com.br/og-image.png",
   url: "https://reengenhariaview.com.br",
-  telephone: "+55-83-99565-0051",
+  telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
   description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e visibilidade em tempo real para PMEs no Nordeste do Brasil.",
