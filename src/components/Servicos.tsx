@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Target, Workflow, Monitor, Database, GraduationCap } from "lucide-react";
 import { PRIMARY_HREF, PRIMARY_LABEL } from "./CTA";
 import { EVENTS, track } from "@/lib/analytics";
 
@@ -12,10 +12,16 @@ import { EVENTS, track } from "@/lib/analytics";
 
   Cada card mostra até quatro serviços; a lista completa das cinco frentes
   está em /solucoes, que é a mesma densidade que os cards já tinham.
+
+  Ícones: Lucide, não emoji. O emoji cru rendeiriza diferente por SO/navegador
+  e destoava dos badges customizados de Pains e dos ícones Lucide de DISTIP.
+  Reaproveitado o mesmo ícone por conceito que DISTIP.tsx já usa (Sistemas =
+  Monitor, Dados = Database, Processos = Workflow), para o mesmo conceito ter
+  a mesma cara em toda a home.
 */
 const areas = [
   {
-    icon: "🎯",
+    icon: Target,
     tag: "VIEW 360",
     sub: "Diagnóstico da operação",
     desc: "Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver.",
@@ -25,7 +31,7 @@ const areas = [
     accent: "text-primary",
   },
   {
-    icon: "🔁",
+    icon: Workflow,
     tag: "VIEW FLOW",
     sub: "Processos e automação",
     desc: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
@@ -35,7 +41,7 @@ const areas = [
     accent: "text-accent",
   },
   {
-    icon: "💻",
+    icon: Monitor,
     tag: "VIEW ONE",
     sub: "Sistemas e integração",
     desc: "Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação.",
@@ -45,7 +51,7 @@ const areas = [
     accent: "text-view-green",
   },
   {
-    icon: "📈",
+    icon: Database,
     tag: "VIEW INSIGHTS",
     sub: "Dados e decisão",
     desc: "Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação.",
@@ -55,7 +61,7 @@ const areas = [
     accent: "text-primary",
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     tag: "VIEW ACADEMY",
     sub: "Capacitação",
     desc: "Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste.",
@@ -90,7 +96,7 @@ export function Servicos() {
             style={{ transitionDelay: `${i * 0.07}s` }}
           >
             <div className="flex items-start justify-between">
-              <span className="text-[1.8rem]">{a.icon}</span>
+              <a.icon className={`w-7 h-7 ${a.accent}`} aria-hidden="true" strokeWidth={1.75} />
               <ArrowRight className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 ${a.accent}`} />
             </div>
             <div>

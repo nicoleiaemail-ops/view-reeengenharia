@@ -15,8 +15,14 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
   antigos estavam colados nas cinco areas tecnicas: no reagrupamento, dois
   cairiam na mesma frente (FLOW) e o INSIGHTS ficaria sem nenhum.
 
-  Nenhum servico foi removido: os 18 que existiam continuam aqui, com as
+  Nenhum servico foi removido: os 19 que existiam continuam aqui, com as
   descricoes que ja tinham.
+
+  "Construcao de agentes proprios" e "Adocao de IA no dia a dia" mudaram do
+  VIEW 360 para o VIEW ACADEMY numa revisao posterior: a redacao das duas
+  ("sua equipe sai capaz de...", "para o time certo") e de capacitacao, nao
+  de diagnostico, e o 360 tinha 9 servicos contra 1 do INSIGHTS -- o
+  desequilibrio mais visivel da pagina.
 */
 const solucoes = [
   {
@@ -37,8 +43,6 @@ const solucoes = [
       { name: "Planejamento estratégico", desc: "Definição clara de onde o negócio vai, por qual caminho e com quais recursos." },
       { name: "Viabilidade de negócio", desc: "Análise antes de investir: o projeto tem retorno real ou é uma aposta?" },
       { name: "Finanças corporativas", desc: "Visão clara de margem, custo, fluxo de caixa e saúde financeira do negócio." },
-      { name: "Construção de agentes próprios", desc: "Sua equipe sai capaz de criar e ajustar agentes sem depender de fornecedor externo." },
-      { name: "Adoção de IA no dia a dia", desc: "Implementação guiada: ferramentas certas, para o time certo, no momento certo." },
     ],
     color: "primary",
     borderColor: "border-primary/25",
@@ -126,6 +130,8 @@ const solucoes = [
     services: [
       { name: "Treinamento de equipes", desc: "Sua equipe aprende a trabalhar com IA no dia a dia, sem depender de terceiros." },
       { name: "Treinamento de IA", desc: "Capacitação prática: sua equipe aprende a usar IA nas tarefas do dia a dia." },
+      { name: "Construção de agentes próprios", desc: "Sua equipe sai capaz de criar e ajustar agentes sem depender de fornecedor externo." },
+      { name: "Adoção de IA no dia a dia", desc: "Implementação guiada: ferramentas certas, para o time certo, no momento certo." },
     ],
     color: "view-green",
     borderColor: "border-view-green/25",

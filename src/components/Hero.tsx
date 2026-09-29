@@ -28,7 +28,7 @@ export function Hero() {
             style={{ animation: "blink 2s infinite" }}
           />
           <span className="text-[.68rem] tracking-[.1em] text-primary/90 font-display font-semibold">
-            Consultoria em processos, automação e dados
+            Parceira de evolução empresarial
           </span>
         </div>
 

@@ -56,7 +56,7 @@ const SOLUCOES = [
   {
     area: "VIEW ACADEMY",
     dor: "Capacitação",
-    entregas: ["Treinamento de equipes", "Treinamento de IA"],
+    entregas: ["Treinamento de equipes", "Treinamento de IA", "Construção de agentes próprios", "Adoção de IA no dia a dia"],
     url: `${SITE}/solucoes#view-academy`,
   },
 ];

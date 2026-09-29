@@ -1,3 +1,4 @@
+import { Calculator, Gauge, CalendarClock, Layers, CheckCircle2, Eye, BookOpen } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ViewLogo } from "@/components/ViewLogo";
 
@@ -31,47 +32,56 @@ interface Botao {
   label: string;
   apoio: string;
   href: string;
+  /** Ícone à esquerda -- acelera o reconhecimento do polegar rolando rápido. */
+  icon: typeof Calculator;
   /** Existe exatamente um primário na página. */
   primario?: boolean;
-  /** O primeiro botão recebe borda reforçada. */
+  /** O primeiro botão recebe fundo tintado, além da borda reforçada. */
   destaque?: boolean;
 }
 
 const botoes: Botao[] = [
   {
     label: "Quanto custa o retrabalho da sua operação",
+    icon: Calculator,
     apoio: "Três campos, e o número aparece na tela. Não pede e-mail.",
     href: "/?utm_source=instagram&utm_medium=bio&utm_content=calculadora#calculadora",
     destaque: true,
   },
   {
     label: "Fazer a avaliação de maturidade",
+    icon: Gauge,
     apoio: "35 perguntas, menos de 5 minutos. O score das 7 dimensões aparece na hora.",
     href: "/avaliacao-maturidade?utm_source=instagram&utm_medium=bio&utm_content=avaliacao",
     primario: true,
   },
   {
     label: "Agendar a Leitura Executiva",
+    icon: CalendarClock,
     apoio: "60 minutos dentro da sua empresa, presencial, em Campina Grande ou João Pessoa.",
     href: "https://wa.me/5583993224878?text=Vim%20pelo%20Instagram.%20Quero%20agendar%20a%20Leitura%20Executiva%20na%20minha%20empresa.",
   },
   {
     label: "Ver o que a VIEW resolve",
+    icon: Layers,
     apoio: "As cinco frentes, com o que entra em cada uma.",
     href: "/solucoes?utm_source=instagram&utm_medium=bio&utm_content=solucoes",
   },
   {
     label: "Ver como funciona na prática",
+    icon: CheckCircle2,
     apoio: "Três operações reais: o que travava e o que mudou.",
     href: "/casos?utm_source=instagram&utm_medium=bio&utm_content=casos",
   },
   {
     label: "Conhecer a VIEW",
+    icon: Eye,
     apoio: "O método de seis etapas, os sete pilares e as três recusas.",
     href: "/sobre?utm_source=instagram&utm_medium=bio&utm_content=sobre",
   },
   {
     label: "Ler os artigos",
+    icon: BookOpen,
     apoio: "O que a VIEW escreve sobre operação e processo.",
     href: "/blog?utm_source=instagram&utm_medium=bio&utm_content=blog",
   },
@@ -79,16 +89,22 @@ const botoes: Botao[] = [
 
 function Botao({ b }: { b: Botao }) {
   const base =
-    "block w-full min-h-[44px] px-5 py-3.5 rounded-[2px] no-underline text-left motion-safe:transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+    "flex items-start gap-3 w-full min-h-[44px] px-5 py-3.5 rounded-[2px] no-underline text-left motion-safe:transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
+  // O destaque original (so a borda mais grossa) mal se distinguia dos
+  // secundarios comuns lado a lado. Um fundo levemente tintado resolve --
+  // ainda claramente abaixo do primario solido, mas visivelmente acima dos
+  // secundarios em branco puro.
   const estilo = b.primario
     ? { background: NAVY, color: "#FFFFFF", outlineColor: AZUL_MEDIO }
     : {
-        background: "transparent",
+        background: b.destaque ? "rgba(11,29,58,0.05)" : "transparent",
         color: NAVY,
         border: `${b.destaque ? 2 : 1}px solid ${NAVY}`,
         outlineColor: AZUL_MEDIO,
       };
+
+  const Icon = b.icon;
 
   return (
     <a
@@ -102,12 +118,20 @@ function Botao({ b }: { b: Botao }) {
         if (b.primario) e.currentTarget.style.background = NAVY;
       }}
     >
-      <span className="block font-display font-semibold text-[.95rem] leading-snug">{b.label}</span>
-      <span
-        className="block font-body text-[.78rem] leading-snug mt-1"
-        style={{ color: b.primario ? "rgba(255,255,255,.72)" : CHUMBO }}
-      >
-        {b.apoio}
+      <Icon
+        className="w-5 h-5 mt-0.5 flex-shrink-0"
+        style={{ color: b.primario ? "#FFFFFF" : NAVY }}
+        aria-hidden="true"
+        strokeWidth={1.75}
+      />
+      <span className="flex-1">
+        <span className="block font-display font-semibold text-[.95rem] leading-snug">{b.label}</span>
+        <span
+          className="block font-body text-[.78rem] leading-snug mt-1"
+          style={{ color: b.primario ? "rgba(255,255,255,.72)" : CHUMBO }}
+        >
+          {b.apoio}
+        </span>
       </span>
     </a>
   );
@@ -137,15 +161,36 @@ export default function Links() {
           <ViewLogo size={56} />
         </div>
 
-        <header className="text-center mb-10">
+        <header className="text-center mb-8">
           <p className="font-display font-extrabold text-[1.15rem] leading-tight">VIEW · Controle da Operação</p>
           <p className="font-body text-[.85rem] leading-relaxed mt-2" style={{ color: CHUMBO }}>
             Processos, sistemas e dados para empresas de 20 a 300 pessoas.
           </p>
+          {/*
+            "Paraíba, Pernambuco, Rio Grande do Norte e Estados Unidos" saiu
+            daqui: nenhuma outra página do site confirma atendimento nos EUA
+            (o rodapé fala só PB/PE/RN/Brasil, e o JSON-LD não lista o país).
+            Prometer isso só na página de bio, sem sustentação em nenhum outro
+            lugar, é o tipo de promessa que um lead dos EUA não consegue
+            confirmar em lugar nenhum. Volta se for confirmado que a VIEW
+            atende lá -- e nesse caso entra nos outros lugares também.
+          */}
           <p className="font-body text-[.85rem] leading-relaxed" style={{ color: CHUMBO }}>
-            Paraíba, Pernambuco, Rio Grande do Norte e Estados Unidos.
+            Paraíba, Pernambuco e Rio Grande do Norte.
           </p>
         </header>
+
+        {/*
+          Prova social: mesmo numero e mesma frase que a home usa em Results.tsx
+          (nao inventa claim novo -- reaproveita o que ja e verificado e
+          publico), so que compacto, para nao competir com os botoes.
+        */}
+        <p
+          className="text-center font-display font-bold text-[.78rem] tracking-[.04em] uppercase mb-8"
+          style={{ color: AZUL_MEDIO }}
+        >
+          +20 processos automatizados desde 2024
+        </p>
 
         <nav className="flex flex-col gap-3" aria-label="Links da VIEW">
           {botoes.map((b) => (

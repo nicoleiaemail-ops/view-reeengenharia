@@ -38,7 +38,7 @@ export function Navbar() {
         <div className="font-display">
           <span className="font-bold text-foreground tracking-[.18em] text-[1.1rem]">VIEW</span>
           <small className="block text-[.56rem] font-normal tracking-[.18em] text-muted-foreground uppercase mt-0.5">
-            IA · Processos · Dados
+            Controle da Operação
           </small>
         </div>
       </Link>

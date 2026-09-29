@@ -69,7 +69,7 @@ Os sistemas que você já paga passam a conversar entre si. Conforme os forneced
 Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação. Inclui dashboards e BI.
 
 ### VIEW ACADEMY — Capacitação
-Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste. Inclui treinamento de equipes e treinamento de IA.
+Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada ajuste. Inclui treinamento de equipes, treinamento de IA, construção de agentes próprios e adoção de IA no dia a dia.
 
 ## Resultados documentados
 

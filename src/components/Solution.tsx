@@ -6,7 +6,7 @@ export function Solution() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Left */}
         <div className="scroll-reveal">
-          <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">O que a VIEW faz</div>
+          <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">Como a VIEW resolve</div>
           <h2 className="font-display font-extrabold text-[clamp(1.9rem,3vw,2.8rem)] leading-[1.08] mb-8">
             Damos a você o <em className="not-italic text-accent">controle</em><br />da sua empresa.
           </h2>
