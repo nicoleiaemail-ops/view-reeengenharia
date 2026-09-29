@@ -30,6 +30,12 @@ const STATIC_ROUTES = new Set([
   "/casos",
   "/blog",
   "/privacidade",
+  // Destino do link da bio do Instagram. É noindex (a própria página já
+  // declara isso via <meta name="robots">), mas continua publica e com
+  // espelho Markdown -- por isso entra aqui, não em PRIVATE_ROUTES, que é
+  // para paginas administrativas que nao devem vazar Link headers nem
+  // markdown.
+  "/links",
 ]);
 
 // Rotas reais que não devem receber Link headers nem espelho Markdown
