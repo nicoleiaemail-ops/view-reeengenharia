@@ -193,50 +193,15 @@ const About = () => {
       </section>
 
       {/*
-        Os sete pilares e as tres recusas faltavam nesta pagina. A pagina /links
-        promete "o metodo de seis etapas, os sete pilares e as tres recusas" em
-        /sobre, e so o metodo estava aqui.
-
-        Os pilares aparecem em lista compacta, com letra, nome e sinal de
-        mudanca. A home ja tem a versao em cards: repetir o mesmo bloco criaria
-        conteudo duplicado entre duas paginas indexadas.
+        As tres recusas faltavam nesta pagina -- a /links promete "o metodo de
+        seis etapas, os sete pilares e as tres recusas" em /sobre. Os sete
+        pilares NAO entram aqui: a pagina ja renderiza <DISTIP /> ali em cima
+        (linha ~155), que cobre pilar, sinal de mudanca e tudo mais. Uma
+        segunda lista dos mesmos sete pilares, na mesma pagina, era
+        duplicacao pura -- existiu aqui por um erro meu (nao chequei que
+        <DISTIP /> ja estava na pagina antes de escrever esta secao) e foi
+        removida.
       */}
-      <section className="py-24 px-[7%] border-t border-view-line">
-        <div className="max-w-[860px] mx-auto">
-          <div className="scroll-reveal text-center mb-12">
-            <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">O que olhamos</div>
-            <h2 className="font-display font-extrabold text-[clamp(1.7rem,2.8vw,2.4rem)] leading-[1.1] mb-4">
-              Os sete pilares do <span className="text-primary">DISTIPP</span>
-            </h2>
-            <p className="text-[.9rem] text-muted-foreground max-w-[560px] mx-auto leading-relaxed">
-              Cada pilar carrega um sinal de mudança: a frase concreta que prova, na prática, que a sua
-              empresa evoluiu naquela dimensão.
-            </p>
-          </div>
-
-          <div className="scroll-reveal flex flex-col divide-y divide-view-line">
-            {[
-              { letra: "D", nome: "Dados", sinal: "Você para de decidir por intuição." },
-              { letra: "I", nome: "Integração", sinal: "A informação chega antes da cobrança." },
-              { letra: "S", nome: "Sistemas", sinal: "Acaba a planilha paralela ao ERP." },
-              { letra: "T", nome: "Tecnologia", sinal: "Mais volume sem mais gente." },
-              { letra: "I", nome: "Inovação", sinal: "Mudança deixa de acontecer só em crise." },
-              { letra: "P", nome: "Pessoas", sinal: "Reconhecer e corrigir com base em fato." },
-              { letra: "P", nome: "Processos", sinal: "O processo não depende de quem está na sala." },
-            ].map((pilar, i) => (
-              <div key={i} className="flex items-baseline gap-4 py-4">
-                <span className="font-display font-black text-primary/70 w-5 flex-shrink-0" aria-hidden="true">
-                  {pilar.letra}
-                </span>
-                <span className="font-display font-bold text-foreground text-[.92rem] w-[7.5rem] flex-shrink-0">
-                  {pilar.nome}
-                </span>
-                <span className="text-[.87rem] text-muted-foreground leading-relaxed">{pilar.sinal}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/*
         As tres recusas. Fundo navy e cantos retos, igual ao bloco do /solucoes:

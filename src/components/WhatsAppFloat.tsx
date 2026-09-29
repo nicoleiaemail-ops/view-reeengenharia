@@ -4,7 +4,16 @@ import { EVENTS, track } from "@/lib/analytics";
 const WHATSAPP_URL =
   "https://wa.me/5583993224878?text=Ol%C3%A1%2C%20eu%20quero%20enxergar%20melhor%20a%20minha%20empresa";
 
+// Em viewports de ~844px (iPhone padrão), o botão secundário do hero
+// ("Ver meu score de maturidade") cai bem no canto inferior direito da
+// primeira dobra -- exatamente onde a bolha fixa do WhatsApp fica. Sem
+// atraso, a bolha nasce sobre o botão antes de qualquer rolagem. O atraso de
+// um scroll mínimo é o padrão do mercado para widgets de chat flutuante:
+// eles não competem com a primeira dobra, aparecem um instante depois.
+const FLOAT_APPEAR_THRESHOLD = 120;
+
 export function WhatsAppFloat() {
+  const appeared = useScrolledPast(FLOAT_APPEAR_THRESHOLD);
   // No mobile, a barra de CTA fixa ocupa a faixa de baixo a partir deste ponto
   // de rolagem. Sem o deslocamento, o botão ficava sobreposto a ela.
   const ctaVisible = useScrolledPast(STICKY_CTA_THRESHOLD);
@@ -13,11 +22,13 @@ export function WhatsAppFloat() {
     <a
       className={`fixed right-5 md:right-8 z-[200] w-[52px] h-[52px] rounded-full bg-[#25d366] flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,.4)] no-underline hover:scale-[1.08] transition-all duration-300 md:bottom-8 ${
         ctaVisible ? "bottom-[6.5rem]" : "bottom-6"
-      }`}
+      } ${appeared ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com a VIEW no WhatsApp"
+      aria-hidden={appeared ? undefined : "true"}
+      tabIndex={appeared ? undefined : -1}
       onClick={() => track(EVENTS.whatsappClick, { location: "float" })}
     >
       <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false">
