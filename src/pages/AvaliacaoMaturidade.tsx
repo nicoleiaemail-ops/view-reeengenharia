@@ -83,64 +83,79 @@ const TOTAL_STEPS = 8;
 // As 7 dimensões DISTIPP explicadas na tela inicial. Além de orientar quem vai
 // responder, é o conteúdo que torna a página indexável: sem isto a rota
 // pré-renderizada tinha só o H1 e três parágrafos.
+// Mesma rotação de cor por letra que DISTIP.tsx já usa (D/T/Processos =
+// azul, Integração/Pessoas = verde, Sistemas/Inovação = dourado) -- a mesma
+// dimensão tem a mesma cor em toda a base, em vez das 7 virem azuis sem
+// exceção só porque essa tela nunca usava outra coisa.
 const DIMENSOES = [
   {
     letra: "D",
     nome: "Dados",
+    cor: "text-primary",
     texto:
       "Se as decisões da empresa nascem de números confiáveis ou de intuição. Avalia a existência de indicadores, o acesso a eles e o uso de análise para antecipar tendências.",
   },
   {
     letra: "I",
     nome: "Integração",
+    cor: "text-view-green",
     texto:
       "Como a informação circula entre setores. Falhas de comunicação entre comercial, operação e financeiro são a origem mais comum de retrabalho e prazo perdido.",
   },
   {
     letra: "S",
     nome: "Sistemas",
+    cor: "text-accent",
     texto:
       "Se o sistema de gestão atende à operação real ou se a equipe trabalha em volta dele com planilhas paralelas, o que costuma indicar um ERP mal ajustado ao negócio.",
   },
   {
     letra: "T",
     nome: "Tecnologia",
+    cor: "text-primary",
     texto:
       "O grau de digitalização dos registros operacionais — quanto ainda depende de papel, WhatsApp e memória das pessoas, e se há dashboards acompanhando a operação.",
   },
   {
     letra: "I",
     nome: "Inovação",
+    cor: "text-accent",
     texto:
       "A capacidade de testar e adotar novas práticas. Mede se existe melhoria contínua estruturada e orçamento dedicado, ou se mudanças só ocorrem sob crise.",
   },
   {
     letra: "P",
     nome: "Pessoas",
+    cor: "text-view-green",
     texto:
       "Autonomia e responsabilização da equipe. Avalia se o desempenho individual é visível e se é possível reconhecer ou corrigir com base em fatos.",
   },
   {
     letra: "P",
     nome: "Processos",
+    cor: "text-primary",
     texto:
       "Mapeamento, padronização e escalabilidade dos fluxos. Verifica se a empresa cresceria em volume ou equipe sem perder controle e qualidade.",
   },
 ];
 
+// 3 passos sem cor semantica previa -- alternado so para variedade visual.
 const COMO_FUNCIONA = [
   {
     titulo: "Você responde as 7 dimensões",
+    cor: "text-primary",
     texto:
       "São 5 perguntas por dimensão, em escala ou múltipla escolha. Leva menos de 5 minutos e não exige preparação nem consulta a documentos. A identificação fica para o fim.",
   },
   {
     titulo: "Seu score aparece na hora",
+    cor: "text-accent",
     texto:
       "Ao terminar, você vê na própria tela a pontuação geral, o radar das sete dimensões e as duas que a VIEW priorizaria na sua empresa. Sem esperar, sem depender de email.",
   },
   {
     titulo: "O relatório completo chega em até 48 horas",
+    cor: "text-view-green",
     texto:
       "Nossa equipe cruza suas respostas com o padrão do seu segmento e envia a leitura detalhada de cada dimensão, com os gargalos prioritários e o plano de ação sugerido. Sem compromisso de contratação.",
   },
@@ -502,7 +517,7 @@ export default function AvaliacaoMaturidade() {
             <h1 className="font-display font-extrabold text-[clamp(1.5rem,3vw,2.4rem)] leading-[1.15] text-foreground">
               Avaliação Estratégica de Maturidade Empresarial
             </h1>
-            <p className="text-primary font-display font-semibold text-[.85rem] tracking-wide">
+            <p className="text-muted-foreground font-display font-semibold text-[.85rem] tracking-wide">
               Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos
             </p>
             <p className="text-muted-foreground text-[.88rem] leading-relaxed max-w-xl mx-auto">
@@ -539,9 +554,9 @@ export default function AvaliacaoMaturidade() {
                 onde a mudança precisa começar.
               </p>
               <ul className="space-y-6">
-                {DIMENSOES.map(({ letra, nome, texto }) => (
+                {DIMENSOES.map(({ letra, nome, cor, texto }) => (
                   <li key={nome} className="flex gap-4">
-                    <span className="font-display font-extrabold text-primary text-lg leading-none pt-0.5 w-6 shrink-0">
+                    <span className={`font-display font-extrabold text-lg leading-none pt-0.5 w-6 shrink-0 ${cor}`}>
                       {letra}
                     </span>
                     <div>
@@ -562,9 +577,9 @@ export default function AvaliacaoMaturidade() {
                 Como funciona
               </h2>
               <ol className="space-y-6">
-                {COMO_FUNCIONA.map(({ titulo, texto }, i) => (
+                {COMO_FUNCIONA.map(({ titulo, cor, texto }, i) => (
                   <li key={titulo} className="flex gap-4">
-                    <span className="font-display font-extrabold text-primary text-lg leading-none pt-0.5 w-6 shrink-0">
+                    <span className={`font-display font-extrabold text-lg leading-none pt-0.5 w-6 shrink-0 ${cor}`}>
                       {i + 1}
                     </span>
                     <div>

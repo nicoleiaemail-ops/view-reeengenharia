@@ -242,7 +242,7 @@ export default function Casos() {
                 <blockquote className="border-l-2 border-foreground/15 pl-5">
                   <p className="text-[.88rem] text-muted-foreground leading-relaxed italic mb-4">"{c.quote}"</p>
                   <footer className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-secondary border border-view-line flex items-center justify-center font-display font-extrabold text-[.8rem] text-primary/80">
+                    <div className={`w-9 h-9 rounded-full bg-secondary border border-view-line flex items-center justify-center font-display font-extrabold text-[.8rem] ${c.accentColor}`}>
                       {c.client.split(" ").map((w) => w[0]).join("").slice(0, 2)}
                     </div>
                     <div>

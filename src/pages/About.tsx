@@ -168,23 +168,23 @@ const About = () => {
           </div>
 
           <div className="flex flex-col relative">
-            <div className="absolute left-[27px] top-5 bottom-5 w-px bg-gradient-to-b from-primary/50 to-primary/10 pointer-events-none" />
+            <div className="absolute left-[27px] top-5 bottom-5 w-px bg-gradient-to-b from-foreground/25 to-transparent pointer-events-none" />
             {[
-              { num: "01", title: "Enxergar", desc: "Medimos as sete dimensões da sua operação e colocamos número no custo mensal de cada gargalo.", tag: "Diagnóstico DISTIPP" },
-              { num: "02", title: "Entender", desc: "Vamos até onde o trabalho acontece e descobrimos, com quem executa, por que a etapa trava.", tag: "Causa antes de solução" },
-              { num: "03", title: "Simplificar", desc: "Tiramos as etapas que só existem por costume e padronizamos o que sobra.", tag: "Processo antes de ferramenta" },
-              { num: "04", title: "Construir", desc: "Automação, integração e sistema entram agora, com a métrica escolhida antes da primeira linha.", tag: "Métrica definida antes" },
-              { num: "05", title: "Capacitar", desc: "Seu time aprende a operar, ajustar e documentar o que foi construído.", tag: "Autonomia, sem dependência" },
-              { num: "06", title: "Evoluir", desc: "Medimos o resultado contra a métrica combinada e você decide o ciclo seguinte.", tag: "Medição antes e depois" },
+              { num: "01", title: "Enxergar", desc: "Medimos as sete dimensões da sua operação e colocamos número no custo mensal de cada gargalo.", tag: "Diagnóstico DISTIPP", circulo: "bg-primary/12 border-primary/35 text-primary/70", badge: "text-primary/80 bg-primary/[.08] border-primary/20" },
+              { num: "02", title: "Entender", desc: "Vamos até onde o trabalho acontece e descobrimos, com quem executa, por que a etapa trava.", tag: "Causa antes de solução", circulo: "bg-accent/12 border-accent/35 text-accent/70", badge: "text-accent/80 bg-accent/[.08] border-accent/20" },
+              { num: "03", title: "Simplificar", desc: "Tiramos as etapas que só existem por costume e padronizamos o que sobra.", tag: "Processo antes de ferramenta", circulo: "bg-view-green/12 border-view-green/35 text-view-green/70", badge: "text-view-green/80 bg-view-green/[.08] border-view-green/20" },
+              { num: "04", title: "Construir", desc: "Automação, integração e sistema entram agora, com a métrica escolhida antes da primeira linha.", tag: "Métrica definida antes", circulo: "bg-primary/12 border-primary/35 text-primary/70", badge: "text-primary/80 bg-primary/[.08] border-primary/20" },
+              { num: "05", title: "Capacitar", desc: "Seu time aprende a operar, ajustar e documentar o que foi construído.", tag: "Autonomia, sem dependência", circulo: "bg-accent/12 border-accent/35 text-accent/70", badge: "text-accent/80 bg-accent/[.08] border-accent/20" },
+              { num: "06", title: "Evoluir", desc: "Medimos o resultado contra a métrica combinada e você decide o ciclo seguinte.", tag: "Medição antes e depois", circulo: "bg-view-green/12 border-view-green/35 text-view-green/70", badge: "text-view-green/80 bg-view-green/[.08] border-view-green/20" },
             ].map((s, i) => (
               <div key={i} className="scroll-reveal flex items-start gap-6 py-7 border-b border-foreground/[.06] last:border-b-0" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="w-14 h-14 rounded-full bg-primary/12 border border-primary/35 flex items-center justify-center font-display font-extrabold text-[.75rem] tracking-[.08em] text-primary/70 flex-shrink-0">
+                <div className={`w-14 h-14 rounded-full border flex items-center justify-center font-display font-extrabold text-[.75rem] tracking-[.08em] flex-shrink-0 ${s.circulo}`}>
                   {s.num}
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display font-bold text-foreground mb-2 leading-tight">{s.title}</h3>
                   <p className="text-[.87rem] text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
-                  <span className="inline-block text-[.6rem] tracking-[.12em] uppercase text-primary/80 bg-primary/[.08] border border-primary/20 rounded-full py-1 px-3">{s.tag}</span>
+                  <span className={`inline-block text-[.6rem] tracking-[.12em] uppercase border rounded-full py-1 px-3 ${s.badge}`}>{s.tag}</span>
                 </div>
               </div>
             ))}
@@ -237,7 +237,7 @@ const About = () => {
           missão, e sem ele a visão precisava carregar sozinha o "para quê".
         */}
         <div className="scroll-reveal max-w-[760px] mx-auto text-center mb-16">
-          <div className="text-[.6rem] tracking-[.2em] uppercase text-primary/80 mb-4">Propósito</div>
+          <div className="text-[.6rem] tracking-[.2em] uppercase text-muted-foreground mb-4">Propósito</div>
           <p className="font-display font-extrabold text-[clamp(1.25rem,2.4vw,1.9rem)] leading-[1.25] text-foreground">
             Tornar empresas mais simples de entender, operar e evoluir.
           </p>
@@ -268,15 +268,15 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { num: "01", title: "Clareza antes da tecnologia", desc: "Não automatizamos caos. Primeiro entendemos e organizamos o processo." },
-              { num: "02", title: "Dados antes de opinião", desc: "Decisões devem ser tomadas com base em informação real, não em intuição." },
-              { num: "03", title: "Simplicidade operacional", desc: "Processos eficientes são simples, claros e replicáveis." },
-              { num: "04", title: "Melhoria contínua", desc: "Acreditamos no princípio Kaizen: pequenas melhorias constantes criam grandes transformações." },
-              { num: "05", title: "Eficiência acima de complexidade", desc: "A melhor solução é aquela que resolve o problema com o menor desperdício possível." },
-              { num: "06", title: "Crescimento sustentável", desc: "Empresas devem crescer com estrutura, não com improviso." },
+              { num: "01", title: "Clareza antes da tecnologia", desc: "Não automatizamos caos. Primeiro entendemos e organizamos o processo.", cor: "text-primary/60", hover: "hover:bg-primary/[.04] hover:border-primary/15" },
+              { num: "02", title: "Dados antes de opinião", desc: "Decisões devem ser tomadas com base em informação real, não em intuição.", cor: "text-accent/60", hover: "hover:bg-accent/[.04] hover:border-accent/15" },
+              { num: "03", title: "Simplicidade operacional", desc: "Processos eficientes são simples, claros e replicáveis.", cor: "text-view-green/60", hover: "hover:bg-view-green/[.04] hover:border-view-green/15" },
+              { num: "04", title: "Melhoria contínua", desc: "Acreditamos no princípio Kaizen: pequenas melhorias constantes criam grandes transformações.", cor: "text-primary/60", hover: "hover:bg-primary/[.04] hover:border-primary/15" },
+              { num: "05", title: "Eficiência acima de complexidade", desc: "A melhor solução é aquela que resolve o problema com o menor desperdício possível.", cor: "text-accent/60", hover: "hover:bg-accent/[.04] hover:border-accent/15" },
+              { num: "06", title: "Crescimento sustentável", desc: "Empresas devem crescer com estrutura, não com improviso.", cor: "text-view-green/60", hover: "hover:bg-view-green/[.04] hover:border-view-green/15" },
             ].map((v, i) => (
-              <div key={i} className="bg-foreground/[.03] border border-view-line rounded-xl p-6 hover:bg-primary/[.04] hover:border-primary/15 transition-all">
-                <div className="font-display font-bold text-[.65rem] tracking-[.1em] text-primary/60 mb-3">VALOR {v.num}</div>
+              <div key={i} className={`bg-foreground/[.03] border border-view-line rounded-xl p-6 transition-all ${v.hover}`}>
+                <div className={`font-display font-bold text-[.65rem] tracking-[.1em] mb-3 ${v.cor}`}>VALOR {v.num}</div>
                 <h3 className="font-display font-bold text-[.95rem] text-foreground mb-2">{v.title}</h3>
                 <p className="text-[.8rem] text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
