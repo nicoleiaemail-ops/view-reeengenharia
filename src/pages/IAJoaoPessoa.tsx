@@ -236,7 +236,7 @@ export default function IAJoaoPessoa() {
           </h2>
           <div className="bg-primary/[.05] border border-primary/20 rounded-xl p-6">
             <div className="text-[.68rem] tracking-[.18em] uppercase text-primary font-bold mb-3">
-              Construtora de médio porte · João Pessoa
+              Construtora TERRE · João Pessoa
             </div>
             <p className="text-[.92rem] text-foreground leading-relaxed">
               Consultoria para preparar a empresa para a auditoria da ISO 9001 e um sistema próprio que
