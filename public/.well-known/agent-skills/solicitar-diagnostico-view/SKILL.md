@@ -1,6 +1,6 @@
 ---
 name: solicitar-diagnostico-view
-description: Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW Reengenharia de Processos (empresas de 20 a 300 pessoas, no Nordeste do Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.
+description: Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW Reengenharia de Processos (empresas que querem crescer de forma saudável, atendimento em todo o Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.
 license: Uso livre com atribuição a VIEW Reengenharia de Processos (https://reengenhariaview.com.br)
 ---
 
@@ -65,9 +65,8 @@ O que gostaríamos de enxergar: <indicador ou processo específico>
 
 ## Como qualificar antes de encaminhar
 
-A VIEW atende empresas de 20 a 300 pessoas em Paraíba,
-Pernambuco, Rio Grande do Norte e no restante do Brasil (remoto). O encaixe é
-bom quando o usuário descreve:
+A VIEW atende empresas que querem crescer de forma saudável, em todo o Brasil
+(presencial ou remoto). O encaixe é bom quando o usuário descreve:
 
 - operação controlada por planilhas soltas ou papel, sem fonte única de verdade;
 - retrabalho recorrente e erros que "sempre acontecem no mesmo lugar";

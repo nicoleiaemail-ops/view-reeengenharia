@@ -11,9 +11,9 @@ Ele mede a maturidade operacional de uma empresa em sete dimensões e indica qua
 delas está travando as outras. Esta skill permite que você conduza o diagnóstico
 em conversa, sem formulário.
 
-Público-alvo: empresas de 20 a 300 pessoas que operam com planilhas, WhatsApp e
-decisão por intuição — indústria, construção civil, logística, serviços, comércio
-e tecnologia.
+Público-alvo: empresas que querem crescer de forma saudável e ainda operam com
+planilhas, WhatsApp e decisão por intuição — indústria, construção civil,
+logística, serviços, comércio e tecnologia.
 
 ## Como conduzir
 
@@ -170,6 +170,6 @@ A versão oficial, com análise da equipe da VIEW e devolutiva em até 48h, est�
 <https://reengenhariaview.com.br/avaliacao-maturidade>. Se o usuário quiser o
 diagnóstico completo, use a skill `solicitar-diagnostico-view`.
 
-Fonte e método: VIEW Reengenharia de Processos — João Pessoa/PB, Brasil.
+Fonte e método: VIEW Reengenharia de Processos — Brasil.
 Detalhamento da metodologia:
 <https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional>

@@ -46,7 +46,7 @@ const organizationJsonLd = {
   url: "https://reengenhariaview.com.br",
   logo: "https://reengenhariaview.com.br/og-image.png",
   description:
-    "Empresa especializada em reengenharia de processos, automação operacional e controle da operação para empresas de 20 a 300 pessoas. Metodologia exclusiva DISTIPP.",
+    "Empresa especializada em reengenharia de processos, automação operacional e controle da operação para empresas que querem crescer de forma saudável. Metodologia exclusiva DISTIPP.",
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   contactPoint: {
@@ -56,12 +56,7 @@ const organizationJsonLd = {
     availableLanguage: "Portuguese",
   },
   foundingDate: "2024",
-  areaServed: [
-    { "@type": "State", name: "Paraíba" },
-    { "@type": "State", name: "Pernambuco" },
-    { "@type": "State", name: "Rio Grande do Norte" },
-    { "@type": "Country", name: "Brasil" },
-  ],
+  areaServed: { "@type": "Country", name: "Brasil" },
   knowsAbout: [
     "Reengenharia de processos",
     "Automação de processos",
@@ -173,7 +168,7 @@ const localBusinessJsonLd = {
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
-  description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e controle da operação para empresas de 20 a 300 pessoas, no Nordeste do Brasil.",
+  description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e controle da operação para empresas que querem crescer de forma saudável.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados",
@@ -187,12 +182,7 @@ const localBusinessJsonLd = {
     latitude: "-7.1193777",
     longitude: "-34.8592312",
   },
-  areaServed: [
-    { "@type": "State", name: "Paraíba" },
-    { "@type": "State", name: "Pernambuco" },
-    { "@type": "State", name: "Rio Grande do Norte" },
-    { "@type": "Country", name: "Brasil" },
-  ],
+  areaServed: { "@type": "Country", name: "Brasil" },
   sameAs: [
     "https://www.instagram.com/reengenhariaview",
     "https://maps.app.goo.gl/3eS9uGY33MLKijYL9",
@@ -236,7 +226,7 @@ const Landing = () => {
   return (
     <>
       <SEO
-        title="VIEW — Controle da Operação para Empresas de 20 a 300 Pessoas"
+        title="VIEW — Controle da Operação para Empresas que Querem Crescer"
         description="A VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo desenhado, depois o sistema, a automação e o dado."
         path="/"
         jsonLd={[websiteJsonLd, organizationJsonLd, localBusinessJsonLd, faqJsonLd, speakableJsonLd]}

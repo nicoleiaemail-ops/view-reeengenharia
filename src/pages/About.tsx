@@ -25,8 +25,8 @@ const About = () => {
   return (
     <>
       <SEO
-        title="Sobre a VIEW — Consultoria de Processos no Nordeste do Brasil"
-        description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional a empresas de 20 a 300 pessoas. Metodologia DISTIPP, missão, valores e nossa história."
+        title="Sobre a VIEW — Consultoria de Processos e Evolução Empresarial"
+        description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional a empresas que querem crescer de forma saudável. Metodologia DISTIPP, missão, valores e nossa história."
         path="/sobre"
         jsonLd={[
           {
@@ -42,22 +42,17 @@ const About = () => {
             "@type": "AboutPage",
             name: "Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional",
             url: "https://reengenhariaview.com.br/sobre",
-            description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para empresas de 20 a 300 pessoas.",
+            description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para empresas que querem crescer de forma saudável.",
             mainEntity: {
               "@type": ["Organization", "ProfessionalService"],
               name: "VIEW Reengenharia de Processos",
               url: "https://reengenhariaview.com.br",
               logo: "https://reengenhariaview.com.br/og-image.png",
               foundingDate: "2024",
-              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para empresas de 20 a 300 pessoas, no Nordeste do Brasil.",
+              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para empresas que querem crescer de forma saudável.",
               telephone: "+55-83-99322-4878",
               email: "admin@reengenhariaview.com.br",
-              areaServed: [
-                { "@type": "State", name: "Paraíba" },
-                { "@type": "State", name: "Pernambuco" },
-                { "@type": "State", name: "Rio Grande do Norte" },
-                { "@type": "Country", name: "Brasil" },
-              ],
+              areaServed: { "@type": "Country", name: "Brasil" },
               knowsAbout: [
                 "Reengenharia de processos",
                 "Automação de processos empresariais",
@@ -138,7 +133,7 @@ const About = () => {
             { icon: "🏭", title: "Formação industrial de alto nível", desc: "Engenharia de produção com vivência em ambientes industriais de alta performance." },
             { icon: "🌍", title: "Experiência em empresas de referência", desc: "Baterias Moura, Alpargatas e projetos internacionais." },
             { icon: "🎯", title: "Propósito claro desde o início", desc: "Fazer empresas em crescimento operarem com a mesma inteligência das grandes." },
-            { icon: "📍", title: "Presença regional, visão global", desc: "Atuamos em PB, PE e RN — com metodologia testada em operações nacionais e internacionais." },
+            { icon: "📍", title: "Presença nacional, visão global", desc: "Atuamos em todo o Brasil — com metodologia testada em operações nacionais e internacionais." },
           ].map((c, i) => (
             <div key={i} className="bg-foreground/[.03] border border-view-line rounded-[10px] p-5 flex gap-4 items-start hover:bg-primary/[.06] hover:border-primary/20 hover:translate-x-1 transition-all">
               <div className="text-[1.3rem] flex-shrink-0 mt-0.5">{c.icon}</div>

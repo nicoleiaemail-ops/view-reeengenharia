@@ -63,7 +63,7 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <span className="text-[.78rem] text-muted-foreground">PB · PE · RN · Brasil</span>
+              <span className="text-[.78rem] text-muted-foreground">Todo o Brasil</span>
             </li>
           </ul>
         </div>

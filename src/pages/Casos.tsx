@@ -16,7 +16,7 @@ const casos = [
     tagBg: "bg-primary/10",
     icon: "🏗️",
     client: "Vitória D.",
-    role: "Diretora · Construtora · Paraíba",
+    role: "Diretora · Construtora",
     headline: "ISO 9001 mantido sem retrabalho — registros automáticos em cada etapa da obra",
     challenge:
       "A cada ciclo de auditoria ISO 9001, a equipe precisava reunir registros dispersos em papel, planilhas e WhatsApp. Era uma corrida contra o tempo que consumia dias de trabalho, gerava erros e colocava o certificado em risco. Além disso, a diretoria não tinha visibilidade do andamento real dos projetos sem ligar para cada encarregado.",
@@ -42,7 +42,7 @@ const casos = [
     tagBg: "bg-view-green/10",
     icon: "📱",
     client: "Aguinaldo S.",
-    role: "Supervisor de Obra · Construtora · Paraíba",
+    role: "Supervisor de Obra · Construtora",
     headline: "Gestão completa de obra pelo celular — visibilidade total sem uma única ligação",
     challenge:
       "O supervisor precisava ligar para cada encarregado individualmente para saber o que estava acontecendo na obra. Sem visibilidade centralizada, era impossível identificar atrasos com antecedência, alocar equipes com eficiência ou apresentar relatórios de progresso precisos para clientes.",
@@ -98,7 +98,7 @@ const casosFaqs = [
   },
   {
     q: "Esses resultados são exclusivos de empresas grandes?",
-    a: "Não. Os casos documentados são de PMEs — uma construtora e um restaurante — atendidas pela VIEW em Paraíba. A metodologia foi criada especificamente para empresas de 20 a 300 pessoas.",
+    a: "Não. Os casos documentados são de uma construtora e um restaurante atendidos pela VIEW. A metodologia foi criada especificamente para empresas que querem crescer de forma saudável.",
   },
 ];
 

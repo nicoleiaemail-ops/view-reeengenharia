@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "A VIEW atende empresas de qualquer segmento?",
-    a: "Sim. Já atuamos em construção civil, alimentação, indústria, serviços e varejo. Atendemos presencialmente em PB, PE e RN, e remotamente em todo o Brasil.",
+    a: "Sim. Já atuamos em construção civil, alimentação, indústria, serviços e varejo, atendendo empresas em todo o Brasil, presencial ou remotamente.",
   },
   {
     q: "Como funciona o diagnóstico gratuito?",
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "Qual o porte de empresa que a VIEW atende?",
-    a: "Empresas de 20 a 300 pessoas que querem operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio.",
+    a: "Empresas que querem crescer de forma saudável e operar com a mesma inteligência das grandes corporações, sem precisar de um departamento de TI próprio.",
   },
   {
     q: "O que acontece com os dados que eu enviar?",

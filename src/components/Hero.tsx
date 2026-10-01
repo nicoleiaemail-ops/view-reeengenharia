@@ -46,7 +46,7 @@ export function Hero() {
         </p>
 
         <p className="text-[.85rem] leading-relaxed text-muted-foreground/90 max-w-[520px] mx-auto mb-7">
-          Atendimento presencial em PB, PE e RN · Remoto em todo o Brasil
+          Atendimento presencial e remoto em todo o Brasil
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
@@ -60,7 +60,7 @@ export function Hero() {
           do projeto, que existe justamente para este papel e passa de 7:1.
         */}
         <div className="text-[.68rem] tracking-[.12em] uppercase text-muted-foreground font-display font-semibold mb-3">
-          Empresas de 20 a 300 pessoas
+          Empresas que querem crescer de forma saudável
         </div>
 
         <Reassurance />

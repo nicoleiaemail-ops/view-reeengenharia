@@ -3,7 +3,7 @@ export function Reengenharia() {
     { emoji: "🔍", title: "O que é", text: "Reengenharia de processos é o redesign completo dos fluxos operacionais — substituindo rotinas manuais, planilhas soltas e decisões no achismo por processos <strong>digitais, automatizados e orientados a dados</strong> em tempo real." },
     { emoji: "⚡", title: "O que muda", text: "Empresas que passam pela reengenharia ganham <strong>visibilidade</strong> do que acontece em cada setor, <strong>controle</strong> para decidir com dados e <strong>escala</strong> para crescer sem contratar proporcionalmente." },
     { emoji: "🗺️", title: "Como a VIEW faz", text: "Diagnóstico gratuito → mapeamento dos processos atuais → redesign digital → automação → sistema sob medida → dashboards em tempo real → acompanhamento contínuo." },
-    { emoji: "🏢", title: "Para quem é", text: "Empresas de médio porte em <strong>construção civil, indústria, alimentação, serviços e varejo</strong> — presencialmente em PB, PE e RN, ou remotamente em todo o Brasil." },
+    { emoji: "🏢", title: "Para quem é", text: "Empresas que querem crescer de forma saudável em <strong>construção civil, indústria, alimentação, serviços e varejo</strong> — em todo o Brasil, presencial ou remotamente." },
   ];
 
   return (

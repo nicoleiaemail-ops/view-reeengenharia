@@ -180,7 +180,7 @@ const FAQS = [
   },
   {
     q: "Preciso ser uma empresa grande para fazer a avaliação?",
-    a: "Não. A avaliação foi desenhada para empresas de 20 a 300 pessoas em crescimento — justamente o momento em que os processos informais começam a virar gargalo. Atendemos construção civil, indústria, logística, tecnologia, serviços e comércio.",
+    a: "Não. A avaliação foi desenhada para empresas que querem crescer de forma saudável — justamente o momento em que os processos informais começam a virar gargalo. Atendemos construção civil, indústria, logística, tecnologia, serviços e comércio.",
   },
 ];
 

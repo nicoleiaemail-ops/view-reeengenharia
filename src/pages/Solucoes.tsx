@@ -157,7 +157,7 @@ const solucoesFaqs = [
   },
   {
     q: "A VIEW atende empresas de qualquer segmento?",
-    a: "Sim. Já atendemos construção civil, alimentação, indústria, serviços, varejo e logística. Atendemos presencialmente em PB, PE e RN, e remotamente em todo o Brasil.",
+    a: "Sim. Já atendemos construção civil, alimentação, indústria, serviços, varejo e logística, atendendo empresas em todo o Brasil, presencial ou remotamente.",
   },
   {
     q: "Quanto tempo leva para ver resultados depois de contratar a VIEW?",
@@ -304,7 +304,7 @@ export default function Solucoes() {
     <>
       <SEO
         title="Soluções VIEW — Reengenharia de Processos, Automação e IA"
-        description="Reengenharia de processos, automação com IA, sistemas sob medida e dashboards em tempo real para empresas de 20 a 300 pessoas. Atendemos PB, PE, RN e todo o Brasil."
+        description="Reengenharia de processos, automação com IA, sistemas sob medida e dashboards em tempo real para empresas que querem crescer de forma saudável. Atendemos todo o Brasil."
         path="/solucoes"
         jsonLd={jsonLd}
       />

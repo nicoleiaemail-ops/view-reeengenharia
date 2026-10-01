@@ -50,7 +50,7 @@ const botoes: Botao[] = [
   {
     label: "Agendar a Leitura Executiva",
     icon: CalendarClock,
-    apoio: "60 minutos dentro da sua empresa, presencial, em Campina Grande ou João Pessoa.",
+    apoio: "60 minutos dentro da sua empresa, presencial.",
     href: "https://wa.me/5583993224878?text=Vim%20pelo%20Instagram.%20Quero%20agendar%20a%20Leitura%20Executiva%20na%20minha%20empresa.",
   },
   {
@@ -118,7 +118,7 @@ export default function Links() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="VIEW · Links"
-        description="Processos, sistemas e dados para empresas de 20 a 300 pessoas. Avaliação de maturidade, calculadora de custo e contato."
+        description="Processos, sistemas e dados para empresas que querem crescer de forma saudável. Avaliação de maturidade, calculadora de custo e contato."
         path="/links"
         noindex
       />
@@ -131,19 +131,10 @@ export default function Links() {
         <header className="text-center mb-8">
           <p className="font-display font-extrabold text-[1.15rem] leading-tight">VIEW · Controle da Operação</p>
           <p className="font-body text-[.85rem] leading-relaxed mt-2 text-muted-foreground">
-            Processos, sistemas e dados para empresas de 20 a 300 pessoas.
+            Processos, sistemas e dados para empresas que querem crescer de forma saudável.
           </p>
-          {/*
-            "Paraíba, Pernambuco, Rio Grande do Norte e Estados Unidos" saiu
-            daqui: nenhuma outra página do site confirma atendimento nos EUA
-            (o rodapé fala só PB/PE/RN/Brasil, e o JSON-LD não lista o país).
-            Prometer isso só na página de bio, sem sustentação em nenhum outro
-            lugar, é o tipo de promessa que um lead dos EUA não consegue
-            confirmar em lugar nenhum. Volta se for confirmado que a VIEW
-            atende lá -- e nesse caso entra nos outros lugares também.
-          */}
           <p className="font-body text-[.85rem] leading-relaxed text-muted-foreground">
-            Paraíba, Pernambuco e Rio Grande do Norte.
+            Atendimento em todo o Brasil.
           </p>
         </header>
 

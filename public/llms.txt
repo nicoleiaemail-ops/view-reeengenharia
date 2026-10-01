@@ -1,6 +1,6 @@
 # VIEW Reengenharia de Processos
 
-> A VIEW é uma consultoria especializada em reengenharia de processos, automação operacional e controle da operação para empresas de 20 a 300 pessoas. Fundada em 2024, aplica a metodologia exclusiva DISTIPP para transformar operações baseadas em planilhas e decisões por intuição em sistemas digitais orientados a dados.
+> A VIEW é uma consultoria especializada em reengenharia de processos, automação operacional e controle da operação para empresas que querem crescer de forma saudável. Fundada em 2024, aplica a metodologia exclusiva DISTIPP para transformar operações baseadas em planilhas e decisões por intuição em sistemas digitais orientados a dados.
 
 ## Domínio
 
@@ -24,7 +24,7 @@ https://reengenhariaview.com.br
 
 ## O que é a VIEW
 
-A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos de atuação em grandes indústrias brasileiras como Baterias Moura e Alpargatas. O objetivo é replicar os mesmos princípios de excelência operacional dessas empresas para empresas de 20 a 300 pessoas em crescimento no Nordeste do Brasil.
+A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos de atuação em grandes indústrias brasileiras como Baterias Moura e Alpargatas. O objetivo é replicar os mesmos princípios de excelência operacional dessas empresas para empresas que querem crescer de forma saudável.
 
 A VIEW não vende software. Entrega execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo.
 
@@ -80,12 +80,12 @@ Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada aju
 
 ## Casos de uso
 
-### Construção Civil — Vitória D. (Diretora, Construtora, Paraíba)
+### Construção Civil — Vitória D. (Diretora, Construtora)
 Desafio: manutenção do certificado ISO 9001 exigia registros manuais extensos e a cada auditoria havia retrabalho intenso.
 Solução VIEW: cada etapa da obra passou a gerar registro automático via sistema sob medida.
 Resultado: ISO 9001 mantido sem retrabalho; planejamento de obras acompanhado em tempo real de qualquer lugar.
 
-### Construção Civil — Aguinaldo S. (Supervisor de Obra, Construtora, Paraíba)
+### Construção Civil — Aguinaldo S. (Supervisor de Obra, Construtora)
 Desafio: precisava ligar para cada encarregado para saber o status da obra, sem visibilidade centralizada.
 Solução VIEW: aplicativo com rastreamento de atividades, atrasos e localização de equipes em tempo real.
 Resultado: gestão completa pelo celular; visibilidade total do que foi feito, o que atrasou e quem está onde.
@@ -97,8 +97,7 @@ Resultado: atendimento mais rápido, redução de custos operacionais, gargalos 
 
 ## Área de atendimento
 
-- **Presencial:** Paraíba (PB), Pernambuco (PE), Rio Grande do Norte (RN)
-- **Remoto:** todo o Brasil
+Todo o Brasil, presencial ou remoto.
 
 ## Contato
 

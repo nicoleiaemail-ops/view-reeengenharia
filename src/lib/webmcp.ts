@@ -114,18 +114,18 @@ const tools: WebMcpTool[] = [
       text(`
 VIEW — a VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo
 desenhado, depois o sistema, a automação e o dado. Nessa ordem, com a medição feita antes e
-depois. Atende empresas de 20 a 300 pessoas.
+depois. Atende empresas que querem crescer de forma saudável.
 
 Fundada em 2024 por uma equipe de engenharia de produção com mais de cinco anos em grandes
 indústrias brasileiras (Baterias Moura, Alpargatas). Aplica os mesmos princípios de excelência
-operacional em empresas de 20 a 300 pessoas em crescimento.
+operacional em empresas que querem crescer de forma saudável.
 
 A VIEW não vende software de prateleira. Entrega execução: diagnóstico, redesenho de processos,
 automação, sistema sob medida e acompanhamento contínuo.
 
 Áreas: ${SOLUCOES.map((s) => s.area).join(" · ")}
 Metodologia: DISTIPP (7 dimensões de maturidade operacional)
-Cobertura: Paraíba, Pernambuco, Rio Grande do Norte e todo o Brasil (remoto). Base em João Pessoa/PB.
+Cobertura: todo o Brasil, presencial ou remoto.
 Diagnóstico gratuito com devolutiva em até 48h.
 
 Contato: WhatsApp (83) 9 9322-4878 · admin@reengenhariaview.com.br

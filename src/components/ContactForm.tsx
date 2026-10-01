@@ -124,7 +124,7 @@ export function ContactForm() {
               "Mapeamento do seu nível de maturidade digital",
               "Identificação dos principais gargalos e custos ocultos",
               "Proposta personalizada com prazo e investimento",
-              "Atendimento em PB, PE e RN — presencial ou remoto",
+              "Atendimento em todo o Brasil — presencial ou remoto",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-[.85rem] text-muted-foreground leading-relaxed">
                 <span className="w-[17px] h-[17px] border border-foreground/20 rounded-sm flex items-center justify-center text-[.58rem] text-primary flex-shrink-0 mt-0.5">✓</span>
