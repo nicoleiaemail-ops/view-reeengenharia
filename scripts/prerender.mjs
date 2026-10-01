@@ -23,6 +23,7 @@ const ROUTES = [
   "/blog",
   "/privacidade",
   "/links",
+  "/ia-para-empresas-joao-pessoa",
   "/blog/metodologia-distipp-7-dimensoes-maturidade-operacional",
   "/blog/reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa",
   "/blog/automacao-de-processos-para-pmes-por-onde-comecar",

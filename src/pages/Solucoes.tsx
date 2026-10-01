@@ -282,10 +282,16 @@ function BlocoRecusa() {
         com nome e a métrica escolhida. Automatizar antes disso acelera o erro, e sai mais caro que o
         erro parado.
       </p>
-      <p className="text-[.8rem] leading-relaxed text-white/80">
+      <p className="text-[.8rem] leading-relaxed text-white/80 mb-3">
         Se o processo ainda não está no papel, o caminho começa no VIEW FLOW. Essa ordem é o que faz a
         automação continuar funcionando seis meses depois.
       </p>
+      <Link
+        to="/ia-para-empresas-joao-pessoa"
+        className="inline-flex items-center gap-1.5 text-[.8rem] font-display font-semibold text-white hover:text-white/80 transition-colors underline underline-offset-2"
+      >
+        Saiba como aplicamos IA →
+      </Link>
     </div>
   );
 }

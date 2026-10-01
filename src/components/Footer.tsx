@@ -29,6 +29,7 @@ export function Footer() {
               { label: "Casos de Sucesso", href: "/casos" },
               { label: "Sobre nós", href: "/sobre" },
               { label: "Avaliação Gratuita", href: "/avaliacao-maturidade" },
+              { label: "IA para empresas", href: "/ia-para-empresas-joao-pessoa" },
               { label: "Diagnóstico Grátis", href: "/#diagnostico" },
             ].map((item) => (
               <li key={item.href}>

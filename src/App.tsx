@@ -16,6 +16,7 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Links = lazy(() => import("./pages/Links"));
+const IAJoaoPessoa = lazy(() => import("./pages/IAJoaoPessoa"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/links" element={<Links />} />
+            <Route path="/ia-para-empresas-joao-pessoa" element={<IAJoaoPessoa />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

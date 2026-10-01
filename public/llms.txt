@@ -14,6 +14,7 @@ https://reengenhariaview.com.br
 - [Avaliação de Maturidade](https://reengenhariaview.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
 - [Casos](https://reengenhariaview.com.br/casos): Casos de sucesso documentados em construção civil e alimentação, com desafio, solução e resultado de cada cliente.
 - [Blog](https://reengenhariaview.com.br/blog): Artigos sobre reengenharia de processos, maturidade operacional, automação e visibilidade em tempo real para PMEs.
+- [IA para Empresas em João Pessoa](https://reengenhariaview.com.br/ia-para-empresas-joao-pessoa): Como a VIEW aplica inteligência artificial em processos de empresas — agentes, automação, integração de sistemas e capacitação. Sede em João Pessoa (PB), atendimento em todo o Brasil.
 
 ## Artigos
 
