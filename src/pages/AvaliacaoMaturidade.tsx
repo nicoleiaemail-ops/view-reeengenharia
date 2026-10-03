@@ -38,7 +38,7 @@ const SEO_JSONLD = [
         description: "Ferramenta gratuita de diagnóstico de maturidade empresarial em 7 dimensões (Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos) baseada na metodologia DISTIPP da VIEW. Resultado personalizado em menos de 5 minutos.",
         provider: {
           "@type": "Organization",
-          name: "VIEW Reengenharia de Processos",
+          name: "VIEW",
           url: "https://reengenhariaview.com.br",
         },
         featureList: [
@@ -63,7 +63,7 @@ const SEO_JSONLD = [
         ],
         provider: {
           "@type": "Organization",
-          name: "VIEW Reengenharia de Processos",
+          name: "VIEW",
           url: "https://reengenhariaview.com.br",
         },
       },

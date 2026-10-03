@@ -38,7 +38,7 @@ const SOLUCOES = [
   {
     area: "VIEW FLOW",
     dor: "Processos e automação",
-    entregas: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Chatbot com IA", "Consultoria em IA"],
+    entregas: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Consultoria em IA"],
     url: `${SITE}/solucoes#view-flow`,
   },
   {
@@ -108,7 +108,7 @@ const tools: WebMcpTool[] = [
   {
     name: "view_visao_geral",
     description:
-      "Retorna o que é a VIEW Reengenharia de Processos: proposta, público atendido, áreas de atuação, cobertura geográfica e canais de contato. Use antes das outras ferramentas para se situar.",
+      "Retorna o que é a VIEW: proposta, público atendido, áreas de atuação, cobertura geográfica e canais de contato. Use antes das outras ferramentas para se situar.",
     inputSchema: NO_ARGS,
     execute: () =>
       text(`

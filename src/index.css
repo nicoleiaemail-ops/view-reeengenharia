@@ -3,57 +3,80 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+    Paleta institucional pós-rebranding (tese validada em 27/08/2026).
+
+    A cor da marca é o VIEW Navy #0B1D3A. Antes ela existia como token e era
+    usada duas vezes no site inteiro: o fundo real era `222 78% 10%`, um azul
+    que não é o da marca, e os protagonistas visuais eram justamente as duas
+    cores que o deck manda evitar como identidade — o azul-claro `222 100% 65%`
+    e o verde `145 63% 58%`.
+
+    O que mudou:
+    - O fundo passa a ser o Navy de verdade, e toda a família de superfícies
+      migra do matiz 222/225 para 217, o do Navy.
+    - `--primary` deixa de ser azul-claro saturado (#4D82FF) e passa a um azul
+      institucional contido (#7CA2DE): continua legível, para de competir.
+    - `--accent` (dourado) assume como único realce protagonista.
+    - `--view-green` é dessaturado: segue servindo de sinal funcional
+      ("depois", "concluído"), não de cor de identidade.
+
+    Contraste sobre o Navy, verificado: foreground 14,6:1 · muted-foreground
+    7,8:1 · primary 6,4:1 · accent 9,3:1 · green 7,8:1. Todos acima de AA para
+    corpo de texto; os três realces também passariam em corpo pequeno.
+  */
   :root {
-    --background: 222 78% 10%;
+    --background: 217 68% 14%;
     --foreground: 225 33% 95%;
 
-    --card: 222 78% 10%;
+    --card: 217 68% 14%;
     --card-foreground: 225 33% 95%;
 
-    --popover: 222 78% 10%;
+    --popover: 217 68% 14%;
     --popover-foreground: 225 33% 95%;
 
-    --primary: 222 100% 65%;
-    --primary-foreground: 222 78% 10%;
+    --primary: 217 60% 68%;
+    --primary-foreground: 217 68% 14%;
 
-    --secondary: 222 50% 15%;
+    --secondary: 217 42% 20%;
     --secondary-foreground: 225 33% 95%;
 
-    --muted: 222 50% 15%;
+    --muted: 217 42% 20%;
     /* Era 55% de luminosidade: ~4.3:1 sobre o fundo, no limite do AA e pesado
        de ler em corpo pequeno. A 72% o texto de corpo passa de 7:1 (AAA). */
     --muted-foreground: 225 18% 72%;
 
     --accent: 40 70% 66%;
-    --accent-foreground: 222 78% 10%;
+    --accent-foreground: 217 68% 14%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 225 33% 95%;
 
-    --border: 225 15% 15%;
-    --input: 225 15% 15%;
-    --ring: 222 100% 65%;
+    /* A 225 15% 15% a borda dava 1,01:1 sobre o Navy — invisível. */
+    --border: 217 25% 30%;
+    --input: 217 25% 30%;
+    --ring: 217 60% 68%;
 
     --radius: 0.25rem;
 
     /* VIEW custom tokens */
-    --view-dark: 222 78% 10%;
+    --view-dark: 217 68% 14%;
     --view-navy: 217 68% 14%; /* VIEW Navy oficial — #0B1D3A */
-    --view-accent: 222 100% 65%;
+    --view-accent: 217 60% 68%;
     --view-gold: 40 70% 66%;
     --view-white: 225 33% 95%;
     --view-muted: 225 33% 95%;
-    --view-line: 225 15% 15%;
-    --view-green: 145 63% 58%;
+    --view-line: 217 25% 30%;
+    --view-green: 152 35% 62%;
 
-    --sidebar-background: 222 60% 15%;
+    --sidebar-background: 217 42% 20%;
     --sidebar-foreground: 225 33% 95%;
-    --sidebar-primary: 222 100% 65%;
+    --sidebar-primary: 217 60% 68%;
     --sidebar-primary-foreground: 225 33% 95%;
-    --sidebar-accent: 222 50% 20%;
+    --sidebar-accent: 217 42% 24%;
     --sidebar-accent-foreground: 225 33% 95%;
-    --sidebar-border: 225 15% 15%;
-    --sidebar-ring: 222 100% 65%;
+    --sidebar-border: 217 25% 30%;
+    --sidebar-ring: 217 60% 68%;
   }
 }
 

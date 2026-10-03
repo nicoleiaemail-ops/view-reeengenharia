@@ -21,7 +21,7 @@ const secoes = [
   {
     titulo: "1. Quem somos",
     conteudo: [
-      "A VIEW Reengenharia de Processos é uma consultoria de reengenharia de processos, automação e sistemas de gestão, com sede na Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados, João Pessoa/PB, CEP 58030-000.",
+      "A VIEW é uma parceira de evolução empresarial — atua em desenho de processos, integração de sistemas, automação e dados —, com sede na Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados, João Pessoa/PB, CEP 58030-000.",
       `Para qualquer assunto relacionado a dados pessoais, incluindo os pedidos descritos nesta política, o contato é ${EMAIL_CONTATO}.`,
     ],
   },
@@ -124,7 +124,7 @@ const secoes = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Política de Privacidade — VIEW Reengenharia de Processos",
+  name: "Política de Privacidade — VIEW",
   url: "https://reengenhariaview.com.br/privacidade",
   description:
     "Como a VIEW coleta, usa, armazena e exclui dados pessoais enviados pelos formulários do site, conforme a LGPD.",
@@ -134,7 +134,7 @@ export default function Privacidade() {
   return (
     <>
       <SEO
-        title="Política de Privacidade — VIEW Reengenharia de Processos"
+        title="Política de Privacidade — VIEW"
         description="Como a VIEW coleta, usa, armazena e exclui os dados pessoais enviados pelos formulários do site, e como exercer seus direitos previstos na LGPD."
         path="/privacidade"
         jsonLd={jsonLd}

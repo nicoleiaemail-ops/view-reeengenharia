@@ -1,4 +1,4 @@
-# VIEW Reengenharia de Processos
+# VIEW
 
 > A VIEW é uma consultoria especializada em reengenharia de processos, automação operacional e controle da operação para empresas que querem crescer de forma saudável. Fundada em 2024, aplica a metodologia exclusiva DISTIPP para transformar operações baseadas em planilhas e decisões por intuição em sistemas digitais orientados a dados.
 
@@ -81,7 +81,7 @@ Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada aju
 
 ## Casos de uso
 
-### Construção Civil — Vitória D. (Diretora, Construtora)
+### Construção Civil — Vitória D. (Diretora, Construtora TERRE)
 Desafio: manutenção do certificado ISO 9001 exigia registros manuais extensos e a cada auditoria havia retrabalho intenso.
 Solução VIEW: cada etapa da obra passou a gerar registro automático via sistema sob medida.
 Resultado: ISO 9001 mantido sem retrabalho; planejamento de obras acompanhado em tempo real de qualquer lugar.

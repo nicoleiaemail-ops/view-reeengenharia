@@ -16,7 +16,7 @@ const casos = [
     tagBg: "bg-primary/10",
     icon: "🏗️",
     client: "Vitória D.",
-    role: "Diretora · Construtora",
+    role: "Diretora · Construtora TERRE",
     headline: "ISO 9001 mantido sem retrabalho — registros automáticos em cada etapa da obra",
     challenge:
       "A cada ciclo de auditoria ISO 9001, a equipe precisava reunir registros dispersos em papel, planilhas e WhatsApp. Era uma corrida contra o tempo que consumia dias de trabalho, gerava erros e colocava o certificado em risco. Além disso, a diretoria não tinha visibilidade do andamento real dos projetos sem ligar para cada encarregado.",
@@ -125,7 +125,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "VIEW Reengenharia de Processos",
+    name: "VIEW",
     url: "https://reengenhariaview.com.br",
     review: casos.map((c) => ({
       "@type": "Review",
@@ -164,7 +164,7 @@ export default function Casos() {
   return (
     <>
       <SEO
-        title="Casos de Sucesso — VIEW Reengenharia de Processos"
+        title="Casos de Sucesso — VIEW"
         description="Veja como a VIEW transformou operações reais: construção civil com ISO 9001 automatizado, gestão de obra pelo celular e restaurante com fluxo do pedido ao pagamento em tempo real."
         path="/casos"
         jsonLd={jsonLd}

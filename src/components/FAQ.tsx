@@ -81,7 +81,7 @@ export function FAQ() {
           <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.8vw,2.2rem)] leading-[1.1]">
             Perguntas frequentes sobre
             <br />
-            <em className="not-italic text-primary">reengenharia de processos</em>
+            <em className="not-italic text-accent">processo, sistema e dado</em>
           </h2>
         </div>
 

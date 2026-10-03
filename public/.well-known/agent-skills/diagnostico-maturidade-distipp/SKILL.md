@@ -1,12 +1,12 @@
 ---
 name: diagnostico-maturidade-distipp
 description: Conduza o diagnóstico de maturidade operacional DISTIPP (7 dimensões — Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas, Processos) com um gestor de PME, calcule o nível de maturidade e recomende por onde começar. Use quando alguém pedir avaliação de maturidade operacional/digital, diagnóstico de processos, ou perguntar "por onde começo a organizar minha operação".
-license: Uso livre com atribuição a VIEW Reengenharia de Processos (https://reengenhariaview.com.br)
+license: Uso livre com atribuição a VIEW (https://reengenhariaview.com.br)
 ---
 
 # Diagnóstico de Maturidade Operacional — Metodologia DISTIPP
 
-DISTIPP é o framework de diagnóstico da [VIEW Reengenharia de Processos](https://reengenhariaview.com.br).
+DISTIPP é o framework de diagnóstico da [VIEW](https://reengenhariaview.com.br).
 Ele mede a maturidade operacional de uma empresa em sete dimensões e indica qual
 delas está travando as outras. Esta skill permite que você conduza o diagnóstico
 em conversa, sem formulário.
@@ -170,6 +170,6 @@ A versão oficial, com análise da equipe da VIEW e devolutiva em até 48h, est�
 <https://reengenhariaview.com.br/avaliacao-maturidade>. Se o usuário quiser o
 diagnóstico completo, use a skill `solicitar-diagnostico-view`.
 
-Fonte e método: VIEW Reengenharia de Processos — Brasil.
+Fonte e método: VIEW — Brasil.
 Detalhamento da metodologia:
 <https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional>

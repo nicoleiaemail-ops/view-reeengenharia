@@ -38,7 +38,7 @@ export default function BlogPost() {
       author: { "@type": "Organization", name: article.author, url: SITE_URL },
       publisher: {
         "@type": "Organization",
-        name: "VIEW Reengenharia de Processos",
+        name: "VIEW",
         url: SITE_URL,
         logo: { "@type": "ImageObject", url: `${SITE_URL}/og-image.png` },
       },

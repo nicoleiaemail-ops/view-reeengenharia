@@ -34,19 +34,19 @@ const faqJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "VIEW Reengenharia de Processos",
+  name: "VIEW",
   url: "https://reengenhariaview.com.br/",
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService"],
-  name: "VIEW Reengenharia de Processos",
+  name: "VIEW",
   alternateName: "VIEW",
   url: "https://reengenhariaview.com.br",
   logo: "https://reengenhariaview.com.br/og-image.png",
   description:
-    "Empresa especializada em reengenharia de processos, automação operacional e controle da operação para empresas que querem crescer de forma saudável. Metodologia exclusiva DISTIPP.",
+    "Parceira de evolução empresarial: desenha o processo, integra os sistemas, automatiza a rotina e entrega o dado que muda a decisão. Metodologia exclusiva DISTIPP.",
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   contactPoint: {
@@ -139,7 +139,7 @@ const organizationJsonLd = {
   review: [
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Vitória D." },
+      author: { "@type": "Person", name: "Vitória D.", worksFor: { "@type": "Organization", name: "TERRE" } },
       reviewBody:
         "Manter o ISO 9001 era uma corrida contra o tempo a cada auditoria. Com a VIEW, cada etapa da obra gera um registro automático. Hoje acompanho o andamento de qualquer projeto em tempo real — de onde estiver.",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
@@ -162,13 +162,13 @@ const organizationJsonLd = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "VIEW Reengenharia de Processos",
+  name: "VIEW",
   image: "https://reengenhariaview.com.br/og-image.png",
   url: "https://reengenhariaview.com.br",
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
   priceRange: "$$",
-  description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e controle da operação para empresas que querem crescer de forma saudável.",
+  description: "Parceira de evolução empresarial: desenho de processos, integração de sistemas, automação com IA e dados para dar controle da operação a quem decide.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados",

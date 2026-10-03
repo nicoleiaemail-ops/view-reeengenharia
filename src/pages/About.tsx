@@ -40,16 +40,16 @@ const About = () => {
           {
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            name: "Sobre a VIEW — Reengenharia de Processos e Eficiência Operacional",
+            name: "Sobre a VIEW — Parceira de Evolução Empresarial",
             url: "https://reengenhariaview.com.br/sobre",
             description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para empresas que querem crescer de forma saudável.",
             mainEntity: {
               "@type": ["Organization", "ProfessionalService"],
-              name: "VIEW Reengenharia de Processos",
+              name: "VIEW",
               url: "https://reengenhariaview.com.br",
               logo: "https://reengenhariaview.com.br/og-image.png",
               foundingDate: "2024",
-              description: "Consultoria especializada em reengenharia de processos, automação operacional, IA e sistemas sob medida para empresas que querem crescer de forma saudável.",
+              description: "Parceira de evolução empresarial: desenho de processos, integração de sistemas, automação com IA e sistemas sob medida para operações em crescimento.",
               telephone: "+55-83-99322-4878",
               email: "admin@reengenhariaview.com.br",
               areaServed: { "@type": "Country", name: "Brasil" },
@@ -72,7 +72,7 @@ const About = () => {
           {
             "@context": "https://schema.org",
             "@type": "HowTo",
-            name: "Como funciona a metodologia VIEW de reengenharia de processos",
+            name: "Como funciona a metodologia VIEW de evolução operacional",
             description:
               "Método de evolução operacional em 6 etapas: processo desenhado primeiro, depois sistema, automação e dado, com medição feita antes e depois.",
             step: [

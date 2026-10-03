@@ -37,8 +37,7 @@ const depoimentos: Depoimento[] = [
     iniciais: "VD",
     nome: "Vitória D.",
     cargo: "Diretora",
-    empresa: "Construtora de médio porte",
-    anonimo: true,
+    empresa: "Construtora TERRE",
     tag: "Construção Civil",
   },
   {

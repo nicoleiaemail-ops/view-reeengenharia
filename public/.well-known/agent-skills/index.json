@@ -6,14 +6,14 @@
       "type": "skill-md",
       "description": "Conduza o diagnóstico de maturidade operacional DISTIPP (7 dimensões — Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas, Processos) com um gestor de PME, calcule o nível de maturidade e recomende por onde começar. Use quando alguém pedir avaliação de maturidade operacional/digital, diagnóstico de processos, ou perguntar \"por onde começo a organizar minha operação\".",
       "url": "https://reengenhariaview.com.br/.well-known/agent-skills/diagnostico-maturidade-distipp/SKILL.md",
-      "digest": "sha256:c56ae1b8a7c8aa3dad9f4dbd752e86705a220eb65f46d9a2ebd39d3d2aec8af2"
+      "digest": "sha256:b319724526138714582bda70075b0347a35617e078a2c5cfb955f8a941a4d5ee"
     },
     {
       "name": "solicitar-diagnostico-view",
       "type": "skill-md",
-      "description": "Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW Reengenharia de Processos (empresas que querem crescer de forma saudável, atendimento em todo o Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.",
+      "description": "Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW (empresas que querem crescer de forma saudável, atendimento em todo o Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.",
       "url": "https://reengenhariaview.com.br/.well-known/agent-skills/solicitar-diagnostico-view/SKILL.md",
-      "digest": "sha256:312020d584d180dc562d83aa4ab4b9c54e2c651ca47f9f71e4797550cca01220"
+      "digest": "sha256:4136e538e15ca7c78635fac314997c99d0d9c23ff17d5876405e273aaac269bf"
     }
   ]
 }

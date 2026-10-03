@@ -13,13 +13,13 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Blog VIEW — Reengenharia de Processos",
+    name: "Blog VIEW — Processos, Dados e Evolução Operacional",
     description:
-      "Conteúdos sobre reengenharia de processos, maturidade operacional, automação e gestão para pequenas e médias empresas.",
+      "Conteúdos sobre processos, maturidade operacional, automação, dados e gestão para empresas em crescimento.",
     url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "VIEW Reengenharia de Processos",
+      name: "VIEW",
       url: SITE_URL,
     },
     blogPost: articles.map((a) => ({
@@ -55,8 +55,8 @@ export default function Blog() {
   return (
     <>
       <SEO
-        title="Blog VIEW — Reengenharia de Processos, Maturidade e Gestão para PMEs"
-        description="Artigos práticos sobre reengenharia de processos, maturidade operacional, automação e gestão para pequenas e médias empresas. Conteúdo da VIEW."
+        title="Blog VIEW — Processos, Maturidade Operacional e Gestão"
+        description="Artigos práticos sobre processos, maturidade operacional, automação e decisão com dados, para quem dirige uma operação em crescimento. Conteúdo da VIEW."
         path="/blog"
         jsonLd={jsonLd}
       />
@@ -68,7 +68,7 @@ export default function Blog() {
           Ideias para <em className="not-italic text-primary">enxergar e controlar</em> sua operação.
         </h1>
         <p className="text-[.95rem] text-muted-foreground leading-relaxed max-w-[560px]">
-          Reengenharia de processos, maturidade operacional e gestão — na prática, para quem toca uma PME.
+          Processos, maturidade operacional e decisão com dados — na prática, para quem dirige a operação.
         </p>
       </section>
 

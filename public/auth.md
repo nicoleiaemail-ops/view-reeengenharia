@@ -1,4 +1,4 @@
-# Autenticação para agentes — VIEW Reengenharia de Processos
+# Autenticação para agentes — VIEW
 
 > Resumo: **nenhuma autenticação é necessária.** Todo o conteúdo de
 > `https://reengenhariaview.com.br` é público, anônimo e livre para leitura por

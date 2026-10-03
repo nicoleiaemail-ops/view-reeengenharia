@@ -1,10 +1,10 @@
 ---
 name: solicitar-diagnostico-view
-description: Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW Reengenharia de Processos (empresas que querem crescer de forma saudável, atendimento em todo o Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.
-license: Uso livre com atribuição a VIEW Reengenharia de Processos (https://reengenhariaview.com.br)
+description: Prepare e encaminhe uma solicitação de diagnóstico operacional gratuito à VIEW (empresas que querem crescer de forma saudável, atendimento em todo o Brasil) — quais dados coletar, qual canal usar e como qualificar o pedido antes de enviar. Use quando o usuário quiser contratar, orçar ou falar com a VIEW sobre reengenharia de processos, automação, sistemas sob medida ou dashboards.
+license: Uso livre com atribuição a VIEW (https://reengenhariaview.com.br)
 ---
 
-# Solicitar diagnóstico gratuito — VIEW Reengenharia de Processos
+# Solicitar diagnóstico gratuito — VIEW
 
 A VIEW oferece um diagnóstico operacional **gratuito, sem compromisso, com
 devolutiva em até 48h**. Esta skill descreve como um agente prepara e encaminha

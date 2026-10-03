@@ -1,3 +1,4 @@
+import { Database, Bot, Workflow, LineChart, Zap, Monitor } from "lucide-react";
 import { useEffect, useRef, useCallback } from "react";
 
 const V_LID_CLOSED_T = "M8,120 C100,18 420,18 512,120 L512,120 C420,120 100,120 8,120 Z";
@@ -124,13 +125,26 @@ export function HeroEye() {
     return () => { if (cycleRef.current) clearTimeout(cycleRef.current); };
   }, [openEye, closeEye]);
 
+  /*
+    Três problemas de uma vez aqui.
+
+    "Aplicativos · iOS & Android" era oferta da versão antiga do site — a VIEW
+    não se vende como fábrica de app. "+32% margem" e "87% menos erro" eram
+    números sem origem, no lugar mais visível da página: um comprador que
+    desconfia de um passa a desconfiar da seção toda. E o emoji cru renderiza
+    diferente por sistema operacional, destoando dos ícones Lucide do resto da
+    home.
+
+    Os seis nós agora nomeiam as frentes reais, sem prometer número que não
+    pode ser mostrado.
+  */
   const nodeData = [
-    { emoji: "📊", label: "Dados", val: "tempo real", cls: "n0" },
-    { emoji: "🤖", label: "IA", val: "aplicada", cls: "n1" },
-    { emoji: "📱", label: "Aplicativos", val: "iOS & Android", cls: "n2" },
-    { emoji: "💰", label: "Lucro", val: "+32% margem", cls: "n3" },
-    { emoji: "⚡", label: "Automação", val: "87% menos erro", cls: "n4" },
-    { emoji: "🖥️", label: "Sistema", val: "sob medida", cls: "n5" },
+    { Icon: Database, label: "Dados", val: "em tempo real", cls: "n0" },
+    { Icon: Bot, label: "IA", val: "aplicada ao gargalo", cls: "n1" },
+    { Icon: Workflow, label: "Processo", val: "escrito e padronizado", cls: "n2" },
+    { Icon: LineChart, label: "Margem", val: "medida antes e depois", cls: "n3" },
+    { Icon: Zap, label: "Automação", val: "rotina sem retrabalho", cls: "n4" },
+    { Icon: Monitor, label: "Sistema", val: "sob medida", cls: "n5" },
   ];
 
   const nodePositions: Record<string, string> = {
@@ -189,7 +203,7 @@ export function HeroEye() {
           { x1: 340, y1: 180, x2: 20, y2: 54 },
         ].map((l, i) => (
           <line key={i} className="vline" x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
-            stroke="hsla(222,100%,65%,.18)" strokeWidth="1"
+            stroke="hsla(var(--view-accent) / .18)" strokeWidth="1"
             strokeDasharray="5 7"
             style={{ animation: "vdash 3.5s linear infinite" }} />
         ))}
@@ -199,8 +213,8 @@ export function HeroEye() {
       <div className="absolute inset-0 pointer-events-none z-[10] hidden md:block">
         {nodeData.map((n, i) => (
           <div key={i} id={`vn${i}`} className={`vnode absolute flex flex-col items-center gap-[5px] ${nodePositions[n.cls]}`}>
-            <div className="w-14 h-14 rounded-full bg-background/95 border border-primary/50 flex items-center justify-center text-[1.3rem] transition-shadow duration-600">
-              {n.emoji}
+            <div className="w-14 h-14 rounded-full bg-background/95 border border-primary/50 flex items-center justify-center transition-shadow duration-600">
+              <n.Icon className="w-6 h-6 text-primary" strokeWidth={1.75} aria-hidden="true" />
             </div>
             <div className="font-display font-bold text-[.6rem] tracking-[.1em] uppercase text-foreground/80 whitespace-nowrap">{n.label}</div>
             <div className="text-[.54rem] text-primary/85 whitespace-nowrap">{n.val}</div>
@@ -219,18 +233,18 @@ export function HeroEye() {
         <defs>
           <radialGradient id="vIrisOpen" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#e8f4ff" stopOpacity=".95" />
-            <stop offset="20%" stopColor="#4a7cff" stopOpacity=".9" />
-            <stop offset="55%" stopColor="#1a3070" />
-            <stop offset="100%" stopColor="#07102a" />
+            <stop offset="20%" stopColor="#7CA2DE" stopOpacity=".9" />
+            <stop offset="55%" stopColor="#16325C" />
+            <stop offset="100%" stopColor="#0B1D3A" />
           </radialGradient>
           <radialGradient id="vIrisClosed" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#0f1e3a" />
-            <stop offset="100%" stopColor="#07102a" />
+            <stop offset="0%" stopColor="#102444" />
+            <stop offset="100%" stopColor="#0B1D3A" />
           </radialGradient>
           <radialGradient id="vIrisGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#4a7cff" stopOpacity=".5" />
-            <stop offset="60%" stopColor="#4a7cff" stopOpacity=".1" />
-            <stop offset="100%" stopColor="#4a7cff" stopOpacity="0" />
+            <stop offset="0%" stopColor="#7CA2DE" stopOpacity=".5" />
+            <stop offset="60%" stopColor="#7CA2DE" stopOpacity=".1" />
+            <stop offset="100%" stopColor="#7CA2DE" stopOpacity="0" />
           </radialGradient>
           <filter id="vEdgeGlow" x="-20%" y="-60%" width="140%" height="220%">
             <feGaussianBlur stdDeviation="3" result="b" />
@@ -240,29 +254,29 @@ export function HeroEye() {
             <path d="M8,120 C100,18 420,18 512,120 C420,222 100,222 8,120 Z" />
           </clipPath>
           <pattern id="vHexPat" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <polygon points="10,2 17,6 17,14 10,18 3,14 3,6" fill="none" stroke="rgba(74,124,255,.12)" strokeWidth=".5" />
+            <polygon points="10,2 17,6 17,14 10,18 3,14 3,6" fill="none" stroke="rgba(124,162,222,.12)" strokeWidth=".5" />
           </pattern>
         </defs>
 
-        <path d="M8,120 C100,18 420,18 512,120 C420,222 100,222 8,120 Z" fill="#060e24" />
+        <path d="M8,120 C100,18 420,18 512,120 C420,222 100,222 8,120 Z" fill="#08172E" />
         <circle id="virisGlowCirc" cx="260" cy="120" r="70" fill="url(#vIrisGlow)" opacity="0" style={{ transition: "opacity 1.5s ease, r 1.2s ease" }} />
 
         <g clipPath="url(#vEyeClip)">
           <circle id="viris" cx="260" cy="120" r="5" fill="url(#vIrisClosed)" style={{ transition: "r 1.4s cubic-bezier(.34,1.1,.64,1)" }} />
           <circle cx="260" cy="120" r="5" id="vhexpat" fill="url(#vHexPat)" opacity="0" style={{ transition: "r 1.4s cubic-bezier(.34,1.1,.64,1), opacity .8s ease .6s" }} />
           <circle id="vring1" cx="260" cy="120" r="4" fill="none" stroke="rgba(237,240,248,.06)" strokeWidth="1" opacity="0" style={{ transition: "r 1.3s ease .2s, opacity .6s ease .8s" }} />
-          <circle id="vring2" cx="260" cy="120" r="3" fill="none" stroke="rgba(74,124,255,.1)" strokeWidth=".8" opacity="0" style={{ transition: "r 1.3s ease .4s, opacity .6s ease 1s" }} />
-          <circle id="vring3" cx="260" cy="120" r="2" fill="none" stroke="rgba(74,124,255,.07)" strokeWidth=".5" opacity="0" style={{ transition: "r 1.3s ease .5s, opacity .6s ease 1.1s" }} />
+          <circle id="vring2" cx="260" cy="120" r="3" fill="none" stroke="rgba(124,162,222,.1)" strokeWidth=".8" opacity="0" style={{ transition: "r 1.3s ease .4s, opacity .6s ease 1s" }} />
+          <circle id="vring3" cx="260" cy="120" r="2" fill="none" stroke="rgba(124,162,222,.07)" strokeWidth=".5" opacity="0" style={{ transition: "r 1.3s ease .5s, opacity .6s ease 1.1s" }} />
         </g>
 
         <g clipPath="url(#vEyeClip)">
-          <circle id="vpupil" cx="260" cy="120" r="2" fill="#020811" style={{ transition: "r 1s cubic-bezier(.34,1.1,.64,1) .3s" }} />
+          <circle id="vpupil" cx="260" cy="120" r="2" fill="#050F1F" style={{ transition: "r 1s cubic-bezier(.34,1.1,.64,1) .3s" }} />
           <circle id="vshine" cx="272" cy="108" r="0" fill="rgba(255,255,255,.18)" style={{ transition: "r .8s ease .8s" }} />
-          <circle id="vshine2" cx="250" cy="130" r="0" fill="rgba(74,124,255,.15)" style={{ transition: "r .6s ease 1s" }} />
+          <circle id="vshine2" cx="250" cy="130" r="0" fill="rgba(124,162,222,.15)" style={{ transition: "r .6s ease 1s" }} />
         </g>
 
-        <path id="vlidT" d={V_LID_CLOSED_T} fill="#07102a" style={{ transition: "d 1.4s cubic-bezier(.4,0,.15,1)" }} />
-        <path id="vlidB" d={V_LID_CLOSED_B} fill="#07102a" style={{ transition: "d 1.4s cubic-bezier(.4,0,.15,1)" }} />
+        <path id="vlidT" d={V_LID_CLOSED_T} fill="#0B1D3A" style={{ transition: "d 1.4s cubic-bezier(.4,0,.15,1)" }} />
+        <path id="vlidB" d={V_LID_CLOSED_B} fill="#0B1D3A" style={{ transition: "d 1.4s cubic-bezier(.4,0,.15,1)" }} />
 
         <path d="M8,120 C100,18 420,18 512,120" fill="none" stroke="rgba(237,240,248,.55)" strokeWidth="1.5" filter="url(#vEdgeGlow)" />
         <path d="M8,120 C100,222 420,222 512,120" fill="none" stroke="rgba(237,240,248,.22)" strokeWidth="1" />

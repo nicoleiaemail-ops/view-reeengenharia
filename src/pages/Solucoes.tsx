@@ -66,8 +66,7 @@ const solucoes = [
     services: [
       { name: "Padronização de processos", desc: "Cada processo documentado e replicável — sem depender da memória de ninguém." },
       { name: "Automações de fluxos", desc: "Tarefas manuais e repetitivas eliminadas, depois do processo desenhado." },
-      { name: "Agentes de IA", desc: "Sistemas autônomos que executam tarefas complexas sem intervenção humana constante." },
-      { name: "Chatbot com IA", desc: "Atendimento automatizado que responde, filtra e qualifica sem depender da equipe." },
+      { name: "Agentes de IA", desc: "Sistemas autônomos que executam tarefas complexas sem intervenção humana constante, incluindo atendimento — sempre a partir do processo mapeado, nunca um chatbot pronto de prateleira." },
       { name: "Consultoria em IA", desc: "Identificamos onde a IA gera mais retorno no seu negócio específico." },
     ],
     color: "accent",
@@ -167,7 +166,7 @@ const solucoesFaqs = [
 
 const providerRef = {
   "@type": "Organization",
-  name: "VIEW Reengenharia de Processos",
+  name: "VIEW",
   url: "https://reengenhariaview.com.br",
   telephone: "+55-83-99322-4878",
   email: "admin@reengenhariaview.com.br",
@@ -309,8 +308,8 @@ export default function Solucoes() {
   return (
     <>
       <SEO
-        title="Soluções VIEW — Reengenharia de Processos, Automação e IA"
-        description="Reengenharia de processos, automação com IA, sistemas sob medida e dashboards em tempo real para empresas que querem crescer de forma saudável. Atendemos todo o Brasil."
+        title="Soluções VIEW — Processos, Sistemas, Dados e Automação"
+        description="Desenho de processos, integração de sistemas, automação com IA e dashboards em tempo real, nas cinco frentes da VIEW. Atendemos todo o Brasil."
         path="/solucoes"
         jsonLd={jsonLd}
       />

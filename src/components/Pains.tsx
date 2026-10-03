@@ -1,9 +1,16 @@
+import { Clock, TrendingDown, Table2, DatabaseZap } from "lucide-react";
+
+/*
+  Ícones: Lucide, não emoji — mesmo argumento já escrito em Servicos.tsx. O
+  emoji cru renderiza diferente por sistema operacional e navegador, e aqui
+  ainda destoava dos ícones Lucide das seções vizinhas da mesma home.
+*/
 export function Pains() {
   const pains = [
-    { icon: "⏳", title: "Demora para ter uma informação", desc: "Precisa perguntar para alguém, procurar numa planilha ou esperar um relatório. A decisão fica travada — e o custo da espera cresce todo dia.", color: "gold" },
-    { icon: "📉", title: "Não sabe o desempenho da sua operação", desc: "Cada setor funciona de forma isolada. Você não tem visão clara do que está indo bem — nem do que está saindo do controle.", color: "blue" },
-    { icon: "📋", title: "Equipe perde horas preenchendo Excel", desc: "Tempo valioso gasto em tarefas que não geram resultado. A operação real fica sem atenção.", color: "green" },
-    { icon: "🚫", title: "Sem dados centralizados — ou sem dados nenhum", desc: "Não é só que a informação está espalhada. Muitas vezes ela nem existe. Sem uma base de dados centralizada, cada decisão vira achismo. Dados soltos em WhatsApp, cadernos e planilhas pessoais não servem para nada.", color: "gold" },
+    { icon: Clock, title: "Demora para ter uma informação", desc: "Precisa perguntar para alguém, procurar numa planilha ou esperar um relatório. A decisão fica travada — e o custo da espera cresce todo dia.", color: "gold" },
+    { icon: TrendingDown, title: "Não sabe o desempenho da sua operação", desc: "Cada setor funciona de forma isolada. Você não tem visão clara do que está indo bem — nem do que está saindo do controle.", color: "blue" },
+    { icon: Table2, title: "Equipe perde horas preenchendo Excel", desc: "Tempo valioso gasto em tarefas que não geram resultado. A operação real fica sem atenção.", color: "green" },
+    { icon: DatabaseZap, title: "Sem dados centralizados — ou sem dados nenhum", desc: "Não é só que a informação está espalhada. Muitas vezes ela nem existe. Sem uma base de dados centralizada, cada decisão vira achismo. Dados soltos em WhatsApp, cadernos e planilhas pessoais não servem para nada.", color: "gold" },
   ];
 
   const colorMap: Record<string, { bg: string; border: string; iconBg: string; title: string }> = {
@@ -28,7 +35,9 @@ export function Pains() {
           const c = colorMap[p.color];
           return (
             <div key={i} className={`scroll-reveal rounded-md p-8 flex flex-col gap-5 ${c.bg} ${c.border} border hover:-translate-y-1 transition-transform`} style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div className={`w-11 h-11 rounded-[10px] flex items-center justify-center text-[1.3rem] ${c.iconBg}`}>{p.icon}</div>
+              <div className={`w-11 h-11 rounded-[10px] flex items-center justify-center ${c.iconBg}`}>
+                <p.icon className={`w-5 h-5 ${c.title}`} strokeWidth={1.75} aria-hidden="true" />
+              </div>
               <div>
                 <div className={`font-display font-bold text-[.92rem] leading-tight mb-1 ${c.title}`}>{p.title}</div>
                 <div className="text-[.82rem] text-muted-foreground leading-relaxed">{p.desc}</div>

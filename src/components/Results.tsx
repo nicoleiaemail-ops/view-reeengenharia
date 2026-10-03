@@ -1,3 +1,4 @@
+import { Cog, TrendingUp, Clock, PiggyBank, type LucideIcon } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 
 /**
@@ -11,7 +12,7 @@ import { useCountUp } from "@/hooks/useCountUp";
  * redondos e não explicados.
  */
 function ResultCard({
-  icon,
+  Icon,
   target,
   prefix,
   suffix,
@@ -20,7 +21,7 @@ function ResultCard({
   colorClass,
   delay,
 }: {
-  icon: string;
+  Icon: LucideIcon;
   target: number;
   prefix?: string;
   suffix: string;
@@ -35,8 +36,8 @@ function ResultCard({
       className={`scroll-reveal rounded-md flex items-center gap-5 p-7 relative overflow-hidden transition-all border ${colorClass}`}
       style={{ transitionDelay: delay }}
     >
-      <div className="w-[46px] h-[46px] flex-shrink-0 rounded-full flex items-center justify-center text-[1.2rem]" aria-hidden="true">
-        {icon}
+      <div className="w-[46px] h-[46px] flex-shrink-0 rounded-full flex items-center justify-center">
+        <Icon className="w-6 h-6 text-foreground/70" strokeWidth={1.75} aria-hidden="true" />
       </div>
       <div className="flex flex-col gap-1">
         <div className="font-display font-bold text-[1.7rem] leading-none text-foreground tabular-nums" ref={ref}>
@@ -70,7 +71,7 @@ export function Results() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ResultCard
-          icon="⚙️"
+          Icon={Cog}
           target={20}
           suffix="+"
           label="processos automatizados"
@@ -78,7 +79,7 @@ export function Results() {
           colorClass="bg-accent/[.06] border-accent/25 hover:bg-accent/[.11]"
         />
         <ResultCard
-          icon="📈"
+          Icon={TrendingUp}
           target={50}
           prefix="+"
           suffix="%"
@@ -88,7 +89,7 @@ export function Results() {
           delay=".08s"
         />
         <ResultCard
-          icon="⏱️"
+          Icon={Clock}
           target={100}
           suffix="h+"
           label="devolvidas à equipe por mês"
@@ -97,7 +98,7 @@ export function Results() {
           delay=".16s"
         />
         <ResultCard
-          icon="💰"
+          Icon={PiggyBank}
           target={100}
           prefix="R$"
           suffix="k+"

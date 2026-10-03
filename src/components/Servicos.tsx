@@ -35,7 +35,7 @@ const areas = [
     tag: "VIEW FLOW",
     sub: "Processos e automação",
     desc: "O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha.",
-    services: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Chatbot com IA"],
+    services: ["Padronização de processos", "Automações de fluxos", "Agentes de IA", "Consultoria em IA"],
     href: "/solucoes#view-flow",
     color: "border-accent/20 hover:border-accent/40 hover:bg-accent/[.04]",
     accent: "text-accent",

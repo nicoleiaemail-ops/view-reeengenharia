@@ -11,7 +11,8 @@ export function Footer() {
             <ViewLogo size={36} />
             <div>
               <div className="font-display font-bold text-[.95rem] tracking-[.12em]">VIEW</div>
-              <div className="text-[.56rem] tracking-[.18em] text-muted-foreground uppercase mt-0.5">Reengenharia de Processos</div>
+              {/* A assinatura da marca, no lugar do descritor aposentado. */}
+              <div className="text-[.56rem] tracking-[.18em] text-accent uppercase mt-0.5">Enxergue · Simplifique · Evolua</div>
             </div>
           </div>
           <p className="text-[.78rem] text-muted-foreground leading-relaxed max-w-[280px]">
@@ -72,7 +73,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-view-line pt-6 flex items-center justify-between flex-wrap gap-3">
-        <div className="text-[.72rem] text-muted-foreground/80">© 2026 VIEW Reengenharia de Processos. Todos os direitos reservados.</div>
+        <div className="text-[.72rem] text-muted-foreground/80">© 2026 VIEW. Todos os direitos reservados.</div>
         <div className="flex items-center gap-4">
           <Link to="/privacidade" className="text-[.72rem] text-muted-foreground/80 hover:text-foreground transition-colors">
             Política de Privacidade
