@@ -56,7 +56,11 @@ const faqs = [
   },
   {
     q: "Quanto custa um agente de IA no WhatsApp?",
-    a: "Depende do volume de atendimento e da complexidade das conversas que o agente precisa cobrir. A VIEW apresenta o investimento exato na proposta, depois do diagnóstico gratuito — sem orçamento fechado sem entender o processo primeiro.",
+    a: "Varia com o volume de atendimento e a complexidade das conversas que o agente precisa cobrir, então não tem como responder com um número fixo aqui. Fale com a gente no WhatsApp ou faça o diagnóstico gratuito para ver o que se aplica ao seu caso.",
+    links: [
+      { label: "Mini-diagnóstico DISTIPP gratuito", href: "/avaliacao-maturidade" },
+      { label: "Falar no WhatsApp", href: WHATSAPP_URL, external: true },
+    ],
   },
   {
     q: "Quanto tempo leva para o agente entrar no ar?",

@@ -62,7 +62,11 @@ const faqs = [
   },
   {
     q: "Quanto custa a consultoria ISO 9001?",
-    a: "Depende do tamanho da construtora e de quanto já está documentado. A VIEW apresenta o investimento exato na proposta, depois do diagnóstico gratuito.",
+    a: "Depende do tamanho da construtora e de quanto já está documentado, então não dá para cravar um número aqui. Fale com a gente no WhatsApp ou faça o diagnóstico gratuito para ver o que se aplica à sua obra.",
+    links: [
+      { label: "Mini-diagnóstico DISTIPP gratuito", href: "/avaliacao-maturidade" },
+      { label: "Falar no WhatsApp", href: WHATSAPP_URL, external: true },
+    ],
   },
   {
     q: "Quanto tempo leva para preparar a construtora para a auditoria?",

@@ -17,6 +17,13 @@ import {
 export interface FAQItem {
   q: string;
   a: string;
+  /**
+   * Ações dentro da resposta — usado, por exemplo, na pergunta de preço: em
+   * vez de citar valor, a resposta aponta para o diagnóstico ou para o
+   * WhatsApp, com link de verdade, clicável, não só texto mencionando o
+   * canal.
+   */
+  links?: { label: string; href: string; external?: boolean }[];
 }
 
 export interface CaseLink {
@@ -114,6 +121,31 @@ export function FAQSection({ faqs }: { faqs: FAQItem[] }) {
               </span>
             </summary>
             <p className="mt-3 text-[.85rem] text-muted-foreground leading-relaxed">{f.a}</p>
+            {f.links && f.links.length > 0 && (
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
+                {f.links.map((l) =>
+                  l.external ? (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[.85rem] font-display font-semibold text-primary hover:underline"
+                    >
+                      {l.label} →
+                    </a>
+                  ) : (
+                    <Link
+                      key={l.href}
+                      to={l.href}
+                      className="text-[.85rem] font-display font-semibold text-primary hover:underline"
+                    >
+                      {l.label} →
+                    </Link>
+                  )
+                )}
+              </div>
+            )}
           </details>
         ))}
       </div>

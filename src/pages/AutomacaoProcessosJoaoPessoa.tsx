@@ -60,7 +60,11 @@ const faqs = [
   },
   {
     q: "Quanto custa automatizar um processo?",
-    a: "Depende de quantas etapas e sistemas estão envolvidos. A VIEW apresenta o investimento exato na proposta, depois do diagnóstico gratuito.",
+    a: "Depende de quantas etapas e sistemas estão envolvidos, então não dá para cravar um número aqui. Fale com a gente no WhatsApp ou faça o diagnóstico gratuito para descobrir o que se aplica à sua operação.",
+    links: [
+      { label: "Mini-diagnóstico DISTIPP gratuito", href: "/avaliacao-maturidade" },
+      { label: "Falar no WhatsApp", href: WHATSAPP_URL, external: true },
+    ],
   },
   {
     q: "Quanto tempo leva para ver resultado?",

@@ -63,7 +63,11 @@ const diferenciais = [
 const faqs = [
   {
     q: "Quanto custa um software sob medida?",
-    a: "Depende do tamanho do processo e dos sistemas que precisam se conectar. A VIEW faz um diagnóstico gratuito antes de qualquer proposta e apresenta o investimento exato junto com o prazo e o resultado esperado — sem orçamento fechado antes de entender o processo.",
+    a: "Isso depende do tamanho do processo e dos sistemas envolvidos, então não dá para responder com um número fixo aqui. O caminho é fazer o diagnóstico gratuito ou falar direto com a gente no WhatsApp — a partir do seu processo real, você recebe uma resposta sob medida também.",
+    links: [
+      { label: "Mini-diagnóstico DISTIPP gratuito", href: "/avaliacao-maturidade" },
+      { label: "Falar no WhatsApp", href: WHATSAPP_URL, external: true },
+    ],
   },
   {
     q: "Quanto tempo leva para ficar pronto?",
