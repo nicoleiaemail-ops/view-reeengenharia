@@ -133,27 +133,18 @@ const organizationJsonLd = {
     ],
   },
 
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Vitória D.", worksFor: { "@type": "Organization", name: "TERRE" } },
-      reviewBody:
-        "Manter o ISO 9001 era uma corrida contra o tempo a cada auditoria. Com a VIEW, cada etapa da obra gera um registro automático. Hoje acompanho o andamento de qualquer projeto em tempo real — de onde estiver.",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Aguinaldo S." },
-      reviewBody:
-        "Antes eu precisava ligar pra cada encarregado pra saber o que tava acontecendo. Agora abro o aplicativo e vejo tudo: o que foi feito, o que atrasou, quem tá onde. Mudou completamente a forma como eu gerencio a obra.",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    },
-  ],
-  // Havia aqui um aggregateRating de "5,0 com 2 avaliações". Nota máxima
-  // apoiada em duas avaliações é o padrão que o Google trata como rich snippet
-  // abusivo, e para um leitor humano soa pior do que não ter nota nenhuma. Os
-  // depoimentos individuais continuam declarados acima, que é o que de fato
-  // existe. Reintroduza a nota agregada quando houver volume real.
+  // O Search Console passou a sinalizar "Review sem aggregateRating" aqui.
+  // A causa raiz não era a nota ausente: segundo a documentação do Google
+  // (Review snippet — self-serving reviews), uma página é inelegível para o
+  // rich result de estrelas quando a própria entidade descrita controla as
+  // avaliações sobre si mesma — é exatamente este caso (a VIEW marcando
+  // depoimentos de clientes seus na sua própria página). Isso vale com ou sem
+  // aggregateRating: adicionar uma nota de "5,0 com 2 avaliações" não
+  // destravaria o rich result, só fabricaria uma média que nem é elegível e
+  // que, à parte, é o padrão que o Google trata como abusivo quando o volume
+  // é baixo. A marcação Review foi removida; os depoimentos continuam
+  // visíveis na página (componente Testimonials), só sem o schema.org por
+  // cima deles.
 };
 
 const localBusinessJsonLd = {

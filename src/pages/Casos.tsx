@@ -4,7 +4,6 @@ import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { BUSINESS_JSONLD_BASE } from "@/lib/business";
 
 const casos = [
   {
@@ -123,21 +122,16 @@ const jsonLd = [
       description: c.challenge,
     })),
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    ...BUSINESS_JSONLD_BASE,
-    // Sem aggregateRating de proposito: nota maxima apoiada em so 3 casos e o
-    // padrao que o Google trata como rich snippet abusivo (mesma razao pela
-    // qual a home ja nao tem isso — ver Landing.tsx). Os depoimentos
-    // individuais abaixo sao o que de fato existe.
-    review: casos.map((c) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: c.client },
-      reviewBody: c.quote,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    })),
-  },
+  // O bloco Organization que existia aqui só servia para carregar `review`.
+  // O Search Console sinalizou "Review sem aggregateRating", e a causa raiz
+  // não é a nota ausente: pela política do Google (Review snippet —
+  // self-serving reviews), uma entidade que controla as avaliações sobre si
+  // mesma é inelegível para o rich result de estrelas, com ou sem
+  // aggregateRating — é exatamente este caso. Removido em vez de corrigido:
+  // adicionar a nota não destravaria elegibilidade nenhuma, só fabricaria uma
+  // média de "5,0 com 3 casos" que já era o padrão evitado de propósito (ver
+  // Landing.tsx). Os depoimentos continuam visíveis na própria página, só
+  // sem o schema.org por cima.
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
