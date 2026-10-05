@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import middleware, { __BLOG_SLUGS_FOR_TESTS } from "../../middleware";
-import { articles } from "../content/blog";
+import { articles, publishedArticles } from "../content/blog";
 
 const SLUG = articles[0].slug;
 
@@ -98,8 +98,13 @@ describe("404 real em vez de soft 404", () => {
   // resolve o import e o emite literal, quebrando em runtime), então a lista de
   // slugs é duplicada lá. Este teste é o que impede as duas divergirem: sem ele,
   // publicar um artigo novo faria a rota dele responder 404.
-  it("a lista de slugs do middleware está sincronizada com o conteúdo do blog", () => {
-    expect([...__BLOG_SLUGS_FOR_TESTS].sort()).toEqual(articles.map((a) => a.slug).sort());
+  //
+  // Comparado contra publishedArticles(), não contra articles: um rascunho
+  // (draft: true) fica de propósito fora de BLOG_SLUGS, para a rota responder
+  // 404 real e não ser indexada enquanto não for aprovado — mesmo continuando
+  // acessível por link direto, já que a SPA ainda renderiza o artigo.
+  it("a lista de slugs do middleware está sincronizada com os artigos publicados do blog", () => {
+    expect([...__BLOG_SLUGS_FOR_TESTS].sort()).toEqual(publishedArticles().map((a) => a.slug).sort());
   });
 
   it("responde 404 e noindex para rota inexistente", async () => {

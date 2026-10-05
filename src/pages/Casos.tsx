@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BUSINESS_JSONLD_BASE } from "@/lib/business";
 
 const casos = [
   {
@@ -125,20 +126,17 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "VIEW",
-    url: "https://reengenhariaview.com.br",
+    ...BUSINESS_JSONLD_BASE,
+    // Sem aggregateRating de proposito: nota maxima apoiada em so 3 casos e o
+    // padrao que o Google trata como rich snippet abusivo (mesma razao pela
+    // qual a home ja nao tem isso — ver Landing.tsx). Os depoimentos
+    // individuais abaixo sao o que de fato existe.
     review: casos.map((c) => ({
       "@type": "Review",
       author: { "@type": "Person", name: c.client },
       reviewBody: c.quote,
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
     })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: String(casos.length),
-      bestRating: "5",
-    },
   },
   {
     "@context": "https://schema.org",

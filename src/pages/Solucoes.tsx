@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd } from "@/lib/business";
 
 /*
   As cinco frentes, na ordem em que os problemas aparecem na empresa. Antes
@@ -166,25 +167,18 @@ const solucoesFaqs = [
 
 const providerRef = {
   "@type": "Organization",
-  name: "VIEW",
-  url: "https://reengenhariaview.com.br",
-  telephone: "+55-83-99322-4878",
-  email: "admin@reengenhariaview.com.br",
+  name: BUSINESS_JSONLD_BASE.name,
+  url: BUSINESS_JSONLD_BASE.url,
+  telephone: BUSINESS_JSONLD_BASE.telephone,
+  email: BUSINESS_JSONLD_BASE.email,
 };
 
 const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
-      { "@type": "ListItem", position: 2, name: "Soluções", item: "https://reengenhariaview.com.br/solucoes" },
-    ],
-  },
+  breadcrumbJsonLd("Soluções", "/solucoes"),
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Soluções VIEW — Serviços de transformação operacional",
+    name: "Soluções VIEW — Processos, sistemas, automação e dados",
     itemListElement: solucoes.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,

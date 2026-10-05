@@ -4,7 +4,10 @@
 export type Block =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
-  | { type: "ul"; items: string[] };
+  | { type: "ul"; items: string[] }
+  // Link interno real (não clicável se fosse só texto dentro de "p") — usado
+  // para linkar de um artigo para uma landing page relacionada.
+  | { type: "link"; text: string; href: string };
 
 export interface Article {
   slug: string;
@@ -22,6 +25,10 @@ export interface Article {
   body: Block[];
   // Perguntas frequentes específicas do artigo (geram FAQPage — bom para AEO).
   faqs: { q: string; a: string }[];
+  // Rascunho: continua acessível por link direto (para revisão), mas some da
+  // listagem de /blog, do JSON-LD de Blog/BlogPosting e do sitemap.xml — não
+  // deve ser indexado nem recomendado por buscador ou agente antes de aprovado.
+  draft?: boolean;
 }
 
 export const articles: Article[] = [
@@ -298,8 +305,210 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "software-sob-medida-ou-sistema-pronto-como-decidir",
+    title: "Software sob medida ou sistema pronto? Como decidir",
+    seoTitle: "Software Sob Medida ou Sistema Pronto? Como Decidir | VIEW",
+    description:
+      "Critérios para decidir entre comprar um sistema pronto e desenvolver um software sob medida: quando cada caminho compensa e qual é o erro mais comum nessa escolha.",
+    datePublished: "2026-10-05",
+    dateModified: "2026-10-05",
+    author: "Equipe VIEW",
+    tag: "Sistemas",
+    readingMinutes: 6,
+    draft: true,
+    lead: "A pergunta não é qual sistema é melhor — é se o seu processo é parecido com o de qualquer empresa do seu setor ou se ele tem uma particularidade que nenhum sistema pronto resolve de verdade. A resposta muda a decisão inteira.",
+    body: [
+      {
+        type: "p",
+        text: "Toda empresa em crescimento chega nessa encruzilhada: continuar com o sistema pronto que já usa, trocar por outro sistema pronto, ou desenvolver algo sob medida. A tentação é decidir pelo preço — o sistema pronto quase sempre custa menos no primeiro mês. Mas essa não é a pergunta certa.",
+      },
+      {
+        type: "p",
+        text: "A pergunta certa é: o seu processo é igual ao de qualquer empresa do seu setor, ou ele tem uma particularidade que faz diferença na prática? Se a resposta for 'é tudo igual', um sistema pronto resolve, e desenvolver algo sob medida seria gastar tempo e dinheiro reinventando o que já existe.",
+      },
+      { type: "h2", text: "O sinal mais comum de que o sistema pronto não encaixa" },
+      {
+        type: "p",
+        text: "Não é o preço da licença. É a planilha paralela. Quando a equipe usa o sistema pronto para uma parte do trabalho e mantém uma planilha por fora para o que o sistema não dá conta, isso é o processo real da empresa tentando existir dentro de um sistema genérico demais para ele.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Campos obrigatórios que não fazem sentido para a sua operação, e que a equipe preenche com qualquer coisa só para avançar a tela.",
+          "Uma etapa do seu processo que o sistema não tem como representar, então vira anotação, e-mail ou mensagem de WhatsApp.",
+          "Relatório que você precisa montar 'na mão' depois, porque o sistema não cruza os dados do jeito que a sua gestão precisa decidir.",
+        ],
+      },
+      { type: "h2", text: "Quando o sistema pronto é a escolha certa" },
+      {
+        type: "p",
+        text: "Processos de apoio que são praticamente iguais em qualquer empresa — folha de pagamento, emissão de nota fiscal, contabilidade — raramente justificam um sistema sob medida. A regra é padronizada por lei ou por convenção do mercado, e um sistema pronto, bem configurado, resolve com menos risco e menos custo.",
+      },
+      { type: "h2", text: "Quando vale a pena desenvolver sob medida" },
+      {
+        type: "p",
+        text: "Quando o processo que diferencia a sua empresa da concorrente — a forma como você atende, produz, entrega ou presta contas — não cabe em nenhum sistema genérico sem ser forçado. Nesses casos, adaptar o processo ao sistema custa mais caro no longo prazo do que construir o sistema certo desde o início.",
+      },
+      {
+        type: "p",
+        text: "O caminho mais seguro não é decidir pelo preço da licença nem pelo preço do desenvolvimento: é mapear o processo primeiro e só depois comparar as duas opções com clareza sobre o que cada uma resolve e o que cada uma deixa sem solução.",
+      },
+      {
+        type: "link",
+        text: "Ver como funciona a fábrica de software sob medida da VIEW em João Pessoa",
+        href: "/fabrica-de-software-sob-medida-joao-pessoa",
+      },
+    ],
+    faqs: [
+      {
+        q: "Sistema sob medida é sempre mais caro que sistema pronto?",
+        a: "No primeiro momento, quase sempre. No longo prazo, depende de quanto a empresa gasta hoje contornando as limitações do sistema pronto com planilha e retrabalho manual.",
+      },
+      {
+        q: "Dá para começar com sistema pronto e migrar depois?",
+        a: "Sim, e é um caminho comum. O risco é deixar essa migração tarde demais, quando o processo já cresceu em cima das limitações do sistema atual.",
+      },
+      {
+        q: "Quem decide isso dentro da empresa?",
+        a: "Idealmente, quem conhece o processo operacional na prática, não só quem assina o contrato do sistema. É por isso que o diagnóstico de processo vem antes da escolha do sistema.",
+      },
+    ],
+  },
+  {
+    slug: "ia-no-whatsapp-quando-vale-a-pena",
+    title: "IA no WhatsApp: quando vale a pena e quando uma automação simples resolve",
+    seoTitle: "IA no WhatsApp: Quando Vale a Pena? | VIEW",
+    description:
+      "Nem todo atendimento no WhatsApp precisa de inteligência artificial. Veja quando uma automação tradicional resolve e quando um agente de IA realmente compensa.",
+    datePublished: "2026-10-05",
+    dateModified: "2026-10-05",
+    author: "Equipe VIEW",
+    tag: "IA Aplicada",
+    readingMinutes: 5,
+    draft: true,
+    lead: "A pergunta mais cara que uma empresa faz sobre atendimento no WhatsApp não é 'quanto custa a IA'. É se o problema dela é mesmo de IA — ou se uma automação bem mais simples e mais barata já resolveria.",
+    body: [
+      {
+        type: "p",
+        text: "IA no WhatsApp virou sinônimo de modernização, e isso cria um efeito colateral: empresas contratam agentes de IA para problemas que uma automação tradicional resolveria com menos custo, menos risco de erro e implantação mais rápida.",
+      },
+      { type: "h2", text: "O teste simples: a conversa varia ou é sempre igual?" },
+      {
+        type: "p",
+        text: "Se as perguntas do cliente seguem um roteiro fixo e previsível — horário de funcionamento, endereço, status de um pedido com número de referência —, uma automação tradicional, com fluxo de respostas programadas, resolve sem precisar interpretar linguagem natural.",
+      },
+      {
+        type: "p",
+        text: "A IA se justifica quando a conversa varia: o cliente escreve de um jeito diferente a cada vez, faz mais de uma pergunta na mesma mensagem, ou traz uma dúvida que depende de entender contexto para responder direito.",
+      },
+      { type: "h2", text: "Onde a IA no WhatsApp costuma valer a pena" },
+      {
+        type: "ul",
+        items: [
+          "Qualificação de leads: entender o que o cliente precisa antes de passar para um vendedor, poupando tempo de quem vende.",
+          "Triagem de pedidos ou dúvidas que chegam em formatos variados, para direcionar ao time certo sem alguém ler mensagem por mensagem.",
+          "Agendamento que depende de cruzar disponibilidade real da equipe com a preferência do cliente, em vez de um horário fixo.",
+        ],
+      },
+      { type: "h2", text: "Onde uma automação simples já resolve" },
+      {
+        type: "p",
+        text: "Confirmação de recebimento, envio de boleto, aviso de status de entrega com código de rastreio, resposta para perguntas frequentes sempre iguais — tudo isso é regra fixa, e regra fixa não precisa de inteligência artificial para funcionar bem.",
+      },
+      {
+        type: "p",
+        text: "O erro mais caro não é escolher IA por engano. É aplicar IA — ou automação — sobre um atendimento que ninguém mapeou direito. Nesse caso, a ferramenta certa só acelera a confusão que já existia.",
+      },
+      {
+        type: "link",
+        text: "Ver como a VIEW implanta agentes de IA no WhatsApp em João Pessoa",
+        href: "/agentes-de-ia-whatsapp-joao-pessoa",
+      },
+    ],
+    faqs: [
+      {
+        q: "Um agente de IA no WhatsApp substitui a equipe de atendimento?",
+        a: "Não. Ele assume o repetitivo e a triagem inicial; decisão, negociação e exceção continuam sendo resolvidas por uma pessoa.",
+      },
+      {
+        q: "É possível começar pequeno e expandir depois?",
+        a: "Sim — e é o caminho mais seguro. Um escopo pequeno e testado reduz o risco de implantar um agente que erra justamente no primeiro contato com o cliente.",
+      },
+      {
+        q: "O que acontece quando o agente não sabe responder?",
+        a: "O desenho correto prevê isso: o agente reconhece o limite do que pode responder e transfere a conversa para um humano, em vez de arriscar uma resposta errada.",
+      },
+    ],
+  },
+  {
+    slug: "7-perguntas-antes-de-automatizar-qualquer-processo",
+    title: "7 perguntas antes de automatizar qualquer processo",
+    seoTitle: "7 Perguntas Antes de Automatizar Qualquer Processo | VIEW",
+    description:
+      "O roteiro de 7 perguntas que a VIEW usa antes de qualquer automação ou IA: da eliminação do processo à métrica que prova se funcionou.",
+    datePublished: "2026-10-05",
+    dateModified: "2026-10-05",
+    author: "Equipe VIEW",
+    tag: "Automação",
+    readingMinutes: 5,
+    draft: true,
+    lead: "Automatizar o processo errado só faz o erro acontecer mais rápido. Estas sete perguntas, nesta ordem, são o que separa uma automação que funciona de uma que só parece moderna.",
+    body: [
+      {
+        type: "p",
+        text: "A primeira reação de muita empresa diante de um processo lento é perguntar 'como automatizar isso?'. A pergunta certa vem antes: esse processo deveria continuar existindo do jeito que está? Automatizar sem passar por isso é acelerar o problema, não resolvê-lo.",
+      },
+      { type: "h2", text: "As sete perguntas, na ordem" },
+      {
+        type: "ul",
+        items: [
+          "1. Esse processo precisa existir? Às vezes a etapa só existe porque sempre existiu, não porque alguém precisa dela hoje.",
+          "2. Ele pode ser eliminado? Antes de melhorar uma etapa, vale testar se dá para cortá-la de vez.",
+          "3. Ele pode ser simplificado? Muita etapa sobrevive porque ninguém nunca tentou torná-la mais simples.",
+          "4. Ele pode ser padronizado? Um processo que muda de forma a cada pessoa que executa não está pronto para automação nenhuma.",
+          "5. Automação tradicional resolve? Regra fixa, sem necessidade de interpretar linguagem ou imagem, costuma ser resolvida sem IA.",
+          "6. A IA é realmente necessária? Só depois de descartar as opções mais simples e mais baratas.",
+          "7. Qual resultado será medido? Sem um número combinado antes, não tem como saber se a automação funcionou.",
+        ],
+      },
+      { type: "h2", text: "Por que a ordem importa mais que a lista" },
+      {
+        type: "p",
+        text: "Inverter essa ordem é o erro mais comum: aplicar IA ou automação às pressas, para só depois descobrir que o processo tinha uma etapa que nem precisava existir. Nesse caso, o trabalho de desfazer e refazer custa mais do que teria custado seguir a ordem certa desde o início.",
+      },
+      {
+        type: "p",
+        text: "Se não houver uma resposta clara para a pergunta 7 — qual resultado será medido —, o projeto não deveria começar. É o critério mais simples para saber se uma automação foi bem pensada ou só parece moderna.",
+      },
+      {
+        type: "link",
+        text: "Ver como a VIEW aplica automação de processos com IA em João Pessoa",
+        href: "/automacao-de-processos-joao-pessoa",
+      },
+    ],
+    faqs: [
+      {
+        q: "Essas sete perguntas servem para qualquer tipo de processo?",
+        a: "Sim. O roteiro vale tanto para um processo manual simples quanto para um fluxo que hoje já envolve vários sistemas.",
+      },
+      {
+        q: "Quem deveria responder essas perguntas dentro da empresa?",
+        a: "Quem executa o processo no dia a dia, junto com quem decide o investimento. Responder só do ponto de vista gerencial costuma pular etapas que a prática revelaria.",
+      },
+      {
+        q: "O que fazer se a resposta da pergunta 7 não existir?",
+        a: "Definir a métrica antes de prosseguir. Automatizar sem saber o que medir é o sinal mais claro de que o projeto ainda não está pronto para começar.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
+}
+
+/** Artigos publicados — usar para listagem, JSON-LD e sitemap. */
+export function publishedArticles(): Article[] {
+  return articles.filter((a) => !a.draft);
 }

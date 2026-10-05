@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { DISTIP } from "@/components/DISTIP";
+import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd } from "@/lib/business";
 
 const HeroEye = lazy(() => import("@/components/HeroEye").then((m) => ({ default: m.HeroEye })));
 
@@ -29,14 +30,7 @@ const About = () => {
         description="A VIEW nasceu dentro de grandes indústrias como Baterias Moura e Alpargatas para levar excelência operacional a empresas que querem crescer de forma saudável. Metodologia DISTIPP, missão, valores e nossa história."
         path="/sobre"
         jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
-              { "@type": "ListItem", position: 2, name: "Sobre a VIEW", item: "https://reengenhariaview.com.br/sobre" },
-            ],
-          },
+          breadcrumbJsonLd("Sobre a VIEW", "/sobre"),
           {
             "@context": "https://schema.org",
             "@type": "AboutPage",
@@ -45,14 +39,9 @@ const About = () => {
             description: "A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos em grandes indústrias como Baterias Moura e Alpargatas, com o propósito de levar excelência operacional para empresas que querem crescer de forma saudável.",
             mainEntity: {
               "@type": ["Organization", "ProfessionalService"],
-              name: "VIEW",
-              url: "https://reengenhariaview.com.br",
-              logo: "https://reengenhariaview.com.br/og-image.png",
+              ...BUSINESS_JSONLD_BASE,
               foundingDate: "2024",
               description: "Parceira de evolução empresarial: desenho de processos, integração de sistemas, automação com IA e sistemas sob medida para operações em crescimento.",
-              telephone: "+55-83-99322-4878",
-              email: "admin@reengenhariaview.com.br",
-              areaServed: { "@type": "Country", name: "Brasil" },
               knowsAbout: [
                 "Reengenharia de processos",
                 "Automação de processos empresariais",
@@ -63,10 +52,6 @@ const About = () => {
                 "Engenharia de produção",
               ],
               slogan: "Você não pode melhorar o que não consegue ver.",
-              sameAs: [
-                "https://www.instagram.com/reengenhariaview",
-                "https://maps.app.goo.gl/3eS9uGY33MLKijYL9",
-              ],
             },
           },
           {

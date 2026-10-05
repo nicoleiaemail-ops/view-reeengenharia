@@ -32,9 +32,14 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="font-display font-extrabold text-[clamp(2.1rem,4vw,3.3rem)] leading-[1.08] tracking-tight mb-5 max-w-[16ch] mx-auto">
+        <h1 className="font-display font-extrabold text-[clamp(2.1rem,4vw,3.3rem)] leading-[1.08] tracking-tight mb-4 max-w-[16ch] mx-auto">
           Sua operação inteira em uma tela, <span className="text-accent">em tempo real</span>.
         </h1>
+
+        <p className="text-[.9rem] leading-[1.6] text-foreground/80 max-w-[560px] mx-auto mb-4">
+          Consultoria de processos, software sob medida e agentes de IA em João Pessoa — primeiro o
+          processo, depois a tecnologia.
+        </p>
 
         <p className="text-[.98rem] leading-[1.7] text-muted-foreground max-w-[560px] mx-auto mb-4">
           Sua empresa cresceu e a operação se espalhou por planilha, sistema e grupo de WhatsApp. A VIEW

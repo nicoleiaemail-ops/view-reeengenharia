@@ -1,6 +1,6 @@
-# VIEW
+# VIEW — Reengenharia de Negócios
 
-> A VIEW é uma consultoria especializada em reengenharia de processos, automação operacional e controle da operação para empresas que querem crescer de forma saudável. Fundada em 2024, aplica a metodologia exclusiva DISTIPP para transformar operações baseadas em planilhas e decisões por intuição em sistemas digitais orientados a dados.
+> A VIEW é uma consultoria de processos e gestão de João Pessoa (PB) que atende empresas de todo o Brasil. Primeiro entende e simplifica o processo do cliente; só depois aplica tecnologia — software sob medida, automação e agentes de IA — para sustentar o que foi simplificado. A VIEW não vende aplicativo nem agente de IA como produto isolado: vende a ordem certa entre processo e tecnologia, com resultado medido antes e depois.
 
 ## Domínio
 
@@ -8,17 +8,21 @@ https://reengenhariaview.com.br
 
 ## Páginas
 
-- [Home](https://reengenhariaview.com.br/): Diagnóstico gratuito, 5 áreas de solução, resultados e depoimentos de clientes.
+- [Home](https://reengenhariaview.com.br/): Diagnóstico gratuito, as cinco frentes de solução, resultados e depoimentos de clientes.
 - [Soluções](https://reengenhariaview.com.br/solucoes): Detalhamento das cinco frentes — VIEW 360, VIEW FLOW, VIEW ONE, VIEW INSIGHTS e VIEW ACADEMY.
-- [Sobre](https://reengenhariaview.com.br/sobre): Origem da empresa, missão, visão, valores, 6 princípios operacionais e a metodologia DISTIPP em 5 passos.
+- [Sobre](https://reengenhariaview.com.br/sobre): Origem da empresa, missão, visão, valores, princípios operacionais e a metodologia DISTIPP.
 - [Avaliação de Maturidade](https://reengenhariaview.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
 - [Casos](https://reengenhariaview.com.br/casos): Casos de sucesso documentados em construção civil e alimentação, com desafio, solução e resultado de cada cliente.
-- [Blog](https://reengenhariaview.com.br/blog): Artigos sobre reengenharia de processos, maturidade operacional, automação e visibilidade em tempo real para PMEs.
-- [IA para Empresas em João Pessoa](https://reengenhariaview.com.br/ia-para-empresas-joao-pessoa): Como a VIEW aplica inteligência artificial em processos de empresas — agentes, automação, integração de sistemas e capacitação. Sede em João Pessoa (PB), atendimento em todo o Brasil.
+- [Blog](https://reengenhariaview.com.br/blog): Artigos sobre processos, maturidade operacional, automação e dados para empresas em crescimento.
+- [IA para Empresas em João Pessoa](https://reengenhariaview.com.br/ia-para-empresas-joao-pessoa): Como a VIEW aplica inteligência artificial em processos de empresas — agentes, automação, integração de sistemas e capacitação.
+- [Fábrica de Software Sob Medida em João Pessoa](https://reengenhariaview.com.br/fabrica-de-software-sob-medida-joao-pessoa): Desenvolvimento de sistema sob medida, feito depois do processo mapeado — não um software genérico adaptado à força.
+- [Agentes de IA e IA no WhatsApp em João Pessoa](https://reengenhariaview.com.br/agentes-de-ia-whatsapp-joao-pessoa): Agentes de IA para atendimento, triagem e agendamento no WhatsApp, aplicados sobre um processo já desenhado.
+- [Automação de Processos com IA em João Pessoa](https://reengenhariaview.com.br/automacao-de-processos-joao-pessoa): Automação tradicional e IA aplicadas na ordem certa — processo primeiro, ferramenta depois.
+- [Consultoria ISO 9001 para Construtoras](https://reengenhariaview.com.br/consultoria-iso-9001-construtoras): Preparação para auditoria ISO 9001 com sistema próprio que conecta administrativo e obra.
 
 ## Artigos
 
-- [Metodologia DISTIPP: as 7 dimensões da maturidade operacional de uma empresa](https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional): O que cada dimensão do DISTIPP mede e como o framework indica por onde uma PME deve começar a melhorar.
+- [Metodologia DISTIPP: as 7 dimensões da maturidade operacional de uma empresa](https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional): O que cada dimensão do DISTIPP mede e como o framework indica por onde uma empresa deve começar a melhorar.
 - [Reengenharia de processos: o que é e quando sua empresa precisa](https://reengenhariaview.com.br/blog/reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa): Definição de reengenharia de processos, como funciona na prática e os sinais de que uma empresa precisa repensar como opera.
 - [Automação de processos para PMEs: por onde começar sem gastar muito](https://reengenhariaview.com.br/blog/automacao-de-processos-para-pmes-por-onde-comecar): Critérios para escolher o primeiro processo a automatizar e erros comuns em automação de PMEs.
 - [Visibilidade operacional em tempo real: o que é e por que muda a gestão](https://reengenhariaview.com.br/blog/visibilidade-operacional-em-tempo-real): O que é visibilidade operacional, o que muda na tomada de decisão e como implementá-la sem trocar todo o sistema.
@@ -27,7 +31,7 @@ https://reengenhariaview.com.br
 
 A VIEW nasceu da experiência de uma equipe de engenharia de produção com mais de cinco anos de atuação em grandes indústrias brasileiras como Baterias Moura e Alpargatas. O objetivo é replicar os mesmos princípios de excelência operacional dessas empresas para empresas que querem crescer de forma saudável.
 
-A VIEW não vende software. Entrega execução completa: diagnóstico, redesign de processos, automação, sistema sob medida e acompanhamento contínuo.
+A VIEW não vende software pronto nem agente de IA avulso. Entrega execução completa: diagnóstico, redesenho de processo, e só então sistema sob medida, automação e inteligência artificial — sempre nessa ordem, com acompanhamento contínuo.
 
 ## Metodologia DISTIPP
 
@@ -41,13 +45,17 @@ DISTIPP é o framework exclusivo de diagnóstico de maturidade empresarial da VI
 6. **Pessoas** — Gestão do desempenho humano, autonomia e rastreabilidade de responsabilidades.
 7. **Processos** — Nível de padronização, documentação e escalabilidade dos fluxos operacionais.
 
-## Como funciona a metodologia VIEW (5 passos)
+A oferta de entrada é o **Mini-diagnóstico DISTIPP gratuito** (30 minutos): mapeia rapidamente onde o processo do cliente trava, antes de qualquer proposta de sistema, automação ou IA.
 
-1. **Diagnóstico gratuito** — Mapeamento da operação atual. Resultado em 48h, sem custo e sem compromisso.
-2. **Mapeamento e redesign** — Documentação de cada fluxo, eliminação do que não agrega valor, padronização do replicável.
-3. **Automação e sistema sob medida** — Automação de tarefas repetitivas e desenvolvimento de sistema adaptado à operação (iOS, Android, Desktop).
-4. **Dashboards em tempo real** — Implementação de KPIs acessíveis de qualquer lugar, em tempo real.
-5. **Acompanhamento contínuo** — Parceria de longo prazo com monitoramento e medição do resultado.
+## Como a VIEW trabalha
+
+1. **Mapear** o processo atual, como ele de fato acontece hoje.
+2. **Eliminar** o que não precisa existir.
+3. **Simplificar e padronizar** o que fica.
+4. **Automatizar de forma tradicional** o que for possível, sem IA.
+5. **Usar IA ou agentes** só onde for realmente necessário.
+6. **Integrar** sistemas e canais — Excel/Google Sheets, ERP, CRM, e-mail, WhatsApp.
+7. **Medir o resultado**, antes e depois.
 
 ## Serviços
 
@@ -59,12 +67,12 @@ automação, depois dado.
 Antes de comprar qualquer ferramenta, você descobre onde o processo trava, quanto isso custa por mês e em que ordem resolver. Inclui análise de maturidade digital, auditoria de processo, arquitetura empresarial, desenvolvimento de governança, planejamento estratégico, viabilidade de negócio e finanças corporativas.
 
 ### VIEW FLOW — Processos e automação
-O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha. Inclui padronização de processos, automações de fluxos, agentes de IA, chatbot com IA e consultoria em IA.
+O processo sai da cabeça das pessoas e vira fluxo escrito. Depois disso, a parte repetitiva passa a rodar sozinha. Inclui padronização de processos, consultoria ISO 9001, automações de fluxos, agentes de IA e consultoria em IA.
 
 Quando a VIEW não aplica IA: não automatizamos caos, não digitalizamos desperdício e não aplicamos IA sem problema definido e sem métrica. Todo agente, chatbot ou automação entra depois de três coisas: o processo desenhado, o problema com nome e a métrica escolhida.
 
 ### VIEW ONE — Sistemas e integração
-Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação. Inclui sistemas personalizados e integração e centralização de sistemas.
+Os sistemas que você já paga passam a conversar entre si. Conforme os fornecedores saem, o custo deles vira investimento na sua operação. Inclui sistemas personalizados (fábrica de software sob medida) e integração e centralização de sistemas.
 
 ### VIEW INSIGHTS — Dados e decisão
 Indicador que muda a decisão de segunda-feira. Se ninguém abre o relatório, ele não conta como informação. Inclui dashboards e BI.
@@ -81,9 +89,9 @@ Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada aju
 
 ## Casos de uso
 
-### Construção Civil — Vitória D. (Diretora, Construtora TERRE)
+### Construção Civil — Vitória D. (Diretora, Construtora TERRE, João Pessoa)
 Desafio: manutenção do certificado ISO 9001 exigia registros manuais extensos e a cada auditoria havia retrabalho intenso.
-Solução VIEW: cada etapa da obra passou a gerar registro automático via sistema sob medida.
+Solução VIEW: consultoria para a auditoria ISO 9001 e sistema próprio que conecta administrativo e obra, com gestão de documentos e checklists em um só lugar, gerando registro automático a cada etapa.
 Resultado: ISO 9001 mantido sem retrabalho; planejamento de obras acompanhado em tempo real de qualquer lugar.
 
 ### Construção Civil — Aguinaldo S. (Supervisor de Obra, Construtora)
@@ -98,11 +106,13 @@ Resultado: atendimento mais rápido, redução de custos operacionais, gargalos 
 
 ## Área de atendimento
 
-Todo o Brasil, presencial ou remoto.
+João Pessoa (PB), presencial, e todo o Brasil, remoto.
 
 ## Contato
 
-- WhatsApp: +55 (83) 9 9322-4878
+- Nome: VIEW — Reengenharia de Negócios
+- Endereço: Av. Pres. Epitácio Pessoa, 1251, Sala 101, Cxpst 88 – Estados, João Pessoa – PB, 58030-000
+- WhatsApp: (83) 99322-4878 — https://wa.me/5583993224878
 - Email: admin@reengenhariaview.com.br
 - Instagram: https://www.instagram.com/reengenhariaview
 - Site: https://reengenhariaview.com.br

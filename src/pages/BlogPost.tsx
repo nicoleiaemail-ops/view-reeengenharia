@@ -7,8 +7,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { BlogCTA } from "@/components/BlogCTA";
 import NotFound from "./NotFound";
 import { getArticle } from "@/content/blog";
-
-const SITE_URL = "https://reengenhariaview.com.br";
+import { BUSINESS_JSONLD_BASE, SITE_URL } from "@/lib/business";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -38,7 +37,7 @@ export default function BlogPost() {
       author: { "@type": "Organization", name: article.author, url: SITE_URL },
       publisher: {
         "@type": "Organization",
-        name: "VIEW",
+        name: BUSINESS_JSONLD_BASE.name,
         url: SITE_URL,
         logo: { "@type": "ImageObject", url: `${SITE_URL}/og-image.png` },
       },
@@ -110,6 +109,16 @@ export default function BlogPost() {
                       </li>
                     ))}
                   </ul>
+                );
+              if (block.type === "link")
+                return (
+                  <Link
+                    key={i}
+                    to={block.href}
+                    className="inline-flex items-center gap-2 self-start text-[.9rem] font-display font-semibold text-primary hover:underline"
+                  >
+                    {block.text} →
+                  </Link>
                 );
               return (
                 <p key={i} className="text-[.95rem] text-muted-foreground leading-relaxed">

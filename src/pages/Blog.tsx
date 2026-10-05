@@ -5,9 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { BlogCTA } from "@/components/BlogCTA";
-import { articles } from "@/content/blog";
-
-const SITE_URL = "https://reengenhariaview.com.br";
+import { publishedArticles } from "@/content/blog";
+import { BUSINESS_JSONLD_BASE, SITE_URL } from "@/lib/business";
 
 const jsonLd = [
   {
@@ -19,10 +18,10 @@ const jsonLd = [
     url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "VIEW",
+      name: BUSINESS_JSONLD_BASE.name,
       url: SITE_URL,
     },
-    blogPost: articles.map((a) => ({
+    blogPost: publishedArticles().map((a) => ({
       "@type": "BlogPosting",
       headline: a.title,
       description: a.description,
@@ -41,6 +40,7 @@ const jsonLd = [
     ],
   },
 ];
+// nota: filtro de rascunho (draft) aplicado logo abaixo, junto com a listagem.
 
 export default function Blog() {
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function Blog() {
 
       <section className="px-[7%] pb-20">
         <div className="max-w-[900px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-view-line border border-view-line">
-          {articles.map((a, i) => (
+          {publishedArticles().map((a, i) => (
             <Link
               key={a.slug}
               to={`/blog/${a.slug}`}

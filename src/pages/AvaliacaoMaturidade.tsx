@@ -12,16 +12,10 @@ import {
   RECOMENDACAO,
   type Resultado,
 } from "@/lib/distipp-score";
+import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd } from "@/lib/business";
 
 const SEO_JSONLD = [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
-          { "@type": "ListItem", position: 2, name: "Avaliação de Maturidade", item: "https://reengenhariaview.com.br/avaliacao-maturidade" },
-        ],
-      },
+      breadcrumbJsonLd("Avaliação de Maturidade", "/avaliacao-maturidade"),
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
@@ -38,8 +32,8 @@ const SEO_JSONLD = [
         description: "Ferramenta gratuita de diagnóstico de maturidade empresarial em 7 dimensões (Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos) baseada na metodologia DISTIPP da VIEW. Resultado personalizado em menos de 5 minutos.",
         provider: {
           "@type": "Organization",
-          name: "VIEW",
-          url: "https://reengenhariaview.com.br",
+          name: BUSINESS_JSONLD_BASE.name,
+          url: BUSINESS_JSONLD_BASE.url,
         },
         featureList: [
           "Diagnóstico gratuito em 7 dimensões DISTIPP",
@@ -63,8 +57,8 @@ const SEO_JSONLD = [
         ],
         provider: {
           "@type": "Organization",
-          name: "VIEW",
-          url: "https://reengenhariaview.com.br",
+          name: BUSINESS_JSONLD_BASE.name,
+          url: BUSINESS_JSONLD_BASE.url,
         },
       },
 ];

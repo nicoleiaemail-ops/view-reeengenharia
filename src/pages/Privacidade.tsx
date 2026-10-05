@@ -21,7 +21,7 @@ const secoes = [
   {
     titulo: "1. Quem somos",
     conteudo: [
-      "A VIEW é uma parceira de evolução empresarial — atua em desenho de processos, integração de sistemas, automação e dados —, com sede na Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados, João Pessoa/PB, CEP 58030-000.",
+      "A VIEW é uma parceira de evolução empresarial — atua em desenho de processos, integração de sistemas, automação e dados —, com sede na Av. Pres. Epitácio Pessoa, 1251, Sala 101, Cxpst 88 – Estados, João Pessoa/PB, CEP 58030-000.",
       `Para qualquer assunto relacionado a dados pessoais, incluindo os pedidos descritos nesta política, o contato é ${EMAIL_CONTATO}.`,
     ],
   },

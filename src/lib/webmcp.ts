@@ -7,8 +7,16 @@
 // · Se a API não existir no navegador, o módulo não faz nada.
 
 import { articles } from "@/content/blog";
+import {
+  BUSINESS_NAME,
+  BUSINESS_WHATSAPP_URL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_ADDRESS_DISPLAY,
+  SITE_URL,
+} from "@/lib/business";
 
-const SITE = "https://reengenhariaview.com.br";
+const SITE = SITE_URL;
 
 type ToolResult = { content: Array<{ type: "text"; text: string }> };
 
@@ -213,9 +221,10 @@ Versão oficial com análise da equipe: ${SITE}/avaliacao-maturidade
     inputSchema: NO_ARGS,
     execute: () =>
       text(`
-Canais oficiais da VIEW:
-- WhatsApp: https://wa.me/5583993224878 — (83) 9 9322-4878
-- E-mail: admin@reengenhariaview.com.br
+Canais oficiais da ${BUSINESS_NAME}:
+- WhatsApp: ${BUSINESS_WHATSAPP_URL} — ${BUSINESS_PHONE_DISPLAY}
+- E-mail: ${BUSINESS_EMAIL}
+- Endereço: ${BUSINESS_ADDRESS_DISPLAY}
 - Formulário de diagnóstico gratuito: ${SITE}/#diagnostico
 - Avaliação de Maturidade DISTIPP (~5 min): ${SITE}/avaliacao-maturidade
 

@@ -5,6 +5,16 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { EVENTS, track } from "@/lib/analytics";
+import {
+  BUSINESS_JSONLD_BASE,
+  BUSINESS_ADDRESS_DISPLAY,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_SHORT_NAME,
+  faqPageJsonLd,
+  breadcrumbJsonLd,
+  whatsappUrl,
+} from "@/lib/business";
 
 /**
  * Página de nicho geográfico para a consulta "quais empresas de João Pessoa
@@ -19,9 +29,7 @@ import { EVENTS, track } from "@/lib/analytics";
  * regionais para não soar como "só atende o Nordeste". Esta página é
  * exatamente o lugar certo para o endereço — o resto do site não é.
  */
-const WHATSAPP_URL =
-  "https://wa.me/5583993224878?text=" +
-  encodeURIComponent("Olá, eu quero saber como aplicar IA na minha empresa.");
+const WHATSAPP_URL = whatsappUrl("Olá, eu quero saber como aplicar IA na minha empresa.");
 
 function handleWhatsappClick(location: string) {
   track(EVENTS.whatsappClick, { location });
@@ -77,31 +85,15 @@ const TITLE = "IA para Empresas em João Pessoa | VIEW";
 const DESCRIPTION =
   "A VIEW é uma empresa de João Pessoa (PB) que aplica inteligência artificial nos processos de empresas, com método e métrica. Atende todo o Brasil. Diagnóstico gratuito em 48h.";
 
-// Entidade local desta página. Não duplicada nas outras páginas do site de
-// propósito — ver nota no topo do arquivo.
+// Entidade local desta página. Campos comuns vêm de BUSINESS_JSONLD_BASE —
+// ver src/lib/business.ts.
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "VIEW",
+  ...BUSINESS_JSONLD_BASE,
   description:
     "Parceira de evolução empresarial em João Pessoa (PB): redesenho de processos, integração de sistemas, ISO 9001 e inteligência artificial aplicada a empresas.",
-  url: "https://reengenhariaview.com.br/",
-  telephone: "+55-83-99322-4878",
-  email: "admin@reengenhariaview.com.br",
   foundingDate: "2024",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Av. Presidente Epitácio Pessoa, 1251, Sala 101",
-    addressLocality: "João Pessoa",
-    addressRegion: "PB",
-    postalCode: "58030-000",
-    addressCountry: "BR",
-  },
-  areaServed: "BR",
-  // Alinhado ao LocalBusiness já publicado na home (08:00–18:00): duas
-  // declarações de horário diferentes para a mesma empresa confundem tanto
-  // o Google quanto um agente de IA tentando reconciliar as duas.
-  openingHours: "Mo-Fr 08:00-18:00",
   knowsAbout: [
     "Inteligência artificial para empresas",
     "Automação de processos",
@@ -110,27 +102,11 @@ const professionalServiceJsonLd = {
     "PBQP-H",
     "Reengenharia de processos",
   ],
-  sameAs: ["https://www.instagram.com/reengenhariaview", "https://maps.app.goo.gl/3eS9uGY33MLKijYL9"],
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
+const faqJsonLd = faqPageJsonLd(faqs);
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Início", item: "https://reengenhariaview.com.br/" },
-    { "@type": "ListItem", position: 2, name: "IA para Empresas em João Pessoa", item: `https://reengenhariaview.com.br${PATH}` },
-  ],
-};
+const pageBreadcrumbJsonLd = breadcrumbJsonLd("IA para Empresas em João Pessoa", PATH);
 
 export default function IAJoaoPessoa() {
   useEffect(() => {
@@ -144,7 +120,7 @@ export default function IAJoaoPessoa() {
 
   return (
     <>
-      <SEO title={TITLE} description={DESCRIPTION} path={PATH} jsonLd={[breadcrumbJsonLd, professionalServiceJsonLd, faqJsonLd]} />
+      <SEO title={TITLE} description={DESCRIPTION} path={PATH} jsonLd={[pageBreadcrumbJsonLd, professionalServiceJsonLd, faqJsonLd]} />
       <Navbar />
 
       {/* Hero */}
@@ -299,9 +275,9 @@ export default function IAJoaoPessoa() {
         {/* NAP — nome, endereço e telefone idênticos ao Perfil do Google/Bing.
             Fica aqui, não no rodapé padrão do site (ver nota no topo do arquivo). */}
         <section className="py-10 border-t border-view-line text-center text-[.8rem] text-muted-foreground leading-relaxed">
-          <div className="font-display font-bold text-foreground tracking-[.1em] mb-1">VIEW</div>
-          <div>Av. Presidente Epitácio Pessoa, 1251, Sala 101, Estados, João Pessoa - PB, 58030-000</div>
-          <div>WhatsApp (83) 99322-4878 · admin@reengenhariaview.com.br</div>
+          <div className="font-display font-bold text-foreground tracking-[.1em] mb-1">{BUSINESS_SHORT_NAME}</div>
+          <div>{BUSINESS_ADDRESS_DISPLAY}</div>
+          <div>WhatsApp {BUSINESS_PHONE_DISPLAY} · {BUSINESS_EMAIL}</div>
         </section>
       </div>
 

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { BUSINESS_JSONLD_BASE } from "@/lib/business";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
@@ -10,6 +11,7 @@ import { DISTIP } from "@/components/DISTIP";
 import { Results } from "@/components/Results";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ, faqItems } from "@/components/FAQ";
+import { SolucoesJoaoPessoa } from "@/components/SolucoesJoaoPessoa";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -34,29 +36,24 @@ const faqJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "VIEW",
+  name: BUSINESS_JSONLD_BASE.name,
+  alternateName: BUSINESS_JSONLD_BASE.alternateName,
   url: "https://reengenhariaview.com.br/",
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService"],
-  name: "VIEW",
-  alternateName: "VIEW",
-  url: "https://reengenhariaview.com.br",
-  logo: "https://reengenhariaview.com.br/og-image.png",
+  ...BUSINESS_JSONLD_BASE,
   description:
     "Parceira de evolução empresarial: desenha o processo, integra os sistemas, automatiza a rotina e entrega o dado que muda a decisão. Metodologia exclusiva DISTIPP.",
-  telephone: "+55-83-99322-4878",
-  email: "admin@reengenhariaview.com.br",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-83-99322-4878",
+    telephone: BUSINESS_JSONLD_BASE.telephone,
     contactType: "customer service",
     availableLanguage: "Portuguese",
   },
   foundingDate: "2024",
-  areaServed: { "@type": "Country", name: "Brasil" },
   knowsAbout: [
     "Reengenharia de processos",
     "Automação de processos",
@@ -162,43 +159,20 @@ const organizationJsonLd = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "VIEW",
-  image: "https://reengenhariaview.com.br/og-image.png",
-  url: "https://reengenhariaview.com.br",
-  telephone: "+55-83-99322-4878",
-  email: "admin@reengenhariaview.com.br",
+  ...BUSINESS_JSONLD_BASE,
   priceRange: "$$",
   description: "Parceira de evolução empresarial: desenho de processos, integração de sistemas, automação com IA e dados para dar controle da operação a quem decide.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Av. Pres. Epitácio Pessoa, 1251, Sala 101, Bairro dos Estados",
-    addressLocality: "João Pessoa",
-    addressRegion: "PB",
-    postalCode: "58030-000",
-    addressCountry: "BR",
-  },
   geo: {
     "@type": "GeoCoordinates",
     latitude: "-7.1193777",
     longitude: "-34.8592312",
-  },
-  areaServed: { "@type": "Country", name: "Brasil" },
-  sameAs: [
-    "https://www.instagram.com/reengenhariaview",
-    "https://maps.app.goo.gl/3eS9uGY33MLKijYL9",
-  ],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "08:00",
-    closes: "18:00",
   },
 };
 
 const speakableJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "VIEW — Visibilidade e Controle Operacional para Empresas",
+  name: "Consultoria, Software Sob Medida e IA | João Pessoa",
   url: "https://reengenhariaview.com.br/",
   speakable: {
     "@type": "SpeakableSpecification",
@@ -226,8 +200,8 @@ const Landing = () => {
   return (
     <>
       <SEO
-        title="VIEW — Controle da Operação para Empresas que Querem Crescer"
-        description="A VIEW devolve o controle da operação para quem toma decisão. Primeiro o processo desenhado, depois o sistema, a automação e o dado."
+        title="Consultoria, Software Sob Medida e IA | João Pessoa"
+        description="A VIEW é uma consultoria de processos em João Pessoa: desenha o processo, depois entrega software sob medida e agentes de IA. Atende todo o Brasil."
         path="/"
         jsonLd={[websiteJsonLd, organizationJsonLd, localBusinessJsonLd, faqJsonLd, speakableJsonLd]}
       />
@@ -250,6 +224,7 @@ const Landing = () => {
       <Results />
       <Testimonials />
       <DISTIP />
+      <SolucoesJoaoPessoa />
       <FAQ />
       <ContactForm />
       <Footer />

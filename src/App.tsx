@@ -17,6 +17,10 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Links = lazy(() => import("./pages/Links"));
 const IAJoaoPessoa = lazy(() => import("./pages/IAJoaoPessoa"));
+const FabricaSoftwareJoaoPessoa = lazy(() => import("./pages/FabricaSoftwareJoaoPessoa"));
+const AgentesIAWhatsappJoaoPessoa = lazy(() => import("./pages/AgentesIAWhatsappJoaoPessoa"));
+const AutomacaoProcessosJoaoPessoa = lazy(() => import("./pages/AutomacaoProcessosJoaoPessoa"));
+const ConsultoriaISO9001Construtoras = lazy(() => import("./pages/ConsultoriaISO9001Construtoras"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -54,6 +58,10 @@ const App = () => (
             <Route path="/admin" element={<Admin />} />
             <Route path="/links" element={<Links />} />
             <Route path="/ia-para-empresas-joao-pessoa" element={<IAJoaoPessoa />} />
+            <Route path="/fabrica-de-software-sob-medida-joao-pessoa" element={<FabricaSoftwareJoaoPessoa />} />
+            <Route path="/agentes-de-ia-whatsapp-joao-pessoa" element={<AgentesIAWhatsappJoaoPessoa />} />
+            <Route path="/automacao-de-processos-joao-pessoa" element={<AutomacaoProcessosJoaoPessoa />} />
+            <Route path="/consultoria-iso-9001-construtoras" element={<ConsultoriaISO9001Construtoras />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
