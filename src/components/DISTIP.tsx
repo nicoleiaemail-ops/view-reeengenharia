@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Database, Link2, Monitor, Cpu, Lightbulb, Users, Workflow, CheckCircle } from "lucide-react";
 import { SecondaryCTA } from "./CTA";
 
@@ -191,6 +192,11 @@ export function DISTIP() {
               location="distipp"
               className="border-primary/40 text-primary hover:text-primary hover:border-primary bg-primary/[.06]"
             />
+            <div className="mt-4">
+              <Link to="/metodo-distipp" className="text-[.78rem] text-muted-foreground hover:text-primary transition-colors">
+                Entender o método DISTIPP em detalhe →
+              </Link>
+            </div>
           </div>
         </div>
 

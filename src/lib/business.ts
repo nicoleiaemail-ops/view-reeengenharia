@@ -47,6 +47,11 @@ export const BUSINESS_ADDRESS_DISPLAY =
 // de IA tentando reconciliar as duas.
 export const BUSINESS_OPENING_HOURS = "Mo-Fr 08:00-18:00";
 
+// TODO: acrescentar o LinkedIn da empresa e o perfil do Google Business assim
+// que existirem. De propósito NÃO colocamos aqui uma URL placeholder tipo
+// "TODO" — um `sameAs` com uma URL inválida é pior do que um `sameAs`
+// incompleto: o Google tenta resolver cada link e um 404/URL inválida nesse
+// campo é sinal de dado estruturado quebrado, não de "campo pendente".
 export const BUSINESS_SAME_AS = [BUSINESS_INSTAGRAM_URL, BUSINESS_GOOGLE_MAPS_URL];
 
 export const BUSINESS_AREA_SERVED = [
@@ -54,6 +59,16 @@ export const BUSINESS_AREA_SERVED = [
   { "@type": "State", name: "Paraíba" },
   { "@type": "Country", name: "Brasil" },
 ];
+
+// Já estabelecido e usado em várias páginas do site (About, IAJoaoPessoa) —
+// não é TODO, é fato já publicado.
+export const BUSINESS_FOUNDING_DATE = "2024";
+
+// TODO: nome do(a) fundador(a). Mesma lógica do sameAs acima: omitido do
+// JSON-LD em vez de preenchido com um placeholder, porque um `founder` com
+// valor "TODO" seria uma entidade Person fictícia no dado estruturado — pior
+// do que não declarar o campo.
+export const BUSINESS_FOUNDER_NAME: string | undefined = undefined;
 
 /**
  * Campos comuns a qualquer declaração de Organization/ProfessionalService/

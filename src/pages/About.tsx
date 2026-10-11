@@ -5,7 +5,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { DISTIP } from "@/components/DISTIP";
-import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd } from "@/lib/business";
+import {
+  BUSINESS_JSONLD_BASE,
+  BUSINESS_FOUNDING_DATE,
+  BUSINESS_ADDRESS_DISPLAY,
+  BUSINESS_GOOGLE_MAPS_URL,
+  breadcrumbJsonLd,
+} from "@/lib/business";
 
 const HeroEye = lazy(() => import("@/components/HeroEye").then((m) => ({ default: m.HeroEye })));
 
@@ -40,7 +46,7 @@ const About = () => {
             mainEntity: {
               "@type": ["Organization", "ProfessionalService"],
               ...BUSINESS_JSONLD_BASE,
-              foundingDate: "2024",
+              foundingDate: BUSINESS_FOUNDING_DATE,
               description: "Parceira de evolução empresarial: desenho de processos, integração de sistemas, automação com IA e sistemas sob medida para operações em crescimento.",
               knowsAbout: [
                 "Reengenharia de processos",
@@ -111,6 +117,7 @@ const About = () => {
             <p>A VIEW nasceu da experiência direta de uma equipe de engenharia com mais de cinco anos de atuação em empresas como <strong>Baterias Moura</strong> e <strong>Alpargatas</strong>.</p>
             <p>Nesse tempo, vivenciaram como <strong>operações bem estruturadas, processos claros e uso inteligente de dados</strong> transformam o desempenho de uma empresa.</p>
             <p>Foi daí que surgiu a VIEW: com o propósito de levar os mesmos princípios de excelência operacional para empresas que estão construindo sua estrutura agora.</p>
+            <p>A VIEW existe desde 2024, com sede em João Pessoa (PB) e atendimento a empresas de todo o Brasil. <Link to="/equipe" className="text-primary hover:underline">Conheça a equipe →</Link></p>
           </div>
         </div>
         <div className="scroll-reveal flex flex-col gap-4" style={{ transitionDelay: ".15s" }}>
@@ -286,6 +293,37 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Escritório */}
+      <section className="py-20 px-[7%] border-t border-view-line">
+        <div className="scroll-reveal text-center mb-10">
+          <div className="text-[.65rem] tracking-[.22em] uppercase text-muted-foreground mb-4">Onde estamos</div>
+          <h2 className="font-display font-extrabold text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.15]">Nosso escritório em João Pessoa</h2>
+        </div>
+        <div className="scroll-reveal max-w-[920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5" style={{ transitionDelay: ".1s" }}>
+          {/*
+            TODO: substituir pela foto real do escritório assim que houver uma
+            disponível. Sem placeholder "[foto]" visível -- um ícone genérico
+            de local é uma substituição honesta, não um rascunho aparente.
+          */}
+          <div className="rounded-xl border border-view-line bg-foreground/[.03] flex items-center justify-center min-h-[220px] text-5xl" aria-hidden="true">
+            📍
+          </div>
+          <iframe
+            title="Localização da VIEW em João Pessoa"
+            src="https://www.google.com/maps?q=-7.1193777,-34.8592312&z=16&output=embed"
+            className="rounded-xl border border-view-line w-full min-h-[220px]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div className="scroll-reveal max-w-[920px] mx-auto text-center mt-5 text-[.85rem] text-muted-foreground" style={{ transitionDelay: ".15s" }}>
+          <p>{BUSINESS_ADDRESS_DISPLAY}</p>
+          <a href={BUSINESS_GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            Abrir no Google Maps →
+          </a>
         </div>
       </section>
 

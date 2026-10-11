@@ -1,5 +1,10 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import middleware, { __BLOG_SLUGS_FOR_TESTS } from "../../middleware";
+import middleware, {
+  __BLOG_SLUGS_FOR_TESTS,
+  __CASOS_SLUGS_FOR_TESTS,
+  __SETORES_SLUGS_FOR_TESTS,
+  __ATENDIMENTO_SLUGS_FOR_TESTS,
+} from "../../middleware";
 import { articles, publishedArticles } from "../content/blog";
 
 const SLUG = articles[0].slug;
@@ -105,6 +110,41 @@ describe("404 real em vez de soft 404", () => {
   // acessível por link direto, já que a SPA ainda renderiza o artigo.
   it("a lista de slugs do middleware está sincronizada com os artigos publicados do blog", () => {
     expect([...__BLOG_SLUGS_FOR_TESTS].sort()).toEqual(publishedArticles().map((a) => a.slug).sort());
+  });
+
+  // /casos/:slug, /setores/:slug e /atendimento/:slug não têm um arquivo de
+  // conteúdo central como blog.ts — os dados moram dentro de cada página.
+  // Por isso este teste não compara contra uma fonte importada (como o de
+  // cima faz com publishedArticles()): é só uma trava manual, que precisa ser
+  // atualizada à mão se uma rota for renomeada ou removida.
+  it("casos conhecidos respondem 200, slug inventado responde 404", async () => {
+    mockOrigin([]);
+    for (const slug of __CASOS_SLUGS_FOR_TESTS) {
+      const res = await get(`/casos/${slug}`, "text/html,*/*;q=0.8");
+      expect(isPassThrough(res)).toBe(true);
+    }
+    const res = await get("/casos/caso-que-nao-existe", "text/html,*/*;q=0.8");
+    expect(res.status).toBe(404);
+  });
+
+  it("setores conhecidos respondem 200, setor inventado responde 404", async () => {
+    mockOrigin([]);
+    for (const slug of __SETORES_SLUGS_FOR_TESTS) {
+      const res = await get(`/setores/${slug}`, "text/html,*/*;q=0.8");
+      expect(isPassThrough(res)).toBe(true);
+    }
+    const res = await get("/setores/setor-que-nao-existe", "text/html,*/*;q=0.8");
+    expect(res.status).toBe(404);
+  });
+
+  it("cidades de atendimento conhecidas respondem 200, cidade inventada responde 404", async () => {
+    mockOrigin([]);
+    for (const slug of __ATENDIMENTO_SLUGS_FOR_TESTS) {
+      const res = await get(`/atendimento/${slug}`, "text/html,*/*;q=0.8");
+      expect(isPassThrough(res)).toBe(true);
+    }
+    const res = await get("/atendimento/cidade-que-nao-existe", "text/html,*/*;q=0.8");
+    expect(res.status).toBe(404);
   });
 
   it("responde 404 e noindex para rota inexistente", async () => {

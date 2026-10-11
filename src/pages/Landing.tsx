@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BUSINESS_JSONLD_BASE } from "@/lib/business";
+import { BUSINESS_JSONLD_BASE, BUSINESS_FOUNDING_DATE } from "@/lib/business";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
@@ -12,6 +12,7 @@ import { Results } from "@/components/Results";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ, faqItems } from "@/components/FAQ";
 import { SolucoesJoaoPessoa } from "@/components/SolucoesJoaoPessoa";
+import { SetoresSection } from "@/components/SetorKit";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -53,7 +54,7 @@ const organizationJsonLd = {
     contactType: "customer service",
     availableLanguage: "Portuguese",
   },
-  foundingDate: "2024",
+  foundingDate: BUSINESS_FOUNDING_DATE,
   knowsAbout: [
     "Reengenharia de processos",
     "Automação de processos",
@@ -216,6 +217,7 @@ const Landing = () => {
       <Testimonials />
       <DISTIP />
       <SolucoesJoaoPessoa />
+      <SetoresSection />
       <FAQ />
       <ContactForm />
       <Footer />

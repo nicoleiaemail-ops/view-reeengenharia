@@ -5,7 +5,18 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { EVENTS, track } from "@/lib/analytics";
 import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd, faqPageJsonLd, whatsappUrl } from "@/lib/business";
-import { ComoAVIEWTrabalha, CasesSection, FAQSection, LinksRelacionados, CTAFinal, NAPFooterBlock } from "@/components/LandingKit";
+import {
+  ComoAVIEWTrabalha,
+  FAQSection,
+  LinksRelacionados,
+  CTAFinal,
+  NAPFooterBlock,
+  NumerosSection,
+  InvestimentoPrazoSection,
+  ComoFuncionaDepoisDoDiagnostico,
+  CompromissosSection,
+  CaseDestaque,
+} from "@/components/LandingKit";
 
 const PATH = "/automacao-de-processos-joao-pessoa";
 const TITLE = "Automação de Processos com IA em João Pessoa | VIEW";
@@ -140,6 +151,11 @@ export default function AutomacaoProcessosJoaoPessoa() {
       </section>
 
       <div className="max-w-[880px] mx-auto px-[6%]">
+        <NumerosSection
+          numero1={{ valor: "100h+", label: "Devolvidas à equipe por mês, por operação atendida" }}
+          numero2={{ valor: "R$100k+", label: "Em custo operacional cortado no primeiro ano" }}
+        />
+
         <section className="py-10 border-t border-view-line">
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
             O problema
@@ -184,12 +200,13 @@ export default function AutomacaoProcessosJoaoPessoa() {
           </p>
         </section>
 
-        <CasesSection
-          cases={[
-            { id: "construtora-iso-9001", tag: "Construção Civil", headline: "ISO 9001 mantido sem retrabalho — registros automáticos em cada etapa da obra" },
-            { id: "construtora-gestao-obra", tag: "Construção Civil", headline: "Gestão completa de obra pelo celular — visibilidade total sem uma única ligação" },
-            { id: "restaurante-operacao-cozinha", tag: "Alimentação", headline: "Caos na cozinha eliminado — atendimento mais rápido e custos reduzidos" },
-          ]}
+        <CaseDestaque
+          caso={{
+            id: "restaurante-processos",
+            tag: "Alimentação",
+            headline: "Caos na cozinha eliminado — atendimento mais rápido e custos reduzidos",
+          }}
+          path="/casos/restaurante-processos"
         />
 
         <section className="py-10 border-t border-view-line">
@@ -206,6 +223,9 @@ export default function AutomacaoProcessosJoaoPessoa() {
           </ul>
         </section>
 
+        <InvestimentoPrazoSection whatsappUrl={WHATSAPP_URL} />
+        <ComoFuncionaDepoisDoDiagnostico />
+        <CompromissosSection />
         <FAQSection faqs={faqs} />
         <LinksRelacionados exceto={PATH} />
         <CTAFinal whatsappUrl={WHATSAPP_URL} location="automacao-processos-rodape" />

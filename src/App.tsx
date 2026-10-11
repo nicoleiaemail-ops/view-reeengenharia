@@ -21,6 +21,20 @@ const FabricaSoftwareJoaoPessoa = lazy(() => import("./pages/FabricaSoftwareJoao
 const AgentesIAWhatsappJoaoPessoa = lazy(() => import("./pages/AgentesIAWhatsappJoaoPessoa"));
 const AutomacaoProcessosJoaoPessoa = lazy(() => import("./pages/AutomacaoProcessosJoaoPessoa"));
 const ConsultoriaISO9001Construtoras = lazy(() => import("./pages/ConsultoriaISO9001Construtoras"));
+const CasoTerreISO9001 = lazy(() => import("./pages/CasoTerreISO9001"));
+const CasoAcompanhamentoObras = lazy(() => import("./pages/CasoAcompanhamentoObras"));
+const CasoRestauranteProcessos = lazy(() => import("./pages/CasoRestauranteProcessos"));
+const MetodoDistipp = lazy(() => import("./pages/MetodoDistipp"));
+const EstudoMaturidadePB = lazy(() => import("./pages/EstudoMaturidadePB"));
+const Equipe = lazy(() => import("./pages/Equipe"));
+const SetorConstrutoras = lazy(() => import("./pages/SetorConstrutoras"));
+const SetorClinicasSaude = lazy(() => import("./pages/SetorClinicasSaude"));
+const SetorVarejo = lazy(() => import("./pages/SetorVarejo"));
+const SetorIndustria = lazy(() => import("./pages/SetorIndustria"));
+const SetorEmpresasServicos = lazy(() => import("./pages/SetorEmpresasServicos"));
+const AtendimentoCampinaGrande = lazy(() => import("./pages/AtendimentoCampinaGrande"));
+const AtendimentoRecife = lazy(() => import("./pages/AtendimentoRecife"));
+const AtendimentoNatal = lazy(() => import("./pages/AtendimentoNatal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -62,6 +76,20 @@ const App = () => (
             <Route path="/agentes-de-ia-whatsapp-joao-pessoa" element={<AgentesIAWhatsappJoaoPessoa />} />
             <Route path="/automacao-de-processos-joao-pessoa" element={<AutomacaoProcessosJoaoPessoa />} />
             <Route path="/consultoria-iso-9001-construtoras" element={<ConsultoriaISO9001Construtoras />} />
+            <Route path="/casos/construtora-terre-iso-9001" element={<CasoTerreISO9001 />} />
+            <Route path="/casos/construtora-acompanhamento-de-obras" element={<CasoAcompanhamentoObras />} />
+            <Route path="/casos/restaurante-processos" element={<CasoRestauranteProcessos />} />
+            <Route path="/metodo-distipp" element={<MetodoDistipp />} />
+            <Route path="/estudos/maturidade-operacional-paraiba-2026" element={<EstudoMaturidadePB />} />
+            <Route path="/equipe" element={<Equipe />} />
+            <Route path="/setores/construtoras" element={<SetorConstrutoras />} />
+            <Route path="/setores/clinicas-e-saude" element={<SetorClinicasSaude />} />
+            <Route path="/setores/varejo" element={<SetorVarejo />} />
+            <Route path="/setores/industria" element={<SetorIndustria />} />
+            <Route path="/setores/empresas-de-servicos" element={<SetorEmpresasServicos />} />
+            <Route path="/atendimento/campina-grande" element={<AtendimentoCampinaGrande />} />
+            <Route path="/atendimento/recife" element={<AtendimentoRecife />} />
+            <Route path="/atendimento/natal" element={<AtendimentoNatal />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -85,6 +85,11 @@ export const articles: Article[] = [
         type: "p",
         text: "A VIEW disponibiliza um diagnóstico gratuito baseado na metodologia DISTIPP. Em menos de cinco minutos, o questionário avalia as sete dimensões e devolve um retrato do nível de maturidade operacional do seu negócio, com indicação de por onde começar. É o primeiro passo para trocar o esforço improvisado por uma operação que você consegue enxergar e controlar.",
       },
+      {
+        type: "link",
+        text: "Veja o detalhamento completo de cada um dos 7 pilares no método DISTIPP →",
+        href: "/metodo-distipp",
+      },
     ],
     faqs: [
       {
@@ -315,22 +320,21 @@ export const articles: Article[] = [
     dateModified: "2026-10-05",
     author: "Equipe VIEW",
     tag: "Sistemas",
-    readingMinutes: 6,
-    draft: true,
+    readingMinutes: 8,
     lead: "A pergunta não é qual sistema é melhor — é se o seu processo é parecido com o de qualquer empresa do seu setor ou se ele tem uma particularidade que nenhum sistema pronto resolve de verdade. A resposta muda a decisão inteira.",
     body: [
       {
         type: "p",
-        text: "Toda empresa em crescimento chega nessa encruzilhada: continuar com o sistema pronto que já usa, trocar por outro sistema pronto, ou desenvolver algo sob medida. A tentação é decidir pelo preço — o sistema pronto quase sempre custa menos no primeiro mês. Mas essa não é a pergunta certa.",
+        text: "Toda empresa em crescimento chega nessa encruzilhada: continuar com o sistema pronto que já usa, trocar por outro sistema pronto, ou desenvolver algo sob medida. A tentação é decidir pelo preço — o sistema pronto quase sempre custa menos no primeiro mês. Mas essa não é a pergunta certa, e decidir só por ela é o motivo mais comum de uma empresa trocar de sistema duas ou três vezes em poucos anos sem nunca resolver o problema de fato.",
       },
       {
         type: "p",
-        text: "A pergunta certa é: o seu processo é igual ao de qualquer empresa do seu setor, ou ele tem uma particularidade que faz diferença na prática? Se a resposta for 'é tudo igual', um sistema pronto resolve, e desenvolver algo sob medida seria gastar tempo e dinheiro reinventando o que já existe.",
+        text: "A pergunta certa é: o seu processo é igual ao de qualquer empresa do seu setor, ou ele tem uma particularidade que faz diferença na prática? Se a resposta for 'é tudo igual', um sistema pronto resolve, e desenvolver algo sob medida seria gastar tempo e dinheiro reinventando o que já existe. Se a resposta for 'tem uma parte que é só nossa', vale olhar com mais cuidado antes de assinar qualquer contrato.",
       },
       { type: "h2", text: "O sinal mais comum de que o sistema pronto não encaixa" },
       {
         type: "p",
-        text: "Não é o preço da licença. É a planilha paralela. Quando a equipe usa o sistema pronto para uma parte do trabalho e mantém uma planilha por fora para o que o sistema não dá conta, isso é o processo real da empresa tentando existir dentro de um sistema genérico demais para ele.",
+        text: "Não é o preço da licença. É a planilha paralela. Quando a equipe usa o sistema pronto para uma parte do trabalho e mantém uma planilha por fora para o que o sistema não dá conta, isso é o processo real da empresa tentando existir dentro de um sistema genérico demais para ele. Com o tempo, essa planilha vira a fonte de verdade de fato — e o sistema pronto vira só um registro incompleto que ninguém confia plenamente.",
       },
       {
         type: "ul",
@@ -338,21 +342,62 @@ export const articles: Article[] = [
           "Campos obrigatórios que não fazem sentido para a sua operação, e que a equipe preenche com qualquer coisa só para avançar a tela.",
           "Uma etapa do seu processo que o sistema não tem como representar, então vira anotação, e-mail ou mensagem de WhatsApp.",
           "Relatório que você precisa montar 'na mão' depois, porque o sistema não cruza os dados do jeito que a sua gestão precisa decidir.",
+          "Mais de uma pessoa reconciliando a mesma informação em lugares diferentes, porque nenhum sistema sozinho conta a história inteira.",
         ],
+      },
+      {
+        type: "p",
+        text: "Esse padrão tem um custo que raramente aparece em nenhuma planilha de orçamento: o tempo gasto reconciliando informação é tempo que não vai para atender cliente, vender ou produzir. Quando esse tempo se acumula mês após mês, ele costuma superar, de longe, a diferença de preço entre manter o sistema pronto remendado e investir em algo que resolva o processo de uma vez.",
       },
       { type: "h2", text: "Quando o sistema pronto é a escolha certa" },
       {
         type: "p",
-        text: "Processos de apoio que são praticamente iguais em qualquer empresa — folha de pagamento, emissão de nota fiscal, contabilidade — raramente justificam um sistema sob medida. A regra é padronizada por lei ou por convenção do mercado, e um sistema pronto, bem configurado, resolve com menos risco e menos custo.",
+        text: "Processos de apoio que são praticamente iguais em qualquer empresa — folha de pagamento, emissão de nota fiscal, contabilidade — raramente justificam um sistema sob medida. A regra é padronizada por lei ou por convenção do mercado, e um sistema pronto, bem configurado, resolve com menos risco e menos custo. Nesses casos, o diferencial competitivo da empresa não está em como a nota fiscal é emitida — está em outro lugar, e é lá que vale concentrar o investimento.",
+      },
+      {
+        type: "p",
+        text: "Vale lembrar também que 'sistema pronto' não é sinônimo de 'sem ajuste'. Muita plataforma de mercado permite configuração, campo customizado e integração via API — o que, para boa parte das empresas, já é suficiente. O erro é supor que, por ser pronto, o sistema precisa ser usado exatamente como veio de fábrica, sem nenhuma adaptação ao processo real.",
       },
       { type: "h2", text: "Quando vale a pena desenvolver sob medida" },
       {
         type: "p",
-        text: "Quando o processo que diferencia a sua empresa da concorrente — a forma como você atende, produz, entrega ou presta contas — não cabe em nenhum sistema genérico sem ser forçado. Nesses casos, adaptar o processo ao sistema custa mais caro no longo prazo do que construir o sistema certo desde o início.",
+        text: "Quando o processo que diferencia a sua empresa da concorrente — a forma como você atende, produz, entrega ou presta contas — não cabe em nenhum sistema genérico sem ser forçado. Nesses casos, adaptar o processo ao sistema custa mais caro no longo prazo do que construir o sistema certo desde o início: a empresa perde exatamente a particularidade que a diferencia, só para caber num fluxo pensado para outra empresa.",
       },
       {
         type: "p",
-        text: "O caminho mais seguro não é decidir pelo preço da licença nem pelo preço do desenvolvimento: é mapear o processo primeiro e só depois comparar as duas opções com clareza sobre o que cada uma resolve e o que cada uma deixa sem solução.",
+        text: "Um sinal complementar: se a resposta de 'por que fazemos assim' é uma vantagem real (um atendimento mais rápido, uma entrega mais confiável, um controle que o concorrente não tem), esse é precisamente o processo que não deveria ser padronizado para caber num sistema de prateleira.",
+      },
+      { type: "h2", text: "O meio-termo que poucas empresas consideram: integrar em vez de substituir" },
+      {
+        type: "p",
+        text: "A escolha raramente precisa ser 'tudo pronto' ou 'tudo sob medida'. Em muitos projetos, a solução certa é manter o sistema pronto que já funciona para o que ele resolve bem — financeiro, nota fiscal, folha — e desenvolver sob medida só a parte que de fato diferencia a operação, integrando as duas pontas para que a informação circule sem reconciliação manual. Essa combinação costuma custar menos do que substituir tudo, e entrega exatamente o ganho que faltava.",
+      },
+      { type: "h2", text: "Como esse diagnóstico é feito na prática" },
+      {
+        type: "p",
+        text: "O caminho mais seguro não é decidir pelo preço da licença nem pelo preço do desenvolvimento: é mapear o processo primeiro e só depois comparar as duas opções com clareza sobre o que cada uma resolve e o que cada uma deixa sem solução. Isso significa descrever o processo como ele realmente acontece — não como o manual diz que deveria ser — antes de qualquer conversa sobre sistema.",
+      },
+      {
+        type: "p",
+        text: "Só depois desse mapeamento é possível comparar com honestidade: quanto custa manter o sistema pronto com a planilha paralela, quanto custaria desenvolver o sistema sob medida, e qual das duas contas realmente fecha para o tamanho e o estágio daquela empresa hoje — não para o que ela pretende ser daqui a cinco anos.",
+      },
+      { type: "h2", text: "Um raciocínio hipotético, só para ilustrar" },
+      {
+        type: "p",
+        text: "Para tornar esse raciocínio mais concreto, vale um exemplo hipotético — sem nenhuma empresa real por trás, só para ilustrar o padrão. Imagine uma operação que usa um sistema de gestão genérico para controlar pedidos, mas tem uma etapa de conferência que o sistema não enxerga, porque essa etapa só existe naquele negócio específico. Hoje essa conferência é feita numa planilha separada, e alguém precisa copiar o resultado de volta para o sistema principal todos os dias.",
+      },
+      {
+        type: "p",
+        text: "Nesse cenário hipotético, a pergunta não é se o sistema atual é bom ou ruim — é se aquela etapa de conferência é exceção rara ou parte estrutural do negócio. Se for exceção, um ajuste pontual no processo pode bastar. Se for estrutural, nenhuma configuração do sistema pronto vai eliminar a planilha paralela, porque o sistema nunca foi desenhado para representar aquela etapa.",
+      },
+      { type: "h2", text: "O risco de trocar de sistema pronto sem resolver a causa" },
+      {
+        type: "p",
+        text: "Um padrão comum é trocar de sistema pronto esperando que o novo resolva o que o antigo não resolveu — e descobrir, meses depois, a mesma planilha paralela, só que ao lado de uma ferramenta diferente. Isso acontece porque a causa do problema nunca estava no sistema escolhido: estava em tentar encaixar um processo particular dentro de qualquer solução genérica, seja ela qual for.",
+      },
+      {
+        type: "p",
+        text: "Por isso a pergunta deste artigo não é 'qual sistema pronto escolher' — é se, antes de qualquer escolha, o processo foi de fato entendido a ponto de saber se ele é genérico (e cabe em qualquer sistema de mercado) ou particular (e vai continuar escapando de qualquer sistema pronto, até que alguém desenhe algo sob medida para ele).",
       },
       {
         type: "link",
@@ -373,6 +418,10 @@ export const articles: Article[] = [
         q: "Quem decide isso dentro da empresa?",
         a: "Idealmente, quem conhece o processo operacional na prática, não só quem assina o contrato do sistema. É por isso que o diagnóstico de processo vem antes da escolha do sistema.",
       },
+      {
+        q: "Dá para integrar um sistema sob medida com o sistema pronto que já uso?",
+        a: "Na maioria dos casos sim. É inclusive o caminho mais comum: manter o que já funciona bem e desenvolver sob medida apenas a parte do processo que o sistema pronto não resolve.",
+      },
     ],
   },
   {
@@ -385,22 +434,29 @@ export const articles: Article[] = [
     dateModified: "2026-10-05",
     author: "Equipe VIEW",
     tag: "IA Aplicada",
-    readingMinutes: 5,
-    draft: true,
+    readingMinutes: 7,
     lead: "A pergunta mais cara que uma empresa faz sobre atendimento no WhatsApp não é 'quanto custa a IA'. É se o problema dela é mesmo de IA — ou se uma automação bem mais simples e mais barata já resolveria.",
     body: [
       {
         type: "p",
-        text: "IA no WhatsApp virou sinônimo de modernização, e isso cria um efeito colateral: empresas contratam agentes de IA para problemas que uma automação tradicional resolveria com menos custo, menos risco de erro e implantação mais rápida.",
+        text: "IA no WhatsApp virou sinônimo de modernização, e isso cria um efeito colateral: empresas contratam agentes de IA para problemas que uma automação tradicional resolveria com menos custo, menos risco de erro e implantação mais rápida. O resultado costuma ser um projeto caro, complexo de manter, e que resolve um problema que nunca precisou de inteligência artificial para começar.",
+      },
+      {
+        type: "p",
+        text: "Isso não significa que IA no WhatsApp seja exagero. Significa que a decisão certa começa num lugar diferente de onde a maioria das empresas começa: não em 'qual IA contratar', mas em 'o que, exatamente, está travando o atendimento hoje'.",
       },
       { type: "h2", text: "O teste simples: a conversa varia ou é sempre igual?" },
       {
         type: "p",
-        text: "Se as perguntas do cliente seguem um roteiro fixo e previsível — horário de funcionamento, endereço, status de um pedido com número de referência —, uma automação tradicional, com fluxo de respostas programadas, resolve sem precisar interpretar linguagem natural.",
+        text: "Se as perguntas do cliente seguem um roteiro fixo e previsível — horário de funcionamento, endereço, status de um pedido com número de referência —, uma automação tradicional, com fluxo de respostas programadas, resolve sem precisar interpretar linguagem natural. Esse tipo de automação é mais barata, mais rápida de implantar e praticamente não tem margem de erro, porque segue uma regra fixa.",
       },
       {
         type: "p",
-        text: "A IA se justifica quando a conversa varia: o cliente escreve de um jeito diferente a cada vez, faz mais de uma pergunta na mesma mensagem, ou traz uma dúvida que depende de entender contexto para responder direito.",
+        text: "A IA se justifica quando a conversa varia: o cliente escreve de um jeito diferente a cada vez, faz mais de uma pergunta na mesma mensagem, ou traz uma dúvida que depende de entender contexto para responder direito. Nesses casos, um fluxo de respostas fixas quebra rápido — qualquer pergunta fora do roteiro previsto trava a conversa ou gera uma resposta sem sentido, e o cliente percebe isso na hora.",
+      },
+      {
+        type: "p",
+        text: "Vale notar que essa variação não precisa ser constante para justificar IA — basta que ela apareça numa parte relevante do volume de conversas. Uma empresa pode ter 80% das mensagens seguindo um roteiro fixo e perfeitamente resolvível por automação tradicional, e ainda assim valer a pena um agente de IA para os 20% restantes, se esses 20% representarem o atendimento que mais frustra o cliente quando mal resolvido.",
       },
       { type: "h2", text: "Onde a IA no WhatsApp costuma valer a pena" },
       {
@@ -409,16 +465,48 @@ export const articles: Article[] = [
           "Qualificação de leads: entender o que o cliente precisa antes de passar para um vendedor, poupando tempo de quem vende.",
           "Triagem de pedidos ou dúvidas que chegam em formatos variados, para direcionar ao time certo sem alguém ler mensagem por mensagem.",
           "Agendamento que depende de cruzar disponibilidade real da equipe com a preferência do cliente, em vez de um horário fixo.",
+          "Primeiro atendimento fora do horário comercial, quando o volume de mensagens justifica uma resposta imediata e contextual em vez de um aviso genérico de ausência.",
         ],
+      },
+      {
+        type: "p",
+        text: "Em todos esses casos, o ponto em comum é a variação: o que o cliente escreve, quando escreve e o que ele precisa mudam de conversa para conversa. É exatamente esse tipo de variação que uma automação de regra fixa não acompanha, e que justifica o custo adicional de um agente de IA.",
       },
       { type: "h2", text: "Onde uma automação simples já resolve" },
       {
         type: "p",
-        text: "Confirmação de recebimento, envio de boleto, aviso de status de entrega com código de rastreio, resposta para perguntas frequentes sempre iguais — tudo isso é regra fixa, e regra fixa não precisa de inteligência artificial para funcionar bem.",
+        text: "Confirmação de recebimento, envio de boleto, aviso de status de entrega com código de rastreio, resposta para perguntas frequentes sempre iguais — tudo isso é regra fixa, e regra fixa não precisa de inteligência artificial para funcionar bem. Uma automação tradicional entrega exatamente o mesmo resultado nesses casos, com menos custo de manutenção e sem o risco de uma resposta mal interpretada.",
       },
       {
         type: "p",
-        text: "O erro mais caro não é escolher IA por engano. É aplicar IA — ou automação — sobre um atendimento que ninguém mapeou direito. Nesse caso, a ferramenta certa só acelera a confusão que já existia.",
+        text: "Vale notar que as duas abordagens não são excludentes. Muitos projetos bons combinam as duas: uma camada de automação tradicional cuida do que é previsível, e um agente de IA entra só na parcela de conversas que realmente exige entender contexto. Essa combinação costuma custar menos do que colocar IA em tudo, e entrega o mesmo resultado onde ele importa.",
+      },
+      { type: "h2", text: "O erro mais caro: automatizar um atendimento que ninguém mapeou" },
+      {
+        type: "p",
+        text: "O erro mais caro não é escolher IA por engano. É aplicar IA — ou automação — sobre um atendimento que ninguém mapeou direito. Nesse caso, a ferramenta certa só acelera a confusão que já existia: se hoje o cliente já recebe respostas inconsistentes dependendo de quem atende, um agente de IA treinado em cima dessa inconsistência vai replicar o mesmo problema, só que mais rápido e em maior volume.",
+      },
+      {
+        type: "p",
+        text: "É por isso que, antes de qualquer decisão sobre tecnologia, vale mapear o fluxo real de atendimento: quais perguntas chegam, com que frequência, quem responde hoje e o que diferencia uma resposta boa de uma resposta ruim. Só com esse mapeamento em mãos a escolha entre automação tradicional e IA deixa de ser uma aposta e passa a ser uma decisão com critério.",
+      },
+      { type: "h2", text: "O que medir antes de decidir" },
+      {
+        type: "p",
+        text: "Dois números simples já ajudam bastante nessa decisão: quantas conversas por dia chegam no WhatsApp da empresa, e que fração delas segue, de fato, um roteiro previsível. Quando a maior parte do volume é repetitiva e previsível, a prioridade é automação tradicional — o ganho ali é imediato e o investimento, baixo. Quando uma fração relevante das conversas exige entender o que o cliente quis dizer, é nessa fração que vale concentrar o investimento em IA, em vez de aplicá-la ao volume inteiro.",
+      },
+      {
+        type: "p",
+        text: "Vale medir também o que acontece hoje quando o atendimento humano não dá conta do volume: mensagem sem resposta, resposta demorada, cliente que desiste de esperar. Esse é o custo real de não automatizar nada — e é ele que deveria ser comparado ao custo de implantar automação ou IA, não o contrário.",
+      },
+      { type: "h2", text: "Como esse projeto costuma ser desenhado" },
+      {
+        type: "p",
+        text: "Um projeto de atendimento no WhatsApp bem desenhado separa claramente as duas camadas antes de escrever uma linha de configuração: o que é regra fixa vira automação tradicional, testada e estável; o que exige entender contexto vira escopo do agente de IA, delimitado o suficiente para que ele saiba, com clareza, quando transferir a conversa para uma pessoa em vez de arriscar uma resposta errada.",
+      },
+      {
+        type: "p",
+        text: "Esse desenho por camadas também facilita medir o resultado depois: é possível acompanhar separadamente quantas conversas a automação tradicional resolveu sem nenhuma intervenção humana, e quantas o agente de IA qualificou ou resolveu antes de precisar de alguém da equipe — dois números que, juntos, mostram se o investimento voltou no tempo e no atendimento que a empresa esperava.",
       },
       {
         type: "link",
@@ -439,6 +527,14 @@ export const articles: Article[] = [
         q: "O que acontece quando o agente não sabe responder?",
         a: "O desenho correto prevê isso: o agente reconhece o limite do que pode responder e transfere a conversa para um humano, em vez de arriscar uma resposta errada.",
       },
+      {
+        q: "Dá para combinar automação tradicional e IA no mesmo atendimento?",
+        a: "Sim, e é uma combinação comum: a automação tradicional cuida do que é previsível e repetitivo, e a IA entra só na parte da conversa que exige interpretar contexto.",
+      },
+      {
+        q: "Quanto tempo leva para implantar um agente de IA no WhatsApp?",
+        a: "Depende do escopo definido no mapeamento do atendimento. Um escopo pequeno e bem delimitado costuma ser mais rápido de implantar do que tentar cobrir toda a conversa de uma vez.",
+      },
     ],
   },
   {
@@ -451,13 +547,16 @@ export const articles: Article[] = [
     dateModified: "2026-10-05",
     author: "Equipe VIEW",
     tag: "Automação",
-    readingMinutes: 5,
-    draft: true,
+    readingMinutes: 8,
     lead: "Automatizar o processo errado só faz o erro acontecer mais rápido. Estas sete perguntas, nesta ordem, são o que separa uma automação que funciona de uma que só parece moderna.",
     body: [
       {
         type: "p",
-        text: "A primeira reação de muita empresa diante de um processo lento é perguntar 'como automatizar isso?'. A pergunta certa vem antes: esse processo deveria continuar existindo do jeito que está? Automatizar sem passar por isso é acelerar o problema, não resolvê-lo.",
+        text: "A primeira reação de muita empresa diante de um processo lento é perguntar 'como automatizar isso?'. A pergunta certa vem antes: esse processo deveria continuar existindo do jeito que está? Automatizar sem passar por isso é acelerar o problema, não resolvê-lo — e é também a forma mais cara de descobrir, meses depois, que o dinheiro foi investido em automatizar uma etapa que nem precisava existir.",
+      },
+      {
+        type: "p",
+        text: "O roteiro abaixo não é burocracia: é a ordem que evita o retrabalho de automatizar, perceber o erro e desfazer tudo depois. Cada pergunta só faz sentido depois que a anterior foi respondida com honestidade — pular uma delas é o que costuma transformar um projeto de automação em um projeto de correção.",
       },
       { type: "h2", text: "As sete perguntas, na ordem" },
       {
@@ -472,14 +571,59 @@ export const articles: Article[] = [
           "7. Qual resultado será medido? Sem um número combinado antes, não tem como saber se a automação funcionou.",
         ],
       },
-      { type: "h2", text: "Por que a ordem importa mais que a lista" },
+      { type: "h2", text: "Por que as três primeiras perguntas vêm antes de qualquer ferramenta" },
       {
         type: "p",
-        text: "Inverter essa ordem é o erro mais comum: aplicar IA ou automação às pressas, para só depois descobrir que o processo tinha uma etapa que nem precisava existir. Nesse caso, o trabalho de desfazer e refazer custa mais do que teria custado seguir a ordem certa desde o início.",
+        text: "As perguntas 1 a 3 — existir, eliminar, simplificar — não têm nada a ver com tecnologia, e é exatamente por isso que costumam ser puladas. Elas exigem olhar para o processo com desconfiança, questionando uma etapa que a equipe já executa há tanto tempo que ninguém mais se pergunta por quê. É mais fácil perguntar 'que sistema resolve isso' do que perguntar 'isso devia continuar existindo'.",
       },
       {
         type: "p",
-        text: "Se não houver uma resposta clara para a pergunta 7 — qual resultado será medido —, o projeto não deveria começar. É o critério mais simples para saber se uma automação foi bem pensada ou só parece moderna.",
+        text: "Só que a conta não fecha ao contrário. Automatizar uma etapa desnecessária entrega, no melhor dos casos, a mesma etapa desnecessária — só que mais rápida. O desperdício continua, agora rodando sozinho e mais difícil de notar, porque ninguém mais precisa executá-lo manualmente para perceber que ele não gera valor.",
+      },
+      { type: "h2", text: "Padronizar antes de automatizar: o passo que a maioria subestima" },
+      {
+        type: "p",
+        text: "A pergunta 4 — pode ser padronizado? — é onde mais automação falha silenciosamente. Um processo que cada pessoa executa de um jeito não tem uma única regra para automatizar: tem várias regras concorrentes, e a automação só vai conseguir reproduzir uma delas. O resultado é uma ferramenta que funciona para parte da equipe e cria atrito para o resto, que vai continuar fazendo do seu próprio jeito por fora do sistema.",
+      },
+      {
+        type: "p",
+        text: "Padronizar antes significa decidir, com quem executa o processo, qual é a forma certa de fazer — não a forma de quem fala mais alto na reunião. Esse acordo, firmado antes da automação entrar, é o que garante que a ferramenta valha para a empresa inteira, não para uma parte dela.",
+      },
+      { type: "h2", text: "Automação tradicional ou IA: a escolha que vem nas perguntas 5 e 6" },
+      {
+        type: "p",
+        text: "Depois que o processo está confirmado, simplificado e padronizado, a pergunta deixa de ser 'automatizar ou não' e passa a ser 'com o quê'. A pergunta 5 filtra o que é regra fixa e previsível — isso quase sempre se resolve com automação tradicional, mais barata e mais fácil de manter. Só o que sobra depois desse filtro chega à pergunta 6, que avalia se de fato existe uma necessidade real de interpretar linguagem, imagem ou contexto variável — e é só aí que a IA se justifica.",
+      },
+      {
+        type: "p",
+        text: "Inverter essa ordem — perguntar primeiro 'onde cabe IA' — é o que leva empresas a aplicar uma solução cara e complexa em um problema que uma automação simples resolveria com uma fração do custo e do risco.",
+      },
+      { type: "h2", text: "A pergunta que decide se o projeto deveria começar" },
+      {
+        type: "p",
+        text: "Se não houver uma resposta clara para a pergunta 7 — qual resultado será medido —, o projeto não deveria começar. É o critério mais simples para saber se uma automação foi bem pensada ou só parece moderna: sem um número combinado antes de automatizar, não existe como comparar o antes e o depois, e sem essa comparação não há como provar que o investimento valeu.",
+      },
+      {
+        type: "p",
+        text: "Esse número não precisa ser sofisticado. Pode ser tempo gasto na etapa, quantidade de erro por lote, ou tempo de resposta ao cliente — o que importa é que ele exista antes da primeira linha de automação ser escrita, para que a comparação depois seja contra um ponto de partida real, não contra uma impressão de que 'ficou mais rápido'.",
+      },
+      { type: "h2", text: "Como aplicar este roteiro num processo real" },
+      {
+        type: "p",
+        text: "Na prática, aplicar as sete perguntas funciona melhor como uma conversa com quem executa o processo todos os dias, não como um questionário preenchido sozinho por quem decide o investimento. Quem está na rotina sabe, muitas vezes de cabeça, qual etapa é pura formalidade, qual já causou confusão por ser diferente para cada pessoa, e qual exigiria interpretar uma mensagem ou uma imagem para ser resolvida de verdade.",
+      },
+      {
+        type: "p",
+        text: "Vale documentar as respostas das sete perguntas antes de qualquer cotação de sistema ou de projeto de automação. Esse documento simples — um processo com sete respostas ao lado — já é, na prática, o escopo do que precisa ser construído, e evita que o fornecedor (interno ou externo) proponha uma solução maior, mais cara ou mais complexa do que o problema exige.",
+      },
+      { type: "h2", text: "O que acontece quando a empresa ignora essas perguntas" },
+      {
+        type: "p",
+        text: "O cenário mais comum de automação que não entrega resultado não é a ferramenta errada — é a pergunta que nunca foi feita. Uma automação implantada sobre um processo não padronizado, por exemplo, tende a funcionar bem nos primeiros testes (feitos por quem desenhou a automação, do jeito que ela espera) e falhar na operação real, onde cada pessoa ainda executa o processo de um jeito levemente diferente.",
+      },
+      {
+        type: "p",
+        text: "Quando isso acontece, a reação mais comum é culpar a ferramenta e procurar outra — repetindo o mesmo erro, porque o problema nunca esteve na ferramenta. Seguir as sete perguntas em ordem, mesmo que de forma rápida e informal, é o que evita esse ciclo de troca de ferramenta sem troca de diagnóstico.",
       },
       {
         type: "link",
@@ -499,6 +643,10 @@ export const articles: Article[] = [
       {
         q: "O que fazer se a resposta da pergunta 7 não existir?",
         a: "Definir a métrica antes de prosseguir. Automatizar sem saber o que medir é o sinal mais claro de que o projeto ainda não está pronto para começar.",
+      },
+      {
+        q: "Essas sete perguntas substituem um diagnóstico de processo?",
+        a: "Não — elas são o roteiro de raciocínio por trás de um diagnóstico. O diagnóstico aplica essas perguntas ao processo real da empresa, com quem o executa no dia a dia.",
       },
     ],
   },

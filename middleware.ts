@@ -35,6 +35,9 @@ const STATIC_ROUTES = new Set([
   "/agentes-de-ia-whatsapp-joao-pessoa",
   "/automacao-de-processos-joao-pessoa",
   "/consultoria-iso-9001-construtoras",
+  "/metodo-distipp",
+  "/equipe",
+  "/estudos/maturidade-operacional-paraiba-2026",
   // Destino do link da bio do Instagram. É noindex (a própria página já
   // declara isso via <meta name="robots">), mas continua publica e com
   // espelho Markdown -- por isso entra aqui, não em PRIVATE_ROUTES, que é
@@ -47,30 +50,65 @@ const STATIC_ROUTES = new Set([
 // (são privadas e já saem com noindex).
 const PRIVATE_ROUTES = new Set(["/admin", "/admin-login"]);
 
-// Slugs do blog repetidos aqui de propósito. O bundler do middleware do Vercel
-// não resolve o import de src/content/blog (moduleResolution node16 exige
-// extensão explícita) e emite o import literal, que quebra em runtime — o
-// resultado seria 404 em todos os artigos. Um teste em src/test/middleware.test.ts
-// falha se esta lista divergir de src/content/blog.
+// Slugs de rotas aninhadas (um nível: /prefixo/slug) repetidos aqui de
+// propósito. O bundler do middleware do Vercel não resolve import de
+// src/content/* ou src/pages/* (moduleResolution node16 exige extensão
+// explícita) e emite o import literal, que quebra em runtime — o resultado
+// seria 404 em toda página do grupo. Um teste em src/test/middleware.test.ts
+// falha se qualquer uma destas listas divergir da fonte de verdade (blog.ts
+// para BLOG_SLUGS; o array de casos/setores/cidades nas próprias páginas).
 const BLOG_SLUGS = new Set([
   "metodologia-distipp-7-dimensoes-maturidade-operacional",
   "reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa",
   "automacao-de-processos-para-pmes-por-onde-comecar",
   "visibilidade-operacional-em-tempo-real",
+  "software-sob-medida-ou-sistema-pronto-como-decidir",
+  "ia-no-whatsapp-quando-vale-a-pena",
+  "7-perguntas-antes-de-automatizar-qualquer-processo",
 ]);
 
+const CASOS_SLUGS = new Set([
+  "construtora-terre-iso-9001",
+  "construtora-acompanhamento-de-obras",
+  "restaurante-processos",
+]);
+
+const SETORES_SLUGS = new Set([
+  "construtoras",
+  "clinicas-e-saude",
+  "varejo",
+  "industria",
+  "empresas-de-servicos",
+]);
+
+const ATENDIMENTO_SLUGS = new Set(["campina-grande", "recife", "natal"]);
+
 export const __BLOG_SLUGS_FOR_TESTS = BLOG_SLUGS;
+export const __CASOS_SLUGS_FOR_TESTS = CASOS_SLUGS;
+export const __SETORES_SLUGS_FOR_TESTS = SETORES_SLUGS;
+export const __ATENDIMENTO_SLUGS_FOR_TESTS = ATENDIMENTO_SLUGS;
 
 // Arquivos servidos direto de public/ (llms.txt, favicon.ico, og-image.png…).
 // O matcher não consegue distinguir "rota inexistente" de "arquivo estático",
 // então qualquer caminho com extensão passa adiante sem virar 404.
 const HAS_EXTENSION = /\.[a-z0-9]{2,5}$/i;
 
+// Prefixos de rota aninhada (um nível: /prefixo/slug) e o conjunto de slugs
+// válidos de cada um.
+const NESTED_ROUTE_GROUPS: [string, Set<string>][] = [
+  ["/blog/", BLOG_SLUGS],
+  ["/casos/", CASOS_SLUGS],
+  ["/setores/", SETORES_SLUGS],
+  ["/atendimento/", ATENDIMENTO_SLUGS],
+];
+
 function isKnownRoute(pathname: string): boolean {
   const clean = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
   if (STATIC_ROUTES.has(clean) || PRIVATE_ROUTES.has(clean)) return true;
-  const blogMatch = clean.match(/^\/blog\/([^/]+)$/);
-  return blogMatch ? BLOG_SLUGS.has(blogMatch[1]) : false;
+  for (const [prefix, slugs] of NESTED_ROUTE_GROUPS) {
+    if (clean.startsWith(prefix)) return slugs.has(clean.slice(prefix.length));
+  }
+  return false;
 }
 
 const LINK_HEADER = [

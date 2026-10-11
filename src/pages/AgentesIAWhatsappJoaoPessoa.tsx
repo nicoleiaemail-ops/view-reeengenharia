@@ -5,7 +5,17 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { EVENTS, track } from "@/lib/analytics";
 import { BUSINESS_JSONLD_BASE, breadcrumbJsonLd, faqPageJsonLd, whatsappUrl } from "@/lib/business";
-import { ComoAVIEWTrabalha, CasesSection, FAQSection, LinksRelacionados, CTAFinal, NAPFooterBlock } from "@/components/LandingKit";
+import {
+  ComoAVIEWTrabalha,
+  FAQSection,
+  LinksRelacionados,
+  CTAFinal,
+  NAPFooterBlock,
+  NumerosSection,
+  InvestimentoPrazoSection,
+  ComoFuncionaDepoisDoDiagnostico,
+  CompromissosSection,
+} from "@/components/LandingKit";
 
 const PATH = "/agentes-de-ia-whatsapp-joao-pessoa";
 const TITLE = "Agentes de IA e IA no WhatsApp em João Pessoa | VIEW";
@@ -144,6 +154,11 @@ export default function AgentesIAWhatsappJoaoPessoa() {
       </section>
 
       <div className="max-w-[880px] mx-auto px-[6%]">
+        <NumerosSection
+          numero1={{ valor: "100h+", label: "Devolvidas à equipe por mês, por operação atendida" }}
+          numero2={{ valor: "+50%", label: "Ganho de produtividade no processo automatizado" }}
+        />
+
         <section className="py-10 border-t border-view-line">
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
             O problema
@@ -188,12 +203,13 @@ export default function AgentesIAWhatsappJoaoPessoa() {
           </p>
         </section>
 
-        <CasesSection
-          cases={[
-            { id: "construtora-gestao-obra", tag: "Construção Civil", headline: "Gestão completa de obra pelo celular — visibilidade total sem uma única ligação" },
-            { id: "restaurante-operacao-cozinha", tag: "Alimentação", headline: "Caos na cozinha eliminado — atendimento mais rápido e custos reduzidos" },
-          ]}
-        />
+        {/*
+          TODO: nenhum dos 3 casos documentados é especificamente sobre
+          agente de IA (são sistema/ISO 9001, app de obra e processo de
+          restaurante). O briefing previa essa lacuna ("o case mais próximo
+          ou TODO") — optado por não forçar um link fraco. Troca por um case
+          de agente de IA assim que existir um documentado.
+        */}
 
         <section className="py-10 border-t border-view-line">
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
@@ -209,6 +225,9 @@ export default function AgentesIAWhatsappJoaoPessoa() {
           </ul>
         </section>
 
+        <InvestimentoPrazoSection whatsappUrl={WHATSAPP_URL} />
+        <ComoFuncionaDepoisDoDiagnostico />
+        <CompromissosSection />
         <FAQSection faqs={faqs} />
         <LinksRelacionados exceto={PATH} />
         <CTAFinal whatsappUrl={WHATSAPP_URL} location="agentes-ia-whatsapp-rodape" />

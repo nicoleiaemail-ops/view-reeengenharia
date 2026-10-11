@@ -13,6 +13,8 @@ https://reengenhariaview.com.br
 - [Sobre](https://reengenhariaview.com.br/sobre): Origem da empresa, missão, visão, valores, princípios operacionais e a metodologia DISTIPP.
 - [Avaliação de Maturidade](https://reengenhariaview.com.br/avaliacao-maturidade): Diagnóstico online gratuito de maturidade empresarial em 7 dimensões, baseado no framework DISTIPP.
 - [Casos](https://reengenhariaview.com.br/casos): Casos de sucesso documentados em construção civil e alimentação, com desafio, solução e resultado de cada cliente.
+- [Equipe](https://reengenhariaview.com.br/equipe): Frentes de atuação da equipe da VIEW — liderança, engenharia de processos, desenvolvimento de sistemas e dados.
+- [Método DISTIPP](https://reengenhariaview.com.br/metodo-distipp): Detalhamento dos 7 pilares do framework de diagnóstico de maturidade operacional da VIEW.
 - [Blog](https://reengenhariaview.com.br/blog): Artigos sobre processos, maturidade operacional, automação e dados para empresas em crescimento.
 - [IA para Empresas em João Pessoa](https://reengenhariaview.com.br/ia-para-empresas-joao-pessoa): Como a VIEW aplica inteligência artificial em processos de empresas — agentes, automação, integração de sistemas e capacitação.
 - [Fábrica de Software Sob Medida em João Pessoa](https://reengenhariaview.com.br/fabrica-de-software-sob-medida-joao-pessoa): Desenvolvimento de sistema sob medida, feito depois do processo mapeado — não um software genérico adaptado à força.
@@ -20,12 +22,31 @@ https://reengenhariaview.com.br
 - [Automação de Processos com IA em João Pessoa](https://reengenhariaview.com.br/automacao-de-processos-joao-pessoa): Automação tradicional e IA aplicadas na ordem certa — processo primeiro, ferramenta depois.
 - [Consultoria ISO 9001 para Construtoras](https://reengenhariaview.com.br/consultoria-iso-9001-construtoras): Preparação para auditoria ISO 9001 com sistema próprio que conecta administrativo e obra.
 
+## Setores atendidos
+
+- [Construtoras](https://reengenhariaview.com.br/setores/construtoras): Processo de obra, preparação para ISO 9001/PBQP-H e sistema de gestão sob medida.
+- [Clínicas e Saúde](https://reengenhariaview.com.br/setores/clinicas-e-saude): Fluxo do paciente, integração de agenda e prontuário, automação de confirmação de consulta.
+- [Varejo](https://reengenhariaview.com.br/setores/varejo): Fluxo de venda e estoque, integração entre PDV e sistema de gestão.
+- [Indústria](https://reengenhariaview.com.br/setores/industria): Fluxo produtivo, apontamento de produção e integração entre produção, qualidade e manutenção.
+- [Empresas de Serviços](https://reengenhariaview.com.br/setores/empresas-de-servicos): Padronização do atendimento, propostas, agenda e equipe.
+
+## Atendimento em outras cidades
+
+A VIEW tem sede em João Pessoa (PB) e atende presencialmente também praças vizinhas, além do atendimento remoto a todo o Brasil:
+
+- [Campina Grande (PB)](https://reengenhariaview.com.br/atendimento/campina-grande)
+- [Recife (PE)](https://reengenhariaview.com.br/atendimento/recife)
+- [Natal (RN)](https://reengenhariaview.com.br/atendimento/natal)
+
 ## Artigos
 
 - [Metodologia DISTIPP: as 7 dimensões da maturidade operacional de uma empresa](https://reengenhariaview.com.br/blog/metodologia-distipp-7-dimensoes-maturidade-operacional): O que cada dimensão do DISTIPP mede e como o framework indica por onde uma empresa deve começar a melhorar.
 - [Reengenharia de processos: o que é e quando sua empresa precisa](https://reengenhariaview.com.br/blog/reengenharia-de-processos-o-que-e-quando-sua-empresa-precisa): Definição de reengenharia de processos, como funciona na prática e os sinais de que uma empresa precisa repensar como opera.
 - [Automação de processos para PMEs: por onde começar sem gastar muito](https://reengenhariaview.com.br/blog/automacao-de-processos-para-pmes-por-onde-comecar): Critérios para escolher o primeiro processo a automatizar e erros comuns em automação de PMEs.
 - [Visibilidade operacional em tempo real: o que é e por que muda a gestão](https://reengenhariaview.com.br/blog/visibilidade-operacional-em-tempo-real): O que é visibilidade operacional, o que muda na tomada de decisão e como implementá-la sem trocar todo o sistema.
+- [Software sob medida ou sistema pronto? Como decidir](https://reengenhariaview.com.br/blog/software-sob-medida-ou-sistema-pronto-como-decidir): Critérios para decidir entre comprar um sistema pronto e desenvolver um software sob medida.
+- [IA no WhatsApp: quando vale a pena](https://reengenhariaview.com.br/blog/ia-no-whatsapp-quando-vale-a-pena): Quando uma automação tradicional resolve o atendimento no WhatsApp e quando um agente de IA realmente compensa.
+- [7 perguntas antes de automatizar qualquer processo](https://reengenhariaview.com.br/blog/7-perguntas-antes-de-automatizar-qualquer-processo): O roteiro de 7 perguntas que a VIEW usa antes de qualquer automação ou IA.
 
 ## O que é a VIEW
 
@@ -93,16 +114,19 @@ Sua equipe aprende a operar e a decidir sem depender de fornecedor para cada aju
 Desafio: manutenção do certificado ISO 9001 exigia registros manuais extensos e a cada auditoria havia retrabalho intenso.
 Solução VIEW: consultoria para a auditoria ISO 9001 e sistema próprio que conecta administrativo e obra, com gestão de documentos e checklists em um só lugar, gerando registro automático a cada etapa.
 Resultado: ISO 9001 mantido sem retrabalho; planejamento de obras acompanhado em tempo real de qualquer lugar.
+Página completa: https://reengenhariaview.com.br/casos/construtora-terre-iso-9001
 
 ### Construção Civil — Aguinaldo S. (Supervisor de Obra, Construtora)
 Desafio: precisava ligar para cada encarregado para saber o status da obra, sem visibilidade centralizada.
 Solução VIEW: aplicativo com rastreamento de atividades, atrasos e localização de equipes em tempo real.
 Resultado: gestão completa pelo celular; visibilidade total do que foi feito, o que atrasou e quem está onde.
+Página completa: https://reengenhariaview.com.br/casos/construtora-acompanhamento-de-obras
 
 ### Alimentação — Restaurante (Proprietário, Setor de Alimentação)
 Desafio: caos na hora do almoço — pedidos atrasavam, clientes reclamavam, equipe estressada, sem dados do fluxo da cozinha.
 Solução VIEW: mapeamento completo do fluxo do pedido ao pagamento; reorganização do layout da cozinha.
 Resultado: atendimento mais rápido, redução de custos operacionais, gargalos eliminados, dados em tempo real do pedido ao pagamento.
+Página completa: https://reengenhariaview.com.br/casos/restaurante-processos
 
 ## Área de atendimento
 

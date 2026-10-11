@@ -341,13 +341,18 @@ export default function Solucoes() {
               <p className="text-[.88rem] text-muted-foreground leading-relaxed mb-4">{s.problem}</p>
               <p className="text-[.88rem] text-foreground leading-relaxed">{s.solution}</p>
 
-              <div className="mt-8 flex gap-3 flex-wrap">
+              <div className="mt-8 flex gap-3 flex-wrap items-center">
                 <a
                   href="/#diagnostico"
                   className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-md font-display font-extrabold text-[.82rem] tracking-[.07em] no-underline hover:opacity-85 transition-opacity"
                 >
                   Quero este serviço →
                 </a>
+                {s.id === "view-360" && (
+                  <Link to="/metodo-distipp" className="text-[.82rem] text-primary hover:underline">
+                    Como funciona o método DISTIPP →
+                  </Link>
+                )}
               </div>
             </div>
 

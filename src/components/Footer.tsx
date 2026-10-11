@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ViewLogo } from "./ViewLogo";
+import { setores } from "@/content/setores";
 import {
   BUSINESS_NAME,
   BUSINESS_PHONE_DISPLAY,
@@ -11,7 +12,7 @@ import {
 export function Footer() {
   return (
     <footer className="px-[7%] pt-12 pb-8 border-t border-view-line">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 mb-10">
         {/* Brand */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5 mb-4">
@@ -36,7 +37,9 @@ export function Footer() {
             {[
               { label: "Soluções", href: "/solucoes" },
               { label: "Casos de Sucesso", href: "/casos" },
+              { label: "Método DISTIPP", href: "/metodo-distipp" },
               { label: "Sobre nós", href: "/sobre" },
+              { label: "Equipe", href: "/equipe" },
               { label: "Blog", href: "/blog" },
               { label: "Avaliação Gratuita", href: "/avaliacao-maturidade" },
               { label: "Diagnóstico Grátis", href: "/#diagnostico" },
@@ -65,6 +68,20 @@ export function Footer() {
               <li key={item.href}>
                 <Link to={item.href} className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors">
                   {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Setores */}
+        <div>
+          <div className="text-[.6rem] tracking-[.2em] uppercase text-muted-foreground mb-4 font-semibold">Setores</div>
+          <ul className="flex flex-col gap-2.5">
+            {setores.map((s) => (
+              <li key={s.slug}>
+                <Link to={`/setores/${s.slug}`} className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors">
+                  {s.nome}
                 </Link>
               </li>
             ))}

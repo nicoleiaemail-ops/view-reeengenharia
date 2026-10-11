@@ -7,14 +7,20 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { EVENTS, track } from "@/lib/analytics";
 import {
   BUSINESS_JSONLD_BASE,
-  BUSINESS_ADDRESS_DISPLAY,
-  BUSINESS_PHONE_DISPLAY,
-  BUSINESS_EMAIL,
-  BUSINESS_SHORT_NAME,
+  BUSINESS_FOUNDING_DATE,
   faqPageJsonLd,
   breadcrumbJsonLd,
   whatsappUrl,
 } from "@/lib/business";
+import {
+  FAQSection,
+  NumerosSection,
+  InvestimentoPrazoSection,
+  ComoFuncionaDepoisDoDiagnostico,
+  CompromissosSection,
+  CaseDestaque,
+  NAPFooterBlock,
+} from "@/components/LandingKit";
 
 /**
  * Página de nicho geográfico para a consulta "quais empresas de João Pessoa
@@ -64,7 +70,15 @@ const faqs = [
   },
   {
     q: "Quanto custa implantar IA em uma empresa?",
-    a: "Depende do processo e dos sistemas envolvidos. A VIEW faz um diagnóstico gratuito, com retorno em até 48h, e apresenta uma proposta com prazo, investimento e o resultado que será medido.",
+    a: "Depende do processo e dos sistemas envolvidos, então não dá para cravar um número aqui. Fale com a gente no WhatsApp ou faça o diagnóstico gratuito para ver o que se aplica ao seu caso.",
+    links: [
+      { label: "Mini-diagnóstico DISTIPP gratuito", href: "/avaliacao-maturidade" },
+      { label: "Falar no WhatsApp", href: WHATSAPP_URL, external: true },
+    ],
+  },
+  {
+    q: "Quanto tempo leva para implantar?",
+    a: "A implantação é por etapas: o primeiro escopo, pequeno e testado, costuma entrar no ar antes do projeto completo terminar. O prazo exato depende do que for mapeado no diagnóstico.",
   },
   {
     q: "A VIEW só trabalha com IA?",
@@ -93,7 +107,7 @@ const professionalServiceJsonLd = {
   ...BUSINESS_JSONLD_BASE,
   description:
     "Parceira de evolução empresarial em João Pessoa (PB): redesenho de processos, integração de sistemas, ISO 9001 e inteligência artificial aplicada a empresas.",
-  foundingDate: "2024",
+  foundingDate: BUSINESS_FOUNDING_DATE,
   knowsAbout: [
     "Inteligência artificial para empresas",
     "Automação de processos",
@@ -158,6 +172,11 @@ export default function IAJoaoPessoa() {
           </p>
         </section>
 
+        <NumerosSection
+          numero1={{ valor: "20+", label: "Processos automatizados desde 2024" }}
+          numero2={{ valor: "+50%", label: "Ganho de produtividade no processo automatizado" }}
+        />
+
         {/* O que a VIEW faz com IA */}
         <section className="py-10 border-t border-view-line">
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
@@ -205,53 +224,30 @@ export default function IAJoaoPessoa() {
           </p>
         </section>
 
-        {/* Caso real */}
-        <section className="py-10 border-t border-view-line">
-          <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
-            Caso real
-          </h2>
-          <div className="bg-primary/[.05] border border-primary/20 rounded-xl p-6">
-            <div className="text-[.68rem] tracking-[.18em] uppercase text-primary font-bold mb-3">
-              Construtora TERRE · João Pessoa
-            </div>
-            <p className="text-[.92rem] text-foreground leading-relaxed">
-              Consultoria para preparar a empresa para a auditoria da ISO 9001 e um sistema próprio que
-              conecta administrativo e obra, com gestão de documentos e checklists em um só lugar.
-            </p>
-          </div>
-        </section>
+        <CaseDestaque
+          caso={{
+            id: "construtora-terre-iso-9001",
+            tag: "Construção Civil",
+            headline: "ISO 9001 mantido sem retrabalho — registros automáticos em cada etapa da obra",
+          }}
+          path="/casos/construtora-terre-iso-9001"
+        />
 
-        {/* FAQ */}
-        <section className="py-10 border-t border-view-line" id="faq">
-          <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
-            Perguntas frequentes
-          </h2>
-          <div className="flex flex-col divide-y divide-view-line">
-            {faqs.map((f, i) => (
-              <details key={i} className="scroll-reveal group py-5" style={{ transitionDelay: `${i * 0.05}s` }}>
-                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
-                  <h3 className="font-display font-bold text-[.93rem] text-foreground group-hover:text-primary transition-colors">
-                    {f.q}
-                  </h3>
-                  <span className="text-primary/60 text-[1.1rem] flex-shrink-0 group-open:rotate-45 transition-transform duration-200" aria-hidden="true">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-[.85rem] text-muted-foreground leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
+        <InvestimentoPrazoSection whatsappUrl={WHATSAPP_URL} />
+        <ComoFuncionaDepoisDoDiagnostico />
+        <CompromissosSection />
+
+        <FAQSection faqs={faqs} />
 
         {/* Sobre a VIEW */}
         <section className="py-10 border-t border-view-line text-center">
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-5">
             Sobre a VIEW
           </h2>
-          <p className="text-[.92rem] text-muted-foreground leading-relaxed max-w-[640px] mx-auto mb-8">
-            VIEW é uma parceira de evolução empresarial fundada em 2024 em João Pessoa. Trabalha com o método
-            DISTIPP, que avalia a empresa em sete pilares: Dados, Integração, Sistemas, Tecnologia, Inovação,
-            Pessoas e Processos.
+          <p className="text-[.92rem] text-muted-foreground leading-relaxed max-w-[640px] mx-auto mb-3">
+            VIEW é uma parceira de evolução empresarial fundada em 2024 em João Pessoa. Trabalha com o método{" "}
+            <Link to="/metodo-distipp" className="text-primary hover:underline">DISTIPP</Link>, que avalia a
+            empresa em sete pilares: Dados, Integração, Sistemas, Tecnologia, Inovação, Pessoas e Processos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -272,13 +268,7 @@ export default function IAJoaoPessoa() {
           </div>
         </section>
 
-        {/* NAP — nome, endereço e telefone idênticos ao Perfil do Google/Bing.
-            Fica aqui, não no rodapé padrão do site (ver nota no topo do arquivo). */}
-        <section className="py-10 border-t border-view-line text-center text-[.8rem] text-muted-foreground leading-relaxed">
-          <div className="font-display font-bold text-foreground tracking-[.1em] mb-1">{BUSINESS_SHORT_NAME}</div>
-          <div>{BUSINESS_ADDRESS_DISPLAY}</div>
-          <div>WhatsApp {BUSINESS_PHONE_DISPLAY} · {BUSINESS_EMAIL}</div>
-        </section>
+        <NAPFooterBlock />
       </div>
 
       <Footer />

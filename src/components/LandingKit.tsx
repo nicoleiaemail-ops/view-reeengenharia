@@ -163,6 +163,7 @@ export function LinksRelacionados({ exceto }: { exceto: string }) {
     { href: "/ia-para-empresas-joao-pessoa", label: "IA para empresas em João Pessoa" },
     { href: "/solucoes", label: "Todas as soluções da VIEW" },
     { href: "/casos", label: "Casos de sucesso" },
+    { href: "/metodo-distipp", label: "O método DISTIPP" },
   ].filter((l) => l.href !== exceto);
 
   return (
@@ -229,6 +230,182 @@ export function NAPFooterBlock() {
       <div>
         WhatsApp {BUSINESS_PHONE_DISPLAY} · {BUSINESS_EMAIL}
       </div>
+    </section>
+  );
+}
+
+/**
+ * "VIEW em números" — pedido como bloco de prova logo após o parágrafo de
+ * abertura. Os 2 números vêm de Results.tsx (já publicados na home, não
+ * duplicados/alterados aqui). "Anos de mercado" e "total de projetos
+ * entregues" eram pedidos como TODO explícito no texto -- mas um "TODO"
+ * visível na página é exatamente o que a regra deste site proíbe (nenhuma
+ * palavra de rascunho aparece para o visitante real). Em vez disso: só
+ * entram itens com dado verificável. "Fundada em 2024" já é fato publicado
+ * (BUSINESS_FOUNDING_DATE), não placeholder -- e junto com os 2 números e o
+ * escritório fecha os 4 itens sem precisar inventar nem expor TODO.
+ */
+export function NumerosSection({
+  numero1,
+  numero2,
+}: {
+  numero1: { valor: string; label: string };
+  numero2: { valor: string; label: string };
+}) {
+  const itens = [
+    numero1,
+    numero2,
+    { valor: "Desde 2024", label: "Fundada e em operação" },
+    { valor: "João Pessoa", label: "Escritório físico, atendimento também remoto" },
+  ];
+  return (
+    <section className="py-8 border-t border-view-line">
+      <div className="text-[.65rem] tracking-[.2em] uppercase text-muted-foreground mb-5 text-center">
+        VIEW em números
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {itens.map((it) => (
+          <div key={it.label} className="text-center bg-foreground/[.03] border border-foreground/[.07] rounded-lg p-4">
+            <div className="font-display font-extrabold text-[1.15rem] text-primary leading-none mb-1.5">{it.valor}</div>
+            <div className="text-[.72rem] text-muted-foreground leading-tight">{it.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * "Investimento e prazo". O briefing pedia faixas "a partir de R$ TODO" —
+ * decidido manter sem número algum visível (nem placeholder "[a definir]"):
+ * o texto descreve a estrutura comercial real (diagnóstico gratuito →
+ * projeto inicial → evolução contínua) sem cravar valor, e os dois CTAs
+ * levam para onde o valor de fato é informado. Quando os números forem
+ * definidos, trocar os parágrafos "O valor exato..." pelas faixas reais.
+ */
+export function InvestimentoPrazoSection({ whatsappUrl }: { whatsappUrl: string }) {
+  const etapas = [
+    {
+      nome: "Diagnóstico DISTIPP",
+      preco: "Gratuito",
+      desc: "30 minutos. Mostra onde o processo trava antes de qualquer proposta.",
+    },
+    {
+      nome: "Projeto inicial",
+      preco: "Sob medida",
+      desc: "Escopo e prazo definidos a partir do diagnóstico — o valor exato vem na proposta, não antes dela.",
+    },
+    {
+      nome: "Evolução contínua",
+      preco: "Mensal",
+      desc: "Acompanhamento e ajustes depois da entrega, conforme o processo evolui.",
+    },
+  ];
+  return (
+    <section className="py-10 border-t border-view-line">
+      <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
+        Investimento e prazo
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        {etapas.map((e) => (
+          <div key={e.nome} className="bg-foreground/[.03] border border-foreground/[.07] rounded-lg p-5">
+            <div className="font-display font-bold text-[.92rem] text-foreground mb-1">{e.nome}</div>
+            <div className="font-display font-extrabold text-[.95rem] text-primary mb-2">{e.preco}</div>
+            <div className="text-[.82rem] text-muted-foreground leading-relaxed">{e.desc}</div>
+          </div>
+        ))}
+      </div>
+      <p className="text-[.85rem] text-muted-foreground leading-relaxed mb-4">
+        Cada proposta é fechada antes do projeto começar — escopo, prazo e investimento, sem reajuste no meio
+        do caminho.
+      </p>
+      <div className="flex flex-wrap gap-x-4 gap-y-1">
+        <Link to="/avaliacao-maturidade" className="text-[.85rem] font-display font-semibold text-primary hover:underline">
+          Mini-diagnóstico DISTIPP gratuito →
+        </Link>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[.85rem] font-display font-semibold text-primary hover:underline"
+        >
+          Falar no WhatsApp →
+        </a>
+      </div>
+    </section>
+  );
+}
+
+/** "Como funciona depois do diagnóstico" — os 4 passos pedidos, redação fixa. */
+export function ComoFuncionaDepoisDoDiagnostico() {
+  const passos = [
+    { titulo: "Conversa de 30 minutos", desc: "Entendemos o processo e o problema antes de falar de solução." },
+    { titulo: "Proposta com escopo fechado", desc: "Prazo e investimento definidos antes do projeto começar, sem letra miúda." },
+    { titulo: "Entregas por etapa, com validação", desc: "Cada módulo é homologado com a sua equipe antes de seguir para o próximo." },
+    { titulo: "Acompanhamento e evolução", desc: "O trabalho não termina na entrega — a VIEW acompanha o resultado medido." },
+  ];
+  return (
+    <section className="py-10 border-t border-view-line">
+      <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
+        Como funciona depois do diagnóstico
+      </h2>
+      <ol className="flex flex-col gap-5">
+        {passos.map((p, i) => (
+          <li key={p.titulo} className="flex gap-4">
+            <span className="font-display font-extrabold text-primary text-lg leading-none pt-0.5 w-6 flex-shrink-0">
+              {i + 1}
+            </span>
+            <div>
+              <div className="font-display font-bold text-foreground text-[.92rem] mb-1">{p.titulo}</div>
+              <div className="text-muted-foreground text-[.85rem] leading-relaxed">{p.desc}</div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+/** "Nossos compromissos" — lista fixa pedida no briefing. */
+export function CompromissosSection() {
+  const compromissos = [
+    "O código e os dados são da sua empresa.",
+    "Sem dependência de fornecedor — sem lock-in.",
+    "Escopo e preço fechados antes de começar.",
+    "Atendimento presencial em João Pessoa e remoto em todo o Brasil.",
+  ];
+  return (
+    <section className="py-10 border-t border-view-line">
+      <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
+        Nossos compromissos
+      </h2>
+      {/* TODO: "garantia de TODO dias após a entrega" -- item fora da lista
+          até o prazo real da garantia ser definido. Sem garantia definida,
+          melhor não prometer prazo nenhum do que inventar um número. */}
+      <ul className="flex flex-col gap-3">
+        {compromissos.map((c) => (
+          <li key={c} className="flex items-start gap-3 text-[.9rem] text-foreground">
+            <span className="text-view-green font-bold flex-shrink-0 mt-0.5" aria-hidden="true">✓</span>
+            {c}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+/** Um único case relevante, linkado para a página completa (não a listagem). */
+export function CaseDestaque({ caso, path }: { caso: CaseLink; path: string }) {
+  return (
+    <section className="py-10 border-t border-view-line">
+      <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">Case</h2>
+      <Link
+        to={path}
+        className="block bg-foreground/[.03] border border-foreground/[.08] rounded-lg p-5 no-underline hover:border-primary/30 hover:bg-primary/[.03] transition-all"
+      >
+        <div className="text-[.65rem] tracking-[.15em] uppercase text-primary font-bold mb-2">{caso.tag}</div>
+        <div className="text-[.92rem] text-foreground font-medium leading-snug">{caso.headline} →</div>
+      </Link>
     </section>
   );
 }
