@@ -64,6 +64,7 @@ export function Footer() {
               { label: "Agentes de IA no WhatsApp", href: "/agentes-de-ia-whatsapp-joao-pessoa" },
               { label: "Automação de processos", href: "/automacao-de-processos-joao-pessoa" },
               { label: "Consultoria ISO 9001", href: "/consultoria-iso-9001-construtoras" },
+              { label: "Engenharia de Produção para Agroindústria", href: "/engenharia-de-producao-agroindustria-paraiba" },
             ].map((item) => (
               <li key={item.href}>
                 <Link to={item.href} className="text-[.8rem] text-muted-foreground hover:text-foreground transition-colors">
@@ -114,7 +115,9 @@ export function Footer() {
               <span className="text-[.78rem] text-muted-foreground leading-relaxed">{BUSINESS_ADDRESS_DISPLAY}</span>
             </li>
             <li>
-              <span className="text-[.78rem] text-muted-foreground">João Pessoa e todo o Brasil</span>
+              <span className="text-[.78rem] text-muted-foreground">
+                Atendemos João Pessoa, Campina Grande, toda a Paraíba e todo o Brasil
+              </span>
             </li>
           </ul>
         </div>

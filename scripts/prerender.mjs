@@ -28,6 +28,7 @@ const ROUTES = [
   "/agentes-de-ia-whatsapp-joao-pessoa",
   "/automacao-de-processos-joao-pessoa",
   "/consultoria-iso-9001-construtoras",
+  "/engenharia-de-producao-agroindustria-paraiba",
   "/metodo-distipp",
   "/equipe",
   "/estudos/maturidade-operacional-paraiba-2026",
@@ -49,6 +50,7 @@ const ROUTES = [
   "/blog/software-sob-medida-ou-sistema-pronto-como-decidir",
   "/blog/ia-no-whatsapp-quando-vale-a-pena",
   "/blog/7-perguntas-antes-de-automatizar-qualquer-processo",
+  "/blog/agente-de-ia-sem-processo-mapeado-por-que-falha",
 ];
 
 // Locais mais comuns do Chrome/Chromium por sistema operacional.

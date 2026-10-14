@@ -56,6 +56,7 @@ export const BUSINESS_SAME_AS = [BUSINESS_INSTAGRAM_URL, BUSINESS_GOOGLE_MAPS_UR
 
 export const BUSINESS_AREA_SERVED = [
   { "@type": "City", name: "João Pessoa" },
+  { "@type": "City", name: "Campina Grande" },
   { "@type": "State", name: "Paraíba" },
   { "@type": "Country", name: "Brasil" },
 ];

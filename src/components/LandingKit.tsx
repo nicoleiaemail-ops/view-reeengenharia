@@ -160,6 +160,7 @@ export function LinksRelacionados({ exceto }: { exceto: string }) {
     { href: "/agentes-de-ia-whatsapp-joao-pessoa", label: "Agentes de IA e IA no WhatsApp em João Pessoa" },
     { href: "/automacao-de-processos-joao-pessoa", label: "Automação de processos com IA em João Pessoa" },
     { href: "/consultoria-iso-9001-construtoras", label: "Consultoria ISO 9001 para construtoras" },
+    { href: "/engenharia-de-producao-agroindustria-paraiba", label: "Engenharia de produção para agroindústria na Paraíba" },
     { href: "/ia-para-empresas-joao-pessoa", label: "IA para empresas em João Pessoa" },
     { href: "/solucoes", label: "Todas as soluções da VIEW" },
     { href: "/casos", label: "Casos de sucesso" },

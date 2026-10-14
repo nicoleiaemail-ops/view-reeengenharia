@@ -13,6 +13,7 @@ const paginas = [
   { label: "Agentes de IA e IA no WhatsApp", href: "/agentes-de-ia-whatsapp-joao-pessoa" },
   { label: "Automação de processos com IA", href: "/automacao-de-processos-joao-pessoa" },
   { label: "Consultoria ISO 9001 para construtoras", href: "/consultoria-iso-9001-construtoras" },
+  { label: "Engenharia de produção para agroindústria", href: "/engenharia-de-producao-agroindustria-paraiba" },
 ];
 
 export function SolucoesJoaoPessoa() {

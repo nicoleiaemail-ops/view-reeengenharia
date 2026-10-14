@@ -35,6 +35,7 @@ const STATIC_ROUTES = new Set([
   "/agentes-de-ia-whatsapp-joao-pessoa",
   "/automacao-de-processos-joao-pessoa",
   "/consultoria-iso-9001-construtoras",
+  "/engenharia-de-producao-agroindustria-paraiba",
   "/metodo-distipp",
   "/equipe",
   "/estudos/maturidade-operacional-paraiba-2026",
@@ -65,6 +66,7 @@ const BLOG_SLUGS = new Set([
   "software-sob-medida-ou-sistema-pronto-como-decidir",
   "ia-no-whatsapp-quando-vale-a-pena",
   "7-perguntas-antes-de-automatizar-qualquer-processo",
+  "agente-de-ia-sem-processo-mapeado-por-que-falha",
 ]);
 
 const CASOS_SLUGS = new Set([

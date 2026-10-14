@@ -21,6 +21,7 @@ https://reengenhariaview.com.br
 - [Agentes de IA e IA no WhatsApp em João Pessoa](https://reengenhariaview.com.br/agentes-de-ia-whatsapp-joao-pessoa): Agentes de IA para atendimento, triagem e agendamento no WhatsApp, aplicados sobre um processo já desenhado.
 - [Automação de Processos com IA em João Pessoa](https://reengenhariaview.com.br/automacao-de-processos-joao-pessoa): Automação tradicional e IA aplicadas na ordem certa — processo primeiro, ferramenta depois.
 - [Consultoria ISO 9001 para Construtoras](https://reengenhariaview.com.br/consultoria-iso-9001-construtoras): Preparação para auditoria ISO 9001 com sistema próprio que conecta administrativo e obra.
+- [Engenharia de Produção para Agroindústria na Paraíba](https://reengenhariaview.com.br/engenharia-de-producao-agroindustria-paraiba): Mapeamento de fluxo, layout, ergonomia e balanceamento de linha para agroindústrias e fábricas em João Pessoa, Campina Grande, na Paraíba e no Brasil.
 
 ## Setores atendidos
 
@@ -47,6 +48,7 @@ A VIEW tem sede em João Pessoa (PB) e atende presencialmente também praças vi
 - [Software sob medida ou sistema pronto? Como decidir](https://reengenhariaview.com.br/blog/software-sob-medida-ou-sistema-pronto-como-decidir): Critérios para decidir entre comprar um sistema pronto e desenvolver um software sob medida.
 - [IA no WhatsApp: quando vale a pena](https://reengenhariaview.com.br/blog/ia-no-whatsapp-quando-vale-a-pena): Quando uma automação tradicional resolve o atendimento no WhatsApp e quando um agente de IA realmente compensa.
 - [7 perguntas antes de automatizar qualquer processo](https://reengenhariaview.com.br/blog/7-perguntas-antes-de-automatizar-qualquer-processo): O roteiro de 7 perguntas que a VIEW usa antes de qualquer automação ou IA.
+- [Agente de IA sem processo mapeado: por que o projeto falha](https://reengenhariaview.com.br/blog/agente-de-ia-sem-processo-mapeado-por-que-falha): Por que a maioria dos projetos de agentes de IA falha quando o processo nunca foi mapeado antes da automação.
 
 ## O que é a VIEW
 
@@ -130,7 +132,7 @@ Página completa: https://reengenhariaview.com.br/casos/restaurante-processos
 
 ## Área de atendimento
 
-João Pessoa (PB), presencial, e todo o Brasil, remoto.
+João Pessoa, Campina Grande e demais regiões da Paraíba, presencial, e todo o Brasil, remoto.
 
 ## Contato
 

@@ -650,6 +650,82 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "agente-de-ia-sem-processo-mapeado-por-que-falha",
+    title: "Agente de IA sem processo mapeado: por que o projeto falha",
+    seoTitle: "Agente de IA sem Processo Mapeado: Por que Falha | VIEW",
+    description:
+      "Mais de 40% dos projetos de agentes de IA serão cancelados até 2027, segundo o Gartner. O motivo raramente é a tecnologia — é o processo que nunca foi mapeado antes de automatizar.",
+    datePublished: "2026-10-10",
+    dateModified: "2026-10-10",
+    author: "Equipe VIEW",
+    tag: "IA Aplicada",
+    readingMinutes: 6,
+    lead: "Toda empresa quer um agente de IA. Quase nenhuma sabe explicar como o próprio processo funciona hoje. E é exatamente nessa lacuna que a maioria dos projetos de agentes de IA está falhando.",
+    body: [
+      {
+        type: "p",
+        text: "A cena se repete com uma regularidade incômoda: alguém vê uma demonstração impecável de um agente de IA, pede algo parecido para o atendimento da própria empresa e, meses depois, o agente responde errado e trava na primeira exceção. A reação mais comum é culpar o modelo, a ferramenta ou o fornecedor. Mas o problema quase sempre aparece antes da tecnologia — no processo que ninguém chegou a desenhar com clareza.",
+      },
+      { type: "h2", text: "O que os números já confirmam" },
+      {
+        type: "p",
+        text: "Isso deixou de ser percepção isolada. Em junho de 2025, a Gartner projetou que mais de 40% dos projetos de agentes de IA serão cancelados até 2027 — por custo, risco pouco claro ou valor que não se confirma na prática. O MIT, em sua pesquisa NANDA sobre o estado da IA nas empresas em 2025, encontrou o mesmo padrão por outro caminho: a maior parte das iniciativas de IA generativa não entrega retorno mensurável, não porque os modelos sejam fracos, mas porque são colocados em cima de um fluxo de trabalho que nunca foi revisto.",
+      },
+      {
+        type: "p",
+        text: "As duas pesquisas chegam à mesma conclusão por ângulos diferentes: o gargalo não está na capacidade da IA, está na maturidade do processo que ela precisa operar. Empresas que mapeiam o processo antes de automatizar são, segundo o próprio MIT, as que de fato colhem resultado — as demais acumulam projetos caros que nunca saem do piloto ou são abandonados depois de meses em produção.",
+      },
+      { type: "h2", text: "Por que o agente herda o caos do processo" },
+      {
+        type: "p",
+        text: "Um agente de IA não inventa regras — ele aprende e reproduz as que encontra. Se o atendimento de hoje já responde de um jeito diferente dependendo de quem atende, se as exceções são resolvidas 'no jeitinho' e se não existe uma única fonte de verdade sobre o que fazer em cada situação, o agente herda cada um desses atalhos improvisados. A diferença é que ele aplica esse caos com a velocidade e o volume de uma máquina, o que torna o erro mais visível e mais caro de corrigir depois.",
+      },
+      {
+        type: "p",
+        text: "É por isso que a demonstração sempre funciona bem: ela é testada com os casos previstos por quem construiu o agente. A operação real tem casos que ninguém previu, porque ninguém documentou o processo o suficiente para saber que eles existiam.",
+      },
+      { type: "h2", text: "Sinais de que o processo ainda não está pronto para um agente" },
+      {
+        type: "ul",
+        items: [
+          "Duas pessoas da equipe respondem a mesma pergunta do cliente de formas diferentes.",
+          "Não existe um documento ou fluxo único que descreva o que fazer nas exceções — cada caso é resolvido \"na hora\".",
+          "A informação que o agente precisaria consultar está espalhada entre sistemas, planilhas e mensagens, sem uma fonte confiável.",
+          "Ninguém consegue dizer, com um número, quanto tempo ou quantas mensagens o atendimento atual consome hoje.",
+          "A regra de quando transferir para um humano nunca foi escrita — só existe na cabeça de quem atende.",
+        ],
+      },
+      { type: "h2", text: "Mapear primeiro, automatizar depois" },
+      {
+        type: "p",
+        text: "A saída não é desistir do agente de IA — é inverter a ordem do projeto. Antes de escolher ferramenta ou modelo, mapeia-se o processo como ele realmente acontece hoje: quais perguntas chegam, quem decide o quê, onde estão as exceções e qual é a regra para cada uma. Só depois desse mapeamento o agente tem uma base sólida para operar, porque está automatizando um processo que a própria empresa já entende e já confia.",
+      },
+      {
+        type: "p",
+        text: "Essa é a lógica por trás da metodologia DISTIPP, usada pela VIEW para diagnosticar a maturidade operacional de uma empresa antes de qualquer projeto de automação ou IA. Um agente de IA bem-sucedido não é o que usa o modelo mais avançado — é o que herda um processo que já faz sentido.",
+      },
+      {
+        type: "link",
+        text: "Descubra o nível de maturidade do seu processo com o método DISTIPP →",
+        href: "/metodo-distipp",
+      },
+    ],
+    faqs: [
+      {
+        q: "É verdade que a maioria dos projetos de agentes de IA é cancelada?",
+        a: "A Gartner projetou, em junho de 2025, que mais de 40% dos projetos de agentes de IA serão cancelados até 2027, citando custo, risco pouco claro e valor que não se confirma na prática.",
+      },
+      {
+        q: "Por que a pesquisa do MIT mostra que a IA generativa não entrega retorno?",
+        a: "O MIT NANDA, em \"The GenAI Divide: State of AI in Business 2025\", encontrou um padrão recorrente: a IA costuma ser aplicada sobre um processo que nunca foi revisto, e o agente herda cada atalho improvisado desse fluxo. As empresas que mapeiam o processo antes são as que colhem resultado.",
+      },
+      {
+        q: "Como saber se minha empresa está pronta para um agente de IA?",
+        a: "Se o processo que o agente vai executar ainda não está mapeado — com regras claras para as exceções e uma fonte única de informação — o agente vai herdar essa desorganização. O primeiro passo é diagnosticar a maturidade do processo, não escolher a ferramenta.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

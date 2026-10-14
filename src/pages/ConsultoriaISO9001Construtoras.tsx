@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -202,6 +203,15 @@ export default function ConsultoriaISO9001Construtoras() {
           <p className="text-[.92rem] text-muted-foreground leading-relaxed">
             Construtoras em crescimento de todo o Brasil que precisam manter ou conquistar a certificação
             ISO 9001 (ou PBQP-H) sem que cada auditoria vire uma corrida contra o tempo.
+          </p>
+          <p className="text-[.85rem] text-muted-foreground leading-relaxed mt-4">
+            Serviço relacionado:{" "}
+            <Link
+              to="/engenharia-de-producao-agroindustria-paraiba"
+              className="font-display font-semibold text-primary hover:underline"
+            >
+              Engenharia de produção para agroindústria na Paraíba →
+            </Link>
           </p>
         </section>
 
