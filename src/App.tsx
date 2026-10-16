@@ -22,6 +22,7 @@ const AgentesIAWhatsappJoaoPessoa = lazy(() => import("./pages/AgentesIAWhatsapp
 const AutomacaoProcessosJoaoPessoa = lazy(() => import("./pages/AutomacaoProcessosJoaoPessoa"));
 const ConsultoriaISO9001Construtoras = lazy(() => import("./pages/ConsultoriaISO9001Construtoras"));
 const EngenhariaProducaoAgroindustriaParaiba = lazy(() => import("./pages/EngenhariaProducaoAgroindustriaParaiba"));
+const AumentarCapacidadeProdutiva = lazy(() => import("./pages/AumentarCapacidadeProdutiva"));
 const CasoTerreISO9001 = lazy(() => import("./pages/CasoTerreISO9001"));
 const CasoAcompanhamentoObras = lazy(() => import("./pages/CasoAcompanhamentoObras"));
 const CasoRestauranteProcessos = lazy(() => import("./pages/CasoRestauranteProcessos"));
@@ -78,6 +79,7 @@ const App = () => (
             <Route path="/automacao-de-processos-joao-pessoa" element={<AutomacaoProcessosJoaoPessoa />} />
             <Route path="/consultoria-iso-9001-construtoras" element={<ConsultoriaISO9001Construtoras />} />
             <Route path="/engenharia-de-producao-agroindustria-paraiba" element={<EngenhariaProducaoAgroindustriaParaiba />} />
+            <Route path="/aumentar-capacidade-produtiva" element={<AumentarCapacidadeProdutiva />} />
             <Route path="/casos/construtora-terre-iso-9001" element={<CasoTerreISO9001 />} />
             <Route path="/casos/construtora-acompanhamento-de-obras" element={<CasoAcompanhamentoObras />} />
             <Route path="/casos/restaurante-processos" element={<CasoRestauranteProcessos />} />

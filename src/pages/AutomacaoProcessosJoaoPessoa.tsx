@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -197,6 +198,15 @@ export default function AutomacaoProcessosJoaoPessoa() {
             Empresas em crescimento de João Pessoa e de todo o Brasil com processos manuais que não escalam:
             construtoras, indústrias, distribuidoras e serviços com equipe gastando tempo em tarefa
             repetitiva em vez de decisão.
+          </p>
+          <p className="text-[.85rem] text-muted-foreground leading-relaxed mt-4">
+            Serviço relacionado:{" "}
+            <Link
+              to="/aumentar-capacidade-produtiva"
+              className="font-display font-semibold text-primary hover:underline"
+            >
+              Aumentar a produção sem comprar máquinas →
+            </Link>
           </p>
         </section>
 

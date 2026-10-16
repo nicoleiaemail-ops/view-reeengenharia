@@ -36,6 +36,7 @@ const STATIC_ROUTES = new Set([
   "/automacao-de-processos-joao-pessoa",
   "/consultoria-iso-9001-construtoras",
   "/engenharia-de-producao-agroindustria-paraiba",
+  "/aumentar-capacidade-produtiva",
   "/metodo-distipp",
   "/equipe",
   "/estudos/maturidade-operacional-paraiba-2026",
@@ -67,6 +68,7 @@ const BLOG_SLUGS = new Set([
   "ia-no-whatsapp-quando-vale-a-pena",
   "7-perguntas-antes-de-automatizar-qualquer-processo",
   "agente-de-ia-sem-processo-mapeado-por-que-falha",
+  "por-que-fabricas-bem-montadas-ainda-escondem-capacidade",
 ]);
 
 const CASOS_SLUGS = new Set([

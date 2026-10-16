@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -335,6 +336,23 @@ export default function EngenhariaProducaoAgroindustriaParaiba() {
             agroindústria for concluído e autorizado pelo cliente, o case completo — desafio, solução e
             resultado — aparece aqui.
           </div>
+        </section>
+
+        <section className="py-10 border-t border-view-line">
+          <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.15] mb-6">
+            Serviço relacionado
+          </h2>
+          <Link
+            to="/aumentar-capacidade-produtiva"
+            className="block bg-foreground/[.03] border border-foreground/[.08] rounded-lg p-5 no-underline hover:border-primary/30 hover:bg-primary/[.03] transition-all"
+          >
+            <div className="text-[.65rem] tracking-[.15em] uppercase text-primary font-bold mb-2">
+              Simulação de cenários
+            </div>
+            <div className="text-[.92rem] text-foreground font-medium leading-snug">
+              Sua fábrica pode produzir mais com o que já tem — veja como funciona a simulação de cenários →
+            </div>
+          </Link>
         </section>
 
         <FAQSection faqs={faqs} />

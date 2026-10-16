@@ -14,6 +14,7 @@ const paginas = [
   { label: "Automação de processos com IA", href: "/automacao-de-processos-joao-pessoa" },
   { label: "Consultoria ISO 9001 para construtoras", href: "/consultoria-iso-9001-construtoras" },
   { label: "Engenharia de produção para agroindústria", href: "/engenharia-de-producao-agroindustria-paraiba" },
+  { label: "Aumentar a produção sem comprar máquinas", href: "/aumentar-capacidade-produtiva" },
 ];
 
 export function SolucoesJoaoPessoa() {
