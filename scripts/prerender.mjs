@@ -52,7 +52,7 @@ const ROUTES = [
   "/blog/ia-no-whatsapp-quando-vale-a-pena",
   "/blog/7-perguntas-antes-de-automatizar-qualquer-processo",
   "/blog/agente-de-ia-sem-processo-mapeado-por-que-falha",
-  "/blog/por-que-fabricas-bem-montadas-ainda-escondem-capacidade",
+  "/blog/fabricas-bem-montadas-escondem-capacidade",
 ];
 
 // Locais mais comuns do Chrome/Chromium por sistema operacional.

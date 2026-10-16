@@ -68,7 +68,7 @@ const BLOG_SLUGS = new Set([
   "ia-no-whatsapp-quando-vale-a-pena",
   "7-perguntas-antes-de-automatizar-qualquer-processo",
   "agente-de-ia-sem-processo-mapeado-por-que-falha",
-  "por-que-fabricas-bem-montadas-ainda-escondem-capacidade",
+  "fabricas-bem-montadas-escondem-capacidade",
 ]);
 
 const CASOS_SLUGS = new Set([

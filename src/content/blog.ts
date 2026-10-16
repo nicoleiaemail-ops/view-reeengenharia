@@ -727,116 +727,185 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "por-que-fabricas-bem-montadas-ainda-escondem-capacidade",
-    title: "Por que fábricas bem montadas ainda escondem capacidade",
-    seoTitle: "Por que Fábricas Bem Montadas Ainda Escondem Capacidade | VIEW",
+    slug: "fabricas-bem-montadas-escondem-capacidade",
+    title: "Fábricas bem montadas ainda escondem capacidade",
+    seoTitle: "Fábricas bem montadas ainda escondem capacidade | VIEW",
     description:
-      "Mesmo fábricas organizadas perdem capacidade em transporte interno, estoque parado entre etapas e postos desbalanceados. Veja onde ela se esconde e como simular cenários antes de comprar máquina.",
+      "Antes de comprar máquinas, descubra onde sua fábrica perde capacidade. Gargalo, layout, ergonomia e simulação de cenários para agroindústrias.",
     datePublished: "2026-10-16",
     dateModified: "2026-10-16",
-    // TODO: nome de quem assina o artigo, quando a autoria for definida.
-    // "Equipe VIEW" é a assinatura já usada em todo o blog (não é um nome
-    // fabricado) — mantida aqui em vez de um placeholder visível.
+    // TODO: nome de quem assina o artigo (pessoa real da equipe) -- pedido
+    // explicitamente no briefing, ainda não definido. "Equipe VIEW" é a
+    // assinatura genérica já usada em todo o blog, nunca um nome fabricado;
+    // trocar por essa pessoa assim que for definida.
     author: "Equipe VIEW",
     tag: "Engenharia de Produção",
-    readingMinutes: 7,
-    lead: "Uma fábrica pode estar limpa, organizada e bem gerida e, mesmo assim, estar produzindo bem menos do que poderia. A diferença não aparece numa inspeção visual — aparece quando alguém mede o fluxo de verdade.",
+    readingMinutes: 6,
+    lead: "Quando a produção não dá conta dos pedidos, a resposta mais comum é comprar máquina, contratar gente ou ampliar o galpão. Mas a maioria das fábricas que a VIEW visita já tem capacidade escondida na operação atual — só não foi medida ainda.",
     body: [
       {
         type: "p",
-        text: "É comum associar perda de capacidade a bagunça: fábrica desorganizada, processo informal, equipamento velho. Mas boa parte da capacidade perdida numa fábrica não tem nada a ver com desorganização visível. Ela está escondida em decisões que parecem neutras — onde uma máquina foi posicionada, em que ordem os produtos são fabricados, quanto material fica parado entre uma etapa e outra — e que nunca foram medidas com rigor.",
+        text: "Isso acontece porque montar bem uma fábrica não é o mesmo que ter testado todas as formas de operá-la. O layout foi pensado para o mix de produtos de anos atrás. A sequência de produção virou hábito. Um posto ganhou uma máquina mais rápida, mas o seguinte continuou igual. Aos poucos, a fábrica passa a produzir abaixo do que poderia, sem que ninguém perceba exatamente onde.",
       },
       {
         type: "p",
-        text: "O resultado é um padrão que se repete: a gestão sente que a fábrica poderia produzir mais, mas a primeira resposta que aparece é comprar uma máquina nova ou ampliar o galpão. Às vezes é mesmo a solução certa. Na maioria das vezes, não é — o gargalo está em outro lugar, e aumentar a capacidade de uma etapa que não é o gargalo real não aumenta a capacidade da fábrica inteira.",
+        text: "Neste artigo, mostramos onde essa capacidade costuma se esconder e como encontrá-la com método, antes de investir.",
       },
       { type: "h2", text: "Onde a capacidade se esconde" },
       {
         type: "p",
-        text: "Seis pontos concentram a maior parte da capacidade perdida em fábricas que, por fora, parecem bem montadas:",
+        text: "Seis sinais aparecem com frequência, inclusive em fábricas organizadas:",
       },
       {
         type: "ul",
         items: [
-          "Transporte interno desnecessário: produto, insumo ou operador percorrendo mais distância do que o processo exigiria, se o layout acompanhasse o fluxo real.",
-          "Estoque parado entre etapas (o chamado WIP, work in process): material em processamento se acumula esperando a próxima etapa, escondendo quanto tempo a produção realmente perde ali.",
-          "Postos desbalanceados: um posto sobrecarregado, outro esperando — a capacidade da linha inteira fica presa no ritmo do posto mais lento, e nenhum dos outros postos, por mais rápidos que sejam, compensa isso.",
-          "Setup e troca de produto demorados: cada troca de produto ou de ferramenta consome tempo de produção que raramente é contado como perda, porque acontece todos os dias e virou parte da rotina.",
-          "Sequência de produção mal planejada: a ordem em que os produtos são feitos influencia quantas trocas de setup acontecem no dia, e essa conta quase nunca é feita.",
-          "Fadiga e postura ruim no fim do turno: o ritmo cai nas últimas horas não por desânimo, mas porque o posto de trabalho exige um esforço que o corpo não sustenta pelo turno inteiro.",
+          "1. Material que anda demais. Matéria-prima e produto em processo cruzam o galpão várias vezes, de um lado para o outro. Cada deslocamento é tempo que não agrega valor.",
+          "2. Estoque parado entre etapas. Caixas, baldes ou paletes esperando a próxima etapa indicam que o fluxo não está equilibrado. Esse estoque intermediário ocupa espaço, esconde problemas de qualidade e prende dinheiro.",
+          "3. Postos desbalanceados. Um setor trabalha no limite enquanto o seguinte fica esperando. A fábrica inteira passa a andar no ritmo do posto mais lento.",
+          "4. Troca de produto demorada. Limpeza, ajuste e preparação entre um lote e outro (o setup) consomem horas que poderiam ser de produção.",
+          "5. Sequência de produção por hábito. A ordem em que os pedidos entram na linha muda muito o resultado do dia. Uma programação mal pensada gera mais trocas, mais espera e mais hora extra.",
+          "6. Fadiga e postura ruim. Bancadas na altura errada, cargas pesadas e movimentos repetitivos derrubam o ritmo no fim do turno e aumentam afastamentos. Ergonomia também é capacidade.",
         ],
       },
+      { type: "h2", text: "Por que comprar máquina nem sempre resolve" },
       {
         type: "p",
-        text: "Nenhum desses pontos aparece numa caminhada rápida pela fábrica. Todos aparecem quando alguém para para medir: cronometrar o tempo de cada etapa, contar quanto material fica parado, mapear a distância percorrida por um lote típico do início ao fim.",
-      },
-      { type: "h2", text: "Medir antes de simular, simular antes de investir" },
-      {
-        type: "p",
-        text: "A tentação, diante de uma fábrica que não acompanha os pedidos, é pular direto para o investimento: comprar a máquina, contratar mais gente, ampliar a área construída. O problema é que esse tipo de decisão, tomada sem medir o fluxo real, acerta por sorte com mais frequência do que deveria.",
+        text: "Toda linha de produção tem um gargalo: a etapa mais lenta, que define quanto a fábrica inteira consegue entregar. Investir em qualquer outra etapa não aumenta a produção. Só aumenta o estoque parado na frente do gargalo.",
       },
       {
         type: "p",
-        text: "O caminho mais seguro segue uma ordem simples: medir os tempos, o fluxo e a capacidade de cada posto para encontrar o gargalo real; modelar o processo como ele é hoje; simular cenários alternativos de layout, sequência e turno antes de mexer em qualquer coisa de verdade; comparar os cenários simulados e escolher o de maior ganho pelo menor investimento; e, só depois de implantar, medir de novo para confirmar se o ganho projetado se confirmou na prática.",
+        text: "Por isso, comprar uma máquina sem saber exatamente onde está o gargalo é arriscado. A máquina pode ir para o lugar errado. Ou pode até estar no lugar certo, mas o ganho some porque o gargalo simplesmente muda de lugar: agora quem trava é a embalagem, a expedição ou a falta de espaço para o material circular.",
       },
       {
         type: "p",
-        text: "A etapa de simulação é a que mais evita gasto errado. Simular significa testar, num modelo do processo, o que aconteceria se uma máquina mudasse de lugar, se a sequência de produção fosse outra, ou se um turno extra fosse aberto — sem ainda ter gastado um real nisso. Quando a simulação mostra que o gargalo está em um posto específico, fica claro que comprar uma máquina para outro posto não resolveria nada, por mais moderna que essa máquina fosse.",
+        text: "A pergunta certa não é \"que máquina eu compro?\", e sim \"o que limita a minha produção hoje, e qual é a forma mais barata de destravar isso?\". Muitas vezes a resposta passa por reorganizar o layout, rebalancear postos, reduzir o tempo de troca ou mudar a sequência de produção, antes de qualquer investimento grande.",
       },
-      { type: "h2", text: "A escada de maturidade" },
+      { type: "h2", text: "Engenharia com método: medir antes de mudar" },
       {
         type: "p",
-        text: "Nem toda fábrica está pronta para simular cenários — e tentar simular antes da hora costuma gerar um modelo bonito que não representa a realidade. A VIEW organiza esse caminho em quatro degraus, e cada fábrica entra pelo degrau em que já está, não necessariamente pelo primeiro.",
+        text: "A forma mais segura de encontrar capacidade escondida é tratar a fábrica como um sistema que pode ser medido, modelado e testado. É o que a engenharia de produção faz de melhor quando aplicada com rigor:",
       },
       {
         type: "ul",
         items: [
-          "Organizar: fluxo, layout, ergonomia e procedimentos operacionais padrão (POPs) — a base sem a qual nenhuma medição ou simulação futura é confiável, porque o processo ainda muda de forma dependendo de quem o executa.",
-          "Medir: indicadores de produção acompanhados de verdade — o que acontece na fábrica passa a ter número, não impressão de quem está no chão naquele dia.",
-          "Simular e otimizar: cenários de capacidade, layout e programação, testados num modelo antes de qualquer investimento real.",
-          "Automatizar e usar IA: controle da produção, alertas e agentes de IA — depois que organizar, medir e simular já sustentam a decisão, nunca antes disso.",
+          "1. Medir. Cronometrar as etapas, registrar quanto cada posto produz, onde o material espera e por quanto tempo. Sem número, a discussão vira opinião.",
+          "2. Modelar. Representar o processo de forma simples: capacidade de cada etapa, sequência, distâncias percorridas, pessoas envolvidas. Isso revela o gargalo real, que nem sempre é o que todo mundo aponta.",
+          "3. Simular cenários. Testar no papel ou no computador o que acontece se o layout mudar, se um posto ganhar uma pessoa, se a ordem dos lotes for outra ou se um turno for reorganizado. Errar na simulação custa quase nada; errar na fábrica custa caro.",
+          "4. Escolher com números. Comparar os cenários pelo ganho de capacidade e pelo investimento necessário, e escolher o que entrega mais com menos.",
+          "5. Implantar e medir de novo. Executar a mudança com a equipe, padronizar a nova forma de trabalhar e comparar o antes e o depois.",
         ],
       },
       {
         type: "p",
-        text: "Pular degraus é o erro mais comum: tentar simular cenários de capacidade numa fábrica que ainda não tem indicador de produção confiável produz um modelo baseado em suposição, não em dado. E tentar automatizar o controle de produção antes de organizar o fluxo só digitaliza a desorganização, deixando-a mais difícil de perceber.",
-      },
-      { type: "h2", text: "Por que isso importa mais ainda para a agroindústria" },
-      {
-        type: "p",
-        text: "Em agroindústrias — polpas de frutas, laticínios, engenhos, usinas, frigoríficos, rações — a perda de capacidade escondida costuma ter um agravante: a matéria-prima tem prazo de validade ou janela de processamento. Um gargalo não identificado não significa só menos produto saindo por dia; pode significar matéria-prima perdida porque não foi processada a tempo. Medir o fluxo real e simular cenários antes de investir tem, nesses casos, um retorno que vai além da capacidade — chega a afetar diretamente o desperdício de insumo.",
+        text: "Nada disso exige uma fábrica cheia de sensores. Para a maioria das pequenas e médias indústrias, cronômetro, planilha, um bom desenho do fluxo e conversa com quem opera já revelam muito.",
       },
       {
         type: "p",
-        text: "Isso não é exclusivo da agroindústria: qualquer fábrica com sazonalidade de demanda ou prazo apertado de entrega sente o mesmo efeito. A diferença é de grau, não de tipo.",
-      },
-      {
-        type: "p",
-        text: "Há ainda um efeito menos óbvio: numa fábrica que já opera perto do limite, qualquer perda de capacidade não identificada se traduz direto em pedido não atendido no prazo. Quando a demanda está dentro da capacidade real, o mesmo gargalo passa despercebido — ele só aparece no número quando o volume aperta. Isso faz com que o problema pareça ter surgido do nada, justamente quando na verdade só estava escondido, esperando a demanda crescer o suficiente para revelá-lo.",
-      },
-      { type: "h2", text: "O primeiro passo é um dia de observação, não uma decisão de compra" },
-      {
-        type: "p",
-        text: "Antes de decidir comprar máquina, ampliar galpão ou abrir um turno a mais, vale um dia de observação estruturada da fábrica: medir os tempos reais, mapear o fluxo do recebimento à expedição e identificar o gargalo de fato — não o que parece ser gargalo à primeira vista. Esse diagnóstico costuma custar uma fração do que custaria um investimento decidido sem essa medição, e é o que transforma 'acho que dá para produzir mais' em um número que sustenta a decisão.",
+        text: "Esse mesmo raciocínio — medir antes de decidir, com método, em vez de achismo — é o que sustenta o método DISTIPP, usado pela VIEW para diagnosticar a maturidade operacional de uma empresa antes de qualquer projeto.",
       },
       {
         type: "link",
-        text: "Veja como funciona o Diagnóstico de Produtividade e a simulação de cenários da VIEW →",
+        text: "Conheça o método DISTIPP da VIEW",
+        href: "/metodo-distipp",
+      },
+      { type: "h2", text: "A escada de maturidade da fábrica" },
+      {
+        type: "p",
+        text: "Cada fábrica está em um degrau diferente, e pular degraus costuma sair caro. Tecnologia aplicada sobre um processo desorganizado só automatiza o desperdício.",
+      },
+      {
+        type: "ul",
+        items: [
+          "1. Organizar. Fluxo claro, layout pensado para o produto atual, postos ergonômicos e operações padronizadas (procedimentos que qualquer operador consegue seguir). É onde está a maior parte do ganho rápido.",
+          "2. Medir. Indicadores simples de produção: quanto foi produzido, quanto parou, por quê, quanto foi perdido. Com dados confiáveis, as decisões deixam de ser no achismo.",
+          "3. Simular e otimizar. Com o processo organizado e medido, dá para testar cenários de capacidade, layout e programação e escolher a melhor alternativa antes de investir.",
+          "4. Automatizar e usar IA. Controle da produção em sistema, alertas automáticos, previsão de demanda e assistentes de IA que ajudam a equipe a analisar problemas mais rápido.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A VIEW começa de onde a fábrica está. Para muitas agroindústrias, o primeiro degrau sozinho já libera capacidade suficiente para adiar ou dimensionar melhor um investimento.",
+      },
+      { type: "h2", text: "Na agroindústria da Paraíba, isso aparece assim" },
+      {
+        type: "p",
+        text: "A Paraíba tem uma agroindústria diversa: polpas de frutas, laticínios no Agreste e no Sertão, engenhos e destilarias de cachaça no Brejo, usinas de açúcar e etanol, frigoríficos, rações, beneficiamento de castanha e mel. Muitas dessas empresas cresceram rápido, ampliando o galpão aos poucos, e chegaram a um ponto em que a demanda existe mas a produção não acompanha.",
+      },
+      {
+        type: "p",
+        text: "Alguns exemplos que costumam aparecer nesse tipo de operação:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Polpas e sucos: recepção e seleção da fruta longe do processamento, câmara fria congestionada e embalagem como gargalo nos dias de pico.",
+          "Laticínios: espera do leite na recepção, tempo alto de limpeza entre produtos e cura de queijos ocupando espaço que poderia ser produtivo.",
+          "Engenhos e destilarias: moagem e fermentação desbalanceadas, envase manual lento e movimentação pesada de barris e caixas.",
+          "Frigoríficos e abatedouros: postos de desossa e embalagem com ritmos diferentes e posturas que cansam a equipe ao longo do turno.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Em todos esses casos, a pergunta é a mesma: onde está o gargalo, e qual a forma mais barata de destravá-lo?",
+      },
+      { type: "h2", text: "Como começar: o Diagnóstico de Produtividade" },
+      {
+        type: "p",
+        text: "O primeiro passo é enxergar a fábrica com números. No Diagnóstico de Produtividade da VIEW, passamos um dia na sua unidade e entregamos:",
+      },
+      {
+        type: "ul",
+        items: [
+          "O mapa do fluxo produtivo, do recebimento à expedição.",
+          "O gargalo identificado e medido.",
+          "As 5 melhorias prioritárias, com o esforço de cada uma.",
+          "O ganho de capacidade estimado por cenário.",
+          "Os próximos passos recomendados, do layout à automação.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A VIEW atende agroindústrias e fábricas em João Pessoa, Campina Grande, em toda a Paraíba e no Brasil, com visitas presenciais e acompanhamento remoto.",
+      },
+      {
+        type: "p",
+        text: "Quer saber quanto sua fábrica pode produzir a mais?",
+      },
+      {
+        type: "link",
+        text: "Agende o Diagnóstico de Produtividade",
         href: "/aumentar-capacidade-produtiva",
+      },
+      {
+        type: "link",
+        text: "Conheça nossa engenharia de produção para agroindústria",
+        href: "/engenharia-de-producao-agroindustria-paraiba",
       },
     ],
     faqs: [
       {
-        q: "Uma fábrica organizada também pode ter capacidade escondida?",
-        a: "Sim — e é o caso mais comum. Organização visível (limpeza, ordem, disciplina) não é o mesmo que fluxo medido. A capacidade escondida só aparece quando alguém mede tempo, distância e estoque parado entre etapas.",
+        q: "Precisa parar a produção para fazer o diagnóstico?",
+        a: "Não. O diagnóstico é feito com a fábrica funcionando, porque é justamente a operação real que precisamos observar e medir.",
       },
       {
-        q: "Simular cenários substitui a decisão de comprar máquina?",
-        a: "Não substitui — orienta. A simulação mostra qual alternativa (layout, sequência, turno ou, sim, às vezes uma máquina nova) traz o maior ganho pelo menor investimento, antes de qualquer dinheiro ser gasto.",
+        q: "Dá para aumentar a produção sem comprar máquinas?",
+        a: "Em muitos casos, sim. Reorganizar o layout, rebalancear postos, reduzir o tempo de troca e mudar a sequência de produção costumam liberar capacidade. Quanto, depende do processo, e é isso que o diagnóstico estima.",
       },
       {
-        q: "Minha fábrica precisa estar em qual degrau da escada para simular cenários?",
-        a: "Pelo menos nos dois primeiros: fluxo e layout organizados, e indicadores de produção medidos com alguma confiabilidade. Sem isso, a simulação parte de suposição em vez de dado real.",
+        q: "O que é simulação de cenários?",
+        a: "É testar alternativas (outro layout, outra ordem de produção, mais uma pessoa em um posto) em um modelo do processo antes de mudar a fábrica. Assim, o investimento vai para a alternativa que comprovadamente entrega mais.",
+      },
+      {
+        q: "Ergonomia aumenta a produtividade?",
+        a: "Sim. Postos bem dimensionados reduzem fadiga, erros e afastamentos, e mantêm o ritmo até o fim do turno.",
+      },
+      {
+        q: "Vocês atendem fábricas pequenas?",
+        a: "Sim. O método se adapta ao porte da operação, e as pequenas e médias indústrias costumam ter os ganhos mais rápidos no primeiro degrau.",
+      },
+      {
+        q: "Vocês atendem fora de João Pessoa?",
+        a: "Sim. Atendemos Campina Grande, todo o interior da Paraíba e outros estados do Brasil, com visitas presenciais programadas e acompanhamento remoto.",
       },
     ],
   },
