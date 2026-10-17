@@ -51,6 +51,7 @@ A VIEW tem sede em João Pessoa (PB) e atende presencialmente também praças vi
 - [7 perguntas antes de automatizar qualquer processo](https://reengenhariaview.com.br/blog/7-perguntas-antes-de-automatizar-qualquer-processo): O roteiro de 7 perguntas que a VIEW usa antes de qualquer automação ou IA.
 - [Agente de IA sem processo mapeado: por que o projeto falha](https://reengenhariaview.com.br/blog/agente-de-ia-sem-processo-mapeado-por-que-falha): Por que a maioria dos projetos de agentes de IA falha quando o processo nunca foi mapeado antes da automação.
 - [Fábricas bem montadas ainda escondem capacidade](https://reengenhariaview.com.br/blog/fabricas-bem-montadas-escondem-capacidade): Onde a capacidade produtiva se esconde em agroindústrias e fábricas organizadas, e como simular cenários antes de investir em máquina.
+- [Fim da escala 6x1: o que muda para a produção da sua fábrica](https://reengenhariaview.com.br/blog/fim-da-escala-6x1-o-que-muda-para-a-producao): Com a jornada caindo para 40 horas sem redução de salário, o ganho de produtividade necessário e dados do programa Brasil Mais Produtivo.
 
 ## O que é a VIEW
 

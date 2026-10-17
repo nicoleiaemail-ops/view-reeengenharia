@@ -53,6 +53,7 @@ const ROUTES = [
   "/blog/7-perguntas-antes-de-automatizar-qualquer-processo",
   "/blog/agente-de-ia-sem-processo-mapeado-por-que-falha",
   "/blog/fabricas-bem-montadas-escondem-capacidade",
+  "/blog/fim-da-escala-6x1-o-que-muda-para-a-producao",
 ];
 
 // Locais mais comuns do Chrome/Chromium por sistema operacional.

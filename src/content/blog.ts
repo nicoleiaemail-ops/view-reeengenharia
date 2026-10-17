@@ -909,6 +909,120 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "fim-da-escala-6x1-o-que-muda-para-a-producao",
+    title: "Fim da escala 6x1: o que muda para a produção da sua fábrica",
+    seoTitle: "Fim da Escala 6x1: o Que Muda para a Produção | VIEW",
+    description:
+      "O fim da escala 6x1 reduz a jornada sem cortar salário. Veja onde a fábrica pode recuperar produtividade, com dados do Brasil Mais Produtivo.",
+    datePublished: "2026-10-17",
+    dateModified: "2026-10-17",
+    author: "Equipe VIEW",
+    tag: "Engenharia de Produção",
+    readingMinutes: 6,
+    lead: "O Senado aprovou o fim da escala 6x1. A fábrica que não mexer no processo vai produzir menos, pagando o mesmo salário — a jornada vai encolher, mas a conta do mês não.",
+    body: [
+      {
+        type: "p",
+        text: "O Senado aprovou a PEC por 75 votos a 1. A partir da promulgação, a jornada máxima cai em duas etapas: em dois meses, o limite passa para 42 horas semanais na escala 5x2; em 14 meses, chega a 40 horas — sem redução de salário.",
+      },
+      {
+        type: "p",
+        text: "Para quem dirige uma fábrica, a notícia boa (menos horas, mesmo salário, para quem trabalha) chega junto com uma conta que ninguém mandou: para manter o volume de produção de hoje, cada hora trabalhada vai precisar render mais.",
+      },
+      { type: "h2", text: "Por que a escala 6x1 chegou a esse ponto" },
+      {
+        type: "p",
+        text: "A escala 6x1 — seis dias de trabalho para cada dia de folga — é comum em comércio, serviços e também em linhas de produção que operam em regime contínuo ou quase contínuo. A pressão para o fim desse modelo não nasceu da indústria: veio principalmente do debate sobre jornada e qualidade de vida no comércio e nos serviços. Mas a mudança na Constituição não separa setor por setor — a jornada máxima cai para todo mundo, inclusive para quem opera uma linha de produção.",
+      },
+      {
+        type: "p",
+        text: "É esse o ponto que costuma passar despercebido na indústria: a conversa pública é sobre direito ao descanso, mas o efeito prático em uma fábrica é uma equação de capacidade que precisa ser resolvida antes de a jornada nova valer, não depois.",
+      },
+      { type: "h2", text: "O que isso significa na prática" },
+      {
+        type: "p",
+        text: "A aritmética é simples. Reduzir a jornada de 44 para 40 horas semanais é uma queda de pouco mais de 9% no tempo disponível. Para entregar o mesmo volume de produção nesse tempo menor, cada hora trabalhada precisa render cerca de 10% a mais do que rende hoje.",
+      },
+      {
+        type: "p",
+        text: "Isso não é um ajuste cosmético de meta. É um ganho de produtividade real, que precisa vir de algum lugar — e o lugar mais comum não é o ritmo da equipe, é o processo ao redor dela.",
+      },
+      { type: "h2", text: "Onde esse tempo costuma estar escondido" },
+      {
+        type: "p",
+        text: "O tempo que a nova jornada vai tirar costuma estar escondido no fluxo, no layout e nas peças refeitas — não na disposição de quem opera a linha. Transporte interno desnecessário, estoque parado entre etapas, postos desbalanceados, troca de produto demorada e sequência de produção mal planejada são os pontos mais comuns, e nenhum deles aparece numa caminhada rápida pela fábrica.",
+      },
+      {
+        type: "link",
+        text: "Veja o detalhamento de cada um desses pontos no artigo sobre capacidade escondida",
+        href: "/blog/fabricas-bem-montadas-escondem-capacidade",
+      },
+      { type: "h2", text: "Um caso real: o Brasil Mais Produtivo" },
+      {
+        type: "p",
+        text: "O Brasil já tem um caso testado nessa direção. No programa Brasil Mais Produtivo, 3 mil pequenas e médias fábricas passaram por consultoria de produtividade e ganharam, em média, 52% de produtividade — principalmente cortando deslocamento desnecessário e retrabalho no chão de fábrica, os mesmos pontos que concentram o tempo escondido de qualquer linha de produção.",
+      },
+      {
+        type: "p",
+        text: "O número não é uma promessa de resultado igual para qualquer fábrica — cada processo tem seu próprio gargalo e seu próprio limite de ganho. Mas mostra, com dado público e avaliado, que o tempo perdido em transporte e retrabalho costuma ser maior do que a gestão imagina antes de medir.",
+      },
+      {
+        type: "p",
+        text: "Fontes: Senado Federal (PEC 221/2019); avaliação CEPAL/IPEA do programa Brasil Mais Produtivo; CNI.",
+      },
+      { type: "h2", text: "Como se preparar antes da jornada mudar" },
+      {
+        type: "p",
+        text: "O prazo até a jornada de 40 horas valer — 14 meses a partir da promulgação — é tempo suficiente para organizar o processo antes de a conta apertar, mas só se o trabalho começar agora. Isso significa, em ordem: organizar o fluxo e o layout, medir a produção com indicador real, simular cenários de capacidade antes de qualquer investimento, e só depois automatizar o que fizer sentido.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Organizar primeiro. Fluxo, layout e postos de trabalho ajustados ao processo real — antes de qualquer meta nova ser cobrada da equipe.",
+          "Medir antes de prometer. Um indicador confiável de produção é o que diferencia uma meta de 10% a mais factível de uma meta inventada na pressão do prazo.",
+          "Simular antes de investir. Testar cenários de layout, sequência e turno mostra se o ganho necessário vem de reorganização ou realmente exige máquina nova.",
+          "Automatizar por último. Só depois que o processo já está organizado e medido é que a automação entrega o ganho esperado, em vez de só acelerar o desperdício que já existia.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Esperar a jornada mudar para só então reagir é o caminho mais caro: o prazo de 14 meses deixa de ser tempo de preparação e vira tempo de correção às pressas. O primeiro passo prático é medir onde a fábrica está hoje: um Diagnóstico de Produtividade de um dia na unidade já aponta as melhorias que, somadas, aproximam a fábrica do ganho que a nova jornada vai exigir.",
+      },
+      {
+        type: "link",
+        text: "Agende o Diagnóstico de Produtividade da VIEW",
+        href: "/aumentar-capacidade-produtiva",
+      },
+      {
+        type: "link",
+        text: "Conheça a engenharia de produção da VIEW para agroindústria",
+        href: "/engenharia-de-producao-agroindustria-paraiba",
+      },
+    ],
+    faqs: [
+      {
+        q: "A jornada de 40 horas já está valendo?",
+        a: "Não imediatamente. A partir da promulgação da PEC, a jornada cai em duas etapas: 42 horas em 2 meses, 40 horas em 14 meses — sem redução de salário.",
+      },
+      {
+        q: "Por que preciso de cerca de 10% mais produtividade?",
+        a: "Reduzir a jornada de 44 para 40 horas semanais tira pouco mais de 9% do tempo disponível. Para manter o mesmo volume de produção, cada hora trabalhada precisa render essa diferença a mais.",
+      },
+      {
+        q: "O que é o programa Brasil Mais Produtivo?",
+        a: "Um programa de consultoria de produtividade aplicado em 3 mil pequenas e médias fábricas no Brasil, com ganho médio avaliado de 52%, principalmente por corte de deslocamento e retrabalho no chão de fábrica.",
+      },
+      {
+        q: "Isso serve só para agroindústria?",
+        a: "Não. O raciocínio vale para qualquer fábrica com linha de produção — a agroindústria é um dos setores mais sensíveis ao tema por causa do prazo de validade da matéria-prima, mas o gargalo de capacidade existe em qualquer indústria.",
+      },
+      {
+        q: "Como funciona o Diagnóstico de Produtividade da VIEW?",
+        a: "Um dia de observação na unidade, medindo o fluxo real da produção, seguido de um relatório com as melhorias prioritárias e o ganho de capacidade estimado por cenário — antes de qualquer investimento em máquina.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

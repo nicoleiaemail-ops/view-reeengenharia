@@ -69,6 +69,7 @@ const BLOG_SLUGS = new Set([
   "7-perguntas-antes-de-automatizar-qualquer-processo",
   "agente-de-ia-sem-processo-mapeado-por-que-falha",
   "fabricas-bem-montadas-escondem-capacidade",
+  "fim-da-escala-6x1-o-que-muda-para-a-producao",
 ]);
 
 const CASOS_SLUGS = new Set([
