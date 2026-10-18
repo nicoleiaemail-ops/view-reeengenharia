@@ -14,5 +14,6 @@ createRoot(document.getElementById("root")!).render(
 // Ferramentas WebMCP para agentes que navegam pelo navegador (no-op se a API não existir).
 registerWebMcpTools();
 
-// GA4 + Clarity, carregados na primeira interação (no-op sem IDs configurados).
+// Clarity, carregado na primeira interação (no-op sem VITE_CLARITY_ID configurado).
+// GA4 já foi carregado de forma síncrona no <head> de index.html.
 initAnalytics();

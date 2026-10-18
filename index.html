@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      GA4 carregado direto aqui, de forma síncrona e única -- antes, um shim
+      em src/lib/analytics.ts recriava `window.gtag` como arrow function
+      (`(...args) => dataLayer.push(args)`), que não tem `arguments` próprio;
+      o resultado era enviar um array comum para o dataLayer em vez do
+      objeto `arguments` que o snippet oficial do Google usa, e o GA4 não
+      registrava a visita. send_page_view é false porque o RouteTracker (em
+      src/App.tsx) já dispara 'page_view' manualmente a cada troca de rota da
+      SPA -- com send_page_view:true essas duas fontes contariam a mesma
+      visualização em dobro.
+    -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', '%VITE_GA4_ID%', { send_page_view: false });
+    </script>
     <meta name="google-site-verification" content="WQLE-w26QVAu2z5_Jx6jeckiRLVEd90mjkvkfzJFXiA" />
     <title>Consultoria, Software Sob Medida e IA | João Pessoa</title>
     <meta name="description" content="A VIEW é uma consultoria de processos em João Pessoa: desenha o processo, depois entrega software sob medida e agentes de IA. Atende todo o Brasil." />

@@ -3,6 +3,7 @@ import { ViewLogo } from "./ViewLogo";
 import { setores } from "@/content/setores";
 import {
   BUSINESS_NAME,
+  BUSINESS_SHORT_NAME,
   BUSINESS_PHONE_DISPLAY,
   BUSINESS_WHATSAPP_URL,
   BUSINESS_EMAIL,
@@ -20,7 +21,7 @@ export function Footer() {
             <div>
               <div className="font-display font-bold text-[.95rem] tracking-[.12em]">VIEW</div>
               {/* A assinatura da marca, no lugar do descritor aposentado. */}
-              <div className="text-[.56rem] tracking-[.18em] text-accent uppercase mt-0.5">Enxergue · Simplifique · Evolua</div>
+              <div className="text-[.56rem] tracking-[.18em] text-accent uppercase mt-0.5">Enxergue. Simplifique. Evolua.</div>
               <div className="text-[.58rem] tracking-[.1em] text-muted-foreground/70 mt-1">{BUSINESS_NAME}</div>
             </div>
           </div>
@@ -126,7 +127,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-view-line pt-6 flex items-center justify-between flex-wrap gap-3">
-        <div className="text-[.72rem] text-muted-foreground/80">© 2026 {BUSINESS_NAME}. Todos os direitos reservados.</div>
+        <div className="text-[.72rem] text-muted-foreground/80">© 2026 {BUSINESS_SHORT_NAME}. Todos os direitos reservados.</div>
         <div className="flex items-center gap-4">
           <Link to="/privacidade" className="text-[.72rem] text-muted-foreground/80 hover:text-foreground transition-colors">
             Política de Privacidade
