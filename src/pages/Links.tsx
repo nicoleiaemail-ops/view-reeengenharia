@@ -1,4 +1,4 @@
-import { Calculator, Gauge, CalendarClock, Layers, CheckCircle2, Eye, BookOpen } from "lucide-react";
+import { Calculator, Gauge, CalendarClock, Layers, CheckCircle2, Eye, BookOpen, MessageCircle } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ViewLogo } from "@/components/ViewLogo";
 
@@ -76,6 +76,12 @@ const botoes: Botao[] = [
     icon: BookOpen,
     apoio: "O que a VIEW escreve sobre operação e processo.",
     href: "/blog?utm_source=instagram&utm_medium=bio&utm_content=blog",
+  },
+  {
+    label: "Conte o seu desafio",
+    icon: MessageCircle,
+    apoio: "Fale direto com a VIEW pelo WhatsApp.",
+    href: "https://wa.me/5583993224878?text=Vim%20pelo%20site%20da%20VIEW.%20Quero%20falar%20com%20voc%C3%AAs.",
   },
 ];
 
